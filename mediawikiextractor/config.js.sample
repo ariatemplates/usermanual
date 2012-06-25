@@ -1,0 +1,17 @@
+module.exports = {
+    /* your mediawiki instance info */
+    wiki: {
+        host: "myserver.com",
+        wiki: "wiki" // http://myserver.com/wiki
+    },
+    db: {
+        /* your mysql host */
+        host: "localhost",
+        /* your mysql username */
+        user: "",
+        /* your mysql password */
+        password: "",
+        /* the default database to use */
+        database: ""
+    }
+};
