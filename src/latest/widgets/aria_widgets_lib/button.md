@@ -7,7 +7,7 @@ Button widget enables the creation of rich, graphical buttons that function like
 
 The whole list of configuration parameters is available in [ButtonCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:ButtonCfg).
 
-# Styling
+## Styling
 
 Styling your buttons can be done changing the properties of your widget or applying a sclass.
 
@@ -15,7 +15,7 @@ Styling your buttons can be done changing the properties of your widget or apply
 
 Button label can only be some text, for richer buttons please check [IconButton](IconButton).
 
-# Action
+## Action
 
 Button is an action widget, meaning that it can call a function when an action happens on it. This is done providing a [callback](Working_in_an_Asynchronous_World#Aria Templates Callback Object) to the *on*_event_.
 
@@ -23,7 +23,7 @@ In the next sample there are two buttons with different _*onclick*_ callback, a 
 
 <sample sample="widgets/button/action" />
 
-# Binding
+## Binding
 
 For more information please read the article on [Widget Bindings](Widget_Bindings).
 

@@ -1,10 +1,10 @@
-Title: Form_Submissions
+Title: Form Submissions
 
 
-# Pseudo Asynchronous Form Submissions
+## Pseudo Asynchronous Form Submissions
 For the purposes of form submission, for instance when needing to upload files, there is a new transport in the framework that handles this in a pseudo asynchronous manner.  The transport creates an IFrame to handle the submission and response of the request, then a callback is used to pass the response back to the application.
 
-## IFrame Technique
+### IFrame Technique
 
 The IFrame technique is based on using the <code>target</code> attribute of a <code>form</code> HTML element in order to submit it into a hidden IFrame and therefore avoid the reload of the main page. The system can then simply check the <code>onreadystatechange</code> of the IFrame to know when the reply has been received and can optionally access the content of the IFrame (if on the same domain only).
 
@@ -21,7 +21,7 @@ The IFrame technique is based on using the <code>target</code> attribute of a <c
 
 *Remove the IFrame, and reset the target attribute of the form:''
 
-## API
+### API
 A method is available to use the new IFrame transport, <code>aria.core.IO.asyncFormSubmit</code>.
 
 The user will need to define one or more of the following:
@@ -48,7 +48,7 @@ The user will need to define one or more of the following:
 </syntaxhighlight>
 
 
-# Submitting a Form
+## Submitting a Form
 
 The following code is used to submit the form in the sample:
 <syntaxhighlight lang="AT">
@@ -67,7 +67,7 @@ In this example only the <code>formId</code> and the <code>callback</code> are n
 :<code>callback.onerror</code> _- for onFailure_
 
 
-## Opening a File Upload Dialog From a Link
+### Opening a File Upload Dialog From a Link
 
 In this example the file input is invisible to the user, instead there is a link which when clicked will trigger the file input click method to open the system dialog.
 
@@ -91,7 +91,7 @@ When the click event is triggered on the link the following handler is called:
 The hidden file input has an ID of "simulateAsyncFileUpload", therefore its click event is triggered which opens the system dialog.
 
 
-## Catching the Change Event of the File Upload
+### Catching the Change Event of the File Upload
 When a user opens a system dialog from the file input, they can browse directories select a file and click on open.  The system dialog then disappears and the file input contains the path and filename of the file to be uploaded.  To trigger a script when the user selects a file in the system dialog, you need to add a listener to the change event of the file input.
 
 

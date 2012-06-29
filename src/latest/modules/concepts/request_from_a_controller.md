@@ -1,9 +1,9 @@
-Title: Request_from_a_controller
+Title: Request from a controller
 
 
 Asynchronous requests can be performed manually using [aria.core.IO](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.IO). However, modules provide an extra layer above simple server calls in your modules.
 
-# Concept
+## Concept
 The calls to the server done by the modules most often answer to the need to execute an *action*, with some information to transmit back and forth, and can be decomposed in several steps:
 
 * <span style="color:green">_From a functional need, perform a request to a server to act, send or retrieve information._</span>
@@ -22,15 +22,15 @@ Module controllers provide a simple method in order to focus on functional code 
 
 This method will use several configuration described below to achieve the non-functional steps. Note that most of these configurations are also available on [aria.modules.RequestMgr](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.modules.RequestMgr) as application configuration for all modules.
 
-# Request parameters management
+## Request parameters management
 
-## Session management
+### Session management
 
 Module provides a dedicated API to manage a session tag in the request: <code>setSession</code>. This allows storing an ID that can be used by the URL creating service. Using this API is recommended as this will also propagate the change to sub module controllers.
 
 <srcinclude tag="session" lang="Javascript" outdent="true">modules/controller/ModuleWithRequest.js</srcinclude>
 
-## Adding other parameters to a request
+### Adding other parameters to a request
 
 Other parameters can be added to the request at [aria.modules.RequestMgr](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.modules.RequestMgr) level, for all modules: 
 
@@ -38,11 +38,11 @@ Other parameters can be added to the request at [aria.modules.RequestMgr](http:/
 
 Check the API for a complete description of what can be done with request parameters.
 
-# URL Services
+## URL Services
 
 When an action or resources are required from the server, Aria Templates automatically builds the appropriate URL to connect to the server handler.  Building these URLs is the responsibility of the URL service, which you can of course tailor to your needs.  For details about this, please refer to [this article](URL_handling#Server_requests_URL_handling).
 
-# Request Handlers
+## Request Handlers
 
 Response processing is delegated to an external handler that can be changed to fit specific needs. It will process the response (text, XML, JSON...) coming from the server to extract or build the data to provide to the module controller that issued the request. This handler is stored on the <code>$requestHandler</code> property of the module controller, and must implement the [aria.modules.requestHandler.IRequestHandler](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.modules.requestHandler.IRequestHandler) interface. Two methods have to be provided: the success handler and the failure handler.
 
@@ -55,7 +55,7 @@ Aria Templates provides several base handlers in the <code>aria.modules.requestH
 
 <srcinclude tag="requestHandler" lang="Javascript" outdent="true">modules/controller/ModuleWithRequest.js</srcinclude>
 
-# JSON data serialization
+## JSON data serialization
 
 When sending requests to the server with the POST method, JSON data can be added in the request (see [aria.templates.ModuleCtrl.submitJsonRequest](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.ModuleCtrl:submitJsonRequest:method)).
 

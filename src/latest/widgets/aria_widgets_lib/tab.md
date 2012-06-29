@@ -18,7 +18,7 @@ The whole list of configuration parameters is available in [TabCfg bean](http://
 
 Tab widget is not a container widget, so the content of the Tab widget have to be placed in [TabPanel](TabPanel) widget.
 
-==Styling==
+## Styling
 * It is possible to close a tab: using a close icon, it should be possible to remove a tab from the screen.
 * It is possible to give several types of styling to a tab (the images and colors used for the normal, disabled and active tabs should be skinnable)
 * It is possible to add ellipse to the tab.
@@ -27,7 +27,7 @@ Tab widget is not a container widget, so the content of the Tab widget have to b
 
 <sample sample="widgets/tab/styling" />
 
-==Binding==
+## Binding
 The bindable properties of tab widget are
 * selectedTab
 * tooltip

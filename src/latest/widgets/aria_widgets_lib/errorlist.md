@@ -12,7 +12,7 @@ Also ErrorList widget is highly configurable, for instance you can filter the ty
 
 <sample sample="widgets/errorlist/standard" />
 
-==Filter Types==
+## Filter Types
 The following filter types are supported: 
 
 :''TYPE_FATAL = "F" -- uses the error icon.
@@ -27,7 +27,7 @@ The following filter types are supported:
 
 <sample sample="widgets/errorlist/filtering" />
 
-==Binding==
+## Binding
 ErrorList widget is also a bind-able widget and the properties bindable are
 * message 
 * tooltip
@@ -38,7 +38,7 @@ For more information please read the article on [Widget Bindings](Widget_Binding
 
 <sample sample="widgets/errorlist/binding" />
 
-==Customizing the display==
+## Customizing the display
 The ErrorList widget is a based on a template to display its content. Therefore, it may be customized to fit several types of displays.
 
 <srcinclude tag="wgtErrorListCustomized" lang="AT" outdent="true">widgets/errorlist/Snippet.tpl</srcinclude>

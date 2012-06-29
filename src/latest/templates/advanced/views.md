@@ -15,7 +15,7 @@ Provided that <code>data.hotels</code> is an Array or a Map, this statement will
 
 Let's now see how ways we can use this object.
 
-==Filtering==
+## Filtering
 
 In order to use the View filtering mechanism, <span style="background:#ffc">you simply define which of its elements should be kept</span>.  This is achieved by using the <code>filterIn()</code> method.
 
@@ -46,7 +46,7 @@ To display the content of a View using the filter mode, you must <span style="ba
 {/foreach}
 </syntaxhighlight>
 
-===Combining filters===
+### Combining filters
 
 Once a filter is set, you can add new ones to <span style="background:#ffc">filter in more items using the Views <code>FILTER_ADD</code></span> property:
 
@@ -68,7 +68,7 @@ this.vHotels.filterIn(this.vHotels.FILTER_REMOVE, function(o) {
 
 In this case, the filter method is applied to items that are already filtered in.  This example, added with the first filter we've set, tells the View to list all hotels for which the daily rate is beyond 200€ *and* which have more than 2 stars.
 
-===Additional features===
+### Additional features
 
 The [aria.templates.View](http://ariatemplates.com/api/#aria.templates.View) class provides useful features to handle common filtering tasks:
 
@@ -76,10 +76,10 @@ The [aria.templates.View](http://ariatemplates.com/api/#aria.templates.View) cla
 * <code>allFilteredOut()</code>: a method to remove all the items from the view.
 * <code>filteredInCount</code>: a property that returns the number of items currently filtered in.
 
-===Example===
+### Example
 <sample sample="templates/views/filtering" />
 
-==Sorting==
+## Sorting
 
 Sorting items of a View is achieved by using the <code>setSort()</code> method, as illustrated in this example:
 
@@ -118,10 +118,10 @@ this.vHotels.toggleSortOrder("sortByPrice", function(o) {
 });
 </syntaxhighlight>
 
-===Example===
+### Example
 <sample sample="templates/views/sorting"/>
 
-==Paging==
+## Paging
 
 The paging functionality of a View is triggered by the <code>setPageSize()</code> method:
 
@@ -148,10 +148,10 @@ To modify the current page used by the View, you need to change its <code>curren
 this.vHotels.currentPageIndex++;
 </syntaxhighlight>
 
-===Example===
+### Example
 <sample sample="templates/views/pagination" />
 
-===Mixing filtering, sorting and paging===
+### Mixing filtering, sorting and paging
 
 You can combine the effects of the <code>filterIn()</code>, <code>setSort()</code> or <code>toggleSortOrder()</code> and <code>setPageSize()</code> methods on a single View.  In this case, to display its content, you must <span style="background:#ffc">iterate over the items using the <code>inView</code> keyword</span> as you would for a paged View.
 
@@ -194,10 +194,10 @@ this.vItems.filterIn(this.vItems.FILTER_SET, function(o) {
 Here's what the <code>items</code> array looks like and the value of the different properties:
 [File:Views.PNG](File:Views.PNG)
 
-===Example===
+### Example
 <sample sample="templates/views" />
 
-==Using Views==
+## Using Views
 
 As we've seen, using Views in your application requires iterating over it in your template and calling various methods in your script.  This means that each time you change the way your View should behave, like changing the sort order, the pagination or applying a new filter, you need to refresh its display.  Have a look at the [Refresh](Refresh) article to define the best strategy for your needs.
 

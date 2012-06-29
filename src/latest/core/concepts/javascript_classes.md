@@ -1,4 +1,4 @@
-Title: Javascript_Classes
+Title: Javascript Classes
 
 
 
@@ -6,7 +6,7 @@ Javascript is a language that supports _prototype_-based classes. You will need 
 Aria Templates introduces useful notions that are not natively found in Javascript, such as classes, dependencies, inheritance, namespaces, etc...
 All these concepts make it easier to organize the different pieces of your code.
 
-# The class definition
+## The class definition
 
 In Aria Templates, all the different objects you can create are in the end classes. A class is created by calling the `classDefinition()` method on [the Aria singleton object](The_Aria_Singleton#classDefinition), giving as an argument a JSON configuration object, like so:
 
@@ -19,9 +19,9 @@ Objects are then created and deleted as follows:
 
 The first thing to notice is that all keys to the configuration object start with the <code>$</code> prefix. The reason for this is that many of the keywords used like (extends, prototype, ...) are reserved keywords in Javascript and would result in a run-time exception if used without prefix.
 
-# Class definition attributes
+## Class definition attributes
 
-## $classpath
+### $classpath
 
 The `$classpath` is the unique identifier of a class.
 
@@ -38,7 +38,7 @@ As in Java, the classpath normally corresponds to the physical location of the f
 
 The <code>rootFolderPath</code> is automatically set by the framework to match the directory where the framework is located (this default setting can be overridden through the variable <code>[Aria.rootFolderPath](The_Aria_Singleton#rootFolderPath)</code>).
 
-## $constructor/$destructor
+### $constructor/$destructor
 
 Their description is pretty much what everyone would expect of them.  This is where code that must execute when an instance is created / destroyed should be placed.  The constructor is also a place where we can define instance members for your class and initialize them.
 
@@ -50,7 +50,7 @@ When a class extends another class, it must explicitly call the parent class con
 
 *Note*: class load is asynchronous, as such you need to use the Aria.load(...) method or the $dependencies descriptor to make sure a class is loaded before instanciating it.
 
-## $prototype
+### $prototype
 
 <code>$prototype</code> is the section in which you have to declare your methods; in our example a very simple getter/setter pair.  Note that instance members are referred to using the this keyword.
 
@@ -64,20 +64,20 @@ Because Javascript does not provide any native mechanism regarding visibility, i
 
 *NB*: Technically all properties defined in the _$prototype_ section will be assigned to the actual prototype of the generated ojbect. In other words, if we consider the _x.y.AClass_, its prototype properties will be stored in _x.y.AClass.protototype_
 
-## $statics
+### $statics
 
 Statics are used to define constants at class level.  In this example, we use it to define a default value that can be used by the constructor when it is not provided with an argument.
 
 <srcinclude lang="javascript" outdent="true">core/classes/Vehicle.js</srcinclude>
 
-## $singleton
+### $singleton
 
 Sometimes, you do not need to create several instances from your class. You just need some kind of a library.
 In this particular cases, Aria Templates allows you to define a singleton class.
 
 <srcinclude lang="javascript" outdent="true">core/classes/MyLogger.js</srcinclude>
 
-# More about classes
+## More about classes
 
 Of course Aria Templates provides a lot more functionalities over Javascript classes, like inheritance, dependencies, or observable pattern...
 

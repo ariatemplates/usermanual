@@ -1,4 +1,4 @@
-Title: Templating_Layer _A_Template_Engine
+Title: Templating Layer   A Template Engine
 
 As you've seen in the first part of this documentation, the Aria Templates Core layer is a powerful library that provides comprehensive tools to help design complex Javascript applications very efficiently.
 

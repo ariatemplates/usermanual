@@ -8,7 +8,7 @@ The simple way to add datefield widget is
 The whole list of configuration parameters is available in [DateFieldCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:DateFieldCfg).
 <sample sample="widgets/datefield" />
 
-==Binding==
+## Binding
 The "value" property in the dateField is bind-able and can be bound to a property in the data model.
 <sample sample="widgets/datefield/binding" />
 

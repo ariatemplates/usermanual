@@ -1,6 +1,5 @@
 Title: TextField
 
-{{Review}}
 
 TextField widget enables the creation of input text fields that function like traditional HTML form input fields whose content can be retrieved and used inside the application. In the following code snippet the binding mechanism is used to access the content of a TextField widget, indeed you could also put in place a onChange event listener to catch user triggered value changes.
 
@@ -8,7 +7,7 @@ TextField widget enables the creation of input text fields that function like tr
 
 The whole list of configuration parameters is available in [TextFieldCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:TextFieldCfg).
 
-# Bindings
+## Bindings
 
 The most widely used - and recommended - way to access the value of a TextField widget is to bind a variable - usually defined in the data model - to its value property. Indeed binding can occur even on others widget properties, for instance the widget label property. For more information please read the article on [Widget Bindings](Widget_Bindings).
 

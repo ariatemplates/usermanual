@@ -1,4 +1,4 @@
-Title: The_HTML_Widgets_Library
+Title: The HTML Widgets Library
 
 HTML widgets library is a collection of simple widgets that enrich traditional html tag element.
 

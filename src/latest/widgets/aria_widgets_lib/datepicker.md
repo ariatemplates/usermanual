@@ -17,7 +17,7 @@ For Instance,you can also add a customized calender to select the date.
 
 <sample sample="widgets/datepicker/customized" />
 
-==Output of DatePicker with reference==
+## Output of DatePicker with reference
 Enter date in the first date picker and the successive datepickers takes the previously entered date as the reference date when the user input is +/-N. If not date is specified then current date will be taken into account. 
 
 <sample sample="widgets/datepicker/reference" />

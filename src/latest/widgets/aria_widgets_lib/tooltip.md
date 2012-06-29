@@ -17,7 +17,7 @@ The whole list of configuration parameters is available in [TooltipCfg bean](htt
 
 <sample sample="widgets/tooltip" />
 
-==Binding==
+## Binding
 The only property that is bind-able for Tooltip widget is 
 * tooltip
 

@@ -8,7 +8,7 @@ TimeField widget enables the creation of time input fields targeted at time form
 
 The whole list of configuration parameters is available in [TimeFieldCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:TimeFieldCfg).
 
-# Formatting patterns
+## Formatting patterns
 
 A formatting pattern is a sequence of the following, a subset from the Java [specs](http://java.sun.com/j2se/1.4.2/docs/api/java/text/SimpleDateFormat.html)
 
@@ -17,7 +17,7 @@ A formatting pattern is a sequence of the following, a subset from the Java [spe
 
 The difference between *H* and *h* is that the first is 0-24 while the latter 1-12 (am/pm).
 
-## Default patterns
+### Default patterns
 
 Some time patterns are defined at application level. There are currently two default formats:
 
@@ -39,7 +39,7 @@ aria.core.AppEnvironment.setEnvironment({
 
 Please keep in mind that "setEnvironment" will override all settings, use "updateEnvironment" to update one property.
 
-# Sample usage
+## Sample usage
 
 The following sample shows how to create and use a TextField widget, packed with number format patterns. In order to fetch the entered value, variable binding is to be considered as the preferred solution. Please refer to the [TextField](TextField) widget for more informations.
 

@@ -10,14 +10,14 @@ The whole list of configuration parameters is available in [Dialog](http://ariat
 
 <sample sample="widgets/dialog" />
 
-==Action==
+## Action
 Dialog widgets are highly configurable, as user can define callback functions for onOpen and onClose events.
 
 <srcinclude tag="wgtDialogAction" lang="AT" outdent="true">widgets/dialog/Snippet.tpl</srcinclude>
 
 <sample sample="widgets/dialog/action" />
 
-==Binding==
+## Binding
 The properties bindable for dialog widget are
 * contentMacro
 * title
@@ -33,7 +33,7 @@ For more information please read the article on [Widget Bindings](Widget_Binding
 
 <sample sample="widgets/dialog/binding" />
 
-# Movable dialog
+## Movable dialog
 
 To enable Drag & Drop on a Dialog widget it's enough to set the <code>movable</code> property to true
 

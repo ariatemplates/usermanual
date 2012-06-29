@@ -10,12 +10,12 @@ The whole list of configuration parameters is available in [DivCfg bean](http://
 
 <sample sample="widgets/div" />
 
-==Styling==
+## Styling
 You can easily change the style of div widget by setting sclass attribute to 'basic','errortip','list','dlg'.
 
 <sample sample="widgets/div/styling" />
 
-==Binding==
+## Binding
 Div widget allows to bind the tooltip property only.
 
 For more information please read the article on [Widget Bindings](Widget_Bindings).
