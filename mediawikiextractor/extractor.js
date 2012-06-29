@@ -1,7 +1,6 @@
 require('colors');
 var http = require('http');
 var fs = require('fs');
-var path = require('path');
 var wrench = require('wrench');
 var mysql = require('mysql');
 
@@ -205,7 +204,7 @@ var save_mediawiki_html = function(pageTitle, last) {
 
 var get_page_path = function(pageDef) {
     var lpath = __dirname + '/' + markdown_destination + '/' + pageDef.config.dir;
-    if (!path.existsSync(lpath)) {
+    if (!fs.existsSync(lpath)) {
         wrench.mkdirSyncRecursive(lpath);
     }
     var filename = pageDef.config.name ? pageDef.config.name : pageDef.title.toLowerCase();

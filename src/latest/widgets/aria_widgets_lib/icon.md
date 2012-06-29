@@ -12,7 +12,7 @@ The whole list of configuration parameters is available in [IconCfg bean](http:/
 
 <sample sample="widgets/icon" />
 
-==Icon Library==
+## Icon Library
 
 All standard icons are of size 16x16 pixels. Here is the whole list of icons available in Library
 

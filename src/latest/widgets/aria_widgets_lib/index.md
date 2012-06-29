@@ -1,4 +1,4 @@
-Title: The_Aria_Templates_Widgets_Collection
+Title: The Aria Templates Widgets Collection
 
 Aria Templates provides a library of widgets for handling user interaction, organizing content, generating markup, giving you a simple way to create interactive applications.
 

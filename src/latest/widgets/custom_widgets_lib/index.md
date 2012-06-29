@@ -1,20 +1,20 @@
-Title: Creating_A_Custom_Widgets_Library
+Title: Creating A Custom Widgets Library
 
 
 The framework comes with a predefined set of widgets grouped in the <code>aria.widgets.AriaLib</code> library available by default using the <code>@aria:</code> prefix in templates. Those widgets may suit your needs very well, but in some cases you may need to develop your own ones.
 
 This article explains how to create a new widget class, how to create the corresponding widget library and how to use it.
 
-# Creating a widget
+## Creating a widget
 
-## BaseWidget
+### BaseWidget
 
 Basically, implementing a widget means creating a class which extends <code>aria.widgetLibs.BaseWidget</code> and overriding some of its methods. In addition, some features provided by Aria Templates like [CSS Templates](CSS_Templates), [event delegation](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.Delegate) and [data model listeners](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.Json:addListener:method) are very useful when developing a widget.
 
 Here's a sample for a slider widget that uses all these concepts:
 <sample sample="widgets/widgetlibs" />
 
-### Lifecycle
+#### Lifecycle
 
 Widgets have a specific lifecycle (which is similar to the one of a template). Here are the main steps:
 
@@ -28,7 +28,7 @@ Widgets have a specific lifecycle (which is similar to the one of a template). H
 
 * Finally, when there is a refresh of a section containing the widget (or a parent template), the widget is disposed.
 
-### Widget constructor
+#### Widget constructor
 
 The constructor of the widget is called with three parameters:
 * the widget configuration (as defined in the template),
@@ -48,7 +48,7 @@ $constructor : function (cfg, context, lineNumber) {
 
 If CSS templates are defined in the <code>$css</code> section of the widget, the CSS manager is notified so that they are loaded before the markup is inserted in the DOM.
 
-### Markup generation
+#### Markup generation
 
 If the widget is intended to be a container, with an opening and a closing tag, both the <code>writeMarkupBegin</code> and <code>writeMarkupEnd</code> methods have to be overriden.  On the other hand, if the widget is intended to be used with a single tag, only the <code>writeMarkup</code> method needs to be overridden.
 
@@ -64,17 +64,17 @@ Here are some methods or properties which are often used in the [MarkupWriter](h
 
 * [_createDynamicId](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgetLibs.BaseWidget:_createDynamicId:method): protected method is used to generate an automatic id, which is useful when you need to access the widget's DOM elements.  The id will be automatically freed when the widget is disposed (and will probably be reused later).
 
-### Widget initialization
+#### Widget initialization
 
 The <code>initWidget</code> method can be overridden if some action should be done after the markup of the widget has been inserted in the DOM. The default implementation of this method does nothing.
 
-### CSS templates
+#### CSS templates
 
 Custom widgets can use CSS templates, declared as <code>$css</code> dependencies.
 
 When processed those CSS templates will not be prefixed with a unique class id as standard CSS templates linked to HTML templates are. As a consequence, class names should be chosen carefully as they will apply to the whole page.
 
-### Example
+#### Example
 
 Here's an example of a simple widget:
 <syntaxhighlight lang="JavaScript">
@@ -162,7 +162,7 @@ Aria.classDefinition({
 });
 </syntaxhighlight>
 
-## BindableWidget
+### BindableWidget
 
 <code>aria.widgetLibs.BindableWidget</code> extends from <code>aria.widgetLibs.BaseWidget</code> and, in addition to that class, registers listeners on the data model for any widget's bind property. This class provides also a method to transform a bound value to and from the widget.
 
@@ -184,7 +184,7 @@ Whenever <code>_registerBindings</code> is called, <code>setWidgetProperty</code
 
 Something similar to <code>_registerBindings</code> happens when the bound value changes in the data model, either because you set it in a template script or because of other automatic bindings. When a value changes <code>_notifyDataChange</code> gets called with the name of the bound property and a description of the change. The value received inside <code>_notifyDataChange</code> has not been transformed yet.
 
-## Element
+### Element
 
 <code>aria.html.Element</code> extends from <code>aria.widgetLibs.BindableWidget</code> and is the base class for creating a single html tag element. Being a `BindableWidget` it has data model bindings, but it also handles `event delegation` of events defined in `on` property.
 
@@ -254,13 +254,13 @@ It is similar to <code>aria.widgetLibs.BindableWidget</code> but in this case wh
 
 Every event raised by the user (mouse, keyboard, ...) is handled by <code>_delegate</code> function that calls the right callback for that event. Normally you don't need to override this function.
 
-### Example
+#### Example
 
 <sample sample="html/custom/gallery" />
 
-# Creating a custom widget library
+## Creating a custom widget library
 
-## Defining a custom library
+### Defining a custom library
 
 A custom library is a singleton class which extends <code>aria.widgetLibs.WidgetLib</code> and specifies for each widget the classpath of the class which implements its behavior.
 
@@ -279,7 +279,7 @@ Aria.classDefinition({
 });
 </syntaxhighlight>
 
-## Using a custom library
+### Using a custom library
 
 To use a specific widget library in a template, you need to declare its classpath and an alias in the template's <code>$wlibs</code> section.  This alias can then be used as a prefix in the widget statement, as shown in the example below:
 <syntaxhighlight lang="AT">

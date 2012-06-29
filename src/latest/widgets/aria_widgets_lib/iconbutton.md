@@ -12,12 +12,12 @@ The whole list of configuration parameters is available in [IconButtonCfg bean](
 
 <sample sample="widgets/iconbutton" />
 
-==Styling==
+## Styling
 Styling your buttons can be done by changing the properties of your widget or applying a sclass or changing the icon. 
 
 <sample sample="widgets/iconbutton/styling" />
 
-==Binding==
+## Binding
 The following properties are bindable for IconButton widget
 * selected
 * disabled

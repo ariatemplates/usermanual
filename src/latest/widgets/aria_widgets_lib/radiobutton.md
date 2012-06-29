@@ -14,14 +14,14 @@ The whole list of configuration parameters is available in [RadioButtonCfg bean]
 
 <sample sample="widgets/radiobutton" />
 
-==Styling==
+## Styling
 RadioButton widget labels can be aligned to "left", "right", "top" and "bottom" depending on the user requirement. Also user can provide a css class via sclass property, determines which class defined in the skin is being used.
 
 <srcinclude tag="wgtRadioButtonSnippet2" lang="AT" outdent="true">widgets/radiobutton/Snippet.tpl</srcinclude>
 
 <sample sample="widgets/radiobutton/styling" />
 
-==Binding==
+## Binding
 RadioButton widget alike Checkbox widget is highly configurable and for instance you can bound the value of property like disabled,error,errorMessages etc to a property in the data model. 
 
 The whole list of configuration parameters is available in [RadioButtonCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:RadioButtonCfg).

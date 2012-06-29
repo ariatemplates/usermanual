@@ -1,4 +1,4 @@
-Title: Template_Inheritance
+Title: Template Inheritance
 
 
 
@@ -15,7 +15,7 @@ This article provides details and examples on how the inheritance mechanism work
 Widget libraries (declared in <code>$wlibs</code>) are not inherited at all by child templates.
 
 
-# Inheriting macros
+## Inheriting macros
 
 Each template can call macros defined in its parent templates and override them with its own macro definition. Look at the source code of the following sample.
 
@@ -30,7 +30,7 @@ Several points are interesting in this template:
 * An *<code>overridenMacro</code>* macro was already declared in the parent template and there is another declaration in the child template. The child declaration is overriding the parent one. It is still possible to call the parent macro explicitly by specifying the parent template name (last part of the classpath) prefixed with a '<code>$</code>' (*<code>$ParentTemplate</code>*) before the name of the macro to call, as shown in the example.
 
 
-# Inheriting script methods
+## Inheriting script methods
 
 Functions defined in a script associated to the parent template are inherited and overridden by the child template, the latter having an associated script, too. Look at the source code of the following sample
 
@@ -44,7 +44,7 @@ The following remarks helps highlighting the most important emerging features:
 * it is still possible to call the original methods defined in the parent template script, despite the fact that they have been overridden in the child template script. In this example, the <code>scriptOverriddenMethod</code> defined in the child template script is able to call the <code>scriptOverriddenMethod</code> of the parent by using the following syntax: <code>this.$ParentTemplateScript.scriptOverriddenMethod.call(this)</code>.
 
 
-# Inheriting macro libraries
+## Inheriting macro libraries
 
 A template inherits the macro libraries defined in its parent template configuration. Look at the source code of the following sample. The parent template defines tow macro libraries (<code>libParent</code> and <code>libOverridden</code>) and the child template overrides one of them (<code>libOverridden</code>).
 
@@ -76,7 +76,7 @@ ChildLibOne<br/><div style="background: #F9F9F9"><code>$classpath: 'path.ChildLi
 
 *Remark:* the same inheritance mechanism also applies to resources and text templates declared in the template configuration (respectively in the properties <code>$res</code> and <code>$texts</code>). On the contrary, widget libraries (declared in <code>$wlibs</code>) are not inherited at all.
 
-# CSS inheritance
+## CSS inheritance
 
 A child HTML template inherits the <code>$css</code> configuration property from its parent template *unless it redefines it in its own configuration*. If a <code>$css</code> property is explicitly specified, the parent one will be completely ignored.
 

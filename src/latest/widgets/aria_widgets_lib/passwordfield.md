@@ -7,7 +7,7 @@ PasswordField widget creates an input text field of type password. It has the sa
 
 The whole list of configuration parameters is available in [PasswordFieldCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:PasswordFieldCfg).
 
-# Features
+## Features
 <sample sample="widgets/passwordfield" />
 
 Features such as [bindings](Widget Bindings) and [transforms](transforms), styling and [validation](Validators) is done exactly in the same way as [TextField](TextField) widget.

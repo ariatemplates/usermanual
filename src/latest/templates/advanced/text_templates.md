@@ -1,10 +1,10 @@
-Title: Text_Templates
+Title: Text Templates
 
 {{Review}}
 
 Text Templates are very simple templates that have been conceived in order to contain simple text. A class defined through a text template exposes a unique public API that allows to print the content of a text template. 
 
-# Template definition
+## Template definition
 
 The text template must be defined using the following syntax:
 
@@ -29,7 +29,7 @@ This means that a text tamplate can have a script associated to it, can inherit 
 
 Text templates must be saved with the extension *<code>.tpl.txt</code>* (for instance the file path of the above example would be <code>my/example/myTextTemplate.tpl.txt</code>).
 
-# Allowed statements
+## Allowed statements
 
 The statements allowed inside a text template definition are the following (see [ statements](Aria Templates statements ) for an explanation):
 
@@ -51,11 +51,11 @@ Notice that, with respect to an HTML template, *it is not possible* to use the f
 * <code>[checkDefault]</code>
 * <code>[createView]</code>.
 
-# Special characters and comments
+## Special characters and comments
 
 Text templates have the same behaviour as HTML templates as far as [special characters](Aria Templates principles#Special characters ) and [comments](Aria Templates principles#Comments ) are concerned. In particular, comments are eliminated.
 
-# Access to a text template
+## Access to a text template
 
 Once the text template (for instance <code>my.example.myTextTemplate</code>) has been loaded, it is possible to display its content by using the following syntax:
 
@@ -79,7 +79,7 @@ An optional  JSON Object (<code>myData</code> in the above example) can be passe
 
 It is NOT possible to have access to the macros defined in the text template or to the functions defined inside its associated script. The only public method that can be invoked is the <code>processTextTemplate</code> method.
 
-# How to include a text template in a class definition
+## How to include a text template in a class definition
 
 Text templates can be used in any class definition by including them in the dependencies:
 
@@ -92,7 +92,7 @@ Aria.classDefinition({
 });
 </syntaxhighlight>
 
-# How to include a text template in HTML/TML/CSS templates
+## How to include a text template in HTML/TML/CSS templates
 
 The text template can be used inside an HTML Template using the following syntax:
 

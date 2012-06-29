@@ -1,12 +1,12 @@
-Title: Localization_and_Resources
+Title: Localization and Resources
 
 
 
-# Localization and Internationalization
+## Localization and Internationalization
 
 Localization and internazionalization is a powerful feature to write applications that adapts to different languages and settings based on country and/or regional differences of target market.
 
-## Internationalization aka i18n
+### Internationalization aka i18n
 
 Internationalization, meant as a way to develop applications that can be easily adapted to different languages, is achieved by means of Resources files that specify a format to produce a common structure translated in as many languages as you wish to offer to users.
 
@@ -15,7 +15,7 @@ There are currently available two kind of resources that can be defined and/or u
 * *Static resources*
 * *Dynamic resources* (through Resource Providers) - _Currently under development. More documentation to be provided soon._
 
-### Static resources
+#### Static resources
 
 Static resources can be defined inside plain JavaScript files using the *[Aria.resourcesDefinition](http://ariatemplates.com/aria/guide/apps/apidocs/#Aria:resourcesDefinition:method)* facility. They are usually physically stored as files on the back-end Web Server delivering your AT application, thus accessible through the HTTP(S) protocol.
 
@@ -25,7 +25,7 @@ An example of a resource definition is the following:
 
 <srcinclude lang="JavaScript" outdent="true">templates/18n/statics/Res.js</srcinclude>
 
-#### Conventions to be used
+##### Conventions to be used
 
 Resources should be defined by following a standard scheme to be properly accessible from your code:
 
@@ -43,9 +43,9 @@ Here's an explanation of each scheme component and accepted values:
 	* `pattern` - pattern resource (e.g. date format, number format ...)
 * `resId` - a free text which has to be descriptive
 
-#### How to use Static Resources
+##### How to use Static Resources
 
-##### Inside Templates
+###### Inside Templates
 
 You must first declare the classpath of the resources to use with the `$res` parameter of the Template statement. Then, localized resources are made available through the `res` variable, which can be seen be seen as an alias to the automatically loaded resource classpath.
 
@@ -53,7 +53,7 @@ You must first declare the classpath of the resources to use with the `$res` par
 
 Of course, you can use an intermediate variable, like `label` here, to make the references to localized resources less verbose.
 
-##### Inside Template Scripts
+###### Inside Template Scripts
 
 Here is the script associated to the previous template, which displays a message, using localized resources.
 
@@ -61,7 +61,7 @@ Here is the script associated to the previous template, which displays a message
 
 As the class generated from a template inherits from its script, localized resources are also available from the template script, through `this.res`.
 
-## Localization aka l10n
+### Localization aka l10n
 
 Localization, meant as the process of adapting an internationalized application to a specific region or language, is achieved with application wide settings that can be changed anytime during applications's life cycle.
 
@@ -72,7 +72,7 @@ The framework allows you to configure:
 * Number and currency format settings
 * Date and Time format settings
 
-### Language
+#### Language
 
 Language and region are used to load a particular version of [Static resources](#Static_resources). The language identifier follows the [IETF language tag](http://en.wikipedia.org/wiki/IETF_language_tag) standards but only allows to specify a _primary language subtag_ and one _extended language subtag_, e.g _en-US_.
   [aria.core.environment.Environment.setLanguage(locale, afterChangeCB)](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.environment.Environment:setLanguage:method)
@@ -82,7 +82,7 @@ More information are available on [Environment Base Configuration Bean](http://a
 
 While changing the locale is quite easy, at least a full application templates refresh could be required to make the changes effective. For this pourpose the first method accept a callback parameter - i.e. a method/function - that should contain all the necessary code to achieve the afore mentioned goal.
 
-#### Resources organization
+##### Resources organization
 
 Definition and structure are better defined in the following section. Here we simply highlight how to organize your translated resource files. A potential structure, could be for instance the following, with translations in five languages:
 
@@ -99,7 +99,7 @@ Please note how the first resource is indeed the base resource name to be refere
 
 <sample sample="templates/i18n" />
 
-### Number and currency
+#### Number and currency
 
 Aria Templates provides a [Number](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.Number) utility to interpret numbers and format them according to a user defined pattern and locale.
 
@@ -180,7 +180,7 @@ The supported patterns are a subset of the [java.text.DecimalFormat](http://down
 
 
 
-### Date and Time
+#### Date and Time
 
 [Date Configuration Bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.environment.DateCfgBeans) defines the application's environment for date and time formatting.
 
@@ -209,7 +209,7 @@ These patterns can be accessed through `aria.utils.environment.Date.getTimeForma
 
 Supported patterns are similar to [Java patterns](http://java.sun.com/j2se/1.4.2/docs/api/java/text/SimpleDateFormat.html).
 
-#### Example:
+##### Example:
 
  `dd MMM yyyy` will display <strong>02 Feb 2010</strong> for date 02/02/2010.
  

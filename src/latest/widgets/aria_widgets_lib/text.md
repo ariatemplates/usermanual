@@ -12,7 +12,7 @@ The whole list of configuration parameters is available in [TextCfg bean](http:/
 
 <sample sample="widgets/text" />
 
-==Binding==
+## Binding
 The bindable properties of text widget are
 * text
 * tooltip

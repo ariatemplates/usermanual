@@ -10,19 +10,19 @@ The whole list of configuration parameters is available in [ListCfg bean](http:/
 
 <sample sample="widgets/list" />
 
-==Styling==
+## Styling
 List widget is highly configurable for instance you can change flowOrientation, decide whether to display code, value or both etc.
 <srcinclude tag="wgtListSnippet2" lang="AT" outdent="true">widgets/list/Snippet.tpl</srcinclude>
 
 <sample sample="widgets/list/styling" />
 
-==Action==
+## Action
 List widget is an action widget meaning, a callback function can be called based on the user action on the List widget
 <srcinclude tag="wgtListSnippet3" lang="AT" outdent="true">widgets/list/Snippet.tpl</srcinclude>
 
 <sample sample="widgets/list/action" />
 
-==Binding==
+## Binding
 The following properties are bindable for List widget
 * disabled
 * selected

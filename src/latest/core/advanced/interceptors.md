@@ -13,7 +13,7 @@ When doing so, each time a method is executed on `C` (assuming it is defined in 
 Additionally, if the method on `C` is asynchronous, the interceptors can also execute some logic after its callback has been called.
 Interceptors can also prevent the call of the original method if needed or change the parameters or return value.
 
-# General considerations
+## General considerations
 
 * An interceptor is similar to an event listener: it is an Aria Templates callback that can be added or removed from an object for a given interface. An interceptor can be added to an object `obj` for an interface by a call to `obj.$addInterceptor(interfaceName, interceptorCallback)`. It can be removed by a call to `obj.$removeInterceptors(interfaceName, scope, fn)`.
 
@@ -26,7 +26,7 @@ Interceptors can also prevent the call of the original method if needed or chang
 
 * For `CallBegin`, interceptor callbacks are called in the order in which they registered with `$addInterceptor`, and for both `CallEnd` and `Callback` they are called in the reverse order.
 
-# Interceptor parameter
+## Interceptor parameter
 
 The type of the first parameter given to interceptor callbacks is described below, depending on the moment of the call. If a property is marked as "in", it means that the property is intended to be read by the interceptor callback. If a property is marked as "out", it means that the property can be changed by the interceptor callback.
 
@@ -42,9 +42,9 @@ The type of the first parameter given to interceptor callbacks is described belo
 
 <srcinclude tag="Callback" lang="text">core/interceptors/ParameterTypes.txt</srcinclude>
 
-# Interceptor calls sequence diagrams
+## Interceptor calls sequence diagrams
 
-## Synchronous Method Call
+### Synchronous Method Call
 
 The following sequence diagram visualizes the calls chain in the simple case of a *Synchronous* method:
 
@@ -52,9 +52,9 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 * intercepted method execution
 * interceptor calls (Begin, End)
 
-[Image:Interceptors - Sync Call.png](Image:Interceptors_-_Sync_Call.png)
+<img src="images/Interceptors - Sync Call.png" />
 
-## Asynchronous Method Call
+### Asynchronous Method Call
 
 The following sequence diagram visualizes the calls chain in the simple case of a *Asynchronous* method:
 
@@ -62,9 +62,9 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 * interceptor calls (Begin, End, CallBack)
 * interaction with the backend server system
 
-[Image:Interceptors - ASync Call.png](Image:Interceptors_-_ASync_Call.png)
+<img src="images/Interceptors - ASync Call.png" />
 
-# Example
+## Example
 
 Basically the whole interceptors mechanism can be properly setup by the following steps:
 
@@ -72,19 +72,19 @@ Basically the whole interceptors mechanism can be properly setup by the followin
 * You have to implement the above interface
 * You have to register one or more interceptors on a specific interface
 
-## Interface definition
+### Interface definition
 
 Here is the example of a simple interface definition with two functions, `mySimpleFunction` and `myAsynchronousFunction`.
 
 <srcinclude lang="javascript" outdent="true">core/interceptors/MyInterface.js</srcinclude>
 
-## Interface implementation
+### Interface implementation
 
 Here is an implementation of the previous interface:
 
 <srcinclude lang="javascript" outdent="true">core/interceptors/MyClass.js</srcinclude>
 
-## Interceptor registration
+### Interceptor registration
 
 Here is an example of how to register an interceptor on an instance of the previous object with the previous interface and how to unregister it:
 

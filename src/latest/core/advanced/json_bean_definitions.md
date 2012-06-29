@@ -1,4 +1,4 @@
-Title: JSON_Bean_Definitions
+Title: JSON Bean Definitions
 
 
 When developing your application, you might want to describe the structure of the data model you are using. This can be very important for two reasons:
@@ -10,7 +10,7 @@ Aria Templates allows you to define your own JSON Schemas by means of *Bean defi
 
 *Remark:* In this article the words _bean definition_, _schema_ and _data type_ are used as sinonyms.
 
-# Bean definitions
+## Bean definitions
 
 A bean definition is a Json object that contains all the information on the data type that you want to define.
 
@@ -26,21 +26,21 @@ In the above example, the parent type of the schema *<code>Name</code>* is the t
 
 This *bean inheritance* mechanism is the very core of beans definitions in Aria Templates. Every data type that you define (through a bean definition) will have to inherit from another data type (specified in another bean definition).
 
-# Built-in data types
+## Built-in data types
 
 Aria Templates provides a set of built-in data types whose bean definitions are available in the package [aria.core.JsonTypes](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.JsonTypes). Every other schema is a descendant of one of these schemas. Technically, these types are characterized by the fact that they inherit from themselves.
 
 There are two categories of built-in types (click on the links to learn more about them):
 * *simple types*: [String](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:String), [Boolean](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:Boolean), [Integer](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:Integer), [Float](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:Float), [Date](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:Date), [RegExp](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:RegExp), [ObjectRef](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:ObjectRef), [FunctionRef](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:FunctionRef), [JsonProperty](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:JsonProperty), [Enum](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:Enum)
-	*complex types*: [Object](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:Object), [Array](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:Array), [Map](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:Map), [MultiTypes](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:MultiTypes)
+**complex types*: [Object](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:Object), [Array](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:Array), [Map](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:Map), [MultiTypes](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.JsonTypes:MultiTypes)
 
 
 When creating your bean definition, you can always include the following properties (an explanation is also available [here](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.BaseTypes:Element)):
-	*<code>$type</code>:* the mandatory parent type
-	*<code>$description</code>:* a short literal description of your data type. It is mandatory when inheriting directly from a built-in data type. When inheriting from a user-defined schema, it is not necessarily required.
-	*<code>$sample</code>:* an example
-	*<code>$mandatory</code>:* a boolean telling whether the element has to be provided for the Json object containing it to be valid. More detail on validation will be provided [later](#Validation).
-	*<code>$default</code>:* the default value. If the data is mandatory, it obviously does not make sense to provide a default value.
+**<code>$type</code>:* the mandatory parent type
+**<code>$description</code>:* a short literal description of your data type. It is mandatory when inheriting directly from a built-in data type. When inheriting from a user-defined schema, it is not necessarily required.
+**<code>$sample</code>:* an example
+**<code>$mandatory</code>:* a boolean telling whether the element has to be provided for the Json object containing it to be valid. More detail on validation will be provided [later](#Validation).
+**<code>$default</code>:* the default value. If the data is mandatory, it obviously does not make sense to provide a default value.
 
 
 Furthermore, depending on the built-in type that you want your schema to inherit from, some additional properties can be specified (and others are automatically added by the framework). Most of them are useful for validation purposes.
@@ -50,7 +50,7 @@ For example, when using the Integer type, you might want to specify the allowed 
 
 The list of extra properties that can be added to the schema according to the ancestor built-in type can be found [here](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.BaseTypes)
 
-# Examples
+## Examples
 
 In this section we will introduce more complex examples involving complex built-in data types like Arrays, Objects and MultiTypes, as well as the inheritance from a user-defined schema. Consider the following example:
 
@@ -74,7 +74,7 @@ Remarks:
 
 This special type allows you to specify the different alternative types that are allowed.
 
-# Validation
+## Validation
 
 The main purpose of defining schemas is to check the validity of data. Aria Templates allows you to perform data model validation by means of the class [aria.core.JsonValidator](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.JsonValidator). There are two methods of this class that you can use for this purpose:
 
@@ -94,10 +94,10 @@ You can see that:
 * the package <code>ariadoc.snippets.core.beans.ContactBeans</code> containing useful bean definitions is included in the dependencies of the class. This allows to load and preprocess the bean definitions, so that they are available to the <code>JsonValidator</code> class.
 * the <code>normalize</code> method is surrounded by a try...catch statement. It is a good practice to do so when the second parameter passed to the method is true.
 
-# Beans for documentation purposes
+## Beans for documentation purposes
 
 As you can see in the previous code snippet, bean definitions allow you to associate a more adequate type to methods parameters or class properties.
 
-# Bean definitions inside classes
+## Bean definitions inside classes
 
 It is also possible to specify class-specific bean definitions inside the <code>$beans</code> key of the [classDefintion configuration Json object](http://ariatemplates.com/aria/guide/apps/apidocs/##aria.core.CfgBeans:ClassDefinitionCfg). However, the schemas thus defined cannot be used in any way at the moment.

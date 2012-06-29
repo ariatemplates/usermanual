@@ -11,14 +11,14 @@ The whole list of configuration parameters is available in [CheckBoxCfg bean](ht
 
 <sample sample="widgets/checkbox" />
 
-==Styling==
+## Styling
 Checkbox widget labels can be aligned to "left", "right" and "top" depending on the user requirement. Also user can provide a css class via sclass property.
 
 <srcinclude tag="wgtCheckboxSnippet2" lang="AT" outdent="true">widgets\checkbox\Snippet.tpl</srcinclude>
 
 <sample sample="widgets/checkbox/styling" />
 
-==Binding==
+## Binding
 For more information please read the article on [Widget Bindings](Widget_Bindings).
 
 <srcinclude tag="wgtCheckboxSnippet3" lang="AT" outdent="true">widgets\checkbox\Snippet.tpl</srcinclude>

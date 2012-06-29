@@ -1,9 +1,9 @@
-Title: URL_handling
+Title: URL handling
 
 
 This article will guide you through services provided in Aria Templates to handle URLs.  The first part focuses on mapping files paths to URLs, the second part details how to create custom URLs to communicate with your server.
 
-# Classpaths and URL mapping
+## Classpaths and URL mapping
 
 Aria Templates' default behavior is to load classes using the Download Manager (<code>aria.core.DownloadMgr</code>) based on these steps:
 
@@ -17,7 +17,7 @@ URL mapping provides a way to modify this behavior.  It may be useful in two cas
 
 * You need to specify that a given package is located somewhere else.
 
-## Mapping a class or a package to a file
+### Mapping a class or a package to a file
 
 Let's say you want to force the definition of the <code>foo.bar.BarClass</code> Javascript class to be fetch from <code>foo/bar/AnotherBarClass.js</code> instead of <code>foo/bar/BarClass.js</code>; you would then write:
 <syntaxhighlight lang="javascript">
@@ -45,7 +45,7 @@ aria.core.DownloadMgr.updateUrlMap({
 
 In the example above, any class which classpath starts with <code>foo.bar</code> is expected to be declared inside the bar.js file.
 
-## Mapping the URL root path
+### Mapping the URL root path
 
 You can define what to use as a root path for a given package using the <code>updateRootMap()</code> method:
 <syntaxhighlight lang="javascript">
@@ -65,7 +65,7 @@ In this example:
 
 You can use <code>updateUrlMap</code> in conjunction with <code>updateRootMap</code> to create custom URLs.
 
-## Advanced mapping
+### Advanced mapping
 
 UrlMap and RootMap accept function references and instances of <code>aria.utils.Callback</code> in their definition. Such a function must be defined as follows:
 
@@ -110,7 +110,7 @@ var myUrlMapper = new aria.utils.Callback({
 });
 </syntaxhighlight >
 
-# Server requests URL handling
+## Server requests URL handling
 
 In order to be as independent as possible from the server-side framework, Aria Templates provides a simple way to build the URLs used for [server requests](Request_from_a_controller) and [retrieving resources](Localization_and_Resources): the URL Creation Service.
 

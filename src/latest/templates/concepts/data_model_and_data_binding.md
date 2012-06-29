@@ -1,7 +1,7 @@
-Title: Data_Model_and_Data_Binding
+Title: Data Model and Data Binding
 
 
-# The Data Model in AT
+## The Data Model in AT
 
 In AT's MVC model, templates are used to build the View, a graphical interface to display data and interact with the user.  The data itself, the Model, is handled by a specific framework Javascript object accessible from your template using the <code>data</code> or <code>this.data</code> local reference.
 
@@ -12,7 +12,7 @@ You can read or write data model information from anywhere in your application, 
 
 There are different ways to initialize the data model.  An empty one can be created with default values using a bean definition but in most cases content will be retrieved from the server (this is covered in the [Controllers](Controllers) article.)  You may also provide initial values when the template is loaded as illustrated in the next paragraph.
 
-### Metadata
+#### Metadata
 
 Metadata have to be used when storing template-related variables in the data model. In fact, most of the times the information that you need to store is not strictly related to the data of your application, but to some view options that you need to keep through template refreshes. Metadata have to be used in order to distinguish view-related data from application data.
 
@@ -29,4 +29,4 @@ The convention is to use the following prefixes:
 When several templates have access to the same data model, it is preferable to use template-specific prefixes to avoid meta-data collisions. It might also be happen that different instances of the same template have access to the same data model.
 
 
-# Binding Principles
+## Binding Principles
