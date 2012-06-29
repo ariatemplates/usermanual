@@ -13,11 +13,11 @@ Aria Templates takes a different approach to the issue by redrawing the parts of
 
 In all cases, the developer never has to deal with direct access to the DOM, which allows for greater security and better code readability.
 
-# Automatic refresh
+## Automatic refresh
 
 In most cases, the most appropriate refresh mechanism is the automatic one. In Aria Templates, it is possible to *bind* the refresh of sections and widgets to parts of your data model. The framework then automatically adds listeners that will be notified whenever a change occurs (you can read more about listeners [here](Helpers#JSON_Helper).)
 
-## Section automatic refresh
+### Section automatic refresh
 
 The [section statement](Writing_Templates#section) allows to bind the refresh of a container to a list of values. Consider this example: 
 
@@ -42,7 +42,7 @@ Consider the following sample. By clicking on the "Increase" box, the score of a
 
 By looking at the data model of the sample, it is also possible to identify the metadata due to the automatic addition of a listener on the specified portion of the data model.
 
-## Repeater
+### Repeater
 
 When you have an array or map that you iterate through to display the properties of their entries, it is a good idea to use a repeater. The [repeater statement](Writing_Templates#repeater) is somehow similar to a foreach loop, with the main difference that it creates refreshable sections for each item in the loop, so that insertion and removal of these sections can be done without refreshing the other sections. Consider the following sample:
 
@@ -55,17 +55,17 @@ You can see that:
 
 For more information on the repeater statement go to [this article](Writing_Templates#repeater). If you want to learn about how to modify JSON objects in order to notify the listeners you might want to read [this article](Helpers#JSON_manipulation).
 
-## Widget bindings
+### Widget bindings
 
 A very common situation in which you need to refresh your markup occurs when you have widgets. Aria Templates provides automatic bindings that allow you to bind some widgets properties to a piece of the data model. When this mechanism is used, you don't have to manually keep track of when the template should be refreshed: the widget itself keeps track of when it needs to be refreshed.
 
 The documentation for this feature is available in [this article](Widget_Bindings).
 
-# Manual refresh
+## Manual refresh
 
 Aria Templates allows to refresh a template from its template script by means of the *<code>$refresh</code>* method. The automatic refresh mechanism introduced in the [previous section](#Automatic_refresh) is based on this method, which is called automatically as a reaction to a data change.
 
-## Full template refresh
+### Full template refresh
 
 A full template refresh is achieved by calling the <code>$refresh</code> method with no parameters in a template script. Consider the following sample.
 
@@ -73,7 +73,7 @@ A full template refresh is achieved by calling the <code>$refresh</code> method 
 
 When clicking on the "refresh" div, the <code>fullTemplateRefresh</code> defined in the script is called. As you can see, this method simply calles the <code>$refresh</code> method with no parameters.
 
-## Partial template refresh
+### Partial template refresh
 
 It is cumbersome to perform a full refresh when it is not strictly needed. Indeed, it is possible to refresh only a section of a template by specifying the section id as parameter of the <code>$refresh</code> method. Suppose you define the following section in a template:
 
@@ -94,7 +94,7 @@ By default, the macro that is called is the one specified in the configuration o
 
 However, if another macro is specified, the section markup will be replaced by the output of that macro.
 
-# Stopping and resuming refreshes
+## Stopping and resuming refreshes
 
 In order to avoid duplicate and/or unnecessary refreshes, two statements are introduced:
 
@@ -110,7 +110,7 @@ Play with the following sample that uses the repeater seen above with the possib
 
 <sample sample="templates/refresh/stopresume" />
 
-# Indirect DOM access
+## Indirect DOM access
 
 As explained in [this article](Interactions_with_the_DOM#DOM_elements_wrappers), Aria Templates provides a scoped access to DOM elements in order to facilitate simple UI updates that would not require a complete refresh.
 

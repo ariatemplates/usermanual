@@ -1,12 +1,12 @@
 Title: Overview
 
 
-# A 4 layer framework
+## A 4 layer framework
 Aria Templates is designed as a stack of 4 layers that allow a partial usage of the framework: i.e.
 the first <i>core</i> layer can be used alone, the 2nd _template_ layer only
 requires the <i>core</i> layer, and so on...
 
-## Layer #1: Aria core
+### Layer #1: Aria core
 
 The first layer provides core JavaScript features that are used to build the framework, such as:
 
@@ -19,7 +19,7 @@ The first layer provides core JavaScript features that are used to build the fra
 * [utility classes](Helpers), such as AJAX Connection support, log Manager and AJAX response mocks to redirect dynamic calls to static files
 * and last but not least, a simple Js Unit framework supporting asynchronous tests and loading tests on-demand
 
-## Layer #2: Templates
+### Layer #2: Templates
 
 The second layer provides the [template engine](http://en.wikipedia.org/wiki/Template_engine_%28web%29) used to generate and display any UI piece. This engine comes with
 many interesting features, such as:
@@ -35,7 +35,7 @@ many interesting features, such as:
 * [internationalization](Localization and Resources) and UI themes
 * ...and soon complete support for widget libraries in order to let any developer provide its own widgets
 
-## Layer #3: Modules
+### Layer #3: Modules
 
 The third layer provides the support for UI modules, that can be considered as mini application blocks, and as such
 are composed of files of different nature: JavaScript classes, JSON resources, HTML and CSS templates, image resources, etc.
@@ -51,7 +51,7 @@ On a technical point of view, modules have to follow an
 	* A service controller (aka [Module Controller](Controllers)) that implements the core functional features exposed through a Service interface
 	* A [flow controller](Flow Controllers) - that technically belongs to the View layer - and that is in charge of managing the User Interface flow
 
-## Layer #4: Page Engine
+### Layer #4: Page Engine
 
 Although full applications can be implemented with a root module driving a series of sub-modules, the general use case requires applications to
 
@@ -63,7 +63,7 @@ These are the main features that will be provided by the page engine (to be rele
 as a module that is able to read JSON page configurations and can dynamically load any module
 and manage page navigation.
 
-# Tools
+## Tools
 
 Like most RIA frameworks, Aria Templates has developed a series of tools that aim at improving
 development efficiency and product optimizations:

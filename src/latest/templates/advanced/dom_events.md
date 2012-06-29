@@ -1,13 +1,13 @@
-Title: DOM_Events
+Title: DOM Events
 
 
 This article describes how to use DOM events in Aria Templates.  Note that it doesn't cover [widgets](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans) events  for which documentation can be found directly in the widget's reference itself.
 
-# Event Handlers in Templates
+## Event Handlers in Templates
 
 Attaching DOM Events to elements created in templates is similar to using  the various <code>on<event></code> parameters (<code>onclick</code>, <code>onkeypress</code>, ...) in a standard HTML page. It is the most straightforward way to allow user interaction with DOM Elements in Aria Templates.
 
-## Supported Events
+### Supported Events
 
 Events handled in Aria Templates are: 
 * Mouse: <code>click, dblclick, mouseup, mousedown, mouseover, mousemove, mouseout, mouseenter, mouseleave</code>
@@ -16,7 +16,7 @@ Events handled in Aria Templates are:
 
 Please note that all events are not necessarily available on all tags. This depends on how browsers manage DOM events. You may want to read detailed documentation on that topic such as [this one](http://www.quirksmode.org/dom/events/) for more information.
 
-## Attach an event handler
+### Attach an event handler
 
 To attach events to DOM elements in templates you must use the <code>[on](Writing_Templates#on)</code> statement.
 Example:
@@ -40,7 +40,7 @@ For instance:
 
 {{Note|One limitation of the framework today is that no check is done on the event name passed to the <code>on</code> statement, meaning that you won't get any error if it is mispelled!}}
 
-# Event callback methods
+## Event callback methods
 
 The callback method given to your <code>on</code> statement can be defined either in the template script, the [module controller](Controllers), or an inline anonymous function.
 
@@ -49,7 +49,7 @@ Depending on how you declared it, the scope of the callback (what <code>this</co
 * If the event was attached using the *short syntax*, the scope will be assigned to the *template object*.
 * If the event was attached with the *complete syntax*, the scope will be the one given in the *scope property* if any, or will default to the *template object*.  It is however good practice to explicitly declare the scope of your callback even when you intend it to be the template, for readability and maintenance purposes.
 
-## Signature
+### Signature
 
 A callback assigned with <code>on</code> must conform to the following signature :
 
@@ -60,7 +60,7 @@ where:
 * *<code>evt</code>* is a cross-browser [event wrapper](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.DomEventWrapper) detailing the event that triggered the callback.
 * *<code>args</code>* is the <code>args</code> property of the [callback definition](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.Callback:$constructor:method) when called with the complete syntax.
 
-## DomEventWrapper and DomElementWrapper
+### DomEventWrapper and DomElementWrapper
 
 In many situations, you will want to check information about the event that was raised. You may do so by checking the [aria.templates.DomEventWrapper](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.DomEventWrapper) parameter of your callback, thus accessing all the event properties in a cross browser manner (<code>type, target, altKey, ctrlKey</code>...). In addition to the usual properties, the DomEventWrapper also gives access to helper methods such as 
 [stopPropagation()](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.DomEvent:stopPropagation:method) or [preventDefault()](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.DomEvent:preventDefault:method) inherited from the DomEvent class.
@@ -71,8 +71,8 @@ The <code>target</code> property of a DomEventWrapper is an instance of [aria.te
 
 For more information please refer to the API documentation of these objects: [aria.templates.DomEventWrapper](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.DomEventWrapper), [aria.DomEvent](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.DomEvent) and [aria.templates.DomElementWrapper](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.DomElementWrapper).
 
-==Advanced Features==
-## Events and Performance
+## Advanced Features
+### Events and Performance
 
 Using DOM events is one of the easiest ways to handle user interaction in an Aria Templates application. Here are a few guidelines to keep in mind when using events.
 
@@ -80,15 +80,15 @@ Using DOM events is one of the easiest ways to handle user interaction in an Ari
 * An obvious consequence of the first point is: *do not create events in loops*.
 * *Use [DomElementWrappers](Interactions_with_the_DOM#DOM_elements_wrappers) for light changes*.  If you need to update a CSS class, it is more efficient to using the dedicated methods rather than performing a refresh.
 
-## Events outside of a template
+### Events outside of a template
 
 You might want in some cases to attach events to elements outside of your template, like <code><body></code> for instance.  To do so, the [addListener() method](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.Event:addListener:method) of the [aria.utils.Event](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.Event) singleton provides a way bind an event handler to any DOM element.
 
 {{Note|It is not recommended to use this approach for DOM elements inside a template. If you choose to do so, your application is likely to be less stable and leak memory.}}
 
-# Examples
+## Examples
 
-## Mouse events
+### Mouse events
 
 * [Samples.Utilities.DOM Events.Simple Syntax](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Simple%20Syntax)
 
@@ -98,7 +98,7 @@ This first sample page contains various examples of mouse events, with several e
 
 This sample is the first of a series of samples all based on a 1-9 keypad. In this first sample, we look at click events. The event handler is designed to be simple : a simple datamodel update followed by a refresh.
 
-===Keyboard events===
+### Keyboard events
 * [Samples.Utilities.DOM Events.Keyboard Events.Step 1](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%201)
 
 This sample is based upon the keypad example used for the Mouse Event sample. The mouse selection is here replaced with a keyboard navigation using the arrows key. In this sample, the callback handler takes advantage of the [DomEventWrapper](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.DomEventWrapper) to retrieve the keyCode of the event. Then using the statics available on [DomEventWrapper](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.DomEventWrapper), we easily check if the event was triggered by on of the arrow keys or not. 
@@ -113,14 +113,14 @@ This sample is based upon the keypad example used for the Mouse Event sample. Th
 	/* ... */
 }</syntaxhighlight>
 
-===Form events===
+### Form events
 * [Samples.Utilities.DOM Events.Keyboard Events.Step 2](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%202)
 Still based on the keypad example, this sample uses input events such as <code>{on change}</code>. As you can see in the template script, the change event is the rough DOM Event, therefore we have to take care of the browser specific behavior of the change event. On IE, we force a blur before we refresh, to trigger the change event to be fired.
 
 * [Samples.Utilities.DOM Events.Keyboard Events.Step 3](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%203)
 A listener on focus is added and is now responsible for updating the datamodel and trigger the refresh. Thanks to this new design, the selection updates automatically if the user navigates using the TAB key. The actual keyboard navigation now triggers a focus on the [DomElementWrapper](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.DomElementWrapper) target of the event.
 
-===Event delegation===
+### Event delegation
 * [Samples.Utilities.DOM Events.Keyboard Events.Step 4](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%204)
 
 This example is the exact same as the example 3, but the event handlers have been moved at the topmost element of the template. Before they were repeated in a loop. This allows to use only 3 events for the whole template, instead of 3 per box (27). This can have a pretty significant impact on performances. 
@@ -154,7 +154,7 @@ __getTargetIndex : function (domEl) {
 
 Event delegation is always about striking a good balance between the amount of events and the amount of dynamic processing in the callback.
 
-===Using aria.utils.Event===
+### Using aria.utils.Event
 * [Samples.Utilities.DOM Events.Event singleton](http://aria/aria-templates/aria/guide/#spl=Samples.Utilities.DOM%20Events.Event%20singleton)
 
 This sample is again based on the keypad example. This time, a keydown is attached on the document using the [aria.utils.Event:addListener](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.Event:addListener) utility method. We filter the numkeys and the matching 1-9 box is selected when the user presses one of those keys. 

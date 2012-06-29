@@ -16,7 +16,7 @@ The whole list of configuration parameters is available in [TemplateCfg bean](ht
 
 <sample sample="widgets/template" />
 
-==Binding==
+## Binding
 The only property bindable for template is
 * tooltip
 For more information please read the article on [Widget Bindings](Widget_Bindings).

@@ -1,4 +1,4 @@
-Title: Template_Scripts
+Title: Template Scripts
 
 
 Template Scripts are special types of classes whose existence is strictly related to a template. Indeed, each template can have a template script associated to it. Its purpose is to perform the logic related to the view, for example
@@ -10,14 +10,14 @@ Template Scripts are special types of classes whose existence is strictly relate
 
 The Aria Templates framework automatically copies the template script prototype members to the template prototype so that the template is given access to everything declared in the template script.
 
-# Script definition
+## Script definition
 The template script is similar to a normal Aria Templates class but it has to be defined with the [Aria.tplScriptDefinition](http://ariatemplates.com/aria/guide/apps/apidocs/#Aria:tplScriptDefinition:method) method. This method accepts an object of type [aria.templates.CfgBeans.TplScriptDefinitionCfg](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.CfgBeans:TplScriptDefinitionCfg).
 
 Its properties are a subset of the properties accepted in a standard [Aria.classDefinition](http://ariatemplates.com/aria/guide/apps/apidocs/#Aria:classDefinition:method). Please refer to the [this APIDOC page](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.CfgBeans:ClassDefinitionCfg) for the complete list and to the [article about Aria Templates Javascript classes](Javascript_Classes).
 
 As with class definitions, the physical file that contains a template script definition has *<code>.js</code>* extension.
 
-# Associating a template to a template script
+## Associating a template to a template script
 
 When you want to associate a template script, you have to set the *<code>$hasScript</code>* property of the Template configuration to <code>true</code>. Consider the following example:
 
@@ -32,7 +32,7 @@ You can notice that the script defines the method <code>showAlert</code> in its 
 
 Also, it is not mandatory to define a <code>$contructor</code> and a <code>$destructor</code>: if they are empty, they can completely removed. When you need to define them, there is no need to call the parent contructor/destructor: the framework automatically takes care of that.
 
-# Available variables
+## Available variables
 
 The predefined variables available to the template are also available in the template script. You can find a description of them in the [article about templates](Writing_Templates#Predefined_variables).
 
@@ -50,7 +50,7 @@ You can see that the template script has access to
 Note, however, that in template scripts the <code>this</code> keyword has to be used.
 
 
-# Available methods
+## Available methods
 
 Some methods are available in the template scripts (declared in the interface of [aria.templates.ITemplate](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.ITemplate)). In particular:
 * *<code>$refresh</code>* is explained in detail in the [article about template refresh](Refresh)
@@ -58,13 +58,13 @@ Some methods are available in the template scripts (declared in the interface of
 * *<code>$vdim</code>* and *<code>$hdim</code>* are detailed in the [article about adaptive display](Adaptive_Display).
 * *<code>$focus</code>* and *<code>$focusFromParent</code>* which allow to handle the focus inside a template. These methods are detailed in [this article](Interactions_with_the_DOM).
 
-# Reacting to user interaction
+## Reacting to user interaction
 
 in this section we present a very simple sample on how to react to a click. The [ on statement](Writing_Templates#on) is used along with a handler defined in the script.
 
 <sample sample="templates/templateScripts/clickhandler"/>
 
-# Reacting to module and flow events
+## Reacting to module and flow events
 
 It is possible to react to events raised by the [module controller](Controllers) associated to the template or by the [flow controller](Flow_Controllers) associated to the the module controller. It is sufficient to define the methods *<code>onModuleEvent</code>* and *<code>onFlowEvent</code>* in the script <code>$prototype</code>:
 
@@ -74,7 +74,7 @@ But doing so, you are actually overriding the methods defined in the prototype o
 
 These methods are called whenever an event is raised by the module controller of its associated flow controller.
 
-# Intercepting template lifecycle phases
+## Intercepting template lifecycle phases
 
 Four callback methods inherited from <code>aria.templates.Template</code> can be implemented at script level to execute code during the initialization phase of the template.  They are as follow:
 

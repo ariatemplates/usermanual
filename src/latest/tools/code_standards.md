@@ -1,4 +1,4 @@
-Title: Code_Standards
+Title: Code Standards
 
 <div id="Top"></div>
 These are the rules that we follow when we write the aria templates code. Please take a look at it and keep it in mind if you want to contribute pushing code to the aria templates Github repository.

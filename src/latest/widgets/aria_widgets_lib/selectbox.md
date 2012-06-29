@@ -9,5 +9,5 @@ A dropdown list of selectable items, with type ahead feature.
 
 The whole list of configuration parameters is available in [SelectBoxCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:SelectBoxCfg).
 
-# Sample Usage
+## Sample Usage
 <sample sample="widgets/selectbox" />

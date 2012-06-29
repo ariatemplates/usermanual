@@ -1,10 +1,10 @@
-Title: CSS_Templates
+Title: CSS Templates
 
 
 
 CSS templates are special kinds of templates designed to bring the flexibility of Aria Templates to your style declarations.  CSS templates benefit from all the advantages of the template engine, such as variables, macros, control statements or scripts.
 
-# Definition and use
+## Definition and use
 
 CSS Templates are defined using the <code>CSSTemplate</code> statement and stored with the <code>.tpl.css</code> extension:
 <srcinclude noheader="true" lang="at" outdent="true">templates\cssTemplates\MyCSSTemplate.tpl.css</srcinclude>
@@ -14,11 +14,11 @@ To use these declarations from an HTML template, you just need to reference the 
 <srcinclude noheader="true" lang="at" outdent="true">templates\cssTemplates\MyTemplate.tpl</srcinclude>
 Note that <code>$css</code> expects an array since you might want to include more than just one CSS template.
 
-# Similarities and differences with HTML templates
+## Similarities and differences with HTML templates
 
 Of course, if CSS templates were just about embedding styles inside a template declaration they wouldn't be very useful.  Their interest obviously resides in the features offered by the templating engine.
 
-## Syntax and allowed statements
+### Syntax and allowed statements
 
 You write CSS templates the same way you would write an HTML template.  The main difference is that you don't need to escape the curly brackets characters (<code>{</code> and <code>}</code>).  Contrary to basic CSS files, both comments formats (<code>//</code> and <code>/*...*/</code>) are accepted.
 
@@ -28,13 +28,13 @@ Most of the AT statements can be used in CSS templates and irrelevant ones (<cod
 
 As illustrated in the example below, CSS templates really come in handy when conditional processing or repetitive declarations are concerned.
 
-## Special variables
+### Special variables
 
 Because they are meant to be shared among different modules, CSS templates do not have access to external data by design. They do however provide access to two special variables besides those explicitly declared in the template itself using <code>var</code>.  They are:
 
-	*<code>cssPath</code>*: the complete classpath of the CSS Template file, using folder notation, e.g. <code>ariadoc/snippets/templates/cssTemplates/MyCssTemplate</code>.
+**<code>cssPath</code>*: the complete classpath of the CSS Template file, using folder notation, e.g. <code>ariadoc/snippets/templates/cssTemplates/MyCssTemplate</code>.
 
-	*<code>cssFolderPath</code>*: the URL of the CSS template location, relative to the [Aria.rootFolderPath](http://ariatemplates.com/aria/guide/apps/apidocs/#Aria:rootFolderPath:property).
+**<code>cssFolderPath</code>*: the URL of the CSS template location, relative to the [Aria.rootFolderPath](http://ariatemplates.com/aria/guide/apps/apidocs/#Aria:rootFolderPath:property).
 
 The latter in particular is quite useful to define URLs of images located in the same folder as your CSS files.  Note that it takes into account the rootMap (not the urlMap) defined through the [download manager](Core_Layer_Configuration#Download_manager_configuration).
 
@@ -42,7 +42,7 @@ The latter in particular is quite useful to define URLs of images located in the
 
 Both of these properties are inherited from the [CSSTemplate](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.CSSTemplate) class.
 
-## Declaration and configuration
+### Declaration and configuration
 
 CSS Templates can use inheritance.  Using *<code>$extends</code>* and the classpath of another CSS template, it makes it easy to reuse styles defined in other templates (see the [article about template inheritance](Template Inheritance).)
 
@@ -55,7 +55,7 @@ Here's how a script method would be declared:
 
 {{Note|At the moment, [Macro Libraries](Macro_Libraries) cannot be used in CSS Templates.}}
 
-# Using CSS templates
+## Using CSS templates
 
 The framework provides automatic scoping for style rules defined in CSS templates in order to avoid collisions.  This is done transparently by prefixing all the definitions with a unique global class selector assigned to the HTML element in which the template is rendered.
 
@@ -90,7 +90,7 @@ This definition is ultimately injected in a <code><style></code> statement insid
 
 Note that it is also possible to include a CSS template as dependency in a normal class, using the <code>$css</code> property.  This is mainly used when defining [custom widgets](Widget_Libraries).
 
-# CSS Template code sample
+## CSS Template code sample
 
 <sample sample="templates/cssTemplates" />
 

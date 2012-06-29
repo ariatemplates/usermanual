@@ -1,4 +1,4 @@
-Title: Core_Layer_Configuration
+Title: Core Layer Configuration
 
-# Download manager configuration
+## Download manager configuration
 Talk about urlMap and rootMap

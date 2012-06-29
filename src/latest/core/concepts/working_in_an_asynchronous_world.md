@@ -1,10 +1,10 @@
-Title: Working_in_an_Asynchronous_World
+Title: Working in an Asynchronous World
 
 
 
 Aria Templates as a client side and javascript framework is obviously and massively asynchronous.
 
-# Synchronous pre-requisite
+## Synchronous pre-requisite
 
 Development using synchronous paradigm, like for example in Java, implicitly involves understanding the <code>return</code> pattern.<br />
 When calling a synchronous method, the first thing you could expect from this method is that it could return an object.
@@ -30,7 +30,7 @@ You can call the <code>initProperty()</code> method. You know and you expect fro
 *Quite easy* !<br />
 Now, let's have a look at the pending mechanism when being in the asynchronous world.
 
-# What about when you play around with asynchronous?
+## What about when you play around with asynchronous?
 
 What you cannot do when dealing with asynchronous code execution is this
 <srcinclude tag="notWorking" lang="Javascript" outdent="true">core\asynchronous\Async.js</srcinclude>
@@ -49,7 +49,7 @@ and you also look at what it's producing as a result
 
 you easily understand that something will not work out the box, or at least not like it was so easy in synchronous pattern.
 
-## Callback versus Return
+### Callback versus Return
 
 To be able to have the exact same behavior, you need to have a mechanism that will allow you to talk with the framework like this:
 <blockquote>
@@ -59,7 +59,7 @@ What is important in this quote ? *call me back* is important ! This was the mis
 
 You just want your code to externalize some logic somewhere (the asynchronous execution) and then you want to be immediately notified when this execution is basically over. And to do so, you just need to give a callback object to the framework.
 
-## Aria Templates Callback Object
+### Aria Templates Callback Object
 
 For you to be able to do this, Aria Templates provides you a simple way to execute callbacks
 
@@ -80,7 +80,7 @@ Though, whenever you would have a <code>return</code> statement at the end of a 
 <srcinclude tag="sampleSyncReturn" lang="Javascript" outdent="true">core\asynchronous\Async.js</srcinclude>
 <srcinclude tag="sampleAsyncReturn" lang="Javascript" outdent="true">core\asynchronous\Async.js</srcinclude>
 
-# Propagating  the Callback Object
+## Propagating  the Callback Object
 
 Javascript is a scripting technology. Which means that the code execution is linear. One line after another, one method after another. Though, you will quickly have to face a common pattern in which you will chain the execution of several asynchronous calls.
 

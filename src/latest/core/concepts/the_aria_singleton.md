@@ -1,4 +1,4 @@
-Title: The_Aria_Singleton
+Title: The Aria Singleton
 
 
 {{Draft}}
@@ -6,7 +6,7 @@ When loaded, the framework exposes most of its functionality through the <code>A
 
 Because as an Aria Templates user you will be using its functionality quite often, several articles in the rest of this documentation will refer to it.  Below is a list of the most common usages.
 
-==Declaring core objects==
+## Declaring core objects
 
 The next articles in this section will describe in details core objects that AT provide to create your application, such as:
 
@@ -44,7 +44,7 @@ Aria.resourcesDefinition({
 
 These objects are all defined in structures declared using the <code>Aria</code> object.
 
-==Loading objects==
+## Loading objects
 
 * The main entry-point method to load a template: Aria.loadTemplate(...)
 /insert code + links/
@@ -52,7 +52,7 @@ These objects are all defined in structures declared using the <code>Aria</code>
 * A mechanism to load asynchronous dependencies: Aria.load(...)
 /insert code + links/
 
-==Configuration==
+## Configuration
 
 * A logging mechanism, to facilitate development and debugging.
 /insert Firebug screenshot/

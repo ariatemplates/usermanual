@@ -1,4 +1,4 @@
-Title: Prefill_Feature
+Title: Prefill Feature
 
 
 The prefill feature makes form filling a lot easier, by prefilling inputs with values derived from either:
@@ -11,7 +11,7 @@ The prefilled values need to be explicitly confirmed, and it is also possible to
 In the example shown below the "prefill" text is gray and when focus is given to a field displaying a prefill value the value is confirmed and the text becomes black.
 
 
-[Image: LAY008v2i0.gif](Image:_LAY008v2i0.gif)
+<img src="images/ LAY008v2i0.gif" />
 
 In this animation, when a user fills in the first segment for a trip, all the following segments are updated. 
 For example, when the date of the first segment is set, the date of all the following segments is set to the date of the first one.
@@ -19,7 +19,7 @@ Another automatically filled field is the origin of the second segment, which ha
 
 Note that, in the example, the pre-filled value of any unconfirmed date is the value of the first confirmed date before that line.  For example, if the user changes the date in the second line (not shown in the animation), the pre-filled date of the following lines changes and contains the date of the second line, and the value in the second line is confirmed. If, after that, the date in the first line is changed by the user, the date in the second line will not change, as it is already confirmed.  If the user types something wrong in the first field, the other fields are not automatically pre-filled with that value.
 
-# Supported widgets
+## Supported widgets
 
 Any text input widget that extends the TextInput base class will provide the Prefill feature through a bindable property called prefill.
 
@@ -34,7 +34,7 @@ The following input widgets all currently support Prefill:
 :[TextField](TextField)
 :[TimeField](TimeField)
 
-# Usage
+## Usage
 
 All <code>TextInput</code>-based widgets are endowed with a *<code>prefill</code>* state and a *<code>prefill</code>* bindable property. The <code>prefill</code> state is triggered by setting a value in the portion of the data model to which the prefill property is bound, on condition that the <code>value</code> of the widget is not set.
 
@@ -49,8 +49,8 @@ When the widget is focused, it automatically exits the prefill state because the
 When both <code>data.value1</code> and <code>data.value2</code> are not set, then the widget is in <code>normal</code> state and a helptext is displayed if specified in the widget configuration.
 
 
-# Validation and invalid values
-## invalid values
+## Validation and invalid values
+### invalid values
 Consider the following typical scenario:
 
 <srcinclude tag="numberfield" lang="AT" outdent="true">features/prefill/Snippet.tpl</srcinclude>
@@ -58,10 +58,10 @@ Consider the following typical scenario:
 The value bound to the <code>prefill</code> for widgetA (<code>data.value1</code>) is also bound to the <code>value</code> property of widgetB. Typing an "incorrect" value in widgetB will not trigger the prefilling of widgetA. In particular, the following behaviour occurs:
 * when the value fails native widget validation (for example the string "aaa" in the NumberField widgetB), then the value is not propagated to the data model, so that the prefill on widgetA will not be triggered. Whenever errors are reported in the validation process, widgetA will be automatically notified and will hence exit the prefill state.
 
-## Prefill validation
+### Prefill validation
 No validation is performed on the prefill value. If for some reason the prefill of NumberField ends up being a string like "aaa", then no error is raised. The validation occurs, for example, when focusing on the field.
 
-## Widget-specific behaviours
+### Widget-specific behaviours
 It is important to remark that the prefill behaviour is slightly different depending on the widget. In particular:
 * <code>SelectBox</code>: the prefill will not be displayed if the value does not belong to the <code>options</code> available to the widget.
 * <code>MultiSelect</code>: the items that do not belong to the <code>items</code> available will not be displayed in the list of selected values.
@@ -69,7 +69,7 @@ It is important to remark that the prefill behaviour is slightly different depen
 * <code>TimeField</code>, <code>DateField</code>, <code>DatePicker</code>: the date/time pattern of the prefill is the same as the one specified in the widget configuration. It is not possible to specify a different pattern for the prefill value.
 
 
-# Confirmation
+## Confirmation
 When a widget is in prefill state it is possible to confirm the displayed value either by focusing on the field or by explicitly setting the portion of the data model to which its <code>value</code> property is bound. Considering the example
 
 <srcinclude tag="textfield" lang="AT" outdent="true">features/prefill/Snippet.tpl</srcinclude>
@@ -82,12 +82,12 @@ in a script (or module controller).
 
 Once the state is confirmed, changing <code>data.value1</code> will not have any impact on the widget, until <code>data.value2</code> is not set to <code>""</code>.
 
-# Skinning the prefill state
+## Skinning the prefill state
 Like any other state, the <code>prefill</code> state can be skinned by setting the desired variables in the <code>*.properties</code> file:
 
 <srcinclude tag="skinningproperties" lang="AT" outdent="true">features/prefill/Snippet.tpl</srcinclude>
 
-# Examples
+## Examples
 In this sample it is possible to find some examples of the above-mentioned features including all <code>TextInput</code>-based widgets.
 
 <sample sample="features/prefill/basic" />

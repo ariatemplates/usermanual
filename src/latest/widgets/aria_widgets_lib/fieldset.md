@@ -17,21 +17,21 @@ The whole list of configuration parameters is available in [FieldsetCfg bean](ht
 
 <sample sample="widgets/fieldset" />
 
-==Nested Fieldset==
+## Nested Fieldset
 Fieldsets can be nested.
 
 <srcinclude tag="wgtFieldsetNested" lang="AT" outdent="true">widgets/fieldset/Snippet.tpl</srcinclude>
 
 <sample sample="widgets/fieldset/nested" />
 
-==Action==
+## Action
 Fieldset is an action widget, meaning that it can call an onSubmit callback function called when the user presses ENTER in a field inside the fieldset.For instance, if an onSubmit callback is implemented on the root Fieldset, then all the nested fieldset bubbles to the root fieldset, provided that the child fieldset implemented onSubmit callback should return true.
 
 <srcinclude tag="wgtFieldsetAction" lang="AT" outdent="true">widgets/fieldset/Snippet.tpl</srcinclude>
 
 <sample sample="widgets/fieldset/action" />
 
-==Binding==
+## Binding
 For fieldset widget, the property bindable is tooltip and can be bound to a value in the datamodel.
 
 For more information please read the article on [Widget Bindings](Widget_Bindings).

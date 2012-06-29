@@ -1,4 +1,4 @@
-Title: Core_Layer _A_Javascript_Framework
+Title: Core Layer   A Javascript Framework
 
 AT introduces useful notions that are not natively found in Javascript, such as classes, dependencies, inheritance, namespaces, etc.  These concepts make it easier to organize the different pieces of your application.
 

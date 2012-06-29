@@ -1,9 +1,9 @@
-Title: Writing_Templates
+Title: Writing Templates
 
 
 This page describes the syntax used to write templates.  You will find here a complete documentation on statements as well as details regarding variables and the use of metadata in your data model.
 
-# Special characters and comments
+## Special characters and comments
 
 Because they have special meanings inside a template file, characters used in template tags will need to be escaped if you want to display them.  These characters are: <code> $ { } \</code> and need to be escaped using the <code>\</code> (backslash) character.
 
@@ -22,7 +22,7 @@ Be careful though:
 *If you need to use the <code>/*</code> sequence inside a string, you will need to escape it, otherwise it will be interpreted as a comment:
  "String containing /\*"
 
-# Expressions
+## Expressions
 
 *<code>${...}</code>* displays the value returned by the evaluation of the JavaScript expression it contains.
 
@@ -40,7 +40,7 @@ the content of <code>myVar</code> will be pushed into <code>myArray</code> and t
 * use the <code>[var](Writing_Templates#var)</code> statement that will assign the return value to a variable instead of displaying it, or
 * use the <code>eat</code> modifier described below.
 
-## Modifiers
+### Modifiers
 
 Modifiers are predefined functions that you can use to change a value you want to display. They can be chained to change a value in several ways. The syntax of modifiers is 
 
@@ -50,7 +50,7 @@ Note that in modifiers parameters, pipe characters <code>|</code> have to be esc
 
 Modifiers may only accept one parameter, but it can be of any type.  They also can be chained.  In the code example above, <code>modifier1</code> is applied to <code>value</code>, <code>modifier2</code> is then applied to the result, and so on.
 
-### List of available modifiers
+#### List of available modifiers
 
 * *<code>eat</code>*
 This modifier returns an empty string for any entry.
@@ -105,15 +105,15 @@ For example:
 
 calls the method <code>myCustomModifier</code> that you have defined in the template script and that, upon receiving <code>myValue</code> as a parameter, processes it to return the string to display.
 
-# Common statements
+## Common statements
 
-## Template
+### Template
 
 ...
 
 {{Note|This statement is (obviously) not accepted in [CSS Templates](CSS_Templates).}}
 
-## var
+### var
 
 <code>var</code> can be used to assign a value to a named variable that can then be used in your template.
 
@@ -121,7 +121,7 @@ calls the method <code>myCustomModifier</code> that you have defined in the temp
 
 More information about template variables can be found [here](#Variables).
 
-## set
+### set
 
 <code>set</code> can be used to assign a new value to an already defined variable. It has to be used inside a [macro](#macro).
 
@@ -129,7 +129,7 @@ More information about template variables can be found [here](#Variables).
 
 More information about template variables can be found [here](#Variables).
 
-## checkDefault
+### checkDefault
 
 {{Note|This statement is not accepted in [CSS Templates](CSS_Templates).}}
 
@@ -141,19 +141,19 @@ The syntax is as follows:
 
 In the above example, assuming that <code>v</code> was already defined and is equal to <code>2</code>, then the statement would have no effect. However, if <code>v</code> was either null or undefined, then it would be set to <code>1</code>.
 
-## if...else
+### if...else
 
 The if statement, just like in a JavaScript file, evaluates a variable or expression, and if that variable or expression evaluates to "true" the contents of the block are executed.
 
 <srcinclude noheader="true" tag="ifelse" lang="at" outdent="true">templates\writingTemplates\TemplateStatements.tpl</srcinclude>
 
-## for
+### for
 
 Loops over a collection of items defined by a JavaScript expression. Any JavaScript expression permitted in the normal JavaScript <code>for</code> statement will work here.
 
 <srcinclude noheader="true" tag="for" lang="at" outdent="true">templates\writingTemplates\TemplateStatements.tpl</srcinclude>
 
-## foreach
+### foreach
 
 The <code>foreach</code> statement allows to loop over a map, an array or a [view](Views).
 
@@ -182,7 +182,7 @@ Consider the following example:
 
 <srcinclude noheader="true" tag="bforeachexample" lang="at" outdent="true">templates\writingTemplates\TemplateStatements.tpl</srcinclude>
 
-## separator
+### separator
 
 The separator statement is a convenient way to add a separator between each loop in a [<code>foreach</code>](#foreach) structure.
 If present, it must be the first statement inside a <code>foreach</code> loop.
@@ -191,7 +191,7 @@ Consider the following example:
 
 <srcinclude noheader="true" tag="separator" lang="at" outdent="true">templates\writingTemplates\TemplateStatements.tpl</srcinclude>
 
-## macro
+### macro
 
 A macro is an independent piece of template code that can be executed whenever needed (see the <code>call</code> statement).
 
@@ -205,7 +205,7 @@ Macros are equivalent to JavaScript functions, and in fact, they are actually tr
 
 Macros can be defined also in separate templates that are called [macro libraries](Macro_Libraries). Also, they can be inherited from parent templates thanks to [template inheritance](Template_Inheritance).
 
-## call
+### call
 
 The <code>call</code> statement allows you to execute a macro.
 * call a macro defined inside the template (or inside a [parent template](Template_Inheritance))
@@ -215,9 +215,9 @@ The <code>call</code> statement allows you to execute a macro.
 * when macro <code>myMacro</code> is defined in a parent template (with class name <code>$MyParentTemplate</code>) and overridden, it is still possible to call the parent template macro
 <srcinclude noheader="true" tag="ccall" lang="at" outdent="true">templates\writingTemplates\TemplateStatements.tpl</srcinclude>
 
-# DOM statements
+## DOM statements
 
-## id
+### id
 
 {{Note|This statement is not accepted in [CSS Templates](CSS_Templates).}}
 
@@ -228,7 +228,7 @@ It is used in the following way:
 
 Read the articles about [template scripts](Template Scripts) and [DOM interactions](Interactions with the DOM) in order to learn how to retrieve elements through their ids and interact with them.
 
-## on
+### on
 
 {{Note|This statement is not accepted in [CSS Templates](CSS_Templates).}}
 
@@ -236,9 +236,9 @@ The <code>on</code> statement is used to attach events handlers to DOM elements.
 
 Please check the [DOM Events](DOM_Events) article for details about how to use it.
 
-# Advanced template statements
+## Advanced template statements
 
-## CDATA
+### CDATA
 
 The CDATA container is used to output character data in the template that will not be parsed by the parser. CDATA cannot be nested. This container in useful to display source code. CDATA preserves spaces, returns, tabulations and comments.
 
@@ -252,7 +252,7 @@ will display in the page:
      ${myVar}
  5
 
-## section
+### section
 
 {{Note|This statement is not accepted in [CSS Templates](CSS_Templates).}}
 
@@ -278,7 +278,7 @@ This example contains all the configuration properties currently available for s
 * *<code>bindProcessingTo</code>* allows to display a loading indicator on top of a section depending on whether a certain value is true or false. Optionally, a *<code>processingLabel</code>* can be specified. Loading indicators are treated in [this article](Interactions with the DOM).
 * *<code>keyMap</code>* and *<code>tableNav</code>* allow to define section-specific keyboard shortcuts and table navigation options. Refer to [this article](Keyboard_Navigation) to learn more about keyboard navigation.
 
-## createView
+### createView
 
 {{Note|This statement is not accepted in [CSS Templates](CSS_Templates).}}
 
@@ -295,7 +295,7 @@ Consider the following example:
 
 <srcinclude noheader="true" tag="anotherView" lang="at" outdent="true">templates\writingTemplates\TemplateStatements.tpl</srcinclude>
 
-## repeater
+### repeater
 
 {{Note|This statement is not accepted in [CSS Templates](CSS_Templates).}}
 
@@ -322,17 +322,17 @@ Check [this article](Refresh#Repeater) for more information about repeaters.
 
 See also the repeater [configuration](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.CfgBeans:RepeaterCfg) in the API reference.
 
-# Variables
+## Variables
 
 When working with templates it is very frequently needed to manage template-specific variables. Since templates can have [a very volatile existence](What_are_Templates%3F#Lifecycle), internal template variables persistence should be looked at very carefully. This section aims at explaining how to manage variables in your templates.
 
-## Predefined variables
+### Predefined variables
 
 When writing your templates, some variables are made automatically available by the framework. Here are the most relevant ones:
 * *<code>data</code>:* an object that references the data model. For a detailed presentation of the data model, refer to [this article](Data Model and Data Binding). This object should be used to store data that needs to be persisted through template refreshes.
-	*<code>moduleCtrl</code>:* it is the interface of the [module controller](Controllers) that is provided when loading the template, if any.
-	*<code>flowCtrl</code>:* it is the interface of the [flow controller](Flow Controllers) associated with the module controller.
-	*<code>moduleRes</code>:* resources available in the module controller.
+**<code>moduleCtrl</code>:* it is the interface of the [module controller](Controllers) that is provided when loading the template, if any.
+**<code>flowCtrl</code>:* it is the interface of the [flow controller](Flow Controllers) associated with the module controller.
+**<code>moduleRes</code>:* resources available in the module controller.
 * any shortcut to [macro libraries](Macro Libraries), text templates and resources that you define in the configuration of your template.
 
 Other variables are also available, but they are not used very frequently. In particular:
@@ -340,7 +340,7 @@ Other variables are also available, but they are not used very frequently. In pa
 * *<code>$json</code>:* it is a reference to the singleton class [aria.utils.Json](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.Json).
 * references to the prototypes of the ancestor classes: every HTML template is transformed into a class that extends the [aria.templates.Template](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.Template) class, unless a parent template is specified (see the [article about template inheritance](Template Inheritance)). The prototypes of the ancestor classes are available at <code>$[name of the class]</code>.
 
-## Defining variables
+### Defining variables
 
 When you want to define your own template-related variables, you have two options:
 
@@ -348,7 +348,7 @@ When you want to define your own template-related variables, you have two option
 
 * *putting your variables inside the <code>data</code> object*: this is the correct solution if you want your data to be persistent over refreshes of any container template. However, you have to be aware of the origin of the data object: if it is the data model of a module controller that is disposed, you still lose all of your data. Most importantly, it is a good practice to use meta-data in order to store persistent information that is related to your template, as explained [here](Data Model and Data Binding).
 
-# Methods
+## Methods
 
 The methods available inside a template are
 * those defined in [template script](Template Scripts). Furthermore, all [methods available in a template script](Template_Scripts#Available_methods)

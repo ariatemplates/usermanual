@@ -1,11 +1,11 @@
-Title: Modules_Filters
+Title: Modules Filters
 
 
 Aria Templates comes out of the box with an embedded filters mechanism. More information are available in the [Core Filters](Filters) documentation.
 
 Combined with the module layer, you can achieve really powerful things, such as emulating a server side.
 
-# Using the <code>sender</code> property
+## Using the <code>sender</code> property
 
 The first thing you need to do inside a filter you would have designed to be used with a module, is to limit its execution to only this module. When you do an asynchronous request from within your module, you are using <code>submitJsonRequest()</code>, which is implicitely using the <code>RequestMgr</code> on top of IO.
 
@@ -24,7 +24,7 @@ The following filter looks for requests done by the <code>my.app.Controller</cod
 
 <srcinclude lang="javascript" outdent="true">modules/filters/TargetedFilter.js</srcinclude>
 
-# Working Offline
+## Working Offline
 
 One of the most interesting feature provided by filters is related to working _offline_.
 
@@ -42,7 +42,7 @@ Consider the following example:
 
 In the previous example, requests are intercepted and, based on their action and json parameters, redirected to static XML files instead. The helper <code>[redirectToFile()](http://ariatemplates.com/api/#aria.core.IOFilter:redirectToFile:method)</code> method is used to simplify the redirection.
 
-## Creating the XML responses
+### Creating the XML responses
 
 The default handler of Aria Templates expects data responses from the server in form of XML messages. Creating these static XML files to work offline can be done in 2 ways:
 * Writing them by hand.

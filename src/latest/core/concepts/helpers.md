@@ -15,7 +15,7 @@ Here is a non exhaustive list of what is available:
 
 Let's focus in this article on the 2 most important one, or at least, the 2 one you will have to use daily
 
-# Ajax Helper
+## Ajax Helper
 
 The Ajax Helper is one the helpers which is directly embedded inside the Core Layer. It's available for you to use through the [aria.core.IO](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.core.IO) singleton class.
 
@@ -23,7 +23,7 @@ You can easily declared and execute an XHR call in your class within just a few 
 
 The usage of this helper is mainly described in the [Working in an Asynchronous World](Working_in_an_Asynchronous_World) article. If not already done, we strongly encouraged you to read it.
 
-# JSON Helper
+## JSON Helper
 
 Working with Aria Templates means to manipulate a lot of JSON objects, and various data. This utility helper is designed to help you manage these sometimes complex manipulations.
 

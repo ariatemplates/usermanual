@@ -1,10 +1,10 @@
-Title: Around_Classes
+Title: Around Classes
 
 
 
 Most of the basic object-oriented concepts are detailed in [Javascript Classes](Javascript_Classes) article. Let's focus on more advanced functionalities that will allow you to using patterns such as inheritance, interfaces or even observable objects.
 
-# Inheritance, $extends
+## Inheritance, $extends
 
 Inheritance is a useful feature that Aria Templates makes easy to manage. You can reuse and extend an existing class quite simply.
 Just declare your child class as inherited from a parent one by using the <code>$extends</code> keyword. Like in Java programming language, multiple inheritance is not available. A single class can only inherit from one parent class.
@@ -26,7 +26,7 @@ When your class inherit an another one, it then inherit from all properties, sta
 
 In Aria Templates, any object inherit from <code>[aria.core.JsObject](http://ariatemplates.com/api/#aria.core.JsObject)</code>. Thus, your class automatically has access to several helpers coming from this parent root object, like for example logging methods: <code>[$logDebug()](http://ariatemplates.com/api/#aria.core.JsObject:$logDebug:method)</code>, <code>[$logWarn()](http://ariatemplates.com/api/#aria.core.JsObject:$logWarn:method)</code>, <code>[$logError()](http://ariatemplates.com/api/#aria.core.JsObject:$logError:method)</code>, and many more.
 
-# Interfaces, $implements
+## Interfaces, $implements
 
 An interface is a description of a set of methods, properties and events, but not containing implementation code at all.
 Classes (or implementations) can decide to implement one or more interfaces, and therefore specifically provide the code for these methods, properties and events.
@@ -45,7 +45,7 @@ Interfaces in Aria Templates support the following features:
 * [events](#Events)
 * [interface wrapper](#Interface wrapper)
 
-## Interface definition
+### Interface definition
 
 An interface can be defined through [Aria.interfaceDefinition](http://ariatemplates.com/aria/guide/apps/apidocs/#Aria:interfaceDefinition:method), as shown in the following sample:
 
@@ -65,7 +65,7 @@ An interface definition contains the following parts:
 		* An interface  must be declared with a json structure with the `$type` property containing "Interface", and the `$classpath` property containing the classpath of the interface. When creating the interface wrapper containing such a member, the corresponding member from the whole object must implement the interface specified here and only its interface wrapper will be published in the interface wrapper.
 * `$events` [optional] - set of event definitions, using the same syntax as in [Aria Templates classes](Javascript_Classes#Events).
 
-## Interface implementation
+### Interface implementation
 
 Once an interface has been defined through [Aria.interfaceDefinition](http://ariatemplates.com/aria/guide/apps/apidocs/#Aria:interfaceDefinition:method), it can be used in class definitions as shown in the following example:
 
@@ -75,7 +75,7 @@ Once an interface has been defined through [Aria.interfaceDefinition](http://ari
 * There is no check for the presence in the class of the properties (objects or arrays) defined in the interface, as it cannot be checked at class load time (properties are usually available only when creating an instance of a class).
 * Events declared in the interface are automatically imported in the class definition. They must not be declared again in the class definition.
 
-## Interface wrapper
+### Interface wrapper
 
 If an object is an instance of a class which implements an interface, it is possible to retrieve a wrapper on that object that only contains the members (methods, properties and events) declared in the interface and prevents access to the remaining members of the object. This is useful to be sure that only members of the interface are actually used, so that the code using the interface is really decoupled from the interface implementation.
 
@@ -83,7 +83,7 @@ To get an instance of an interface wrapper, simply call the `$interface` method 
 
 <srcinclude tag="execute" lang="javascript" outdent="true">core/classes/Wrapping.js</srcinclude>
 
-## Events
+### Events
 
 Interfaces can declare events in the `$events` part of the interface definition. Events declared in the interface are automatically imported in the class definition. They must not be declared again in the class definition.
 
@@ -99,7 +99,7 @@ These methods are wrappers on the methods from [aria.core.JsObject](http://ariat
 * calling `$removeListeners` or `$unregisterListeners` from a wrapper object cannot unregister events registered with another wrapper object or with the complete object, it can only unregister events registered with the same wrapper object
 * calling `$removeListeners` or `$unregisterListeners` from the complete object can unregister events registered with any wrapper object
 
-# Dependencies, $dependencies
+## Dependencies, $dependencies
 
 Dependencies management is definitely a missing feature from native Javascript. Thus, Aria Templates provides you a way to easily define all the dependencies associated to a specific class.
 
@@ -122,7 +122,7 @@ The first thing you have to understand as far as dependencies are concerned is t
 
 <srcinclude lang="javascript" outdent="true">core/classes/DynamicDeps.js</srcinclude>
 
-# Events, $events
+## Events, $events
 
 Natively, all Aria Templates objects are Observable. Because of the implicit inheritance from the original root object (<code>[aria.core.JsObject](http://ariatemplates.com/api/#aria.core.JsObject)</code>) on all of your classes, Aria Templates  gives you the ability to declare and listen to events. Any class could listen to events that could be raised by any other class.
 

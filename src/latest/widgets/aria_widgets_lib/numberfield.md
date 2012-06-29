@@ -8,7 +8,7 @@ NumberField widget enables the creation of input fields that should contain a nu
 
 The whole list of configuration parameters is available in [NumberFieldCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:NumberFieldCfg).
 
-# Formatting patterns
+## Formatting patterns
 
 You can use formatting patterns to specify how a number should be conventionally displayed, even as a currency. It can be defined as a combination of the following:
 
@@ -41,7 +41,7 @@ You can use formatting patterns to specify how a number should be conventionally
 
 The supported patterns are a subset of the [java.text.DecimalFormat](http://download.oracle.com/javase/1.4.2/docs/api/java/text/DecimalFormat.html) specs. More information are available at [Localization and Resources](Localization_and_Resources).
 
-# Sample usage
+## Sample usage
 
 The following sample shows how to create and use a NumberField widget, with a mandatory attribute for error checking and number format patterns. In order to fetch the entered value, variable binding is to be considered as the preferred solution. Please refer to the [TextField](TextField) widget for more informations.
 

@@ -12,7 +12,7 @@ The simple way to add SortIndicator widget to your application is as follows
 The whole list of configuration parameters is available in [SortIndicatorCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:SortIndicatorCfg).
 <sample sample="widgets/sortindicator" />
 
-==Binding==
+## Binding
 The only property that is bindable for SortIndicator widget
 * tooltip
 For more information please read the article on [Widget Bindings](Widget_Bindings).

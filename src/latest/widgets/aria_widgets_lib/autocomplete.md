@@ -22,7 +22,7 @@ This article will show you how to
 
 The whole list of configuration parameters is available in [AutocompleteCfg Bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:AutoCompleteCfg).
 
-# Basic AutoComplete
+## Basic AutoComplete
 
 Label-Code Resource Handlers accepts an Array of suggestions described as Objects matching the [LC Resources Handler Bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.resources.handlers.LCResourcesHandlerBean).
 Each of the item contains a pair of *label* and *code* where _label_ is the visible value, _code_ is what is stored internally in the Autocomplete or in the datamodel.
@@ -35,7 +35,7 @@ You can navigate the results with up/down key and select the highlighted option 
 
 By default, *preselect* is set to _strict_ so typing the exact short code of a nation selects that option (you can try typing ENG, FRA, ...). For more samples on _preselect_ please have a look at the paragraph [Highlight Behavior](#Highlight_Behavior).
 
-# Look-and-feel
+## Look-and-feel
 
 Being a Text Input you can customize the field width, the label (text, width, position, align), the initial displayed value, the helptext and the status (mandatory, readOnly or disabled) as in any other Input. For reference you can check the samples in [TextField](TextField).
 
@@ -51,7 +51,7 @@ Try typing _fraance_ or any other country doubling its third letter and you'll s
 
 The second AutoComplete in the previous samples uses the sclass _*underlineError*_ to change the style of a field in error.
 
-# Highlight Behavior
+## Highlight Behavior
 
 * *autofill* is enabled by default. If enabled, when you navigate with _up_/_down_ keys the value of highlighted option is set in the text field.
 
@@ -70,7 +70,7 @@ In _*strict*_ mode the suggestion is highlighted only when you type entirely _EN
 
 <template templateclasspath="ariadoc.samples.widgets.autocomplete.HighlightPreselect" />
 
-# Action
+## Action
 
 AutoComplete is a form widget, meaning that it is a good addition to your forms although it can be used also outside such element. For this reason it doesn't allow to react on user interaction (click, focus, ...) but only to data changes.
 

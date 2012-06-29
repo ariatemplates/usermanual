@@ -1,10 +1,10 @@
-Title: Keyboard_Navigation
+Title: Keyboard Navigation
 
 
 
 Keyboard navigation plays an important role in the usability and accessibility of your application.  Depending on your requirements, Aria Templates provide different means to handle keyboard interactions easily.
 
-==Tab Navigation==
+## Tab Navigation
 
 Using the tab key to navigate through the list of controls in your interface is the most basic keyboard navigation that is natively available in any browser.  Control of this behavior can be achieved using the <code>tabindex</code> property of elements that defines the order in which they should receive focus.  This property being also supported by AT widgets, it is very intuitive to indicate the tabbing sequence for the controls of a template.
 <syntaxhighlight lang="AT">
@@ -61,11 +61,11 @@ Keep in mind the following when using <code>baseTabIndex</code>:
 
 <sample sample="templates/keyboardnavigation/subTemplate" />
 
-==Keymaps==
+## Keymaps
 
 Keymaps are mechanisms that AT uses to catch sets of keystrokes and assign them to specific actions.  They can be created to handle keyboard shortcuts inside a specific section or at application level.
 
-===Creating keymaps===
+### Creating keymaps
 
 The [keymap object](http://ariatemplates.com/api/#aria.templates.CfgBeans:KeyMapConfiguration) defines a keystroke and which method it should execute.  It has the following properties:
 * *<code>key</code>*: a key (see below)
@@ -190,11 +190,11 @@ Example:
 }
 </syntaxhighlight>
 
-===Using keymaps===
+### Using keymaps
 
 There are two ways to assign keymaps to your app depending on the scope you want your shortcuts to have.
 
-====At Section Level====
+#### At Section Level
 
 Keymaps assigned to a section will only be active when the focus is inside this section.  To do so, you need to supply an array of keymaps objects to the <code>keyMap</code> property of your [section](http://ariatemplates.com/api/#aria.templates.CfgBeans:SectionCfg), like in this example:
 
@@ -208,7 +208,7 @@ We've seen earlier that it was possible to use the <code>"*"</code> wildcard cha
 
 <sample sample="templates/keyboardnavigation/wildcardKeyMap" />
 
-====At Application Level====
+#### At Application Level
 
 Keymaps assigned at application level will be triggered wherever the focus is.  In this case, they must be set using the <code>addGlobalKeyMap()</code> method of <code>[aria.templates.NavigationManager](http://ariatemplates.com/api/#aria.templates.NavigationManager:addGlobalKeyMap:method)</code>.  This can be done anywhere in your code.
 
@@ -226,7 +226,7 @@ It is also possible to delete a globally assigned keymap using the <code>removeG
 
 <span style="color:#D13838">Be careful!</span>  Hooks set using <code>addGlobalKeyMap()</code> are not automatically removed when the object that created them is destroyed.  Don't forget to remove them.
 
-==Table-Like Navigation==
+## Table-Like Navigation
 
 The table-like navigation feature of Aria Templates allows moving focus using arrow keys inside a section.  When set, using the <code>up</code> and <code>down</code> arrow keys (along with modifiers if activated) moves the focus from one element to the next one.  Note that in this context "next one" has to be understood as "the next element defined in the template": the <code>tabIndex</code> widgets property (explained at the beginning of this article) has no effect in this case.
 

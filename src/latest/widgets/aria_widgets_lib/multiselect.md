@@ -8,6 +8,6 @@ A Widget to create a list of checkbox options.
 
 The whole list of configuration parameters is available in [MultiSelectCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:MultiSelectCfg).
 
-# Sample Usage
+## Sample Usage
 
 <sample sample="widgets/multiselect" />
