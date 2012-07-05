@@ -1,0 +1,61 @@
+include ../common_layout
+
+mixin doctype
+html(lang='en', dir='ltr', class='client-js')
+
+  mixin head
+
+  body.mediawiki.documentation
+
+    mixin header
+
+    mixin scrolling
+
+    div.content-wrapper
+      
+      mixin goToTop
+
+      section.content
+        div.wrapper
+          div.columns.two.title
+            article.column
+              if metadata && metadata.title
+                h1 #{metadata.title}
+              if metadata && metadata.author
+                span.cite by 
+                  -var authors = metadata.author.split(",")
+                  -var urls = metadata.url.split(",")
+                  -for (var a = 0; a < authors.length; a++)
+                    a(href='#{urls[a]}') #{authors[a]}
+                    if (a != authors.length - 1)
+                      ,
+              nav.navigationbar
+                span.alignleft.nav-previous
+                  a(href="/usermanual/TextField", rel="prev") Previous
+                span.alignright.nav-next
+                  a(href="/usermanual/Tooltip", rel="next") Next
+                div#dropdown.aligncenter.nav-main
+                  include navigationbar.jade
+
+              div.doc
+                != content       
+              nav.navigationbar
+                span.alignleft.nav-previous
+                  a(href="/usermanual/TextField", rel="prev") Previous
+                span.alignright.nav-next
+                  a(href="/usermanual/Tooltip", rel="next") Next
+                div.aligncenter.nav-main
+                  include navigationbar.jade
+            aside.column.sidebar
+              include versionList.jade
+              mixin search
+              
+              if toc
+                div#tableOfContent
+                  h4 Contents
+                  div.toc
+                    mixin toc
+
+    mixin footer    
+
+    mixin endingScripts
