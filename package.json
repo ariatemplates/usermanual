@@ -1,16 +1,16 @@
 {
-    "name": "ariatemplates-doc",
+    "name": "ariatemplates-usermanual",
     "version": "0.0.0",
     "private": true,
     "repository": {
         "type": "git",
-        "url": "git://github.com/ariatemplates/ariadoc.git"
+        "url": "git://github.com/ariatemplates/usermanual.git"
     },
     "dependencies": {
         "colors": "",
         "mysql": "~2.0.0-alpha2",
         "wrench": "~1.3.9",
-        "marked": "~0.1.5",
-        "markdown_conrefs": "~1.2.3"
+        "panda-docs": "https://github.com/benouat/panda-docs/tarball/toc",
+        "underscore": "1.3.3"
     }
 }

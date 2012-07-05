@@ -1,0 +1,111 @@
+mixin doctype
+  !!! 5
+
+mixin head
+  head
+    title Aria Templates - Javascript Framework
+    meta(charset='utf-8')
+    link(href='/favicon.ico', type='image/ico', rel='shortcut icon')
+    link(title='AriaTemplates', href='/fluidicon.png', rel='fluid-icon')
+    link(rel='stylesheet', href='/styles/all.css', type='text/css')
+    link(rel='stylesheet', href='/styles/highlight_skin.css', type='text/css')
+    script
+      //Aria={debug:true}
+    script(type='text/javascript', src='/aria/aria-templates-1.1-26.js')
+    script(type='text/javascript', src='/css/atwiki-1.1-26.js')
+    //if lt IE 9
+      script(type='text/javascript', src='/js/iemap.js')
+      script(src='//html5shiv.googlecode.com/svn/trunk/html5.js', type='text/javascript', charset='utf-8')
+      style
+        .ie-hidden {display:none;}
+    //if lt IE 8
+      link(href='/style/ie/ie7.css', rel='stylesheet', type='text/css')
+    script(type='text/javascript', src='/js/carouselmap.js')
+    script
+      var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-29575860-1']);  _gaq.push(['_setDomainName', 'ariatemplates.com']);  _gaq.push(['_trackPageview']);  (function() { var a = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+
+mixin header
+  header#header
+    div.logo
+        h5
+          a(href='/')
+            img(src='/images/logo-page.png', alt='Aria Templates')
+    nav
+      a.documentation(href='/documentation') Documentation
+      a.blog(href='/blog') Blog
+      a.contribute(href='/contribute') Contribute
+      a.about(href='/about') About
+      a.download.button.green(href='/download') Download
+
+mixin search
+  div.wiki-search
+    h4 Search
+    form(action='/usermanual/Special:Search')
+      input(type='hidden', name='fulltext', value='Search')
+      input(type='hidden', name='ns0', value='1')
+      input(type='text', id='search', name='search', value='')
+      button(class='searchbutton blue', value='Search', onclick="javascript:if(document.getElementById('search').value == '') return false;")
+        span Search
+
+mixin toc
+  -var lowestRank = 2
+  -var tocmd = toc.map(function (x) {var indent = (new Array(x.rank - lowestRank + 1)).join('\t'); return indent + '- [' + x.name + '](' + x.link + ')';}).join('\n');
+  != markdown(tocmd).html
+
+mixin scrolling
+  script(type='text/javascript', src='/js/top-scrolling.js')
+  div#top
+    a(href='#top')
+
+mixin goToTop
+  div#scrollMenu.up
+      div
+        a(href='#top', onclick="smoothScroll('top');return false") Top
+
+mixin footer
+  footer#footer
+    section.content
+      nav
+        section.documentation
+          h5
+            a(href='/documentation') Documentation
+          ul
+            li: a(href='/usermanual') User Manual
+            li: a(href='/aria/guide/apps/apidocs', target=' blank') Api Documentation
+            li: a(href='/guides') Guides
+            li: a(href='/faq') FAQ
+        section.discuss
+          h5
+            a(href='/discuss') Discuss
+          ul
+            li: a(href='/blog') Blog
+            li: a(href='/forum') Forum
+            li: a(href='/blog/category/news') Latest News
+        section.contribute
+          h5
+            a(href='/contribute') Contribute
+          ul
+            li: a(href='http://github.com/ariatemplates') Source Code
+            li: a(href='http://github.com/ariatemplates/ariatemplates/issues') Bugs tracking
+            li: a(href='/contribute/documentation') Documentation
+        section.contact
+          h5
+            a(href='/about') About
+          ul
+            li: a(href='/about/contact') Contact
+            li: a(href='/about/team') The Team
+    section.content.legal
+      &copy; 2012 Aria Templates is licensed under Apache 2.0 license. See our 
+      a(href='/license') licensing page
+
+mixin endingScripts
+  script(type='text/javascript', src='/wiki/extensions/SampleViewer/viewer/Launcher.js')
+
+  script
+    var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-29575860-1']); _gaq.push(['_setDomainName', 'ariatemplates.com']); _gaq.push(['_trackPageview']); (function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+
+
+
+mixin markdown(text, inline)
+  html = markdown(text, inline)
+  != html
