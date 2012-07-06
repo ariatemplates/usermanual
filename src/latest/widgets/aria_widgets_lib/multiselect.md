@@ -4,10 +4,10 @@ Title: MultiSelect
 
 A Widget to create a list of checkbox options.
 
-<srcinclude tag="wgtMultiSelect" lang="AT" outdent="true">widgets/multiselect/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/multiselect/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [MultiSelectCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:MultiSelectCfg).
+The whole list of configuration parameters is available in [MultiSelectCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:MultiSelectCfg).
 
 ## Sample Usage
 
-<sample sample="widgets/multiselect" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/multiselect/' />

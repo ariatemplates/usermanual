@@ -3,28 +3,28 @@ Title: Button
 
 Button widget enables the creation of rich, graphical buttons that function like traditional HTML form buttons and trigger an action when pressed.
 
-<srcinclude tag="wgtButtonAction" lang="AT" outdent="true">widgets\button\Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/button/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [ButtonCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:ButtonCfg).
+The whole list of configuration parameters is available in [ButtonCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:ButtonCfg).
 
 ## Styling
 
 Styling your buttons can be done changing the properties of your widget or applying a sclass.
 
-<sample sample="widgets/button/style" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/button/style/' />
 
-Button label can only be some text, for richer buttons please check [IconButton](IconButton).
+Button label can only be some text, for richer buttons please check [iconbutton](iconbutton).
 
 ## Action
 
-Button is an action widget, meaning that it can call a function when an action happens on it. This is done providing a [callback](Working_in_an_Asynchronous_World#Aria Templates Callback Object) to the *on*_event_.
+Button is an action widget, meaning that it can call a function when an action happens on it. This is done providing a [callback](working_in_an_asynchronous_world#aria-templates-callback-object) to the *on*_event_.
 
 In the next sample there are two buttons with different _*onclick*_ callback, a simple one and another one with arguments. Clicking on the buttons will open an alert dialog.
 
-<sample sample="widgets/button/action" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/button/action/' />
 
 ## Binding
 
-For more information please read the article on [Widget Bindings](Widget_Bindings).
+For more information please read the article on [widget bindings](widget_bindings).
 
-<sample sample="widgets/button/binding" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/button/binding/' />

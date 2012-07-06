@@ -6,11 +6,11 @@ ErrorList widget can be used to display list of errors (client-side or server-si
 
 The simple way to add ErrorList widget to your application is as follows
 
-<srcinclude tag="wgtErrorListSimple" lang="AT" outdent="true">widgets/errorlist/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/errorlist/Snippet.tpl' defer></script>
 
-Also ErrorList widget is highly configurable, for instance you can filter the type of error (E,F,W etc..), binding the message and tooltip properties and lot more. The whole list of configuration parameters is available in [ErrorListCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:ErrorListCfg).
+Also ErrorList widget is highly configurable, for instance you can filter the type of error (E,F,W etc..), binding the message and tooltip properties and lot more. The whole list of configuration parameters is available in [ErrorListCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:ErrorListCfg).
 
-<sample sample="widgets/errorlist/standard" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/errorlist/standard/' />
 
 ## Filter Types
 The following filter types are supported: 
@@ -23,24 +23,24 @@ The following filter types are supported:
 :''TYPE_CRITICAL_WARNING = "C" -- uses the warning icon.
 :''TYPE_CONFIRMATION = "O" -- uses the confirmation icon.
 
-<srcinclude tag="wgtErrorListFilter" lang="AT" outdent="true">widgets/errorlist/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/errorlist/Snippet.tpl' defer></script>
 
-<sample sample="widgets/errorlist/filtering" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/errorlist/filtering/' />
 
 ## Binding
 ErrorList widget is also a bind-able widget and the properties bindable are
 * message 
 * tooltip
 
-For more information please read the article on [Widget Bindings](Widget_Bindings).
+For more information please read the article on [widget bindings](widget_bindings).
 
-<srcinclude tag="wgtErrorListBinding" lang="AT" outdent="true">widgets/errorlist/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/errorlist/Snippet.tpl' defer></script>
 
-<sample sample="widgets/errorlist/binding" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/errorlist/binding/' />
 
 ## Customizing the display
 The ErrorList widget is a based on a template to display its content. Therefore, it may be customized to fit several types of displays.
 
-<srcinclude tag="wgtErrorListCustomized" lang="AT" outdent="true">widgets/errorlist/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/errorlist/Snippet.tpl' defer></script>
 
-<sample sample="widgets/errorlist/custom" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/errorlist/custom/' />

@@ -7,12 +7,12 @@ The content of the Tab widget is presented by using TabPanel widget. The TabPane
 If the TabPanel hasn't been used as a container then it is necessary to specify a macro, which is used in the refresh. This method is considerable faster and is recommended where possible.
 
 Here is an example of initialising a TabPanel widget
-<srcinclude tag="wgtTabPanelSnippet1" lang="AT" outdent="true">widgets/tabpanel/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/tabpanel/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [TabPanelCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:TabPanelCfg).
+The whole list of configuration parameters is available in [TabPanelCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TabPanelCfg).
 
-Since TabPanel widget is used along with Tab widget, for more understanding please read [Tab Widget](Tab).
+Since TabPanel widget is used along with Tab widget, for more understanding please read [Tab Widget](tab).
 
 Here is an example for TabPanel widget using macro content
 
-<sample sample="widgets/tab/tabpanel" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/tab/tabpanel/' />

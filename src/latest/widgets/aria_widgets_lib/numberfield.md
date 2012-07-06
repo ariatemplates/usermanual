@@ -4,9 +4,9 @@ Title: NumberField
 
 NumberField widget enables the creation of input fields that should contain a numeric value. It also provides formatting facilities to handle numeric and currency patterns.
 
-<srcinclude tag="wgtNumberField" lang="AT" outdent="true">widgets/numberfield/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/numberfield/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [NumberFieldCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:NumberFieldCfg).
+The whole list of configuration parameters is available in [NumberFieldCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:NumberFieldCfg).
 
 ## Formatting patterns
 
@@ -39,15 +39,15 @@ You can use formatting patterns to specify how a number should be conventionally
 | Currency sign, replaced by currency symbol.
 |}
 
-The supported patterns are a subset of the [java.text.DecimalFormat](http://download.oracle.com/javase/1.4.2/docs/api/java/text/DecimalFormat.html) specs. More information are available at [Localization and Resources](Localization_and_Resources).
+The supported patterns are a subset of the [java.text.DecimalFormat](http://download.oracle.com/javase/1.4.2/docs/api/java/text/DecimalFormat.html) specs. More information are available at [localization and resources](localization_and_resources).
 
 ## Sample usage
 
-The following sample shows how to create and use a NumberField widget, with a mandatory attribute for error checking and number format patterns. In order to fetch the entered value, variable binding is to be considered as the preferred solution. Please refer to the [TextField](TextField) widget for more informations.
+The following sample shows how to create and use a NumberField widget, with a mandatory attribute for error checking and number format patterns. In order to fetch the entered value, variable binding is to be considered as the preferred solution. Please refer to the [textfield](textfield) widget for more informations.
 
-<sample sample="widgets/numberfield" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/numberfield/' />
 
 In this sample, the first 3 NumberFields are the same except for the state, which is respectively mandatory, normal and disabled.
 The fourth NumberField has a pattern, that is used both to interpret and display the number.
 
-More information about the pattern are available at [Localization and Resources](Localization_and_Resources).
+More information about the pattern are available at [localization and resources](localization_and_resources).

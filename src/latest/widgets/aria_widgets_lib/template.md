@@ -6,17 +6,17 @@ Template widget allows application developer to include external template file i
 
 The simple way to add Template widget to your application is as follows
 
-<srcinclude tag="wgtTemplateSnippet1" lang="AT" outdent="true">widgets/template/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/template/Snippet.tpl' defer></script>
 
 Also the data can be passed from the parent template to the sub template via data property. If no data is set, the the sub template uses parent template data, unless moduleCtrl is specified, in which case the data model of that module controller is used as data.
 
-<srcinclude tag="wgtTemplateSnippet2" lang="AT" outdent="true">widgets/template/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/template/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [TemplateCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:TemplateCfg).
+The whole list of configuration parameters is available in [TemplateCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TemplateCfg).
 
-<sample sample="widgets/template" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/template/' />
 
 ## Binding
 The only property bindable for template is
 * tooltip
-For more information please read the article on [Widget Bindings](Widget_Bindings).
+For more information please read the article on [widget bindings](widget_bindings).

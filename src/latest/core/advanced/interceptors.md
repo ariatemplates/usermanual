@@ -1,10 +1,9 @@
 Title: Interceptors
 
 
+AT Interceptors can be generally intented as extension points to [Aria Templates classes](javascript classes). Their main purpouse is to provide pre and post processing on class methods implemented from a specific interface, both synchronous and asynchronous ones. They are basically implemented as JavaScript functions.
 
-AT Interceptors can be generally intented as extension points to [Aria Templates classes](Javascript Classes). Their main purpouse is to provide pre and post processing on class methods implemented from a specific interface, both synchronous and asynchronous ones. They are basically implemented as JavaScript functions.
-
-Originally introduced for [flow controllers](Flow Controllers), interceptors can be used against any AT Javascript [interface](Around Classes). Make sure you read the necessary documentation about [ Aria Templates JavaScript classes](JavaScript Classes) and [interfaces](Around Classes) before reading further.
+Originally introduced for [flow controllers](flow controllers), interceptors can be used against any AT Javascript [interface](around classes). Make sure you read the necessary documentation about [ Aria Templates JavaScript classes](javascript classes) and [interfaces](around classes) before reading further.
 
 Indeed, if a class `C` implements an interface `I`, it then becomes possible for any other class to define an interceptor on an instance of `C`.
 
@@ -32,15 +31,15 @@ The type of the first parameter given to interceptor callbacks is described belo
 
 * `CallBegin`
 
-<srcinclude tag="CallBegin" lang="text">core/interceptors/ParameterTypes.txt</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/ParameterTypes.txt' defer></script>
 
 * `CallEnd`
 
-<srcinclude tag="CallEnd" lang="text">core/interceptors/ParameterTypes.txt</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/ParameterTypes.txt' defer></script>
 
 * `Callback`
 
-<srcinclude tag="Callback" lang="text">core/interceptors/ParameterTypes.txt</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/ParameterTypes.txt' defer></script>
 
 ## Interceptor calls sequence diagrams
 
@@ -52,7 +51,7 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 * intercepted method execution
 * interceptor calls (Begin, End)
 
-<img src="images/Interceptors - Sync Call.png" />
+<img src="images/interceptors  sync call.png" />
 
 ### Asynchronous Method Call
 
@@ -62,7 +61,7 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 * interceptor calls (Begin, End, CallBack)
 * interaction with the backend server system
 
-<img src="images/Interceptors - ASync Call.png" />
+<img src="images/interceptors  async call.png" />
 
 ## Example
 
@@ -76,19 +75,19 @@ Basically the whole interceptors mechanism can be properly setup by the followin
 
 Here is the example of a simple interface definition with two functions, `mySimpleFunction` and `myAsynchronousFunction`.
 
-<srcinclude lang="javascript" outdent="true">core/interceptors/MyInterface.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/MyInterface.js' defer></script>
 
 ### Interface implementation
 
 Here is an implementation of the previous interface:
 
-<srcinclude lang="javascript" outdent="true">core/interceptors/MyClass.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/MyClass.js' defer></script>
 
 ### Interceptor registration
 
 Here is an example of how to register an interceptor on an instance of the previous object with the previous interface and how to unregister it:
 
-<srcinclude lang="javascript" outdent="true">core/interceptors/Interceptor.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/Interceptor.js' defer></script>
 
 When the above piece of code is run, the following alerts will be displayed (in this order):
 

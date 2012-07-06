@@ -6,18 +6,18 @@ Text widget is a simple label widget containing only textual information.The wid
 
 The simple way to add Text widget to your application is as follows 
 
-<srcinclude tag="wgtTextSnippet1" lang="AT" outdent="true">widgets/text/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/text/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [TextCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:TextCfg).
+The whole list of configuration parameters is available in [TextCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TextCfg).
 
-<sample sample="widgets/text" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/text/' />
 
 ## Binding
 The bindable properties of text widget are
 * text
 * tooltip
 
-<srcinclude tag="wgtTextSnippet2" lang="AT" outdent="true">widgets/text/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/text/Snippet.tpl' defer></script>
 
-For more information please read the article on [Widget Bindings](Widget_Bindings).
-<sample sample="widgets/text/binding" />
+For more information please read the article on [widget bindings](widget_bindings).
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/text/binding/' />

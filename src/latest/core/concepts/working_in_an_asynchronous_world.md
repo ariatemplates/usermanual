@@ -6,7 +6,7 @@ Aria Templates as a client side and javascript framework is obviously and massiv
 
 ## Synchronous pre-requisite
 
-Development using synchronous paradigm, like for example in Java, implicitly involves understanding the <code>return</code> pattern.<br />
+Development using synchronous paradigm, like for example in Java, implicitly involves understanding the `return` pattern.<br />
 When calling a synchronous method, the first thing you could expect from this method is that it could return an object.
 
 <syntaxhighlight lang="Javascript">
@@ -25,7 +25,7 @@ public class MyClass {
 }
 </syntaxhighlight>
 
-You can call the <code>initProperty()</code> method. You know and you expect from this method to return a <code>String</code>
+You can call the `initProperty()` method. You know and you expect from this method to return a `String`
 
 *Quite easy* !<br />
 Now, let's have a look at the pending mechanism when being in the asynchronous world.
@@ -33,11 +33,11 @@ Now, let's have a look at the pending mechanism when being in the asynchronous w
 ## What about when you play around with asynchronous?
 
 What you cannot do when dealing with asynchronous code execution is this
-<srcinclude tag="notWorking" lang="Javascript" outdent="true">core\asynchronous\Async.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/asynchronous/Async.js' defer></script>
 
 If you have a quick look at the below example
 
-<srcinclude tag="playingAsynchronous" lang="Javascript" outdent="true">core\asynchronous\Async.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/asynchronous/Async.js' defer></script>
 
 and you also look at what it's producing as a result
 
@@ -65,20 +65,20 @@ For you to be able to do this, Aria Templates provides you a simple way to execu
 
 First you need to be familiar with the syntax of a callback object:
 
-<srcinclude tag="sampleCallbackObject" lang="Javascript" outdent="true">core\asynchronous\Async.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/asynchronous/Async.js' defer></script>
 
 An Aria Templates callback object is always composed of a combination of 3 different properties:
-* *fn*: the function reference. It can be either a <code>string</code>, a direct reference (like <code>this.myMethod</code>), or an anonymous method using an in line declaration.
-* *scope*: (_optional_) the scope parameter. The object to which this parameter refers is going to be used by the framework as the scope (ie the <code>this</code>) inside the function specified with <code>fn</code>
-* *args*: (_optional_) an object containing all the named arguments you would like to give to the function defined with <code>fn</code>
+* *fn*: the function reference. It can be either a `string`, a direct reference (like `this.myMethod`), or an anonymous method using an in line declaration.
+* *scope*: (_optional_) the scope parameter. The object to which this parameter refers is going to be used by the framework as the scope (ie the `this`) inside the function specified with `fn`
+* *args*: (_optional_) an object containing all the named arguments you would like to give to the function defined with `fn`
 
 
-Finally, because all the different types of objects that you can create with Aria Templates all inherit from [aria.core.JsObject](http://ariatemplates.com/api/#aria.core.JsObject), you transparently have access to a method called <code>$callback()</code> on every object instance that allows you to execute an Aria Templates callback object.
+Finally, because all the different types of objects that you can create with Aria Templates all inherit from [aria.core.JsObject](http://ariatemplates.com/api/#aria.core.JsObject), you transparently have access to a method called `$callback()` on every object instance that allows you to execute an Aria Templates callback object.
 
-Though, whenever you would have a <code>return</code> statement at the end of a function in the synchronous world, you will instead have <code>this.$callback( /* Reference to a callback object */)</code> in an asynchronous environment.
+Though, whenever you would have a `return` statement at the end of a function in the synchronous world, you will instead have `this.$callback( /* Reference to a callback object */)` in an asynchronous environment.
 
-<srcinclude tag="sampleSyncReturn" lang="Javascript" outdent="true">core\asynchronous\Async.js</srcinclude>
-<srcinclude tag="sampleAsyncReturn" lang="Javascript" outdent="true">core\asynchronous\Async.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/asynchronous/Async.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/asynchronous/Async.js' defer></script>
 
 ## Propagating  the Callback Object
 
@@ -88,10 +88,10 @@ The easiest way to perform such an execution chain is to propagate all your call
 
 Let's have a quick look at a standard file retrieval using an asynchronous call to the server to see how to propagate all our callback objects:
 
-<srcinclude tag="propagatingCallback" lang="Javascript" outdent="true">core\asynchronous\Async.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/asynchronous/Async.js' defer></script>
 
 At this point of this article, this is what you need to remember, so write it down somewhere in your mind
 <blockquote>
 Each time you need to write a method inside one of your class that need, depends or involves any kind of asynchronous matter, think about adding an extra argument to your method: a *callback* one !<br />
-And don't forget to execute it when the async job is over using <code>this.$callback()</code>
+And don't forget to execute it when the async job is over using `this.$callback()`
 </blockquote>

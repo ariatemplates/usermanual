@@ -10,13 +10,13 @@ requires the <i>core</i> layer, and so on...
 
 The first layer provides core JavaScript features that are used to build the framework, such as:
 
-* a Java-inspired [class syntax](Javascript Classes) that simplifies the management of the (prototype-based) object inheritance
+* a Java-inspired [class syntax](javascript classes) that simplifies the management of the (prototype-based) object inheritance
 * support for class namespaces
 * on-demand load support through static & dynamic class dependencies management
-* support for [asynchronous programming](Working in an Asynchronous World), through asynchronous methods and generic callback patterns
-* support for [interfaces](Around Classes), to support safe service layers
-* support for a simple XSD-inspired [JSON grammar](JSON Bean Definitions), coming with dynamic validators and normalizers
-* [utility classes](Helpers), such as AJAX Connection support, log Manager and AJAX response mocks to redirect dynamic calls to static files
+* support for [asynchronous programming](working in an asynchronous world), through asynchronous methods and generic callback patterns
+* support for [interfaces](around classes), to support safe service layers
+* support for a simple XSD-inspired [JSON grammar](json bean definitions), coming with dynamic validators and normalizers
+* [utility classes](helpers), such as AJAX Connection support, log Manager and AJAX response mocks to redirect dynamic calls to static files
 * and last but not least, a simple Js Unit framework supporting asynchronous tests and loading tests on-demand
 
 ### Layer #2: Templates
@@ -24,15 +24,15 @@ The first layer provides core JavaScript features that are used to build the fra
 The second layer provides the [template engine](http://en.wikipedia.org/wiki/Template_engine_%28web%29) used to generate and display any UI piece. This engine comes with
 many interesting features, such as:
 
-* full and [partial template refresh](Refresh)
-* [template inheritance](Template Inheritance) and nested templates
-* [template scripts](Template Scripts) to support advanced rendering logic
-* [CSS templates](CSS Templates) - that allow to optimize the CSS payload, and also offer easy support for skinning and browser-specific CSS fixes
-* [sorting, filtering and paging](Views) features on any data lists
-* [rich widget library](The Aria Templates Widgets Collection) - covering the most frequently used UI widgets
-* widget [data-bindings](Data Model and Data Binding) to automatically synchronize widget properties with the template data
-* [keyboard navigation](Keyboard Navigation)
-* [internationalization](Localization and Resources) and UI themes
+* full and [partial template refresh](refresh)
+* [template inheritance](template inheritance) and nested templates
+* [template scripts](template scripts) to support advanced rendering logic
+* [CSS templates](css templates) - that allow to optimize the CSS payload, and also offer easy support for skinning and browser-specific CSS fixes
+* [sorting, filtering and paging](views) features on any data lists
+* [rich widget library](the aria templates widgets collection) - covering the most frequently used UI widgets
+* widget [data-bindings](data model and data binding) to automatically synchronize widget properties with the template data
+* [keyboard navigation](keyboard navigation)
+* [internationalization](localization and resources) and UI themes
 * ...and soon complete support for widget libraries in order to let any developer provide its own widgets
 
 ### Layer #3: Modules
@@ -40,7 +40,7 @@ many interesting features, such as:
 The third layer provides the support for UI modules, that can be considered as mini application blocks, and as such
 are composed of files of different nature: JavaScript classes, JSON resources, HTML and CSS templates, image resources, etc.
 The interesting aspect of modules is that they can (and shall) be developed and tested independently and re-used in different
-applications or contexts. Modules can also load and interact with [sub-modules](Using Sub Controllers) in order to implement complex functionalities.
+applications or contexts. Modules can also load and interact with [sub-modules](using sub controllers) in order to implement complex functionalities.
 
 On a technical point of view, modules have to follow an
 [MVC pattern](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) where:
@@ -48,8 +48,8 @@ On a technical point of view, modules have to follow an
 * The *Model* is implemented as a JSON object, that can be specified with the JSON grammar
 * The *View* is implemented with a set of templates
 * The *Controller* is developed through JavaScript classes and is split in 2 entities:
-	* A service controller (aka [Module Controller](Controllers)) that implements the core functional features exposed through a Service interface
-	* A [flow controller](Flow Controllers) - that technically belongs to the View layer - and that is in charge of managing the User Interface flow
+	* A service controller (aka [Module Controller](controllers)) that implements the core functional features exposed through a Service interface
+	* A [flow controller](flow controllers) - that technically belongs to the View layer - and that is in charge of managing the User Interface flow
 
 ### Layer #4: Page Engine
 
