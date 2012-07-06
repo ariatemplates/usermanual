@@ -3,14 +3,14 @@ Title: DateField
 
 The DateField is a simple textfield whose content is interpreted as a date.There are two modes for date parsing: the European mode and the US mode.A global setting specifies which mode is actually used.
 The simple way to add datefield widget is
-<srcinclude tag="wgtDatefieldSnippet" lang="AT" outdent="true">widgets\datefield\Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/datefield/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [DateFieldCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:DateFieldCfg).
-<sample sample="widgets/datefield" />
+The whole list of configuration parameters is available in [DateFieldCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:DateFieldCfg).
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/datefield/' />
 
 ## Binding
 The "value" property in the dateField is bind-able and can be bound to a property in the data model.
-<sample sample="widgets/datefield/binding" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/datefield/binding/' />
 
 * In the European mode,the following date formats are recognized (all are interpreted as the 13th of June; when the year is not specified, the current year is used if the date is in the future, otherwise the next year):
 	* 13/06/2002

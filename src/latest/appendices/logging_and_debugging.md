@@ -5,9 +5,9 @@ Title: Logging and debugging
 
 The AriaTemplates logger is based on the following concepts:
 
-* any class that needs to log messages can do so by using specific methods inherited from the <code>aria.core.JsObject</code> root object from which any AT class inherits directly or indirectly;
+* any class that needs to log messages can do so by using specific methods inherited from the `aria.core.JsObject` root object from which any AT class inherits directly or indirectly;
 
-* messages can be logged with several possible levels: <code>debug</code>, <code>info</code>, <code>warn</code> and <code>error</code>;
+* messages can be logged with several possible levels: `debug`, `info`, `warn` and `error`;
 
 * the class names are kept in the logger system so you can filter on them;
 
@@ -28,11 +28,11 @@ These methods may be used anywhere within the life-cycle of your class to either
 
 They all have the same signature:
 
-* <code>msg</code>: the message string to be displayed in the logs.
+* `msg`: the message string to be displayed in the logs.
 
-* <code>msgArgs</code>: optional array of values to be used for <code>%n</code> string replacement in the message (for instance: <code>this.$logDebug("Hello %1 %2", ["John", "Smith"]);</code>).
+* `msgArgs`: optional array of values to be used for `%n` string replacement in the message (for instance: `this.$logDebug("Hello %1 %2", ["John", "Smith"]);`).
 
-* <code>o</code>: an optional object to be inspected in the logs.
+* `o`: an optional object to be inspected in the logs.
 
 The simplest usage example is the following one:
 
@@ -46,7 +46,7 @@ this.$logInfo("Processing something ...");
 
 Appenders are objects that are responsible for actually showing the logged messages.  The default appender available out of the box in Aria Templates is the DefaultAppender based on the browser console.
 
-If a <code>console</code> object exists in the browser, the DefaultAppender will use it to output messages. This means that it will work with Firebug in Firefox, with the JS console in Safari, with FirebugLite in IE, etc.
+If a `console` object exists in the browser, the DefaultAppender will use it to output messages. This means that it will work with Firebug in Firefox, with the JS console in Safari, with FirebugLite in IE, etc.
 
 Appenders are standard JavaScript classes, so you may create your own.
 
@@ -54,7 +54,7 @@ Aria Templates comes with another notable appender: the WindowAppender. It can b
 
 This appender can be used in browsers that do not have a JavaScript console.
 
-Manipulating appenders can be done with the <code>aria.core.Log</code> singleton object like so:
+Manipulating appenders can be done with the `aria.core.Log` singleton object like so:
 
 <syntaxhighlight lang="javascript">
 aria.core.Log.addAppender(new aria.core.log.WindowAppender());
@@ -89,17 +89,17 @@ The above code will do several things:
 
 * set minimum logging level to error for all classes
 
-* except for classes found in <code>aria.*</code> for which it will set the level info,
+* except for classes found in `aria.*` for which it will set the level info,
 
-* and except for classes found in <code>my.package.*</code> for which it will set the level debug.
+* and except for classes found in `my.package.*` for which it will set the level debug.
 
 ## Debugging
 
-The debug mode in Aria Templates is enabled by setting the <code>debug</code> parameter of the Aria object to true _before it is instanciated by the framework_.  Practically, this means you should write something like this:
+The debug mode in Aria Templates is enabled by setting the `debug` parameter of the Aria object to true _before it is instanciated by the framework_.  Practically, this means you should write something like this:
 
-<srcinclude tag="logdebug" outdent="true" noheader="true" lang="html5">logdebug/bootstrap.html</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/logdebug/bootstrap.html' defer></script>
 
-The default debug value is <code>false</code> and you have to set this value before the framework loads. When set to true, the following will enabled:
+The default debug value is `false` and you have to set this value before the framework loads. When set to true, the following will enabled:
 
 * Precise runtime exceptions on templates.
 
@@ -111,7 +111,7 @@ Aria-Templates provides tools to inspect the templates and modules currently dis
 
 ### Inspecting through Contextual Menu
 
-When the debug mode of Aria Templates is enabled, the <code>CTRL Right-click</code> combination on a template opens a contextual menu showing:
+When the debug mode of Aria Templates is enabled, the `CTRL Right-click` combination on a template opens a contextual menu showing:
 
 * The target template classpath.
 
@@ -119,7 +119,7 @@ When the debug mode of Aria Templates is enabled, the <code>CTRL Right-click</co
 
 * A Reload Template button which allows the developer to reload the targeted template from the server. This is useful during development to test a new view without reloading the complete application.
 
-* A Reload Module button which allows to reload the submodules and flow from the server. This is useful during development to test changes in a submodule and flow without reloading the complete application.  See [below](#About_module_reloading) for details about this feature.
+* A Reload Module button which allows to reload the submodules and flow from the server. This is useful during development to test changes in a submodule and flow without reloading the complete application.  See [below](#about-module-reloading) for details about this feature.
 
 * A Debug Tools button which opens dedicated tools to inspect the application (see below.)
 
@@ -148,7 +148,7 @@ Reloading a module means:
 1. recreating with the new module controller the templates disposed in step 1
 
 Note that:
-* if a template uses a module controller, but uses as its <code>data</code> variable another object than the one returned by calling <code>getData()</code> on the module controller, then when reloading the module controller, the <code>data</code> variable is not changed in the reloaded template. This may have wrong results in some cases, especially if the <code>data</code> variable refers to a sub-part of the data model, which is most of the time rebuilt when reloading the module controller. This limitation only applies for a template which is not included in a template associated with the same module controller.
+* if a template uses a module controller, but uses as its `data` variable another object than the one returned by calling `getData()` on the module controller, then when reloading the module controller, the `data` variable is not changed in the reloaded template. This may have wrong results in some cases, especially if the `data` variable refers to a sub-part of the data model, which is most of the time rebuilt when reloading the module controller. This limitation only applies for a template which is not included in a template associated with the same module controller.
 * the reference to the module public interface and flow public interface changes when reloading a module. However, there is a mechanism to make calls on the old interface wrapper be redirected automatically to the new one.
 * when reloading a module, listeners and interceptors registered by application code on the old module and flow are not automatically registered again on the reloaded module.
 
@@ -185,10 +185,10 @@ The Aria Templates framework stores debugging information on the DIV DOM element
 <img src="images/firebug.png" />
 
 As illustrated in the screenshot:
-* The <code>_template</code> attribute of the <code>div</code> tag contains the classpath of the template loaded in it (in this example: <code>ariadoc.guides.todo.view.Todo</code>).
+* The `_template` attribute of the `div` tag contains the classpath of the template loaded in it (in this example: `ariadoc.guides.todo.view.Todo`).
 
-* The <code>__data</code> property is a reference to the data variable accessible from the template. It is visible on the screenshot on the right pane of Firebug, at the top of the DOM tab.
+* The `__data` property is a reference to the data variable accessible from the template. It is visible on the screenshot on the right pane of Firebug, at the top of the DOM tab.
 
-* The <code>__moduleCtrl</code> property is a reference to the module controller linked to the template. It can be either the private complete module controller or its public interface (accessible through the moduleCtrl variable from the template), depending on what is available.
+* The `__moduleCtrl` property is a reference to the module controller linked to the template. It can be either the private complete module controller or its public interface (accessible through the moduleCtrl variable from the template), depending on what is available.
 
-* The <code>__template</code> property is a reference to the template instance object, available as <code>this</code> in the template and template script.
+* The `__template` property is a reference to the template instance object, available as `this` in the template and template script.

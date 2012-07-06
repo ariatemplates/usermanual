@@ -5,19 +5,19 @@ DatePicker is a highly configurable widget that adds datepicker functionality to
 
 The simple way to add DatePicker widget to the application is as follows
 
-<srcinclude tag="wgtDatePickerSimple" lang="AT" outdent="true">widgets/datepicker/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/datepicker/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [DatePickerCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:DatePickerCfg ).
+The whole list of configuration parameters is available in [DatePickerCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:DatePickerCfg ).
 
-<sample sample="widgets/datepicker" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/datepicker/' />
 
 For Instance,you can also add a customized calender to select the date.
 
-<srcinclude tag="wgtDatePickerCustom" lang="AT" outdent="true">widgets/datepicker/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/datepicker/Snippet.tpl' defer></script>
 
-<sample sample="widgets/datepicker/customized" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/datepicker/customized/' />
 
 ## Output of DatePicker with reference
 Enter date in the first date picker and the successive datepickers takes the previously entered date as the reference date when the user input is +/-N. If not date is specified then current date will be taken into account. 
 
-<sample sample="widgets/datepicker/reference" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/datepicker/reference/' />

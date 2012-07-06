@@ -3,9 +3,9 @@ Title: Select
 
 A dropdown list of selectable items, similar to the <select> html component.
 
-<srcinclude tag="wgtSelectField" lang="AT" outdent="true">widgets/select/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/select/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [SelectCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:SelectCfg).
+The whole list of configuration parameters is available in [SelectCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:SelectCfg).
 
 ## Sample Usage
-<sample sample="widgets/select" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/select/' />

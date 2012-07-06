@@ -4,9 +4,9 @@ Title: Calendar
 
 The Calendar widget is a JavaScript-based calendar that can be embedded within a page.
 
-<srcinclude tag="autocomplete" lang="AT" outdent="true">widgets\calendar\Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/calendar/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [CalendarCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:CalendarCfg).
+The whole list of configuration parameters is available in [CalendarCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:CalendarCfg).
 
 ### Using default date
 Calendar labels can be customized in a variety of ways according to the requirement, This can be achieved by using property _dateLabelFormat_ and _dayOfWeekLabelFormat_.
@@ -19,7 +19,7 @@ Default values for these patterns are :
 * longFormat: "d MMMM yyyy"
 * fullFormat: "EEEE d MMMM yyyy"
 
-These patterns can be accessed through eg:<code>aria.core.AppEnvironment.getDateFormats().shortFormat</code>. 
+These patterns can be accessed through eg:`aria.core.AppEnvironment.getDateFormats().shortFormat`. 
 Supported patterns are similar to: http://download.oracle.com/javase/1.4.2/docs/api/java/text/SimpleDateFormat.html
 
 ### Useful Keyboard shortcuts
@@ -30,9 +30,9 @@ Supported patterns are similar to: http://download.oracle.com/javase/1.4.2/docs/
 
 ## Samples
 
-<sample sample="widgets/calendar" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/calendar/' />
 
 ## Bindings
 Calendar can accept custom template thanks to property _defaultTemplate_, where user can implement there own template. Here is a customized version showing days vertically. Both calendars are bound to each other, so that selecting a day or navigating inside one calendar changes the other.
 
-<sample sample="widgets/calendar/binding" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/calendar/binding/' />

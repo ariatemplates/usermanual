@@ -7,26 +7,26 @@ Automatic selection is not supposed to be the default and only behaviour for all
 
 The following figure illustrates the Autoselect behaviour of input fields:
 
-<img src="images/ ERR001v2i0.png" />
+<img src="images/ err001v2i0.png" />
 
 If the user clicks again in the field once the text is already selected, the selection disappears and the cursor position is set at the location where the click was actioned.
 
 
 ## Supported widgets
 
-Any text input widget that extends the TextInput base class will provide the Autoselect feature through a configurable property called [autoselect](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:TextInputCfg).
+Any text input widget that extends the TextInput base class will provide the Autoselect feature through a configurable property called [autoselect](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TextInputCfg).
 
 The following input widgets all currently support Autoselect: 
 
-:[AutoComplete](AutoComplete)
-:[DateField](DateField)
-:[DatePicker](DatePicker)
-:[MultiSelect](MultiSelect)
-:[NumberField](NumberField)
-:[Select](Select)
-:[SelectBox](SelectBox)
-:[TextField](TextField)
-:[TimeField](TimeField)
+:[autocomplete](autocomplete)
+:[datefield](datefield)
+:[datepicker](datepicker)
+:[multiselect](multiselect)
+:[numberfield](numberfield)
+:[select](select)
+:[selectbox](selectbox)
+:[textfield](textfield)
+:[timefield](timefield)
 
 ## Setting Autoselect globally for all input widgets
 
@@ -36,12 +36,12 @@ When a property is set on an application level then all widgets that contain thi
 
 Here is an example of setting the autoselect property for a text input based widget:
 
-<srcinclude tag="widgetsettings" lang="AT" outdent="true">features/autoselect/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/features/autoselect/Snippet.tpl' defer></script>
 
 ## Setting Autoselect on a specific input widget
 
 Here it can be overriden by setting the property on a widget level from within a template:
 
-<srcinclude tag="textfield" lang="AT" outdent="true">features/autoselect/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/features/autoselect/Snippet.tpl' defer></script>
 
-<sample sample="features/autoselect" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/features/autoselect/' />

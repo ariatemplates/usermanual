@@ -17,13 +17,13 @@ There are currently available two kind of resources that can be defined and/or u
 
 #### Static resources
 
-Static resources can be defined inside plain JavaScript files using the *[Aria.resourcesDefinition](http://ariatemplates.com/aria/guide/apps/apidocs/#Aria:resourcesDefinition:method)* facility. They are usually physically stored as files on the back-end Web Server delivering your AT application, thus accessible through the HTTP(S) protocol.
+Static resources can be defined inside plain JavaScript files using the *[Aria.resourcesDefinition](http://ariatemplates.com/api/#Aria:resourcesDefinition:method)* facility. They are usually physically stored as files on the back-end Web Server delivering your AT application, thus accessible through the HTTP(S) protocol.
 
 You can then localize a resource file creating different versions of the file and appending the locale to the end of each resource definition JavaScript file.
 
 An example of a resource definition is the following:
 
-<srcinclude lang="JavaScript" outdent="true">templates/18n/statics/Res.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/18n/statics/Res.js' defer></script>
 
 ##### Conventions to be used
 
@@ -49,7 +49,7 @@ Here's an explanation of each scheme component and accepted values:
 
 You must first declare the classpath of the resources to use with the `$res` parameter of the Template statement. Then, localized resources are made available through the `res` variable, which can be seen be seen as an alias to the automatically loaded resource classpath.
 
-<srcinclude lang="AT" outdent="true">templates/localization/statics/LocalizedTemplate.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/localization/statics/LocalizedTemplate.tpl' defer></script>
 
 Of course, you can use an intermediate variable, like `label` here, to make the references to localized resources less verbose.
 
@@ -57,7 +57,7 @@ Of course, you can use an intermediate variable, like `label` here, to make the 
 
 Here is the script associated to the previous template, which displays a message, using localized resources.
 
-<srcinclude lang="JavaScript" outdent="true">templates/18n/statics/LocalizedTemplateScript.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/18n/statics/LocalizedTemplateScript.js' defer></script>
 
 As the class generated from a template inherits from its script, localized resources are also available from the template script, through `this.res`.
 
@@ -65,7 +65,7 @@ As the class generated from a template inherits from its script, localized resou
 
 Localization, meant as the process of adapting an internationalized application to a specific region or language, is achieved with application wide settings that can be changed anytime during applications's life cycle.
 
-All locale specific parameters can be configured through the [aria.core.AppEnvironment](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.AppEnvironment).
+All locale specific parameters can be configured through the [aria.core.AppEnvironment](http://ariatemplates.com/api/#aria.core.AppEnvironment).
 
 The framework allows you to configure:
 * Language of static resources
@@ -74,11 +74,11 @@ The framework allows you to configure:
 
 #### Language
 
-Language and region are used to load a particular version of [Static resources](#Static_resources). The language identifier follows the [IETF language tag](http://en.wikipedia.org/wiki/IETF_language_tag) standards but only allows to specify a _primary language subtag_ and one _extended language subtag_, e.g _en-US_.
-  [aria.core.environment.Environment.setLanguage(locale, afterChangeCB)](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.environment.Environment:setLanguage:method)
-  [aria.core.environment.Environment.getLanguage()](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.environment.Environment:getLanguage:method)
+Language and region are used to load a particular version of [#static-resources](#static-resources). The language identifier follows the [IETF language tag](http://en.wikipedia.org/wiki/IETF_language_tag) standards but only allows to specify a _primary language subtag_ and one _extended language subtag_, e.g _en-US_.
+  [aria.core.environment.Environment.setLanguage(locale, afterChangeCB)](http://ariatemplates.com/api/#aria.core.environment.Environment:setLanguage:method)
+  [aria.core.environment.Environment.getLanguage()](http://ariatemplates.com/api/#aria.core.environment.Environment:getLanguage:method)
 
-More information are available on [Environment Base Configuration Bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.environment.EnvironmentBaseCfgBeans).
+More information are available on [Environment Base Configuration Bean](http://ariatemplates.com/api/#aria.core.environment.EnvironmentBaseCfgBeans).
 
 While changing the locale is quite easy, at least a full application templates refresh could be required to make the changes effective. For this pourpose the first method accept a callback parameter - i.e. a method/function - that should contain all the necessary code to achieve the afore mentioned goal.
 
@@ -93,17 +93,17 @@ Definition and structure are better defined in the following section. Here we si
   $appRoot/res/SampleRes_sv_SE.js
   $appRoot/res/SampleRes_pl_PL.js
 
-*The framework will automatically try to download the proper resource file based on the locale setting defined through the <code>AppEnvinroment.setLanguage</code> method call.*
+*The framework will automatically try to download the proper resource file based on the locale setting defined through the `AppEnvinroment.setLanguage` method call.*
 
 Please note how the first resource is indeed the base resource name to be referenced inside your classes, modules and/or templates. While keeping this name you should then append the proper locale code according to the language contained in each resource file.
 
-<sample sample="templates/i18n" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/templates/i18n/' />
 
 #### Number and currency
 
-Aria Templates provides a [Number](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.Number) utility to interpret numbers and format them according to a user defined pattern and locale.
+Aria Templates provides a [Number](http://ariatemplates.com/api/#aria.utils.Number) utility to interpret numbers and format them according to a user defined pattern and locale.
 
-Application's parameters are defined in [Number Configuration Bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.environment.NumberCfgBeans) and can be modified through the AppEnvironment.
+Application's parameters are defined in [Number Configuration Bean](http://ariatemplates.com/api/#aria.utils.environment.NumberCfgBeans) and can be modified through the AppEnvironment.
 
 <div data-sample="missing">Snippet on how to modify the appenvironment</div>
 
@@ -182,7 +182,7 @@ The supported patterns are a subset of the [java.text.DecimalFormat](http://down
 
 #### Date and Time
 
-[Date Configuration Bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.environment.DateCfgBeans) defines the application's environment for date and time formatting.
+[Date Configuration Bean](http://ariatemplates.com/api/#aria.utils.environment.DateCfgBeans) defines the application's environment for date and time formatting.
 
 * Accepted date separators : `/ - .` and space.
 * Accepted time separators : `\;,.-/:` and space.

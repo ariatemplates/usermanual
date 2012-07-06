@@ -20,7 +20,7 @@ For each module controller instance, there is an associated flow controller inst
 Flow controllers are very similar to module controllers:
 
 * a flow controller is a class which extends `aria.templates.FlowCtrl`, which itself extends `aria.templates.PublicWrapper`
-* a flow controller has a public interface (the interface is created and attached to the flow controller in the same way as for [module controllers](Controllers) with the difference that flow controller interfaces must inherit `aria.templates.IFlowCtrl` (currently empty) and not `aria.templates.IModuleCtrl`)
+* a flow controller has a public interface (the interface is created and attached to the flow controller in the same way as for [module controllers](controllers) with the difference that flow controller interfaces must inherit `aria.templates.IFlowCtrl` (currently empty) and not `aria.templates.IModuleCtrl`)
 * a flow controller is created and destroyed at the same time as its associated module controller
 * templates can access the public interface wrapper of the associated flow controller through the `flowCtrl` variable (similar to the `moduleCtrl` variable)
 * template scripts can receive events from the flow controller by implementing the `onFlowEvent` method (similar to the `onModuleEvent`)
@@ -46,7 +46,7 @@ To intercept calls to the module controller, the following naming convention is 
 * `on<<MethodName>>CallEnd` - called after the corresponding method of the module controller returns.
 * `on<<MethodName>>Callback` - called if the method is asynchronous (as declared in the interface) when the callback is called, before the call of the normal callback. Note that "Callback" can sometimes be called before "CallEnd" if the module controller method calls its callback synchronously.
 
-These methods are automatically called, if present, when the corresponding method is called in the module controller. The parameter passed to these functions is described in [the article about interceptors](Interceptors), which also gives more details about the concept of interceptors in Aria Templates.
+These methods are automatically called, if present, when the corresponding method is called in the module controller. The parameter passed to these functions is described in [the article about interceptors](interceptors), which also gives more details about the concept of interceptors in Aria Templates.
 
 ## Example Code
 
@@ -54,16 +54,16 @@ These methods are automatically called, if present, when the corresponding metho
 
 Let's consider the following public interface of the module controller:
 
-<srcinclude lang="JavaScript" outdent="true">modules/flow_controllers/IMyModule.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/flow_controllers/IMyModule.js' defer></script>
 
 ### Flow controller interface
 
 Here is the public interface of the flow controller:
 
-<srcinclude lang="javascript" outdent="true">modules/flow_controllers/IMyModuleFlow.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/flow_controllers/IMyModuleFlow.js' defer></script>
 
 ### Flow controller implementation
 
 Here is a flow controller implementation. Note: so that the flow controller is actually used, the associated module controller (`modules.mymodule.MyModule`) must contain `$hasFlowCtrl: true` on its prototype - like here - or as a property defined in the constructor.
 
-<srcinclude lang="JavaScript" outdent="true">modules/flow_controllers/MyModuleFlow.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/flow_controllers/MyModuleFlow.js' defer></script>

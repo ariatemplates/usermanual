@@ -4,9 +4,9 @@ Title: TimeField
 
 TimeField widget enables the creation of time input fields targeted at time formatted input, packed with specific formatting facilities to handle diverse time formats, as required by the locale and/or the application needs.
 
-<srcinclude tag="wgtTimeField" lang="AT" outdent="true">widgets/timefield/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/timefield/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [TimeFieldCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:TimeFieldCfg).
+The whole list of configuration parameters is available in [TimeFieldCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TimeFieldCfg).
 
 ## Formatting patterns
 
@@ -24,7 +24,7 @@ Some time patterns are defined at application level. There are currently two def
 * *shortFormat* (hh:mm)
 * *fullFormat* (HH:mm:ss)
 
-These formats can be accessed through <code>aria.core.AppEnvironment.getTimeFormats().shortFormat|longFormat</code>
+These formats can be accessed through `aria.core.AppEnvironment.getTimeFormats().shortFormat|longFormat`
 
 Indeed, default time patterns at the application level can be overridden and/or extended as you need:
 
@@ -41,6 +41,6 @@ Please keep in mind that "setEnvironment" will override all settings, use "updat
 
 ## Sample usage
 
-The following sample shows how to create and use a TextField widget, packed with number format patterns. In order to fetch the entered value, variable binding is to be considered as the preferred solution. Please refer to the [TextField](TextField) widget for more informations.
+The following sample shows how to create and use a TextField widget, packed with number format patterns. In order to fetch the entered value, variable binding is to be considered as the preferred solution. Please refer to the [textfield](textfield) widget for more informations.
 
-<sample sample="widgets/timefield" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/timefield/' />

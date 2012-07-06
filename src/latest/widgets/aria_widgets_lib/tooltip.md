@@ -11,14 +11,14 @@ The main features of Tooltip widget are as follows
 * *Timeframe* - the delay after which to show the tooltip is reset to the initial delay
 
 The simple way to add Tooltip widget to the application is as follows
-<srcinclude tag="wgtTooltipSnippet" lang="AT" outdent="true">widgets/tooltip/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/tooltip/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [TooltipCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:TooltipCfg).
+The whole list of configuration parameters is available in [TooltipCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TooltipCfg).
 
-<sample sample="widgets/tooltip" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/tooltip/' />
 
 ## Binding
 The only property that is bind-able for Tooltip widget is 
 * tooltip
 
-For more information please read the article on [Widget Bindings](Widget_Bindings).
+For more information please read the article on [widget bindings](widget_bindings).

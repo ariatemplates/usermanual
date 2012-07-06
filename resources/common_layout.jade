@@ -8,7 +8,7 @@ mixin head
     link(href='/favicon.ico', type='image/ico', rel='shortcut icon')
     link(title='AriaTemplates', href='/fluidicon.png', rel='fluid-icon')
     link(rel='stylesheet', href='/styles/all.css', type='text/css')
-    link(rel='stylesheet', href='/styles/highlight_skin.css', type='text/css')
+    link(rel='stylesheet', href='http://snippets.ariatemplates.com/styles/highlight_skin.css', type='text/css')
     script
       //Aria={debug:true}
     script(type='text/javascript', src='/aria/aria-templates-1.1-26.js')
@@ -40,11 +40,9 @@ mixin header
 mixin search
   div.wiki-search
     h4 Search
-    form(action='/usermanual/Special:Search')
-      input(type='hidden', name='fulltext', value='Search')
-      input(type='hidden', name='ns0', value='1')
-      input(type='text', id='search', name='search', value='')
-      button(class='searchbutton blue', value='Search', onclick="javascript:if(document.getElementById('search').value == '') return false;")
+    form(action='http://google.com/')
+      input(type='text', id='search', name='q', value='')
+      button(class='searchbutton blue', value='Search', onclick="javascript:var q = document.getElementById('search').value; if(q == '') return false; else q = encodeURIComponent('site:ariatemplates.com/' +' '+ q);"
         span Search
 
 mixin toc
@@ -95,14 +93,8 @@ mixin footer
             li: a(href='/about/contact') Contact
             li: a(href='/about/team') The Team
     section.content.legal
-      &copy; 2012 Aria Templates is licensed under Apache 2.0 license. See our 
+      &copy; 2012 Aria Templates is licensed under Apache 2.0 license. See our
       a(href='/license') licensing page
-
-mixin endingScripts
-  script(type='text/javascript', src='/wiki/extensions/SampleViewer/viewer/Launcher.js')
-
-  script
-    var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-29575860-1']); _gaq.push(['_setDomainName', 'ariatemplates.com']); _gaq.push(['_trackPageview']); (function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
 
 
 

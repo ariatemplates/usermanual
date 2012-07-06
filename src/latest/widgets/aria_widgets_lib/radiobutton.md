@@ -8,26 +8,26 @@ RadioButton widget is similar to the checkbox widget exempt that the latter can 
 
 The simple way to add radioButton widget to your application is as follows
 
-<srcinclude tag="wgtRadioButtonSnippet1" lang="AT" outdent="true">widgets/radiobutton/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/radiobutton/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [RadioButtonCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:RadioButtonCfg).
+The whole list of configuration parameters is available in [RadioButtonCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:RadioButtonCfg).
 
-<sample sample="widgets/radiobutton" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/radiobutton/' />
 
 ## Styling
 RadioButton widget labels can be aligned to "left", "right", "top" and "bottom" depending on the user requirement. Also user can provide a css class via sclass property, determines which class defined in the skin is being used.
 
-<srcinclude tag="wgtRadioButtonSnippet2" lang="AT" outdent="true">widgets/radiobutton/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/radiobutton/Snippet.tpl' defer></script>
 
-<sample sample="widgets/radiobutton/styling" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/radiobutton/styling/' />
 
 ## Binding
 RadioButton widget alike Checkbox widget is highly configurable and for instance you can bound the value of property like disabled,error,errorMessages etc to a property in the data model. 
 
-The whole list of configuration parameters is available in [RadioButtonCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:RadioButtonCfg).
+The whole list of configuration parameters is available in [RadioButtonCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:RadioButtonCfg).
 
-For more information please read the article on [Widget Bindings](Widget_Bindings).
+For more information please read the article on [widget bindings](widget_bindings).
 
-<srcinclude tag="wgtRadioButtonSnippet3" lang="AT" outdent="true">widgets/radiobutton/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/radiobutton/Snippet.tpl' defer></script>
 
-<sample sample="widgets/radiobutton/binding" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/radiobutton/binding/' />

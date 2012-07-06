@@ -1,7 +1,7 @@
 Title: Filters
 
 __NOTOC__
-As Aria Templates is using a central <code>[core class](http://ariatemplates.com/api/#aria.core.IO)</code>  to manage all IO asynchronous requests, we added the ability to write IO Filters.
+As Aria Templates is using a central [`core class`](http://ariatemplates.com/api/#aria.core.IO)  to manage all IO asynchronous requests, we added the ability to write IO Filters.
 
 Filters can be compared to [servlet filters](http://java.sun.com/products/servlet/Filters.html) in the J2EE world because they can be used to intercept requests and/or responses as they are sent out/received in.
 
@@ -13,16 +13,16 @@ They are also globally set for a whole application, but you can restrict them to
 
 Creating a filter is done by extending a base class and overriding one or two methods, like so:
 
-<srcinclude lang="Javascript" outdent="true">core\filters\IoFilter.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/IoFilter.js' defer></script>
 
 ## Adding a Filter to the IO Filters Manager
 
-Once a custom filter class has been written, it can be registered on the <code>[IOFiltersMgr](http://ariatemplates.com/api/#aria.core.IOFiltersMgr)</code> singleton to be used at run-time.
+Once a custom filter class has been written, it can be registered on the [`IOFiltersMgr`](http://ariatemplates.com/api/#aria.core.IOFiltersMgr) singleton to be used at run-time.
 
-<srcinclude tag="attachFilter" lang="Javascript" outdent="true">core\filters\MyFilterHelper.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/MyFilterHelper.js' defer></script>
 
 
-<srcinclude tag="detachFilter" lang="Javascript" outdent="true">core\filters\MyFilterHelper.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/MyFilterHelper.js' defer></script>
 
 Check the [API documentation](http://ariatemplates.com/api/#aria.core.IOFiltersMgr:addFilter:method) to know the different types of parameters accepted (e.g. it is possible to specify an initialization parameter, passed to the constructor of the filter).
 
@@ -42,19 +42,19 @@ By default every filter inheriting from the filter base class IOFilter has delay
 If the filter has overwritten the inherited onRequest and onResponse methods then the following code will need to be added:
 
 
-<srcinclude tag="delayFilterConstructor" lang="Javascript" outdent="true">core\filters\IoDelayFilter.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/IoDelayFilter.js' defer></script>
 
 
-<srcinclude tag="delayFilter" lang="Javascript" outdent="true">core\filters\IoDelayFilter.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/IoDelayFilter.js' defer></script>
 
 ### Adding a delay from the addFilter method
 
-It is possible to specify the delay parameters directly within the <code>addFilter()</code> call through the <code>initArgs</code> property:
+It is possible to specify the delay parameters directly within the `addFilter()` call through the `initArgs` property:
 
 Here is an example:
 
-<srcinclude tag="delayFilter" lang="Javascript" outdent="true">core\filters\MyFilterHelper.js</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/MyFilterHelper.js' defer></script>
 
 ## More Advanced Usage
 
-At this stage, if you feel confident with the Aria Template [Module Layer](Modules_Layer_-_The_Application_Generator), you can continue further with some readings concerning [filters usage with modules ](Modules_Filters).
+At this stage, if you feel confident with the Aria Template [Module Layer](modules_layer_the_application_generator), you can continue further with some readings concerning [filters usage with modules ](modules_filters).
