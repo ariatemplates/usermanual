@@ -5,7 +5,7 @@ Atgen is a command line indipendent tool that is able to speed up the creation p
 
 It allows you to create a project from scratch with the skeleton files of templates, template scripts, bootstraps, interfaces, etc. so with atgen you will never do again copy/paste from an old template to create a new one, you will just type a single command.
 
-<h4>*What atgen is*</h4>
+#### *What atgen is*
 atgen is a tool:
 * *easy to use*, with long and short commands; 
 * *documented*, with an help command; 
@@ -13,7 +13,7 @@ atgen is a tool:
 * with a *special wizard*, in order to create a project (or to add files to an existing one) in interactive mode; 
 * doesn't *need to install other software* to work;
 
-<h4>*What atgen needs*</h4>
+#### *What atgen needs*
 To generate the files, atgen needs the project classpath and the name of the files.
 
 So atgen asks:
@@ -25,7 +25,7 @@ So atgen asks:
 * *the bootstrap*, (if required) to be able to automatically generate the html skeleton into the module root folder;
 
 
-<h3>How atgen works</h3>
+### How atgen works
 
 At the first run the tool will configure the aria templates framework path, using a config.json, after that it will be run in different modes:
 
@@ -39,7 +39,7 @@ In this modality the tool will help you to create a project from scratch or to a
 
 This is how your project will look like:
 
-[File:Folders.png](File:Folders.png)
+[file:folders.png](file:folders.png)
 
 If the AT project already has a folders' structure, the tool will create only the folders that are missing and that the user wants to create.
 
@@ -58,12 +58,12 @@ $atgen --config
 </syntaxHighlight>
 
 
-<h3>How atgen looks like</h3>
+### How atgen looks like
 
 Here you can see some screenshot of the atgen running in different modes.
 
-[File:atgen screenshot.png](File:atgen_screenshot.png)
-<h3>How to install atgen</h3>
+[file:atgen screenshot.png](file:atgen_screenshot.png)
+### How to install atgen
 
 atgen is developed in nodejs, so you need to have it installed on your machine (v0.6.x or higher). If you don't have it, please [download](http://nodejs.org) it and choose the version which will install npm too.
 
@@ -74,7 +74,7 @@ If you already have node and npm you just need to type from command line:
 and that's it!
 
 
-<h3>The atgen help</h3>
+### The atgen help
 
 For any problem you can use the command line help typing:
 
@@ -98,7 +98,7 @@ Options:
 </syntaxHighlight>
 
 
-<h3>How to remove atgen</h3>
+### How to remove atgen
 
 As you saw atgen is very easy to install and it is a very light tool, so basically you will never want to remove it, but in the sad case you decide that you don't need it anymore you can remove it typing:
 
@@ -109,7 +109,7 @@ $npm rm -g atgen
 and that's it!
 
 
-<h3>Future Work</h3>
+### Future Work
 
 atgen is alive and under development and with the future releases we will provide:
 * the possibility to accept *more than one parameter* in order to create more than one file with a single command:
@@ -133,7 +133,7 @@ $atgen myapp.mymodule -t MyFirstTemplate MySecondTemplate MyThirdTemplate
 * *to improve the configuration mode*;
 
 
-<h3>Contribute</h3>
+### Contribute
 
 If you have any idea and you want to contribute to the development of atgen please take a look to the atgen github repository and send us your ideas.
 

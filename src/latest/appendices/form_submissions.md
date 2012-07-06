@@ -6,7 +6,7 @@ For the purposes of form submission, for instance when needing to upload files, 
 
 ### IFrame Technique
 
-The IFrame technique is based on using the <code>target</code> attribute of a <code>form</code> HTML element in order to submit it into a hidden IFrame and therefore avoid the reload of the main page. The system can then simply check the <code>onreadystatechange</code> of the IFrame to know when the reply has been received and can optionally access the content of the IFrame (if on the same domain only).
+The IFrame technique is based on using the `target` attribute of a `form` HTML element in order to submit it into a hidden IFrame and therefore avoid the reload of the main page. The system can then simply check the `onreadystatechange` of the IFrame to know when the reply has been received and can optionally access the content of the IFrame (if on the same domain only).
 
 
 *Create an IFrame and insert into the page (shrink the IFrame to make it invisible to the user):''
@@ -22,12 +22,12 @@ The IFrame technique is based on using the <code>target</code> attribute of a <c
 *Remove the IFrame, and reset the target attribute of the form:''
 
 ### API
-A method is available to use the new IFrame transport, <code>aria.core.IO.asyncFormSubmit</code>.
+A method is available to use the new IFrame transport, `aria.core.IO.asyncFormSubmit`.
 
 The user will need to define one or more of the following:
 * FormId is the ID used in the HTML form object (if passing a form object then FormId is not necessary).
 * HTML form object containing the inputs to be used in the form submission (if passing a formId then no form object is necessary).
-* URL to post the form to (optional - can be specified in the action attribute of the form or separately as a URL paramter of the <code>asyncFormSubmit</code> call.  Note if the URL parameter is used then this will override any action attribute defined within the form).
+* URL to post the form to (optional - can be specified in the action attribute of the form or separately as a URL paramter of the `asyncFormSubmit` call.  Note if the URL parameter is used then this will override any action attribute defined within the form).
 * Method to use for the request (optional - can be specified in the HTML form object but if it is passed in using the method parameter then this value will override the forms method attribute).
 * Callback to be used when returning a response for the request.
 
@@ -62,9 +62,9 @@ The following code is used to submit the form in the sample:
   });
 </syntaxhighlight>
 
-In this example only the <code>formId</code> and the <code>callback</code> are needed.  The IFrame transport then extracts the form using the ID and completes the request calling the specific callback after the response has been received:
-:<code>callback.fn</code> _- for onSuccess_
-:<code>callback.onerror</code> _- for onFailure_
+In this example only the `formId` and the `callback` are needed.  The IFrame transport then extracts the form using the ID and completes the request calling the specific callback after the response has been received:
+:`callback.fn` _- for onSuccess_
+:`callback.onerror` _- for onFailure_
 
 
 ### Opening a File Upload Dialog From a Link
@@ -104,7 +104,7 @@ When a user opens a system dialog from the file input, they can browse directori
   }
 </syntaxhighlight>
 
-After the user has selected a file and clicked open the <code>fileChosen</code> method will be executed.
+After the user has selected a file and clicked open the `fileChosen` method will be executed.
 
 <syntaxhighlight lang="AT">
   fileChosen : function () {

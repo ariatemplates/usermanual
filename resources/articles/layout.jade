@@ -12,7 +12,7 @@ html(lang='en', dir='ltr', class='client-js')
     mixin scrolling
 
     div.content-wrapper
-      
+
       mixin goToTop
 
       section.content
@@ -22,7 +22,7 @@ html(lang='en', dir='ltr', class='client-js')
               if metadata && metadata.title
                 h1 #{metadata.title}
               if metadata && metadata.author
-                span.cite by 
+                span.cite by
                   -var authors = metadata.author.split(",")
                   -var urls = metadata.url.split(",")
                   -for (var a = 0; a < authors.length; a++)
@@ -38,7 +38,7 @@ html(lang='en', dir='ltr', class='client-js')
                   include navigationbar.jade
 
               div.doc
-                != content       
+                != content
               nav.navigationbar
                 span.alignleft.nav-previous
                   a(href="/usermanual/TextField", rel="prev") Previous
@@ -49,13 +49,11 @@ html(lang='en', dir='ltr', class='client-js')
             aside.column.sidebar
               include versionList.jade
               mixin search
-              
+
               if toc
                 div#tableOfContent
                   h4 Contents
                   div.toc
                     mixin toc
 
-    mixin footer    
-
-    mixin endingScripts
+    mixin footer

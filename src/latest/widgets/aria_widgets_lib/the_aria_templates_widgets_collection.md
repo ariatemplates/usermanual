@@ -8,4 +8,4 @@ Aria Templates Widgets Collection provides already
 * *Form Widgets* to make your form more usable with automatic binding to the Data Model
 	* AutoComplete, Checkbox, more!
 
-If a widget is not in the library you can easily include [Custom Widgets Libraries](Creating_A_Custom_Widgets_Library).
+If a widget is not in the library you can easily include [Custom Widgets Libraries](creating_a_custom_widgets_library).

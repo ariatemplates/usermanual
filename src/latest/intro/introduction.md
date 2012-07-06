@@ -8,7 +8,7 @@ Aria Templates (later sometimes referred to as *AT* in this documentation), is a
 
 ### A what?
 
-As a Javascript framework, AT provides a set of libraries and helpers that make it easier to develop your web application.  It provides familiar object-oriented features such as [class definitions](Javascript Classes) and [inheritance](Around Classes) as well as a number of useful ways to create your user interface such as [widgets](Aria Templates Widgets Library) and [CSS templates](CSS Templates).
+As a Javascript framework, AT provides a set of libraries and helpers that make it easier to develop your web application.  It provides familiar object-oriented features such as [class definitions](javascript classes) and [inheritance](around classes) as well as a number of useful ways to create your user interface such as [widgets](aria templates widgets library) and [CSS templates](css templates).
 
 ### Based on what?
 
@@ -20,7 +20,7 @@ You're already familiar with the concept of templates if you have ever done web 
 
 With the advent of AJAX and the ability to generate asynchronous requests from the client, web apps became more flexible and communications between the browser and the server were not limited to transmitting whole streams of markup and JS code anymore and developers were free to only use chunks of markup or even pure data, a process that was made even easier with the help of JSON.
 
-<img src="images/AT_intro.PNG" />
+<img src="images/at_intro.png" />
 
 Server-side templating has two undeniable advantages:
 1. it's efficient, because the processing is done on a powerful dedicated machine;
@@ -31,7 +31,7 @@ The idea behind client-side templating is to solve this issue by shifting part o
 
 Not only does this mechanism allow for less data to be transmitted over the network but, because the display is clearly separated from the data and the logic, this also makes customization of the interface much simpler: one template can be replaced by another very easily.
 
-<img src="images/At doc template.jpg" />
+<img src="images/at doc template.jpg" />
 
 ## Aria Templates principles
 
@@ -54,16 +54,16 @@ To illustrate practically how an AT app is built, let's have a look at a simple 
 
 First off, we start with the bootstrap, in our case a simple HTML page created from scratch:
 
-<srcinclude lang="html5">intro/index.html</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/intro/index.html' defer></script>
 
 There are 3 parts to look at here:
 1. Lines 6 & 7 reference the needed files to include Aria Templates.
-1. Line 11 creates an empty container (a <code>DIV</code> in this case) which will be used to display our template.
-1. Finally, lines 14 to 21 contain the Javascript statement that will load a template called <code>amadeus.example.view.SgtGreeters</code> inside our <code>output</code> container.  In this example, it is also where we initialize some data to be used by the template.
+1. Line 11 creates an empty container (a `DIV` in this case) which will be used to display our template.
+1. Finally, lines 14 to 21 contain the Javascript statement that will load a template called `amadeus.example.view.SgtGreeters` inside our `output` container.  In this example, it is also where we initialize some data to be used by the template.
 
-Now let's see what <code>SgtGreeters.tpl</code> looks like:
+Now let's see what `SgtGreeters.tpl` looks like:
 
-<srcinclude lang="at">intro/view/SgtGreeters.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/intro/view/SgtGreeters.tpl' defer></script>
 
 As you can see, AT introduces  a special kind of grammar to describe your interfaces, much of it being quite straightforward.  If we have a detailed look at the code we can see the following:
 1. Lines 1 to 3 simply declare that the file is a template with a specific classpath.
@@ -72,11 +72,11 @@ As you can see, AT introduces  a special kind of grammar to describe your interf
 
 And here's what the result looks like:
 
-<sample sample="intro"/>
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/intro/' />
 
 ## Going further
 
-Aria Templates aims at making it fast and easy to develop professional web applications.  It offers a wide variety of [widgets](Widgets Overview) covering most of modern UI use cases, as well as a complete [API](http://aria/aria-templates/apps/apidocs) to help tackle the common tasks of the application logic.
+Aria Templates aims at making it fast and easy to develop professional web applications.  It offers a wide variety of [widgets](widgets overview) covering most of modern UI use cases, as well as a complete [API](http://aria/aria-templates/apps/apidocs) to help tackle the common tasks of the application logic.
 
 Thanks to the clear separation between its MVC layers, it also makes it simple to customize an existing application by modifying its interface or enhancing its business logic.
 

@@ -11,31 +11,31 @@ Also, when focusing on the elements and pressing ENTER, it executes the onSubmit
 
 The simple way to add Fieldset widget to your application is as follows
 
-<srcinclude tag="wgtFieldsetSimple" lang="AT" outdent="true">widgets/fieldset/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/fieldset/Snippet.tpl' defer></script>
 
-The whole list of configuration parameters is available in [FieldsetCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:FieldsetCfg).
+The whole list of configuration parameters is available in [FieldsetCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:FieldsetCfg).
 
-<sample sample="widgets/fieldset" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/fieldset/' />
 
 ## Nested Fieldset
 Fieldsets can be nested.
 
-<srcinclude tag="wgtFieldsetNested" lang="AT" outdent="true">widgets/fieldset/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/fieldset/Snippet.tpl' defer></script>
 
-<sample sample="widgets/fieldset/nested" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/fieldset/nested/' />
 
 ## Action
 Fieldset is an action widget, meaning that it can call an onSubmit callback function called when the user presses ENTER in a field inside the fieldset.For instance, if an onSubmit callback is implemented on the root Fieldset, then all the nested fieldset bubbles to the root fieldset, provided that the child fieldset implemented onSubmit callback should return true.
 
-<srcinclude tag="wgtFieldsetAction" lang="AT" outdent="true">widgets/fieldset/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/fieldset/Snippet.tpl' defer></script>
 
-<sample sample="widgets/fieldset/action" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/fieldset/action/' />
 
 ## Binding
 For fieldset widget, the property bindable is tooltip and can be bound to a value in the datamodel.
 
-For more information please read the article on [Widget Bindings](Widget_Bindings).
+For more information please read the article on [widget bindings](widget_bindings).
 
-<srcinclude tag="wgtFieldsetBinding" lang="AT" outdent="true">widgets/fieldset/Snippet.tpl</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/fieldset/Snippet.tpl' defer></script>
 
-<sample sample="widgets/fieldset/binding" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/fieldset/binding/' />

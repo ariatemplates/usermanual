@@ -7,6 +7,6 @@ Gauge widget is a graphical horizontal bar displaying its current value. Changin
 <srcinclude tag="wgtGauge" lang="AT" outdent="true">widgets/gauge/Snippet.tpl
 </srcinclude>
 
-The whole list of configuration parameters is available in [GaugeCfg bean](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.widgets.CfgBeans:GaugeCfg).
+The whole list of configuration parameters is available in [GaugeCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:GaugeCfg).
 
-<sample sample="widgets/gauge" />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/gauge/' />

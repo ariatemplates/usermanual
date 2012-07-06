@@ -17,7 +17,7 @@ These are the rules that we follow when we write the aria templates code. Please
       <td>1</td>
       <td>JsLint</td>
       <td>
-We are using JsLint. New classes should trigger no errors. Please take a look to our [JsLint rules](#JsLint_rules).
+We are using JsLint. New classes should trigger no errors. Please take a look to our [#jslint-rules](#jslint-rules).
       </td>										
     </tr>
 									<tr>
@@ -235,8 +235,8 @@ For JsLint we are using these rules:
 	</tr>
 </table>
 
-[Top](#Top)
+[#top](#top)
 
 You can copy/paste our JsLint rules directely from here:
 
-<code>jslint devel: false, bitwise: false, undef: true, browser: true, continue: true, unparam: false, node: false, debug: false, sloppy: true, rhino: false, eqeq: true, widget: false, es5: false, sub: true, windows: false, evil: false, vars: false, forin: false, white: false, passfail: false, newcap: false, nomen: true, plusplus: true, regexp: true, maxerr: 50, maxlen: 120, indent: 4 </code>
+`jslint devel: false, bitwise: false, undef: true, browser: true, continue: true, unparam: false, node: false, debug: false, sloppy: true, rhino: false, eqeq: true, widget: false, es5: false, sub: true, windows: false, evil: false, vars: false, forin: false, white: false, passfail: false, newcap: false, nomen: true, plusplus: true, regexp: true, maxerr: 50, maxlen: 120, indent: 4 `
