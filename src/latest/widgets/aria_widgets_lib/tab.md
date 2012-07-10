@@ -11,10 +11,10 @@ Knowing that when a set of tabs are attached to the same content panel, only one
 A tab should be able to be deactivated after it has been created.
 
 The simple way to add Tab widget to your application is as follows
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/tab/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/tab/Snippet.tpl?tag=wgtTabSnippet1&lang=at&outdent=true' defer></script>
 
 The whole list of configuration parameters is available in [TabCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TabCfg).
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/tab/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/tab/?skip=1' ></iframe>
 
 Tab widget is not a container widget, so the content of the Tab widget have to be placed in [tabpanel](tabpanel) widget.
 
@@ -23,15 +23,15 @@ Tab widget is not a container widget, so the content of the Tab widget have to b
 * It is possible to give several types of styling to a tab (the images and colors used for the normal, disabled and active tabs should be skinnable)
 * It is possible to add ellipse to the tab.
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/tab/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/tab/Snippet.tpl?tag=wgtTabSnippet2&lang=at&outdent=true' defer></script>
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/tab/styling/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/tab/styling/?skip=1' ></iframe>
 
 ## Binding
 The bindable properties of tab widget are
 * selectedTab
 * tooltip
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/tab/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/tab/Snippet.tpl?tag=wgtTabSnippet3&lang=at&outdent=true' defer></script>
 For more information please read the article on [widget bindings](widget_bindings).
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/tab/binding/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/tab/binding/?skip=1' ></iframe>

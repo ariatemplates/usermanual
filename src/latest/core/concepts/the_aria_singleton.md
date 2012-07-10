@@ -1,7 +1,7 @@
 Title: The Aria Singleton
 
 
-{{Draft}}
+
 When loaded, the framework exposes most of its functionality through the `Aria` global object.  The singleton for which you can find details in the [API reference](http://ariatemplates.com/api/#Aria), features numerous methods and properties used by developers as well as the framework itself.
 
 Because as an Aria Templates user you will be using its functionality quite often, several articles in the rest of this documentation will refer to it.  Below is a list of the most common usages.
@@ -10,37 +10,38 @@ Because as an Aria Templates user you will be using its functionality quite ofte
 
 The next articles in this section will describe in details core objects that AT provide to create your application, such as:
 
+
 [classes](javascript classes)
-<syntaxhighlight lang="Javascript">
+<div data-sample="hardcoded"><code><pre>
 Aria.classDefinition({
     $classpath: "garden.tree.Fruit"
     (...)
 });
-</syntaxhighlight>
+</code></pre></div>
 
 and [interfaces](around_classes#interfaces.2c-.24implements),
-<syntaxhighlight lang="Javascript">
+<div data-sample="hardcoded"><code><pre>
 Aria.interfaceDefinition({
     $classpath: "garden.tree.IFruit"
     (...)
 });
-</syntaxhighlight>
+</code></pre></div>
 
 [JSON Beans](json bean definitions)
-<syntaxhighlight lang="Javascript">
+<div data-sample="hardcoded"><code><pre>
 Aria.beanDefinitions({
     $package : "example.beans.SimpleBean",
     (...)
 });
-</syntaxhighlight>
+</code></pre></div>
 
 or [resources](localization and resources).
-<syntaxhighlight lang="Javascript">
+<div data-sample="hardcoded"><code><pre>
 Aria.resourcesDefinition({
     $classpath: 'samples.templates.localization.Res',
     (...)
 });
-</syntaxhighlight>
+</code></pre></div>
 
 These objects are all defined in structures declared using the `Aria` object.
 

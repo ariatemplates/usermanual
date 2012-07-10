@@ -67,8 +67,8 @@ module.exports = {
         markdown = markdown.replace(/\!(([A-Z][a-z0-9]+){2,})/ig, '$1');
 
         // Bold, italic
-        markdown = markdown.replace(/'''''(.+?)'''''/ig, '_*$1*_');
-        markdown = markdown.replace(/'''(.+?)'''/ig, '*$1*');
+        markdown = markdown.replace(/'''''(.+?)'''''/ig, '_**$1**_');
+        markdown = markdown.replace(/'''(.+?)'''/ig, '**$1**');
         markdown = markdown.replace(/''(.+?)''/ig, '_$1_');
 
         // We finally inject the Markdown header information about Title, Author ...

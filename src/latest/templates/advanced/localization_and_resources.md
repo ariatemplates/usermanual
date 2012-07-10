@@ -12,30 +12,34 @@ Internationalization, meant as a way to develop applications that can be easily 
 
 There are currently available two kind of resources that can be defined and/or used inside an Aria Templates application.
 
-* *Static resources*
-* *Dynamic resources* (through Resource Providers) - _Currently under development. More documentation to be provided soon._
+* **Static resources**
+* **Dynamic resources** (through Resource Providers) - _Currently under development. More documentation to be provided soon._
 
 #### Static resources
 
-Static resources can be defined inside plain JavaScript files using the *[Aria.resourcesDefinition](http://ariatemplates.com/api/#Aria:resourcesDefinition:method)* facility. They are usually physically stored as files on the back-end Web Server delivering your AT application, thus accessible through the HTTP(S) protocol.
+Static resources can be defined inside plain JavaScript files using the **[Aria.resourcesDefinition](http://ariatemplates.com/api/#Aria:resourcesDefinition:method)** facility. They are usually physically stored as files on the back-end Web Server delivering your AT application, thus accessible through the HTTP(S) protocol.
 
 You can then localize a resource file creating different versions of the file and appending the locale to the end of each resource definition JavaScript file.
 
 An example of a resource definition is the following:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/18n/statics/Res.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/18n/statics/Res.js?lang=javascript&outdent=true' defer></script>
 
 ##### Conventions to be used
 
 Resources should be defined by following a standard scheme to be properly accessible from your code:
 
+
   `classpath.panelId.resType.resId`
 
 Here's an explanation of each scheme component and accepted values:
 
+
 * `classpath` - the classpath of the resourcesDefinition entity
 * `panelId` - the id of the panel where the resource is used or `common` if it is used in several panels
 * `resType` - the type of the resource, which can be one of the following values:
+
 	* `label` - static text resource without any HTML markup
 	* `alt` - alternate text for DOM elements (mainly images)
 	* `content` - text resource which may contain safe HTML markup (no CSS, no Scripts)
@@ -49,7 +53,7 @@ Here's an explanation of each scheme component and accepted values:
 
 You must first declare the classpath of the resources to use with the `$res` parameter of the Template statement. Then, localized resources are made available through the `res` variable, which can be seen be seen as an alias to the automatically loaded resource classpath.
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/localization/statics/LocalizedTemplate.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/localization/statics/LocalizedTemplate.tpl?lang=at&outdent=true' defer></script>
 
 Of course, you can use an intermediate variable, like `label` here, to make the references to localized resources less verbose.
 
@@ -57,7 +61,7 @@ Of course, you can use an intermediate variable, like `label` here, to make the 
 
 Here is the script associated to the previous template, which displays a message, using localized resources.
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/18n/statics/LocalizedTemplateScript.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/18n/statics/LocalizedTemplateScript.js?lang=javascript&outdent=true' defer></script>
 
 As the class generated from a template inherits from its script, localized resources are also available from the template script, through `this.res`.
 
@@ -68,6 +72,7 @@ Localization, meant as the process of adapting an internationalized application 
 All locale specific parameters can be configured through the [aria.core.AppEnvironment](http://ariatemplates.com/api/#aria.core.AppEnvironment).
 
 The framework allows you to configure:
+
 * Language of static resources
 * Number and currency format settings
 * Date and Time format settings
@@ -86,6 +91,7 @@ While changing the locale is quite easy, at least a full application templates r
 
 Definition and structure are better defined in the following section. Here we simply highlight how to organize your translated resource files. A potential structure, could be for instance the following, with translations in five languages:
 
+
   $appRoot/res/SampleRes.js //default language, if no app wide locale is specified
   $appRoot/res/SampleRes_en_US.js
   $appRoot/res/SampleRes_sv_SE.js
@@ -93,11 +99,11 @@ Definition and structure are better defined in the following section. Here we si
   $appRoot/res/SampleRes_sv_SE.js
   $appRoot/res/SampleRes_pl_PL.js
 
-*The framework will automatically try to download the proper resource file based on the locale setting defined through the `AppEnvinroment.setLanguage` method call.*
+**The framework will automatically try to download the proper resource file based on the locale setting defined through the `AppEnvinroment.setLanguage` method call.**
 
 Please note how the first resource is indeed the base resource name to be referenced inside your classes, modules and/or templates. While keeping this name you should then append the proper locale code according to the language contained in each resource file.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/templates/i18n/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/templates/i18n/?skip=1' ></iframe>
 
 #### Number and currency
 
@@ -108,14 +114,16 @@ Application's parameters are defined in [Number Configuration Bean](http://ariat
 <div data-sample="missing">Snippet on how to modify the appenvironment</div>
 
 By default numbers are interpreted with en_US conventions:
+
 * " . " a dot for decimal separator.
 * " , " a comma for group (thousand) separator.
 
 <div data-sample="missing">Numberfield with different patterns and separators</div>
 
-The option *strictGrouping* allows to enforce or not the match between the number patterna and what the user typed.
+The option **strictGrouping** allows to enforce or not the match between the number patterna and what the user typed.
 
 When _strictGrouping_ is enabled, the following rules apply:
+
  Pattern : #,###
  1,000 is valid
  1,00 is invalid
@@ -127,10 +135,10 @@ When _strictGrouping_ is enabled, the following rules apply:
 disabling _strictGrouping_ no check will be done on the input pattern, the grouping separator is simply ignored
  Pattern : #,###
  1,000 is valid : 1000 (one thousand)
- 1,00 is *valid* : 100 (one hundred)
+ 1,00 is **valid** : 100 (one hundred)
 
  Pattern : #,##
- 1,000 is *valid* : 1000 (one thousand)
+ 1,000 is **valid** : 1000 (one thousand)
  1,00 is valid : 100 (one hundred)
  
 _strictGrouping_ might be useful for languages such as
@@ -140,7 +148,8 @@ _strictGrouping_ might be useful for languages such as
 * Hindi : the first grouping separator (from the rightmost character) is used for thousands and then for hundreds
  10,00,000 (1 million)
 
-The separator can be only a single character, non digit. Conventions such as the ones used in the following countries are *not* supported:
+The separator can be only a single character, non digit. Conventions such as the ones used in the following countries are **not** supported:
+
 
 * Croatia : thousands separator alternates dots and commas
  1.000,000 (1 million)
@@ -148,6 +157,7 @@ The separator can be only a single character, non digit. Conventions such as the
  1'000,000 (1 million)
 
 The formatting patterns to specify how a number should be conventionally displayed or interpreted, even as a currency. It can be defined as a combination of the following:
+
 
 {| style="width:100%"
 |-
@@ -190,8 +200,10 @@ The supported patterns are a subset of the [java.text.DecimalFormat](http://down
 Accepted formatters are a subset of the [Java patterns](http://java.sun.com/j2se/1.4.2/docs/api/java/text/SimpleDateFormat.html).
 
 Some date patterns are defined at application level :
+
  shortFormat, longFormat, mediumFormat and fullFormat.
 Default values for these patterns are :
+
 * shortFormat: "d/M/y"
 * mediumFormat: "d MMM y"
 * longFormat: "d MMMM yyyy"
@@ -200,8 +212,10 @@ Default values for these patterns are :
 These patterns can be accessed through `aria.utils.environment.Date.getDateFormats()`
 
 Similarly some time patterns are also defined at application level.  There are currently two :
+
  shortFormat and fullFormat.
 Default values for these patterns are :
+
 * shortFormat: "HH:mm"
 * fullFormat: "HH:mm:ss"
 
@@ -217,9 +231,9 @@ Supported patterns are similar to [Java patterns](http://java.sun.com/j2se/1.4.2
 
 On top of Java-like patterns, it is possible to use the IATA format replacing the month format character with 'I'. For example: 
 
- `*Udd*I*yy*`   will display <strong>02 Feb 10</strong> for date 02/02/2010.
+ `**Udd**I**yy**`   will display <strong>02 Feb 10</strong> for date 02/02/2010.
  or
- `*Udd*I*yyyy*`   will display <strong>02 Feb 2010</strong> for date 02/02/2010.
+ `**Udd**I**yyyy**`   will display <strong>02 Feb 2010</strong> for date 02/02/2010.
 
 In this case, the English version of the month will be displayed in the format specified regardless of the localization settings (IATA format corresponds to 3 capital letter untranslated month name).
 

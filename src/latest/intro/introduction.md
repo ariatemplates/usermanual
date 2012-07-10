@@ -4,7 +4,7 @@ Title: Introduction
 
 ## What is Aria Templates?
 
-Aria Templates (later sometimes referred to as *AT* in this documentation), is a Javascript framework based on client-side templating.
+Aria Templates (later sometimes referred to as **AT** in this documentation), is a Javascript framework based on client-side templating.
 
 ### A what?
 
@@ -23,6 +23,7 @@ With the advent of AJAX and the ability to generate asynchronous requests from t
 <img src="images/at_intro.png" />
 
 Server-side templating has two undeniable advantages:
+
 1. it's efficient, because the processing is done on a powerful dedicated machine;
 1. it's pretty much standard, meaning that documentation and tools are easy to find for developers.
 However, as web applications became more and more complex, this mechanism quickly showed its limits: because of the amount of information needed to be sent back and forth, server-side templating weighs heavily on bandwidth and this has a huge impact on applications responsiveness.
@@ -48,31 +49,37 @@ So what do you need to know to start using Aria Templates?  Obviously, knowledge
 ### A practical example
 
 To illustrate practically how an AT app is built, let's have a look at a simple example.  Like most applications it will be based on:
+
 1. a bootstrap: a piece of HTML that loads the framework engine and the initial script code to load the template;
 1. a template;
 1. some data.
 
 First off, we start with the bootstrap, in our case a simple HTML page created from scratch:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/intro/index.html' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/intro/index.html?lang=html5' defer></script>
 
 There are 3 parts to look at here:
+
 1. Lines 6 & 7 reference the needed files to include Aria Templates.
 1. Line 11 creates an empty container (a `DIV` in this case) which will be used to display our template.
 1. Finally, lines 14 to 21 contain the Javascript statement that will load a template called `amadeus.example.view.SgtGreeters` inside our `output` container.  In this example, it is also where we initialize some data to be used by the template.
 
 Now let's see what `SgtGreeters.tpl` looks like:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/intro/view/SgtGreeters.tpl' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/intro/view/SgtGreeters.tpl?lang=at' defer></script>
 
 As you can see, AT introduces  a special kind of grammar to describe your interfaces, much of it being quite straightforward.  If we have a detailed look at the code we can see the following:
+
 1. Lines 1 to 3 simply declare that the file is a template with a specific classpath.
 1. Line 4 marks the entry point of the template.
 1. Lines 8 to 10 iterates through the array that was given as an argument in the bootstrap.
 
 And here's what the result looks like:
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/intro/' />
+
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/intro/?skip=1' ></iframe>
 
 ## Going further
 

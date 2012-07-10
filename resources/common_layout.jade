@@ -8,7 +8,7 @@ mixin head
     link(href='/favicon.ico', type='image/ico', rel='shortcut icon')
     link(title='AriaTemplates', href='/fluidicon.png', rel='fluid-icon')
     link(rel='stylesheet', href='/styles/all.css', type='text/css')
-    link(rel='stylesheet', href='http://snippets.ariatemplates.com/styles/highlight_skin.css', type='text/css')
+    link(rel='stylesheet', href='http://snippets.ariatemplates.com/css/highlight_skin.css', type='text/css')
     script
       //Aria={debug:true}
     script(type='text/javascript', src='/aria/aria-templates-1.1-26.js')
@@ -42,7 +42,7 @@ mixin search
     h4 Search
     form(action='http://google.com/')
       input(type='text', id='search', name='q', value='')
-      button(class='searchbutton blue', value='Search', onclick="javascript:var q = document.getElementById('search').value; if(q == '') return false; else q = encodeURIComponent('site:ariatemplates.com/' +' '+ q);"
+      button(class='searchbutton blue', value='Search', onclick="javascript:var q = document.getElementById('search').value; if(q == '') {return false;} else {q = encodeURIComponent('site:ariatemplates.com/' +' '+ q); }")
         span Search
 
 mixin toc
@@ -101,3 +101,12 @@ mixin footer
 mixin markdown(text, inline)
   html = markdown(text, inline)
   != html
+
+mixin unescapeHtml(text)
+  -text = text.replace(/\&lt;/ig, "<").replace(/\&gt;/ig, ">").replace(/\&quot;/ig, '"').replace(/\&#39;/ig, "'");
+  mixin replaceVersion(text)
+
+mixin replaceVersion(text)
+  -var version = whoAmI.substr(whoAmI.indexOf('/src/'), whoAmI.length).split("/")[2]
+  -text = text.replace(/%VERSION%/ig, version)
+  != text

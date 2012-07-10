@@ -14,12 +14,13 @@ To define interfaces Aria Templates relies on HTML to which it adds a number of 
 Templates are defined in files with a `.tpl` extension and use a number of special tags identified by curly brackets `{` and `}`, which are interpreted by the AT framework engine.
 
 There are 3 kinds of tags:
-* *Statements*: like `{foreach}` or `{section}` explained in details in [this article](writing templates), are used to define the structure of dynamic pages.
-* *Widgets*: like `{@aria:Button}` explained in details in [ this article](the widgets collection) are graphical components that make it easy to design a flexible user interface.
-* *Expressions*: like `${i + 10}` are used to evaluate Javascript expressions (variable references, functions calls, etc.)
+
+* **Statements**: like `{foreach}` or `{section}` explained in details in [this article](writing templates), are used to define the structure of dynamic pages.
+* **Widgets**: like `{@aria:Button}` explained in details in [ this article](the widgets collection) are graphical components that make it easy to design a flexible user interface.
+* **Expressions**: like `${i + 10}` are used to evaluate Javascript expressions (variable references, functions calls, etc.)
 
 Templates always begin with a `{Template}` statement that defines its classpath and may provide additional configuration options.  They can contain several macros, which are the equivalent of methods, but must always contain one called `main`, that is the template entry point.
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/fibo/Fibonacci.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/fibo/Fibonacci.tpl?lang=at' defer></script>
 
 ## Loading templates
 
@@ -29,16 +30,16 @@ There are two ways to use templates in your application.
 
 The first one is to dynamically load them using `loadTemplate()` method of the [Aria](the aria singleton) global object.  This can be done anywhere in your code.  The two mandatory parameters of this method are the classpath of the template and the id of the container in which it should be loaded.
 
-<syntaxhighlight lang="javascript">
+<div data-sample="hardcoded"><code><pre>
 Aria.loadTemplate({
     classpath: "ariadoc.snippets.SimpleTemplate",
     div: "output"
 });
-</syntaxhighlight>
+</code></pre></div>
 
 This is also the method you will use in the _bootstrap code_, i.e. the container (HTML, JSP, PHP, etc.) of your application from which you will load the root template from.
 
-<syntaxhighlight lang="html5">
+<div data-sample="hardcoded"><code><pre>
 <DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
@@ -62,7 +63,7 @@ This is also the method you will use in the _bootstrap code_, i.e. the container
     
     </body>
 </html>
-</syntaxhighlight>
+</code></pre></div>
 
 Note that in this example we've initialized the [data model](data model and data binding) directly at loading time using the `data` property of the configuration.  The complete list of parameters that are accepted by the `loadTemplate()` method configuration object is detailed [here](http://ariatemplates.com/api/#aria.templates.CfgBeans:LoadTemplateCfg).
 
@@ -70,11 +71,12 @@ Note that in this example we've initialized the [data model](data model and data
 
 Another way to include a template in your application is to use the `{@aria:Template}` widget and providing it with the classpath of the file to load:
 
-<syntaxhighlight lang="AT">
+
+<div data-sample="hardcoded"><code><pre>
 {@aria:Template {
     defaultTemplate : "amadeus.training.playground.view.OtherTemplate"
 } /}
-</syntaxhighlight>
+</code></pre></div>
 
 Doing so will display the content of `OtherTemplate.tpl` in the template it has been included in (note that we obviously don't need to give a container id in this case.)  Similarly to the `loadTemplate()` method, it is possible to provide the template to be loaded with several other parameters such as an pre-initialized data model.  The complete list of parameters that are accepted by the Template widget is detailed [here](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TemplateCfg)
 

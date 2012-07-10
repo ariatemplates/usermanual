@@ -35,13 +35,13 @@ html(lang='en', dir='ltr', class='client-js')
                     include navigationbar.jade
 
                 div.doc
-                  != content
+                  mixin unescapeHtml(content)
                 nav.navigationbar
                   div.aligncenter.nav-main
                     include navigationbar.jade
               else
                 div.doc
-                  != content
+                  mixin unescapeHtml(content)
 
             aside.column.sidebar
               include versionList.jade

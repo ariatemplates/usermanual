@@ -2,9 +2,10 @@ Title: Flow Controllers
 
 
 
-{{Draft}}
+
 
 The goal of flow controllers is to contain the flow logic and keep it separated from the rest of the application so that it can be managed and customized independently and more easily. The flow controller is in charge of managing the flow, which means the following:
+
 
 * maintaining in the data model the current state of the flow
 * intercepting calls to the module controller to update that state
@@ -13,11 +14,13 @@ The goal of flow controllers is to contain the flow logic and keep it separated 
 
 For each module controller instance, there is an associated flow controller instance (if a flow controller is present). The following schema describes the relation between a module controller, its flow controller and templates:
 
+
 <img src="images/at_doc_overview_flow_controller.png" />
 
 ## Similarities with module controllers
 
 Flow controllers are very similar to module controllers:
+
 
 * a flow controller is a class which extends `aria.templates.FlowCtrl`, which itself extends `aria.templates.PublicWrapper`
 * a flow controller has a public interface (the interface is created and attached to the flow controller in the same way as for [module controllers](controllers) with the difference that flow controller interfaces must inherit `aria.templates.IFlowCtrl` (currently empty) and not `aria.templates.IModuleCtrl`)
@@ -32,6 +35,7 @@ Currently, there is a naming convention to find the flow controller associated t
 Remember that flow controllers can be customized (this feature will be provided in a future release of Aria Templates), so that the flow controller associated to a module controller can actually be different from the one with the "Flow" suffix added. There should not be any assumption made on which flow controller is associated to a given module controller (anyway, the module controller does not have any reference to the flow controller).
 
 If a special flow controller has to be used, the `$hasFlowCtrl` property can be set directly to the flow controller classpath:
+
 
 <srcinclude lang="JavaScript" outdent="true">modules/flow_controllers/MyModuleController.js
 </srcinclude>
@@ -54,16 +58,18 @@ These methods are automatically called, if present, when the corresponding metho
 
 Let's consider the following public interface of the module controller:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/flow_controllers/IMyModule.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/flow_controllers/IMyModule.js?lang=javascript&outdent=true' defer></script>
 
 ### Flow controller interface
 
 Here is the public interface of the flow controller:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/flow_controllers/IMyModuleFlow.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/flow_controllers/IMyModuleFlow.js?lang=javascript&outdent=true' defer></script>
 
 ### Flow controller implementation
 
 Here is a flow controller implementation. Note: so that the flow controller is actually used, the associated module controller (`modules.mymodule.MyModule`) must contain `$hasFlowCtrl: true` on its prototype - like here - or as a property defined in the constructor.
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/flow_controllers/MyModuleFlow.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/flow_controllers/MyModuleFlow.js?lang=javascript&outdent=true' defer></script>

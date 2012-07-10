@@ -1,6 +1,6 @@
 Title: Widget Bindings
 
-{{Draft}}
+
 
 All Aria Templates widgets can be automatically bound to properties contained inside your data model.
 
@@ -12,23 +12,18 @@ Let's have a look at this template
 <srcinclude lang="at" outdent="true">templates/widget_bindings/Template.tpl
 </srcinclude>
 
-that we load in a page with this bootstrap
-
-<srcinclude tag="bootstrap" lang="javascript" outdent="true">templates/widget_bindings/Bootstrap.js
-</srcinclude>
-
-As you can see, it only contains a [`{@aria:TextField {}}`](textfield widget) widget. We are using the *bind* attribute of the widget itself.
+As you can see, it only contains a [`{@aria:TextField {}}`](textfield widget) widget. We are using the **bind** attribute of the widget itself.
 
 ## Bindable Property Sample
 
 The following sample shows how to bind a TextField widget to a data model level defined variable.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/textfield/binding/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/textfield/binding/?skip=1' ></iframe>
 
 ## Transforms
 
 The widget binding mechanism offers a powerful feature to enhance the way a value is fetched to and from the bound variable.
 
-This feature is called *tranform*, which basically consists - as the name itself says - to transform a displayed/entered value after fetching it from the bound variable - for displaying purpouses - or before giving it back - alignment - to the variable bound the widget.
+This feature is called **tranform**, which basically consists - as the name itself says - to transform a displayed/entered value after fetching it from the bound variable - for displaying purpouses - or before giving it back - alignment - to the variable bound the widget.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/textfield/transform/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/textfield/transform/?skip=1' ></iframe>

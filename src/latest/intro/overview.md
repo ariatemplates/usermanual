@@ -10,6 +10,7 @@ requires the <i>core</i> layer, and so on...
 
 The first layer provides core JavaScript features that are used to build the framework, such as:
 
+
 * a Java-inspired [class syntax](javascript classes) that simplifies the management of the (prototype-based) object inheritance
 * support for class namespaces
 * on-demand load support through static & dynamic class dependencies management
@@ -23,6 +24,7 @@ The first layer provides core JavaScript features that are used to build the fra
 
 The second layer provides the [template engine](http://en.wikipedia.org/wiki/Template_engine_%28web%29) used to generate and display any UI piece. This engine comes with
 many interesting features, such as:
+
 
 * full and [partial template refresh](refresh)
 * [template inheritance](template inheritance) and nested templates
@@ -45,9 +47,11 @@ applications or contexts. Modules can also load and interact with [sub-modules](
 On a technical point of view, modules have to follow an
 [MVC pattern](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) where:
 
-* The *Model* is implemented as a JSON object, that can be specified with the JSON grammar
-* The *View* is implemented with a set of templates
-* The *Controller* is developed through JavaScript classes and is split in 2 entities:
+
+* The **Model** is implemented as a JSON object, that can be specified with the JSON grammar
+* The **View** is implemented with a set of templates
+* The **Controller** is developed through JavaScript classes and is split in 2 entities:
+
 	* A service controller (aka [Module Controller](controllers)) that implements the core functional features exposed through a Service interface
 	* A [flow controller](flow controllers) - that technically belongs to the View layer - and that is in charge of managing the User Interface flow
 
@@ -68,10 +72,11 @@ and manage page navigation.
 Like most RIA frameworks, Aria Templates has developed a series of tools that aim at improving
 development efficiency and product optimizations:
 
+
 * The Aria Templates packager allows to [minify](http://en.wikipedia.org/wiki/Minification_%28programming%29) and bundle JavaScript resources. It also generates
 unique file names so that different versions of the application will use different URLs, and as
 such will support web-proxy and browser caching
 * The Eclipse plugin provides an efficient template editor
 * The JS Doc generator allows to generate documentation for all the project classes - this is the same tool that is used to document the framework classes
 
-*Note:* these tools have been originally developed in Java and are being migrated on node.js - which explains why they are not published yet.
+**Note:** these tools have been originally developed in Java and are being migrated on node.js - which explains why they are not published yet.

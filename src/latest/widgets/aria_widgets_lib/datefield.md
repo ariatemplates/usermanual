@@ -3,16 +3,17 @@ Title: DateField
 
 The DateField is a simple textfield whose content is interpreted as a date.There are two modes for date parsing: the European mode and the US mode.A global setting specifies which mode is actually used.
 The simple way to add datefield widget is
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/widgets/datefield/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/datefield/Snippet.tpl?tag=wgtDatefieldSnippet&lang=at&outdent=true' defer></script>
 
 The whole list of configuration parameters is available in [DateFieldCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:DateFieldCfg).
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/datefield/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/datefield/?skip=1' ></iframe>
 
 ## Binding
 The "value" property in the dateField is bind-able and can be bound to a property in the data model.
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/datefield/binding/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/datefield/binding/?skip=1' ></iframe>
 
 * In the European mode,the following date formats are recognized (all are interpreted as the 13th of June; when the year is not specified, the current year is used if the date is in the future, otherwise the next year):
+
 	* 13/06/2002
 	* 13/06/02
 	* 13/6/02
@@ -27,6 +28,7 @@ The "value" property in the dateField is bind-able and can be bound to a propert
 	* 13/6
 	* 13/06
 * In the US mode, the following date formats are recognized (all are interpreted as the 13th of June; when the year is not specified, the current year is used if the date is in the future, otherwise the next year):
+
 	* 06/13/2002
 	* 06/13/02
 	* 6/13/2002
@@ -42,6 +44,7 @@ The "value" property in the dateField is bind-able and can be bound to a propert
 	* 6/13
 	* 06/13
 * In both modes the following date formats are recognized:
+
 	* 13JUN
 	* 13 JUN
 	* 13JUN02

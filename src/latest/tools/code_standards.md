@@ -118,6 +118,7 @@ We are using JsLint. New classes should trigger no errors. Please take a look to
 <h4>JsLint rules</h4>
 For JsLint we are using these rules:
 
+
 <table class="hor-zebra">
 	<tr>
 		<th scope="col">#</th>
@@ -238,5 +239,6 @@ For JsLint we are using these rules:
 [#top](#top)
 
 You can copy/paste our JsLint rules directely from here:
+
 
 `jslint devel: false, bitwise: false, undef: true, browser: true, continue: true, unparam: false, node: false, debug: false, sloppy: true, rhino: false, eqeq: true, widget: false, es5: false, sub: true, windows: false, evil: false, vars: false, forin: false, white: false, passfail: false, newcap: false, nomen: true, plusplus: true, regexp: true, maxerr: 50, maxlen: 120, indent: 4 `

@@ -4,7 +4,8 @@ Title: Request from a controller
 Asynchronous requests can be performed manually using [aria.core.IO](http://ariatemplates.com/api/#aria.core.IO). However, modules provide an extra layer above simple server calls in your modules.
 
 ## Concept
-The calls to the server done by the modules most often answer to the need to execute an *action*, with some information to transmit back and forth, and can be decomposed in several steps:
+The calls to the server done by the modules most often answer to the need to execute an **action**, with some information to transmit back and forth, and can be decomposed in several steps:
+
 
 * <span style="color:green">_From a functional need, perform a request to a server to act, send or retrieve information._</span>
 * Serialization: transform this JavaScript information into a server message.
@@ -14,11 +15,12 @@ The calls to the server done by the modules most often answer to the need to exe
 * <span style="color:green">_Use this new information in the module controller._</span>
 
 Module controllers provide a simple method in order to focus on functional code (green italic) and delegate the technical implementation of the call to external handlers: the `submitJsonRequest` method. This method has three arguments:
+
 * The action to perform.
 * The JavaScript object that have to be sent.
 * The callback to be called with the call result. 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/controller/ModuleWithRequest.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/controller/ModuleWithRequest.js?tag=call&lang=javascript&outdent=true' defer></script>
 
 This method will use several configuration described below to achieve the non-functional steps. Note that most of these configurations are also available on [aria.modules.RequestMgr](http://ariatemplates.com/api/#aria.modules.RequestMgr) as application configuration for all modules.
 
@@ -28,13 +30,13 @@ This method will use several configuration described below to achieve the non-fu
 
 Module provides a dedicated API to manage a session tag in the request: `setSession`. This allows storing an ID that can be used by the URL creating service. Using this API is recommended as this will also propagate the change to sub module controllers.
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/controller/ModuleWithRequest.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/controller/ModuleWithRequest.js?tag=session&lang=javascript&outdent=true' defer></script>
 
 ### Adding other parameters to a request
 
 Other parameters can be added to the request at [aria.modules.RequestMgr](http://ariatemplates.com/api/#aria.modules.RequestMgr) level, for all modules: 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/controller/ModuleWithRequest.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/controller/ModuleWithRequest.js?tag=params&lang=javascript&outdent=true' defer></script>
 
 Check the API for a complete description of what can be done with request parameters.
 
@@ -53,19 +55,21 @@ After processing, a callback provided as an argument of these two methods needs 
 
 Aria Templates provides several base handlers in the `aria.modules.requestHandler` package that can be used:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/controller/ModuleWithRequest.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/controller/ModuleWithRequest.js?tag=requestHandler&lang=javascript&outdent=true' defer></script>
 
 ## JSON data serialization
 
 When sending requests to the server with the POST method, JSON data can be added in the request (see [aria.templates.ModuleCtrl.submitJsonRequest](http://ariatemplates.com/api/#aria.templates.ModuleCtrl:submitJsonRequest:method)).
 
 This data must be stringified before sending it to the server. It is possible to decide how the serialization has to be done by setting the public property [$requestJsonSerializer](http://ariatemplates.com/api/#aria.templates.ModuleCtrl:$requestJsonSerializer:property) property of the module:
-<syntaxhighlight lang="AT">
+
+<div data-sample="hardcoded"><code><pre>
 this.$requestJsonSerializer = {
   instance : mySerializerInstance, // instance of a valid JSON serializer
   options : myOptions // options object that will be given to the serialize method of your serializer 
 };
-</syntaxhighlight>
+</code></pre></div>
 
 The value specified is of type [aria.modules.environment.EnvironmentCfgBeans.RequestJsonSerializerCfg](http://ariatemplates.com/api/#aria.modules.environment.EnvironmentCfgBeans:RequestJsonSerializerCfg). In particular it can contain
 

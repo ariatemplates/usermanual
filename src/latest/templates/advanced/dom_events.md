@@ -20,25 +20,29 @@ Please note that all events are not necessarily available on all tags. This depe
 
 To attach events to DOM elements in templates you must use the [`on`](writing_templates#on) statement.
 Example:
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/domEvents/Main.tpl' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=basic&outdent=true' defer></script>
 
 The `on` statement is part of the element opening tag, as would an `on_event_` property be.
 
 To specify the event handler method you may either use the short or complete notation:
 
+
 * short:
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/domEvents/Main.tpl' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=short&outdent=true' defer></script>
 
 * complete: 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/domEvents/Main.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=complete&outdent=true' defer></script>
 
 Check the [examples section](#examples) to learn which syntax you should use and when.
 
 You can use several `on` statements inside the same DOM element.
 For instance:
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/domEvents/Main.tpl' defer></script>
 
-{{Note|One limitation of the framework today is that no check is done on the event name passed to the `on` statement, meaning that you won't get any error if it is mispelled!}}
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=multiple&outdent=true' defer></script>
+
+<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> One limitation of the framework today is that no check is done on the event name passed to the `on` statement, meaning that you won't get any error if it is mispelled!</div>
 
 ## Event callback methods
 
@@ -46,19 +50,22 @@ The callback method given to your `on` statement can be defined either in the te
 
 Depending on how you declared it, the scope of the callback (what `this` represents) will differ:
 
-* If the event was attached using the *short syntax*, the scope will be assigned to the *template object*.
-* If the event was attached with the *complete syntax*, the scope will be the one given in the *scope property* if any, or will default to the *template object*.  It is however good practice to explicitly declare the scope of your callback even when you intend it to be the template, for readability and maintenance purposes.
+
+* If the event was attached using the **short syntax**, the scope will be assigned to the **template object**.
+* If the event was attached with the **complete syntax**, the scope will be the one given in the **scope property** if any, or will default to the **template object**.  It is however good practice to explicitly declare the scope of your callback even when you intend it to be the template, for readability and maintenance purposes.
 
 ### Signature
 
 A callback assigned with `on` must conform to the following signature :
 
-<syntaxhighlight lang="javascript">
+
+<div data-sample="hardcoded"><code><pre>
 onEventCallback : function ([evt, [args]])
-</syntaxhighlight>
+</code></pre></div>
 where:
-* *`evt`* is a cross-browser [event wrapper](http://ariatemplates.com/api/#aria.templates.DomEventWrapper) detailing the event that triggered the callback.
-* *`args`* is the `args` property of the [callback definition](http://ariatemplates.com/api/#aria.utils.Callback:$constructor:method) when called with the complete syntax.
+
+* **`evt`** is a cross-browser [event wrapper](http://ariatemplates.com/api/#aria.templates.DomEventWrapper) detailing the event that triggered the callback.
+* **`args`** is the `args` property of the [callback definition](http://ariatemplates.com/api/#aria.utils.Callback:$constructor:method) when called with the complete syntax.
 
 ### DomEventWrapper and DomElementWrapper
 
@@ -67,7 +74,7 @@ In many situations, you will want to check information about the event that was 
 
 The `target` property of a DomEventWrapper is an instance of [aria.templates.DomElementWrapper](http://ariatemplates.com/api/#aria.templates.DomElementWrapper). Similarly to the DomEventWrapper, it acts as a cross-browser wrapper over the actual DOM element.
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/templates/domEvents/MainScript.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/MainScript.js?noheader=true&lang=at&tag=domelem&outdent=true' defer></script>
 
 For more information please refer to the API documentation of these objects: [aria.templates.DomEventWrapper](http://ariatemplates.com/api/#aria.templates.DomEventWrapper), [aria.DomEvent](http://ariatemplates.com/api/#aria.DomEvent) and [aria.templates.DomElementWrapper](http://ariatemplates.com/api/#aria.templates.DomElementWrapper).
 
@@ -76,15 +83,15 @@ For more information please refer to the API documentation of these objects: [ar
 
 Using DOM events is one of the easiest ways to handle user interaction in an Aria Templates application. Here are a few guidelines to keep in mind when using events.
 
-* *Use event delegation*.  For performance and maintenance reasons you should avoid setting event listeners on plenty of elements inside a container and rather use one at container level.
-* An obvious consequence of the first point is: *do not create events in loops*.
-* *Use [DomElementWrappers](interactions_with_the_dom#dom-elements-wrappers) for light changes*.  If you need to update a CSS class, it is more efficient to using the dedicated methods rather than performing a refresh.
+* **Use event delegation**.  For performance and maintenance reasons you should avoid setting event listeners on plenty of elements inside a container and rather use one at container level.
+* An obvious consequence of the first point is: **do not create events in loops**.
+* **Use [DomElementWrappers](interactions_with_the_dom#dom-elements-wrappers) for light changes**.  If you need to update a CSS class, it is more efficient to using the dedicated methods rather than performing a refresh.
 
 ### Events outside of a template
 
 You might want in some cases to attach events to elements outside of your template, like `<body>` for instance.  To do so, the [addListener() method](http://ariatemplates.com/api/#aria.utils.Event:addListener:method) of the [aria.utils.Event](http://ariatemplates.com/api/#aria.utils.Event) singleton provides a way bind an event handler to any DOM element.
 
-{{Note|It is not recommended to use this approach for DOM elements inside a template. If you choose to do so, your application is likely to be less stable and leak memory.}}
+<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> It is not recommended to use this approach for DOM elements inside a template. If you choose to do so, your application is likely to be less stable and leak memory.</div>
 
 ## Examples
 
@@ -103,7 +110,7 @@ This sample is the first of a series of samples all based on a 1-9 keypad. In th
 
 This sample is based upon the keypad example used for the Mouse Event sample. The mouse selection is here replaced with a keyboard navigation using the arrows key. In this sample, the callback handler takes advantage of the [DomEventWrapper](http://ariatemplates.com/api/#aria.templates.DomEventWrapper) to retrieve the keyCode of the event. Then using the statics available on [DomEventWrapper](http://ariatemplates.com/api/#aria.templates.DomEventWrapper), we easily check if the event was triggered by on of the arrow keys or not. 
 
-<syntaxhighlight lang="javascript">onCheckboxKeydown : function (evt, args) {
+<div data-sample="hardcoded"><code><pre>onCheckboxKeydown : function (evt, args) {
 	/* ... */
 	if (evt.keyCode == evt.KC_ARROW_DOWN) {
 		// event triggered by arrow down, move selection down
@@ -111,7 +118,7 @@ This sample is based upon the keypad example used for the Mouse Event sample. Th
 		// event triggered by arrow up, move selection up	
 	} 
 	/* ... */
-}</syntaxhighlight>
+}</code></pre></div>
 
 ### Form events
 * [Samples.Utilities.DOM Events.Keyboard Events.Step 2](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%202)
@@ -127,21 +134,21 @@ This example is the exact same as the example 3, but the event handlers have bee
 
 The downside is of course that we now have less information directly bound to the event callback. But it is easy enough to compensate for that. One of the first tools of event delegation is to check the tagName of the target, to know if the event was captured on a DOM element that interests us. Indeed, since the event is attached on a container element, it will be fired each time the container receives the event, either directly or by bubbling. Checking the tagName is the easiest way to make sure the event was fired on an element that interests us.
 
-<syntaxhighlight lang="javascript">
+<div data-sample="hardcoded"><code><pre>
 if (domEl.tagName.toLowerCase() != "input") {
 	return;
-}</syntaxhighlight>
+}</code></pre></div>
 
-We also need to know what is the index of the clicked input. To retrieve this information dynamically in the callback, we will use *expandos*. *Expandos* are extra attributes that you can use on a DOM element inside your template. An expando is prefixed by an underscore, and can be retrieved using the [getExpando](http://ariatemplates.com/api/#aria.templates.DomElementWrapper:getExpando) method on a DomElementWrapper. Here we store the index of the item in `_index` and retrieve it using `getExpando("index")`.
-<syntaxhighlight lang="xml"><input type="checkbox" _index="${i}" /></syntaxhighlight>
-<syntaxhighlight lang="javascript">
+We also need to know what is the index of the clicked input. To retrieve this information dynamically in the callback, we will use **expandos**. **Expandos** are extra attributes that you can use on a DOM element inside your template. An expando is prefixed by an underscore, and can be retrieved using the [getExpando](http://ariatemplates.com/api/#aria.templates.DomElementWrapper:getExpando) method on a DomElementWrapper. Here we store the index of the item in `_index` and retrieve it using `getExpando("index")`.
+<div data-sample="hardcoded"><code><pre><input type="checkbox" _index="${i}" /></code></pre></div>
+<div data-sample="hardcoded"><code><pre>
 var indexExpando = domEl.getExpando("index");
 if (indexExpando) {
 	return parseInt(indexExpando,10);
-}</syntaxhighlight>
+}</code></pre></div>
 
 All this overhead has been mutualized in a single method and is used in each event callback of the template script. The rest of the implementation then remains strictly similar to the non-delegated version.
-<syntaxhighlight lang="javascript">
+<div data-sample="hardcoded"><code><pre>
 __getTargetIndex : function (domEl) {
 	if (domEl.tagName.toLowerCase() != "input") {
 		return;
@@ -150,7 +157,7 @@ __getTargetIndex : function (domEl) {
 	if (indexExpando) {
 		return parseInt(indexExpando,10);
 	}
-}</syntaxhighlight>
+}</code></pre></div>
 
 Event delegation is always about striking a good balance between the amount of events and the amount of dynamic processing in the callback.
 
@@ -159,6 +166,6 @@ Event delegation is always about striking a good balance between the amount of e
 
 This sample is again based on the keypad example. This time, a keydown is attached on the document using the [aria.utils.Event:addListener](http://ariatemplates.com/api/#aria.utils.Event:addListener) utility method. We filter the numkeys and the matching 1-9 box is selected when the user presses one of those keys. 
 
-<syntaxhighlight lang="javascript">aria.utils.Event.addListener(document, "keydown", this.__onBodyKeydown, this, true);</syntaxhighlight>
+<div data-sample="hardcoded"><code><pre>aria.utils.Event.addListener(document, "keydown", this.__onBodyKeydown, this, true);</code></pre></div>
 
 Note that in the destructor of the template script, the addListener is mirrored by a removeListener to avoid leaving unwanted events on the page.

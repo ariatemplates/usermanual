@@ -13,15 +13,15 @@ When your class inherit an another one, it then inherit from all properties, sta
 
 * Base class
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/classes/Device.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Device.js?lang=javascript&outdent=true' defer></script>
 
 * Subclass
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/classes/Disk.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Disk.js?lang=javascript&outdent=true' defer></script>
 
 * Sample usage
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/classes/DevicesMain.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/DevicesMain.js?tag=execute&lang=javascript&outdent=true' defer></script>
 
 
 In Aria Templates, any object inherit from [`aria.core.JsObject`](http://ariatemplates.com/api/#aria.core.JsObject). Thus, your class automatically has access to several helpers coming from this parent root object, like for example logging methods: [`$logDebug()`](http://ariatemplates.com/api/#aria.core.JsObject:$logDebug:method), [`$logWarn()`](http://ariatemplates.com/api/#aria.core.JsObject:$logWarn:method), [`$logError()`](http://ariatemplates.com/api/#aria.core.JsObject:$logError:method), and many more.
@@ -39,6 +39,7 @@ The core JavaScript language does not provide any direct support to program with
 
 Interfaces in Aria Templates support the following features:
 
+
 * [interface definition](#interface-definition)
 * [check for implementation](#interface-implementation)
 * single inheritance
@@ -49,9 +50,11 @@ Interfaces in Aria Templates support the following features:
 
 An interface can be defined through [Aria.interfaceDefinition](http://ariatemplates.com/api/#Aria:interfaceDefinition:method), as shown in the following sample:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/classes/ColorfulObject.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/ColorfulObject.js?lang=javascript&outdent=true' defer></script>
 
 An interface definition contains the following parts:
+
 
 * `$classpath` _mandatory_ - the classpath is a unique identifier of the interface, just like in Java, and in [Aria Templates classes](javascript_classes). It corresponds to the package name + the interface name.
 * `$extends` _optional_ - the classpath of another interface declared with [Aria.interfaceDefinition](http://ariatemplates.com/api/#Aria:interfaceDefinition:method), which will be the super interface of this one.
@@ -60,6 +63,7 @@ An interface definition contains the following parts:
 * `$interface` _mandatory_ - This section contains empty methods and empty properties that must be implemented in classes that implement the interface.
 	* The names used for interface members must not be JavaScript keywords and must match the `/^[a-zA-Z_\$][\w\$]*$/` regular expression.
 	* Interface members can be:
+
 		* A function: can be declared with either an empty function, or the string `"Function"`, or  a json structure with the `$type` property containing "Function". With this last syntax, it is possible to specify that the function is asynchronous by setting the `$callbackParam` property. This property must contain the index of the argument of the function which contains the callback. Declaring asynchronous functions in an interface is especially useful when using [interceptors](interceptors).
 		* An object or array: declared as shown in the above example. Note that the reference to the object or the array must stay the same in the object from its construction until it is disposed. This is because interface wrappers never update the references to the properties.
 		* An interface  must be declared with a json structure with the `$type` property containing "Interface", and the `$classpath` property containing the classpath of the interface. When creating the interface wrapper containing such a member, the corresponding member from the whole object must implement the interface specified here and only its interface wrapper will be published in the interface wrapper.
@@ -69,7 +73,8 @@ An interface definition contains the following parts:
 
 Once an interface has been defined through [Aria.interfaceDefinition](http://ariatemplates.com/api/#Aria:interfaceDefinition:method), it can be used in class definitions as shown in the following example:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/classes/Fruit.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Fruit.js?lang=javascript&outdent=true' defer></script>
 
 * When declaring that a class is implementing an interface through the `$implements` keyword, the class must contain in its prototype (or in the prototype of one of its super-classes) all the methods declared in the interface, otherwise, an error is logged and the class load fails.
 * There is no check for the presence in the class of the properties (objects or arrays) defined in the interface, as it cannot be checked at class load time (properties are usually available only when creating an instance of a class).
@@ -81,7 +86,8 @@ If an object is an instance of a class which implements an interface, it is poss
 
 To get an instance of an interface wrapper, simply call the `$interface` method on the object, with the classpath of the interface to get. For example, with the `ariadoc.snippets.core.classes.Fruit` class declared above:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/classes/Wrapping.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Wrapping.js?tag=execute&lang=javascript&outdent=true' defer></script>
 
 ### Events
 
@@ -89,11 +95,13 @@ Interfaces can declare events in the `$events` part of the interface definition.
 
 If an interface declares events, its wrapper object will automatically contain the following additional methods:
 
+
 * `$on` (same as `$addListeners`)
 * `$removeListeners`
 * `$unregisterListeners`
 
 These methods are wrappers on the methods from [aria.core.JsObject](http://ariatemplates.com/api/#aria.core.JsObject), with the following specific aspects:
+
 
 * when registering a listener on a wrapper object, when the event is raised, the `src` property of the event object will contain the wrapper object and not the whole object
 * calling `$removeListeners` or `$unregisterListeners` from a wrapper object cannot unregister events registered with another wrapper object or with the complete object, it can only unregister events registered with the same wrapper object
@@ -105,6 +113,7 @@ Dependencies management is definitely a missing feature from native Javascript. 
 
 The first thing you have to understand as far as dependencies are concerned is their type. Aria Templates can handles 2 different kinds of dependencies:
 
+
 <dl>
 <dt>Static dependencies</dt>
 <dd>You can express them using the `$dependencies` keyword in your classDefinition. This keyword takes as argument an array that contains all the different classpaths that you know your class is strongly dependent on.</dd>
@@ -112,7 +121,7 @@ The first thing you have to understand as far as dependencies are concerned is t
 </dl>
 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/classes/StaticDeps.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/StaticDeps.js?lang=javascript&tag=static&outdent=true' defer></script>
 
 <dl>
 <dt>Dynamic dependencies</dt>
@@ -120,7 +129,7 @@ The first thing you have to understand as far as dependencies are concerned is t
 <dd>This helper takes also as argument a JSON configuration object, in which you can specify an array of classpaths to be loaded. Once all the classes are loaded, a callback is used to trigger code execution.</dd>
 </dl>
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/classes/DynamicDeps.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/DynamicDeps.js?lang=javascript&outdent=true' defer></script>
 
 ## Events, $events
 
@@ -130,9 +139,9 @@ The _emitter_ class declares the events it is able to fire using the `$events` k
 
 Then, to raise an event, you simply have to use `$raiseEvent(eventName)` method. (Which again is there implicitly because of [aria.core.JsObject](http://ariatemplates.com/api/#aria.core.JsObject) inheritance)
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/classes/MainClass.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/MainClass.js?lang=javascript&outdent=true' defer></script>
 
 On the other hand, a _listener_ class should just simply declares that it is listening using the `$on()` method.
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/classes/CustomLogger.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/CustomLogger.js?lang=javascript&outdent=true' defer></script>
 

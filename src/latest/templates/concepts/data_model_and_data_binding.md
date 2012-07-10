@@ -22,9 +22,10 @@ For instance `"foo:bar"` would correspond to the property "bar" of the prefix "f
 
 The convention is to use the following prefixes:
 
-* *`aria:`* for framework-specific meta-data, you should not use this prefix.
-* *`view`*: for template-specific meta-data.
-* *`xxx`*: where xxx is a customizer unique-id used to reference customization meta-data.
+
+* **`aria:`** for framework-specific meta-data, you should not use this prefix.
+* **`view`**: for template-specific meta-data.
+* **`xxx`**: where xxx is a customizer unique-id used to reference customization meta-data.
 
 When several templates have access to the same data model, it is preferable to use template-specific prefixes to avoid meta-data collisions. It might also be happen that different instances of the same template have access to the same data model.
 

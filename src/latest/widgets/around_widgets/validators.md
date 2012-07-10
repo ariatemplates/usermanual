@@ -14,6 +14,7 @@ In Aria Templates, this means that the module controller (in charge of the model
 ### Validator Classes
 
 The framework provides the following set of validator helper classes that can be "attached" to your data model in order to validate it:
+
 {|
 ! Classpath
 ! Type to validate
@@ -66,7 +67,8 @@ The framework provides the following set of validator helper classes that can be
 
 These validators should be loaded as dependencies into your module controller class:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=dependencies&lang=at&outdent=true' defer></script>
  
 These classes implement the interface `aria.utils.validators.IValidator` that defines one `validate` method only. This means that any number of extra validator classes can be created if needed.
 
@@ -76,50 +78,34 @@ The validate function returns a specific object, depending on the success or not
 
 The MultipleValidator is a special validator that allows you to queue several validators on the same piece of datamodel. By default, it will execute all validators added to it, but have two special behaviours :
 
+
 * If `breakOnMessage` property is set to true, it will stop on the first message raised by a contained validator.
 * If the validator is created with a custom message OR `groupMessages` is set to true, messages from contained validators will be added as sub messages.
 
-### Data Model Validation Utility
+#### Data Model Validation Utility
 
-On top of these validators, the aria-templates data utility `aria.utils.Data` can be used to manage the association of validators to the data model, here are the methods available for this:  
- 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
-
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
-
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
-
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
-
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
-
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
-
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
-
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
-
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
-
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+On top of these validators, the Aria Templates `aria.utils.Data` singleton can be used to manage the association of validators to the data model.  These methods are described [here](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.Data).
 
 ### Module Controller Code Example
 
 Here is a module controller example using validators 
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/utils/validators/basic/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/utils/validators/basic/?skip=1' ></iframe>
 
-First, let's assume that the constructor of the module controller prepares some data (in most modules, this will probably be done by sending a request to the server):
+If we were to use a data model such as the following:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
 
-Then, the `init` method sets the required validators within the data model using the data model utility:
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=datamodel&lang=at&outdent=true' defer></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script> 
+In the module controller, we could set the appropriate validators like this:
 
-Finally, let's assume one of the templates associated to this module controller calls its `submit` method when a button is clicked. The `submit` method will validate the model and then make a request to process the messages:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=setvalidators&lang=at&outdent=true' defer></script> 
+
+Now, let's assume one of the templates associated to this module controller calls its `submit` method when a button is clicked. The `submit` method will validate the model and then make a request to process the messages:
+
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=submit&lang=at&outdent=true' defer></script>
 
 ### Validators and Events
 
@@ -129,29 +115,31 @@ As previously mentioned, Validators are set on the data model and are executed w
 
 In the module controller a validators eventToValidate property can be set using the setValidator method: 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=eventsSingle&lang=at&outdent=true' defer></script>
 
-In the example groups are undefined, in fact it doesn't matter if you grouped the validators or not, as groupings are not applied for onblur validation.
+In this example we don't pass groups, in fact it doesn't matter if you grouped the validators or not, as groupings are not applied for onblur validation.
 
-For more details on validator groupings click [validators#validators-and-groupings-here](validators#validators-and-groupings-here).
+For more details on validator groupings see below.
 
 #### Using Multiple Validators
 
 When using multiple validators without passing an event parameter then the original syntax will suffice: 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=eventsMultiple1&lang=at&outdent=true' defer></script>
 
 When passing an event parameter the following new API is used:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=eventsMultiple2&lang=at&outdent=true' defer></script>
 
 Both techniques can be mixed:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=eventsMultiple3&lang=at&outdent=true' defer></script>
 
 #### Example of Validators and Events
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/utils/validators/event/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/utils/validators/event/?skip=1' ></iframe>
 
 ### Validators and Groups
 
@@ -161,34 +149,36 @@ As well as configuring validators to be executed on an event it is also possible
 
 To set a validator as a member of a group a new groups parameter needs to be passed to the utility method setValidator within the Data utility:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=groupsSingle1&lang=at&outdent=true' defer></script>
 
 The new groups parameters for setting a validators groups and for validating a value or the entire model are optional.  Here is an example of validating a value which has validators that are a part of the "mandatory" group:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=groupsSingle2&lang=at&outdent=true' defer></script>
 
 #### Using Multiple Validators
 
 It is possible to set groups on multiple validators using the two following approaches: 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=groupsMultiple1&lang=at&outdent=true' defer></script>
 
 or
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=groupsMultiple2&lang=at&outdent=true' defer></script>
 
 when using the add method the original syntax is still supported: 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=groupsMultiple3&lang=at&outdent=true' defer></script>
 
 now groups are supported through the following API: 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=groupsMultiple4&lang=at&outdent=true' defer></script>
 
 both techniques can be mixed: 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/utils/validators/Snippet.tpl' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/validators/Validators.js?tag=groupsMultiple5&lang=at&outdent=true' defer></script>
 
 #### Example of Validators and Groups
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/utils/validators/group/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/utils/validators/group/?skip=1' ></iframe>

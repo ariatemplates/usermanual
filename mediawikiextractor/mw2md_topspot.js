@@ -4,8 +4,12 @@ module.exports = {
 
         /* Private Mediawiki to be removed */
         markdown = markdown.replace(/\{\{Reviewneeded\}\}/ig, '');
+        markdown = markdown.replace(/\{\{Draft\}\}/ig, '');
+        markdown = markdown.replace(/\{\{Reviewed\}\}/ig, '');
+
         markdown = markdown.replace("<div id=\"tableOfContent\">__TOC__</div>", "");
         markdown = markdown.replace(/__TOC__/ig, '');
+        markdown = markdown.replace(/__NOTOC__/ig, '');
 
         markdown = markdown.replace(/\[mandatory\]/ig, "_mandatory_");
         markdown = markdown.replace(/\[optional\]/ig, "_optional_");
@@ -50,21 +54,46 @@ module.exports = {
 
         // Missing Samples
         markdown = markdown.replace(/\{\{Missing Samples\|([^\}\}]+)\}\}/ig, '<div data-sample="missing">$1</div>');
+        markdown = markdown.replace(/>> (?:sample)s?/ig, '<div data-sample="missing">missing sample</div>');
+
+        //Note
+        markdown = markdown.replace(/\{\{Note\|([^\}\}]+)\}\}/ig, '<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> $1</div>');
 
         //Snippets
-        re = new RegExp('<srcinclude[^<>]*>(.+?)</srcinclude>','ig');
-        markdown = markdown.replace(re, function(match, file) {
+        re = new RegExp('<srcinclude([^<>]*)>(.+?)</srcinclude>','ig');
+        markdown = markdown.replace(re, function(match, options, file) {
+            if (options) {
+                options = options
+                    .trim()
+                    .split(/\s/)
+                    .map(function(option) {
+                        if (option.indexOf("lang") != -1) {
+                            option = option.toLowerCase();
+                        }
+                        return option.replace(/["']/g, "");
+                    })
+                    .join("&");
+            }
             file = file.replace(/\\/g, "/");
-            return "<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/"+file+"' defer></script>";
+            return "<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/"+ file + (options ? ("?"+options) : "") + "' defer></script>";
         });
 
 
         //Samples
         markdown = markdown.replace(/<sample\s+sample=[\'"](.+?)[\'"]\s*?\/>/ig, function(match, file) {
             file = file.replace(/\\/g, "/");
-            return "<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/"+file+"/' />";
+            return "<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/"+file+"/?skip=1' ></iframe>";
         });
 
+        //Syntax Highlight
+        re = new RegExp('<syntaxhighlight[^>]*>((.|\n)*?)</syntaxhighlight>','ig');
+        markdown = markdown.replace(re, function(match, content) {
+            return '<div data-sample="hardcoded"><code><pre>'+content+'</code></pre></div>';
+        });
+
+
+        //End of line : (might announce a list right after)
+        markdown = markdown.replace(/:$/igm, ":\n");
 
         return markdown;
     },

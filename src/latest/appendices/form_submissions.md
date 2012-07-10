@@ -25,13 +25,14 @@ The IFrame technique is based on using the `target` attribute of a `form` HTML e
 A method is available to use the new IFrame transport, `aria.core.IO.asyncFormSubmit`.
 
 The user will need to define one or more of the following:
+
 * FormId is the ID used in the HTML form object (if passing a form object then FormId is not necessary).
 * HTML form object containing the inputs to be used in the form submission (if passing a formId then no form object is necessary).
 * URL to post the form to (optional - can be specified in the action attribute of the form or separately as a URL paramter of the `asyncFormSubmit` call.  Note if the URL parameter is used then this will override any action attribute defined within the form).
 * Method to use for the request (optional - can be specified in the HTML form object but if it is passed in using the method parameter then this value will override the forms method attribute).
 * Callback to be used when returning a response for the request.
 
-<syntaxhighlight lang="javascript">
+<div data-sample="hardcoded"><code><pre>
  asyncFormSubmit({     
      "formId" : "myFormId", 
      "form" : myForm, 
@@ -45,13 +46,14 @@ The user will need to define one or more of the following:
          args:{x:123}     
      }
  })
-</syntaxhighlight>
+</code></pre></div>
 
 
 ## Submitting a Form
 
 The following code is used to submit the form in the sample:
-<syntaxhighlight lang="AT">
+
+<div data-sample="hardcoded"><code><pre>
   aria.core.IO.asyncFormSubmit({
     formId : "simulateAsyncFormSubmit",
     callback : {
@@ -60,9 +62,10 @@ The following code is used to submit the form in the sample:
       scope : this
     }
   });
-</syntaxhighlight>
+</code></pre></div>
 
 In this example only the `formId` and the `callback` are needed.  The IFrame transport then extracts the form using the ID and completes the request calling the specific callback after the response has been received:
+
 :`callback.fn` _- for onSuccess_
 :`callback.onerror` _- for onFailure_
 
@@ -71,22 +74,23 @@ In this example only the `formId` and the `callback` are needed.  The IFrame tra
 
 In this example the file input is invisible to the user, instead there is a link which when clicked will trigger the file input click method to open the system dialog.
 
-<syntaxhighlight lang="AT">
+<div data-sample="hardcoded"><code><pre>
  {@aria:Link {
      label: "Import from file",
      onclick: {
          fn: "uploadFile"
      }
   }/}
-</syntaxhighlight>
+</code></pre></div>
 
 When the click event is triggered on the link the following handler is called:
-<syntaxhighlight lang="AT">
+
+<div data-sample="hardcoded"><code><pre>
   uploadFile : function () {
    ...   
     aria.utils.Dom.getElementById("simulateAsyncFileUpload").click();
   }
-</syntaxhighlight>
+</code></pre></div>
 
 The hidden file input has an ID of "simulateAsyncFileUpload", therefore its click event is triggered which opens the system dialog.
 
@@ -95,18 +99,18 @@ The hidden file input has an ID of "simulateAsyncFileUpload", therefore its clic
 When a user opens a system dialog from the file input, they can browse directories select a file and click on open.  The system dialog then disappears and the file input contains the path and filename of the file to be uploaded.  To trigger a script when the user selects a file in the system dialog, you need to add a listener to the change event of the file input.
 
 
-<syntaxhighlight lang="AT">
+<div data-sample="hardcoded"><code><pre>
   uploadFile : function () {  
     ... 
     // add a listener on the change event of the file input.
     aria.utils.Event.addListener("simulateAsyncFileUpload", "change", this.fileChosen, this);
     ...			
   }
-</syntaxhighlight>
+</code></pre></div>
 
 After the user has selected a file and clicked open the `fileChosen` method will be executed.
 
-<syntaxhighlight lang="AT">
+<div data-sample="hardcoded"><code><pre>
   fileChosen : function () {
     // simulate async request to submit form
     aria.core.IO.asyncFormSubmit({
@@ -118,4 +122,4 @@ After the user has selected a file and clicked open the `fileChosen` method will
       }
     });
   }
-</syntaxhighlight>
+</code></pre></div>

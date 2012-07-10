@@ -19,6 +19,7 @@ Interceptors can also prevent the call of the original method if needed or chang
 * Interceptor callbacks registered on an object `obj` for an interface `MyInterface` are called when a method is called through the `MyInterface` interface wrapper, or the interface wrapper of one of its super interfaces.
 
 * Interceptor callbacks are called multiple times:
+
 	* `CallBegin` - before the corresponding method is called on the whole object,
 	* `CallEnd` - after the corresponding method returns,
 	* `Callback` - if the method is asynchronous, when the callback is called, before the call of the normal callback. Note that "Callback" can sometimes be called before "CallEnd" if the method calls its callback synchronously.
@@ -31,21 +32,22 @@ The type of the first parameter given to interceptor callbacks is described belo
 
 * `CallBegin`
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/ParameterTypes.txt' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=CallBegin&lang=text' defer></script>
 
 * `CallEnd`
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/ParameterTypes.txt' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=CallEnd&lang=text' defer></script>
 
 * `Callback`
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/ParameterTypes.txt' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=Callback&lang=text' defer></script>
 
 ## Interceptor calls sequence diagrams
 
 ### Synchronous Method Call
 
-The following sequence diagram visualizes the calls chain in the simple case of a *Synchronous* method:
+The following sequence diagram visualizes the calls chain in the simple case of a **Synchronous** method:
+
 
 * add an interceptor for a specific interface
 * intercepted method execution
@@ -55,7 +57,8 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 
 ### Asynchronous Method Call
 
-The following sequence diagram visualizes the calls chain in the simple case of a *Asynchronous* method:
+The following sequence diagram visualizes the calls chain in the simple case of a **Asynchronous** method:
+
 
 * add an interceptor for a specific interface
 * interceptor calls (Begin, End, CallBack)
@@ -67,6 +70,7 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 
 Basically the whole interceptors mechanism can be properly setup by the following steps:
 
+
 * You have to define an interface; this is required as interceptors are bound to a specific interface
 * You have to implement the above interface
 * You have to register one or more interceptors on a specific interface
@@ -75,31 +79,37 @@ Basically the whole interceptors mechanism can be properly setup by the followin
 
 Here is the example of a simple interface definition with two functions, `mySimpleFunction` and `myAsynchronousFunction`.
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/MyInterface.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/MyInterface.js?lang=javascript&outdent=true' defer></script>
 
 ### Interface implementation
 
 Here is an implementation of the previous interface:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/MyClass.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/MyClass.js?lang=javascript&outdent=true' defer></script>
 
 ### Interceptor registration
 
 Here is an example of how to register an interceptor on an instance of the previous object with the previous interface and how to unregister it:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/interceptors/Interceptor.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/Interceptor.js?lang=javascript&outdent=true' defer></script>
 
 When the above piece of code is run, the following alerts will be displayed (in this order):
 
+
 * For `myItf.mySimpleFunction()`:
+
 	* Interceptor: mySimpleFunction [CallBegin]
 	* mySimpleFunction is called
 	* Interceptor: mySimpleFunction [CallEnd]
 
 * For `myObj.mySimpleFunction()`:
+
 	* mySimpleFunction is called
 
 * For `myItf.myAsynchronousFunction(myCallback)`:
+
 	* Interceptor: myAsynchronousFunction [CallBegin]
 	* myAsynchronousFunction is called
 	* Interceptor: myAsynchronousFunction [CallEnd]
@@ -108,4 +118,5 @@ When the above piece of code is run, the following alerts will be displayed (in 
 	* myCallback is called.
 
 * For `myItf.mySimpleFunction(myCallback)` in `myCallback`:
+
 	* mySimpleFunction is called

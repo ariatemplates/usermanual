@@ -1,6 +1,6 @@
 Title: Filters
 
-__NOTOC__
+
 As Aria Templates is using a central [`core class`](http://ariatemplates.com/api/#aria.core.IO)  to manage all IO asynchronous requests, we added the ability to write IO Filters.
 
 Filters can be compared to [servlet filters](http://java.sun.com/products/servlet/Filters.html) in the J2EE world because they can be used to intercept requests and/or responses as they are sent out/received in.
@@ -13,16 +13,17 @@ They are also globally set for a whole application, but you can restrict them to
 
 Creating a filter is done by extending a base class and overriding one or two methods, like so:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/IoFilter.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/filters/IoFilter.js?lang=javascript&outdent=true' defer></script>
 
 ## Adding a Filter to the IO Filters Manager
 
 Once a custom filter class has been written, it can be registered on the [`IOFiltersMgr`](http://ariatemplates.com/api/#aria.core.IOFiltersMgr) singleton to be used at run-time.
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/MyFilterHelper.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/filters/MyFilterHelper.js?tag=attachFilter&lang=javascript&outdent=true' defer></script>
 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/MyFilterHelper.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/filters/MyFilterHelper.js?tag=detachFilter&lang=javascript&outdent=true' defer></script>
 
 Check the [API documentation](http://ariatemplates.com/api/#aria.core.IOFiltersMgr:addFilter:method) to know the different types of parameters accepted (e.g. it is possible to specify an initialization parameter, passed to the constructor of the filter).
 
@@ -34,6 +35,7 @@ There are also 2 different ways to add delays.
 ### Adding a delay within the filter itself
 
 When adding delays within the filter simply add two properties:
+
 * this.requestDelay
 * this.responseDelay
 
@@ -42,18 +44,21 @@ By default every filter inheriting from the filter base class IOFilter has delay
 If the filter has overwritten the inherited onRequest and onResponse methods then the following code will need to be added:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/IoDelayFilter.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/filters/IoDelayFilter.js?tag=delayFilterConstructor&lang=javascript&outdent=true' defer></script>
 
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/IoDelayFilter.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/filters/IoDelayFilter.js?tag=delayFilter&lang=javascript&outdent=true' defer></script>
 
 ### Adding a delay from the addFilter method
 
 It is possible to specify the delay parameters directly within the `addFilter()` call through the `initArgs` property:
 
+
 Here is an example:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/core/filters/MyFilterHelper.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/filters/MyFilterHelper.js?tag=delayFilter&lang=javascript&outdent=true' defer></script>
 
 ## More Advanced Usage
 

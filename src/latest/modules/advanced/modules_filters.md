@@ -14,6 +14,7 @@ Though, to test from which module your request is coming inside your filter, you
 Aria Template dynamically publishes for you properties on the request (or response) argument.
 
 For example, for requests sent by the `RequestMgr`, here are the properties available in the `sender` property:
+
 * `classpath`: contains "aria.modules.RequestMgr" (allows to check if the request was made through the `RequestMgr`).
 * `requestObject`: contains information about the module which did the request (its `moduleName` and `actionName`).
 * `requestData`: contains the posted data as a json object. If the filter needs to change it, it can modify this property, but it should then call [setJsonPostData](http://ariatemplates.com/api/#aria.core.IOFilter:setJsonPostData:method) to update the encoded string in `request.postData`.
@@ -22,7 +23,8 @@ For example, for requests sent by the `RequestMgr`, here are the properties avai
 
 The following filter looks for requests done by the `my.app.Controller` module through the request manager:
 
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/filters/TargetedFilter.js' defer></script>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/filters/TargetedFilter.js?lang=javascript&outdent=true' defer></script>
 
 ## Working Offline
 
@@ -34,17 +36,19 @@ IO filters can be used to intercept requests, and redirect to static XML files r
 
 Consider the following example:
 
+
 * The filter class
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/filters/OfflineFilter.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/filters/OfflineFilter.js?lang=javascript&outdent=true' defer></script>
 
 * The moduleCtrl class
-<script src='http://snippets.ariatemplates.com/snippets/%VERSION%/modules/filters/MyController.js' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/filters/MyController.js?lang=javascript&outdent=true' defer></script>
 
 In the previous example, requests are intercepted and, based on their action and json parameters, redirected to static XML files instead. The helper [`redirectToFile()`](http://ariatemplates.com/api/#aria.core.IOFilter:redirectToFile:method) method is used to simplify the redirection.
 
 ### Creating the XML responses
 
 The default handler of Aria Templates expects data responses from the server in form of XML messages. Creating these static XML files to work offline can be done in 2 ways:
+
 * Writing them by hand.
 * Recording actual "online" responses by copy/pasting the content into a XML file.
 

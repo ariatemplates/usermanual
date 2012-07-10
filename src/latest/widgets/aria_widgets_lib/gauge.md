@@ -9,4 +9,4 @@ Gauge widget is a graphical horizontal bar displaying its current value. Changin
 
 The whole list of configuration parameters is available in [GaugeCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:GaugeCfg).
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/%VERSION%/widgets/gauge/' />
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/gauge/?skip=1' ></iframe>
