@@ -29,28 +29,25 @@ html(lang='en', dir='ltr', class='client-js')
                     a(href='#{urls[a]}') #{authors[a]}
                     if (a != authors.length - 1)
                       ,
-              nav.navigationbar
-                span.alignleft.nav-previous
-                  a(href="/usermanual/TextField", rel="prev") Previous
-                span.alignright.nav-next
-                  a(href="/usermanual/Tooltip", rel="next") Next
-                div#dropdown.aligncenter.nav-main
-                  include navigationbar.jade
+              if metadata && !metadata.nonavbar
+                nav.navigationbar
+                  div#dropdown.aligncenter.nav-main
+                    include navigationbar.jade
 
-              div.doc
-                != content
-              nav.navigationbar
-                span.alignleft.nav-previous
-                  a(href="/usermanual/TextField", rel="prev") Previous
-                span.alignright.nav-next
-                  a(href="/usermanual/Tooltip", rel="next") Next
-                div.aligncenter.nav-main
-                  include navigationbar.jade
+                div.doc
+                  != content
+                nav.navigationbar
+                  div.aligncenter.nav-main
+                    include navigationbar.jade
+              else
+                div.doc
+                  != content
+
             aside.column.sidebar
               include versionList.jade
               mixin search
 
-              if toc
+              if toc && metadata && !metadata.notoc
                 div#tableOfContent
                   h4 Contents
                   div.toc
