@@ -2,7 +2,7 @@ Title: The Aria Singleton
 
 
 
-When loadedd, the framework exposes most of its functionality through the `Aria` global object.  The singleton for which you can find details in the [API reference](http://ariatemplates.com/api/#Aria), features numerous methods and properties used by developers as well as the framework itself.
+When loaded, the framework exposes most of its functionality through the `Aria` global object.  The singleton for which you can find details in the [API reference](http://ariatemplates.com/api/#Aria), features numerous methods and properties used by developers as well as the framework itself.
 
 Because as an Aria Templates user you will be using its functionality quite often, several articles in the rest of this documentation will refer to it.  Below is a list of the most common usages.
 
