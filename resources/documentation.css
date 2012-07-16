@@ -43,10 +43,9 @@
 }
 
 pre {
-	background-color: #F9F9F9;
-    border: 1px dashed #CCCCCC;
-	padding: 5px;
-	margin: 8px;
+	border: 3px solid white;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+	margin: 8px 0 0 0;
 	border-radius: 4px;
 }
 
@@ -233,7 +232,23 @@ pre {
 }
 
 #search {
-	width: 135px;
+   	background: url(../images/search-white.png) no-repeat 10px 7px #fcfcfc;
+   	background-color: #F0F0F0;
+	width:148px;
+	padding: 4px 15px 4px 35px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #CCC;
+	font-size: 16px;
+}
+
+#search:focus {
+    outline: none;
+    background-color: white;
+	-webkit-box-shadow: 0px 0px 3px #007eff;  
+    -moz-box-shadow: 0px 0px 3px #007eff;  
+    box-shadow: 0px 0px 3px #007eff;
 }
 
 .mediawiki .stats {
@@ -264,8 +279,7 @@ pre {
 .snippet h5 {
 	color: #5092BD;
 	margin-bottom: 0px;
-	margin-top: -15px;
-	margin-left: 10px;
+	margin-top: -5px;
 }
 
 .snippet h5 strong {
