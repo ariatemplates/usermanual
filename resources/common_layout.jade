@@ -42,9 +42,7 @@ mixin search
   div.wiki-search
     h4 Search
     form(action='http://google.com/')
-      input(type='text', id='search', name='q', value='')
-      button(class='searchbutton blue', value='Search', onclick="javascript:var q = document.getElementById('search').value; if(q == '') {return false;} else {q = encodeURIComponent('site:ariatemplates.com/' +' '+ q); }")
-        span Search
+      input(type='text', id='search', name='q', value='', placeholder='search inside the doc', onkeyup="javascript: if (event.keyCode == 13) {var q = document.getElementById('search').value; if(q == '') {return false;} else {q = encodeURIComponent('site:ariatemplates.com/' +' '+ q); }}")
 
 mixin toc
   -var lowestRank = 2
