@@ -133,7 +133,7 @@
 #search {
    	background: url(../images/search-white.png) no-repeat 10px 7px #fcfcfc;
    	background-color: #F0F0F0;
-	width:148px;
+	width:150px;
 	padding: 4px 15px 4px 35px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -234,6 +234,11 @@ body.internal article .callout.reviewed,
 	border: 1px solid #fff;
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
 	min-height: 150px;
+}
+
+/* To displey the main table of content properly */
+.doc.nonavbar ul li {
+	list-style: none;
 }
 
 /* Style for the navigation bar to go back to the main index */

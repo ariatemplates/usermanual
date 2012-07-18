@@ -41,8 +41,7 @@ mixin header
 mixin search
   div.wiki-search
     h4 Search
-    form(action='http://google.com/')
-      input(type='text', id='search', name='q', value='', placeholder='search inside the doc', onkeyup="javascript: if (event.keyCode == 13) {var q = document.getElementById('search').value; if(q == '') {return false;} else {q = encodeURIComponent(q + ' site:ariatemplates.com'); }}")
+    input(type='text', id='search', name='q', value='', placeholder='search inside the doc', onkeyup="javascript: if (event.keyCode == 13) {var q = document.getElementById('search').value; if ((q == '') || (q == null)) {return false;} else {openSearchResults(q);}} function openSearchResults (query) {var popUp = window.open('http://www.google.com/search?q=' + encodeURIComponent(query) + ' site:ariatemplates.com', 'new_window_1'); if (popUp == null || typeof(popUp)=='undefined') {alert('Please disable your pop-up blocker and re do the search.');} else { popUp.focus();}}")
 
 mixin toc
   -var lowestRank = 2
