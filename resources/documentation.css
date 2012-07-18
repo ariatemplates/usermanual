@@ -236,7 +236,11 @@ body.internal article .callout.reviewed,
 	min-height: 150px;
 }
 
-/* To displey the main table of content properly */
+.doc {
+	min-height: 500px;
+}
+
+/* To display the main table of content properly */
 .doc.nonavbar ul li {
 	list-style: none;
 }
