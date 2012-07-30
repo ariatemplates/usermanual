@@ -30,10 +30,10 @@ To specify the event handler method you may either use the short or complete not
 
 * short:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=short&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=short&outdent=true'></script>
 
 * complete: 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=complete&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=complete&outdent=true'></script>
 
 Check the [examples section](#examples) to learn which syntax you should use and when.
 
