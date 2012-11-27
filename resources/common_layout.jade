@@ -8,6 +8,10 @@ mixin head
     link(href='/favicon.ico', type='image/ico', rel='shortcut icon')
     link(title='AriaTemplates', href='/fluidicon.png', rel='fluid-icon')
     link(rel='stylesheet', href='/styles/all.css', type='text/css')
+    //if IE 7
+      link(rel='stylesheet', href='/styles/versionselect.css', type='text/css')
+
+    link(rel='stylesheet', href='../documentation.css', type='text/css')
     link(rel='stylesheet', href='http://snippets.ariatemplates.com/css/highlight_skin.css', type='text/css')
     script
       //Aria={debug:true}
@@ -40,10 +44,7 @@ mixin header
 mixin search
   div.wiki-search
     h4 Search
-    form(action='http://google.com/')
-      input(type='text', id='search', name='q', value='')
-      button(class='searchbutton blue', value='Search', onclick="javascript:var q = document.getElementById('search').value; if(q == '') {return false;} else {q = encodeURIComponent('site:ariatemplates.com/' +' '+ q); }")
-        span Search
+    input(type='text', id='search', name='q', value='', placeholder='search inside doc', onkeyup="javascript: if (event.keyCode == 13) {var q = document.getElementById('search').value; if ((q == '') || (q == null)) {return false;} else {openSearchResults(q);}} function openSearchResults (query) {var popUp = window.open('http://www.google.com/search?q=' + encodeURIComponent(query) + ' site:ariatemplates.com', 'new_window_1'); if (popUp == null || typeof(popUp)=='undefined') {alert('Please disable your pop-up blocker and re do the search.');} else { popUp.focus();}}")
 
 mixin toc
   -var lowestRank = 2

@@ -5,7 +5,7 @@ html(lang='en', dir='ltr', class='client-js')
 
   mixin head
 
-  body.mediawiki.documentation
+  body.documentation
 
     mixin header
 
@@ -40,7 +40,7 @@ html(lang='en', dir='ltr', class='client-js')
                   div.aligncenter.nav-main
                     include navigationbar.jade
               else
-                div.doc
+                div.doc.nonavbar
                   mixin unescapeHtml(content)
 
             aside.column.sidebar

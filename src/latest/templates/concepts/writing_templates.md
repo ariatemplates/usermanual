@@ -142,7 +142,6 @@ More information about template variables can be found [here](#variables).
 
 ### checkDefault
 
-<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> This statement is not accepted in [CSS Templates](css_templates).</div>
 
 The `checkDefault` statement can be used to assign a value to a named variable only if it is not already defined to a non-null value.
 

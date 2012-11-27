@@ -50,6 +50,8 @@ function makeDevDocs(verj) {
             process.exit(-1);
         }
     });
+
+    copyFileSync("./resources/documentation.css", "./out/documentation.css");
 }
 
 function generateToc(input) {
@@ -123,3 +125,24 @@ function addLink(header) {
 }
 
 function notNull(x) { return  x !== null; }
+
+function copyFileSync(srcFile, destFile) {
+    var BUF_LENGTH = 64*1024;
+    var _buff = new Buffer(BUF_LENGTH);
+
+    var fdr = fs.openSync(srcFile, 'r');
+    var fdw = fs.openSync(destFile, 'w');
+    var bytesRead = 1;
+    var pos = 0
+
+    console.log("Copying documentation.css to " + destFile);
+    
+    while (bytesRead > 0) {
+        bytesRead = fs.readSync(fdr, _buff, 0, BUF_LENGTH, pos);
+        fs.writeSync(fdw,_buff,0,bytesRead);
+        pos += bytesRead;
+    }
+        
+    fs.closeSync(fdr);
+    fs.closeSync(fdw);
+}
