@@ -3,6 +3,7 @@ var http = require('http');
 var fs = require('fs');
 var wrench = require('wrench');
 var mysql = require('mysql');
+var path = require('path');
 
 var config = require('./config');
 var mw2md = require('./mw2md');
@@ -10,6 +11,7 @@ var mw2md_topspot = require('./mw2md_topspot');
 
 var wiki_destination = "mediawiki";
 var markdown_destination = "markdown";
+var images_destination = "images";
 
 var directory_mappings = {
     "Around_Classes" :                          { dir: "core/concepts"                },
@@ -93,14 +95,20 @@ var directory_mappings = {
 
 
 console.log("Creating local folders".yellow);
-wrench.rmdirSyncRecursive(markdown_destination);
-wrench.rmdirSyncRecursive(wiki_destination);
+if (fs.existsSync(__dirname + '/' + markdown_destination)) {
+    wrench.rmdirSyncRecursive(__dirname + '/' + markdown_destination);
+    wrench.rmdirSyncRecursive(__dirname + '/' + wiki_destination);
+    wrench.rmdirSyncRecursive(__dirname + '/' + images_destination);
+}
 
-fs.mkdirSync(markdown_destination)
+fs.mkdirSync(markdown_destination);
 console.log('Folder', markdown_destination, 'created');
 
-fs.mkdirSync(wiki_destination)
-fs.mkdirSync(wiki_destination+'/html')
+fs.mkdirSync(images_destination);
+console.log('Folder', images_destination, 'created');
+
+fs.mkdirSync(wiki_destination);
+fs.mkdirSync(wiki_destination+'/html');
 console.log('Folder', wiki_destination, "created");
 
 
@@ -177,33 +185,54 @@ var save_mediawiki_html = function(pageTitle, last) {
         path: '/' + config.wiki.wiki + '/' + pageTitle + '?action=render'
     };
 
-    http.get(options, function(res) {
+    http_get(options, function(htmlPageContent, statusCode) {
+        var filename = __dirname + '/' + wiki_destination + '/html/' + pageTitle + '.html';
+        console.log('Page title:'.yellow, pageTitle, 'Status code:'.green, statusCode);
 
-        var htmlPageContent = "";
-        res.setEncoding('utf8');
-        res.on('data', function (chunk) {
-            htmlPageContent += chunk;
-        });
-        res.on('end', function(){
-            var filename = __dirname + '/' + wiki_destination + '/html/' + pageTitle + '.html';
-
-
-            console.log('Page title:'.yellow, pageTitle, 'Status code:'.green, res.statusCode);
-
-            save_to_file(filename, htmlPageContent, function() {
-                if (last) {
-                    connection.end(function(err) {
-                        console.log("MySql connection closed".yellow);
-                    });
+        save_to_file(filename, htmlPageContent, function() {
+            htmlPageContent.replace(/img.*src=['"]([^'"\/]*\/*[^'"]+)['"]/ig, function(matches, image_path) {
+                var image_name = path.basename(image_path).toLowerCase().replace(/ /ig,"_");
+                var image_options = {
+                    host: config.wiki.host,
+                    port: config.wiki.port || 80,
+                    path: '/' + image_path,
+                    encoding: 'binary'
                 }
+                http_get(image_options, function(image, statusCode) {
+                    var image_filepath = __dirname + '/' + images_destination + '/' + image_name;
+                    save_to_binary_file(image_filepath, image, function() {
+                        console.log('Image retrieved:'.yellow, image_filepath);
+                    });
+                });
             });
+            if (last) {
+                connection.end(function(err) {
+                    console.log("MySql connection closed".yellow);
+                });
+            }
         });
+    });
+};
 
 
+var http_get = function(options, callback) {
+    var content = '';
+    http.get(options, function(res) {
+        if (options.encoding) {
+            res.setEncoding(options.encoding);
+        }
+        res.on('data', function(chunk) {
+            content += chunk;
+        });
+        
+        res.on('end', function() {
+            callback(content, res.statusCode);
+        });
     }).on('error', function(err) {
         console.log(err.message);
     });
 };
+
 
 var get_page_path = function(pageDef) {
     var lpath = __dirname + '/' + markdown_destination + '/' + pageDef.config.dir;
@@ -214,6 +243,10 @@ var get_page_path = function(pageDef) {
     var filename = pageDef.title.toLowerCase().replace(/-/g, "").replace(/__/g, "_");
     return lpath + '/' + filename + '.md';
 };
+
+var save_to_binary_file = function(path, content, callback) {
+    fs.writeFile(path, content, 'binary', callback || function() {});
+}
 
 var save_to_file = function(path, content, callback) {
     var writeStream = fs.createWriteStream(path);

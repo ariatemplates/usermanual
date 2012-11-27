@@ -45,7 +45,9 @@ module.exports = {
         markdown = markdown.replace(/\[\[Category\:.+?\]\]/ig, '');
 
         // Images
-        markdown = markdown.replace(/\[\[Image\:(.+?)(?:\|[^\]\]]+)?\]\]/ig, '<img src="images/$1" />');
+        markdown = markdown.replace(/\[\[Image\:(.+?)(?:\|[^\]\]]+)?\]\]/ig, function(matches, image) {
+            return '<img src="/images/' + image.toLowerCase().replace(/ /ig,"_") + '"/>';
+        });
 
         // Internal links (links)
         markdown = markdown.replace(/\[\[([^\|\[\]]+)\]\]/ig, function(match, url) {
