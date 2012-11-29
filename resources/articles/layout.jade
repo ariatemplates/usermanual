@@ -3,16 +3,20 @@
 -metadata.Toc = (metadata.Toc ? (metadata.Toc === 'false' ? false: true ) : true)
 
 mixin doc
-  div.doc
-    mixin unescapeHtml(content)
+    div.doc(class=(metadata.CssClass||""))
+        mixin unescapeHtml(content)
 
-mixin markdown(text, inline)
-  html = markdown(text, inline)
-  != html
+mixin toh
+    -toh.splice(0,0,{}) //adding a first fake h1 element
+    != headingTable(toh, ["toclevel", "toctext"])
 
+mixin category(category)
+    -category = category.split("_").map(function(x) { return x[0].toUpperCase() + x.substr(1) }).join(" ")
+    li= category
+    
 mixin unescapeHtml(text)
-  -text = text.replace(/\&lt;/ig, "<").replace(/\&gt;/ig, ">").replace(/\&quot;/ig, '"').replace(/\&#39;/ig, "'");
-  mixin replaceVersion(text)
+    -text = text.replace(/\&lt;/ig, "<").replace(/\&gt;/ig, ">").replace(/\&quot;/ig, '"').replace(/\&#39;/ig, "'");
+    mixin replaceVersion(text)
 
 mixin replaceVersion(text)
   -text = text.replace(/%VERSION%/ig, metadata.version)
@@ -41,18 +45,6 @@ html(lang='en')
             link(href='/styles/ie/ie7.css', rel='stylesheet', type='text/css')
         
         script(type='text/javascript', src='/js/top-scrolling.js')
-        script(type='text/javascript')
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-29575860-1']); 
-            _gaq.push(['_setDomainName', 'ariatemplates.com']);
-            _gaq.push(['_trackPageview']);
-            (function() {
-                var ga = document.createElement('script');
-                ga.type = 'text/javascript';
-                ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
 
     body.documentation
         div#top
@@ -79,6 +71,11 @@ html(lang='en')
                             block content
                                 if metadata && metadata.Title
                                     h1 #{metadata.Title}
+                                if metadata && metadata.Category
+                                    div.catlinks
+                                        ul
+                                            each cat in metadata.Category.split(",")
+                                                mixin category(cat)
                                 if metadata && metadata.Navbar
                                     nav.navigationbar
                                         div#dropdown.aligncenter.nav-main
@@ -100,10 +97,9 @@ html(lang='en')
                             block sidebar
                             
                             if toh && metadata && metadata.Toc
-                                div#tableOfContent
+                                div#toc
                                     h4 Contents
-                                    div.toc
-                                        != headingTable(toh, 5, ['tocContainer', 'tocItem'])
+                                    mixin toh()
 
         footer#footer
             section.content
@@ -138,3 +134,16 @@ html(lang='en')
                             li: a(href='/about/team') The Team
             section.content.legal &copy; 2012 Aria Templates is licensed under Apache 2.0 license. See our
                 a(href='/license') licensing page
+                
+        script(type='text/javascript')
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-29575860-1']); 
+            _gaq.push(['_setDomainName', 'ariatemplates.com']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();

@@ -3,39 +3,11 @@
 */
 
 /* Style for the TOC */
-#toc {
-	table-layout: fixed;
-	width: 245px;
+#toc ol {
+  padding-left: 20px;
 }
-
-#toc ul {
-	padding-left: 0;
- }
-
-#toc ul li {
-	list-style-type: none;
-	padding-left: 15px;
-}
-
-#toctitle {
-	padding-left: 15px;
-}
-
-#toctitle h2 {
-	font-size: 16px;
-	font-weight: 700;
-	text-transform: uppercase;
-	color: #888;
-}
-
-.tocnumber {
-	color: #888;
-	font-size: 90%;
-}
-
-.documentation dl {
-	margin-left: 2em;
-}
+#toc ol ol li { list-style-type: lower-alpha; }
+#toc ol ol ol li { list-style-type: lower-roman; }
 
 .documentation a.new {
 	color: #BA0000;
@@ -61,12 +33,9 @@
 
 .documentation article.column {
 	margin-right: 0 !important;
-
 	border-right: 1px solid #dedede;
-
 	padding: 0 20px 20px 20px;
 	background-color: #fff;
-
 	border-radius: 0 0 0 8px;
 }
 
@@ -239,10 +208,12 @@ body.internal article .callout.reviewed,
 .doc {
 	min-height: 500px;
 }
+.doc ul {
+    padding-left: 30px;
+}
 
-/* To display the main table of content properly */
-.doc.nonavbar ul li {
-	list-style: none;
+.maintoc ul li {
+    list-style-type: none;
 }
 
 /* Style for the navigation bar to go back to the main index */
