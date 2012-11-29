@@ -8,9 +8,12 @@
     },
     "dependencies": {
         "colors": "",
-        "mysql": "~2.0.0-alpha2",
         "wrench": "~1.3.9",
-        "panda-docs": "https://github.com/benouat/panda-docs/tarball/toc",
+        "panda-docs": "0.4.1",
         "underscore": "1.3.3"
+    },
+    "devDependencies": {
+        "mysql": "~2.0.0-alpha4",
+        "express": "3.0.x"
     }
 }

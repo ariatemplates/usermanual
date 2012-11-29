@@ -5,9 +5,10 @@ function sanitize(text) {
 module.exports = {
     convert: function(content, title, author) {
         var markdown = content;
+        
+        var categories = [];
 
         // Definition list
-
         markdown = markdown.replace(/;([^\n]+)\n((?:\:[^\n]+\n)+)/ig, function(matches, dt, items) {
             var result = "<dl>\n<dt>"+dt+"</dt>\n";
             items = items.split("\n");
@@ -42,11 +43,11 @@ module.exports = {
 
 
         // Categories
-        markdown = markdown.replace(/\[\[Category\:.+?\]\]/ig, '');
-
-        // Images
-        markdown = markdown.replace(/\[\[Image\:(.+?)(?:\|[^\]\]]+)?\]\]/ig, function(matches, image) {
-            return '<img src="/images/' + image.toLowerCase().replace(/ /ig,"_") + '"/>';
+        markdown = markdown.replace(/\[\[Category\:(.+?)\]\]/ig, function(match, category) {
+            if (categories.indexOf(category) === -1) {
+                categories.push(category);
+            }
+            return "";
         });
 
         // Internal links (links)
@@ -73,12 +74,20 @@ module.exports = {
         markdown = markdown.replace(/'''(.+?)'''/ig, '**$1**');
         markdown = markdown.replace(/''(.+?)''/ig, '_$1_');
 
+        // Images
+        markdown = markdown.replace(/\[\[Image\:(.+?)(?:\|[^\]\]]+)?\]\]/ig, function(matches, image) {
+            return '<img src="images/' + image.toLowerCase().replace(/ /ig,"_") + '"/>';
+        });
+        
+        
         // We finally inject the Markdown header information about Title, Author ...
         header = "Title: " + sanitize(title) + "\n";
         if (author) {
             header += "Author: " + author + "\n";
         }
-
+        if (categories.length > 0) {
+            header += "Category: " + categories.toString() + "\n";
+        }
         markdown = header + "\n" + markdown;
 
         return markdown;

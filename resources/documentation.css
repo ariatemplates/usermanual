@@ -395,3 +395,20 @@ body.internal article .callout.reviewed,
 	width:140px;
 	padding: 0px;
 }
+
+iframe.samples {
+    width: 100%;
+    min-height: 400px;
+}
+
+/* Hardcoded */
+[data-sample="hardcoded"]:before {
+    content: "Hardcoded Snippet that was using Geshi directly";
+    color: #fff;
+    background-color: red;
+    display: block;
+}
+
+[data-sample="hardcoded"] {
+    border: 1px solid red;
+}
