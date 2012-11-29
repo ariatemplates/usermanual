@@ -5,11 +5,11 @@ Template widget allows application developer to include external template file i
 
 The simple way to add Template widget to your application is as follows
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/template/Snippet.tpl?tag=wgtTemplateSnippet1&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/template/Snippet.tpl?tag=wgtTemplateSnippet1&lang=at&outdent=true'></script>
 
 Also the data can be passed from the parent template to the sub template via data property. If no data is set, the the sub template uses parent template data, unless moduleCtrl is specified, in which case the data model of that module controller is used as data.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/template/Snippet.tpl?tag=wgtTemplateSnippet2&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/template/Snippet.tpl?tag=wgtTemplateSnippet2&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [TemplateCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TemplateCfg).
 

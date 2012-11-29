@@ -3,7 +3,7 @@ Title: TimeField
 
 TimeField widget enables the creation of time input fields targeted at time formatted input, packed with specific formatting facilities to handle diverse time formats, as required by the locale and/or the application needs.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/timefield/Snippet.tpl?tag=wgtTimeField&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/timefield/Snippet.tpl?tag=wgtTimeField&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [TimeFieldCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TimeFieldCfg).
 

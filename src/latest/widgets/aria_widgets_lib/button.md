@@ -3,7 +3,7 @@ Title: Button
 
 Button widget enables the creation of rich, graphical buttons that function like traditional HTML form buttons and trigger an action when pressed.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/button/Snippet.tpl?tag=wgtButtonAction&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/button/Snippet.tpl?tag=wgtButtonAction&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [ButtonCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:ButtonCfg).
 

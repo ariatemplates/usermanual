@@ -20,7 +20,7 @@ There are 3 kinds of tags:
 * **Expressions**: like `${i + 10}` are used to evaluate Javascript expressions (variable references, functions calls, etc.)
 
 Templates always begin with a `{Template}` statement that defines its classpath and may provide additional configuration options.  They can contain several macros, which are the equivalent of methods, but must always contain one called `main`, that is the template entry point.
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/fibo/Fibonacci.tpl?lang=at' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/fibo/Fibonacci.tpl?lang=at'></script>
 
 ## Loading templates
 

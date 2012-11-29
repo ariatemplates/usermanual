@@ -33,11 +33,11 @@ Now, let's have a look at the pending mechanism when being in the asynchronous w
 ## What about when you play around with asynchronous?
 
 What you cannot do when dealing with asynchronous code execution is this
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=notWorking&lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=notWorking&lang=javascript&outdent=true'></script>
 
 If you have a quick look at the below example
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=playingAsynchronous&lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=playingAsynchronous&lang=javascript&outdent=true'></script>
 
 and you also look at what it's producing as a result
 
@@ -67,7 +67,7 @@ For you to be able to do this, Aria Templates provides you a simple way to execu
 First you need to be familiar with the syntax of a callback object:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=sampleCallbackObject&lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=sampleCallbackObject&lang=javascript&outdent=true'></script>
 
 An Aria Templates callback object is always composed of a combination of 3 different properties:
 
@@ -80,8 +80,8 @@ Finally, because all the different types of objects that you can create with Ari
 
 Though, whenever you would have a `return` statement at the end of a function in the synchronous world, you will instead have `this.$callback( /* Reference to a callback object */)` in an asynchronous environment.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=sampleSyncReturn&lang=javascript&outdent=true' defer></script>
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=sampleAsyncReturn&lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=sampleSyncReturn&lang=javascript&outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=sampleAsyncReturn&lang=javascript&outdent=true'></script>
 
 ## Propagating  the Callback Object
 
@@ -92,7 +92,7 @@ The easiest way to perform such an execution chain is to propagate all your call
 Let's have a quick look at a standard file retrieval using an asynchronous call to the server to see how to propagate all our callback objects:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=propagatingCallback&lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/asynchronous/Async.js?tag=propagatingCallback&lang=javascript&outdent=true'></script>
 
 At this point of this article, this is what you need to remember, so write it down somewhere in your mind
 <blockquote>

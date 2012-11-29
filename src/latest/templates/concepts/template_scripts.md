@@ -22,12 +22,12 @@ As with class definitions, the physical file that contains a template script def
 When you want to associate a template script, you have to set the **`$hasScript`** property of the Template configuration to `true`. Consider the following example:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MyTemplate.tpl?lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MyTemplate.tpl?lang=at&outdent=true'></script>
 
 When this template is loaded, the framework automatically looks for script definition whose classpath is obtained by adding the keyword **`Script`** to the classpath of the template. So in this case you have to provide a script definition whose classpath is `ariadoc.snippets.templates.templateScripts.MyTemplateScript`. Here is the definition of a basic script that would be loaded:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MyTemplateScript.js?lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MyTemplateScript.js?lang=at&outdent=true'></script>
 
 
 You can notice that the script defines the method `showAlert` in its prototype. This method can be used inside the template (`${showAlert("my message")}`) because the template script prototype members are automatically copied to the template prototype.
@@ -41,9 +41,9 @@ The predefined variables available to the template are also available in the tem
 Moreover, global-scope variables defined in the template are available in the template script. Consider this example:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MySecondTemplate.tpl?lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MySecondTemplate.tpl?lang=at&outdent=true'></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MySecondTemplateScript.js?lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MySecondTemplateScript.js?lang=at&outdent=true'></script>
 
 You can see that the template script has access to
 * the global-scope variable `myGlobalTemplateVar` defined in the template
@@ -73,7 +73,7 @@ in this section we present a very simple sample on how to react to a click. The 
 It is possible to react to events raised by the [module controller](controllers) associated to the template or by the [flow controller](flow_controllers) associated to the the module controller. It is sufficient to define the methods **`onModuleEvent`** and **`onFlowEvent`** in the script `$prototype`:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MyThirdTemplateScript.js?lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MyThirdTemplateScript.js?lang=at&outdent=true'></script>
 
 But doing so, you are actually overriding the methods defined in the prototype of the class [aria.templates.Template](http://ariatemplates.com/api/#aria.templates.Template), which is the default parent class of templates and template scripts.
 

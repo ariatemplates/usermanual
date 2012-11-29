@@ -32,15 +32,15 @@ The type of the first parameter given to interceptor callbacks is described belo
 
 * `CallBegin`
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=CallBegin&lang=text' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=CallBegin&lang=text'></script>
 
 * `CallEnd`
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=CallEnd&lang=text' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=CallEnd&lang=text'></script>
 
 * `Callback`
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=Callback&lang=text' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=Callback&lang=text'></script>
 
 ## Interceptor calls sequence diagrams
 
@@ -53,7 +53,7 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 * intercepted method execution
 * interceptor calls (Begin, End)
 
-[image:interceptors__sync_call.png](image:interceptors__sync_call.png)
+<img src="../images/interceptors__sync_call.png"/>
 
 ### Asynchronous Method Call
 
@@ -64,7 +64,7 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 * interceptor calls (Begin, End, CallBack)
 * interaction with the backend server system
 
-[image:interceptors__async_call.png](image:interceptors__async_call.png)
+<img src="../images/interceptors__async_call.png"/>
 
 ## Example
 
@@ -79,21 +79,21 @@ Basically the whole interceptors mechanism can be properly setup by the followin
 
 Here is the example of a simple interface definition with two functions, `mySimpleFunction` and `myAsynchronousFunction`.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/MyInterface.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/MyInterface.js?lang=javascript&outdent=true'></script>
 
 ### Interface implementation
 
 Here is an implementation of the previous interface:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/MyClass.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/MyClass.js?lang=javascript&outdent=true'></script>
 
 ### Interceptor registration
 
 Here is an example of how to register an interceptor on an instance of the previous object with the previous interface and how to unregister it:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/Interceptor.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/Interceptor.js?lang=javascript&outdent=true'></script>
 
 When the above piece of code is run, the following alerts will be displayed (in this order):
 

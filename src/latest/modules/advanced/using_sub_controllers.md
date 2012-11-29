@@ -61,7 +61,7 @@ Creating the sub controllers is done through the `loadSubModules` method or [ari
 Once the sub controllers are loaded, they can be accessed from public properties of the main controller using the same path as the path for their data inside the data model. For previous example, a method to add a sub controller is added. Path to use is the path to the array of counters in the data model and the next index in this array:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/subcontrollers/MyMainController.js?tag=add&lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/subcontrollers/MyMainController.js?tag=add&lang=javascript&outdent=true'></script>
 
 Then, assuming `moduleCtrl` is the main module controller public interface, the sub module controller public interface for the first counter will be accessible through `moduleCtrl.counters[0]`.
 
@@ -84,4 +84,4 @@ Using this feature the view can be structured the same way the data and the modu
 
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/subcontrollers/MyMainView.tpl?lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/subcontrollers/MyMainView.tpl?lang=at&outdent=true'></script>

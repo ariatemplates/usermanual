@@ -106,7 +106,7 @@ The above code will do several things:
 The debug mode in Aria Templates is enabled by setting the `debug` parameter of the Aria object to true _before it is instanciated by the framework_.  Practically, this means you should write something like this:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/logdebug/bootstrap.html?tag=logdebug&outdent=true&noheader=true&lang=html5' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/logdebug/bootstrap.html?tag=logdebug&outdent=true&noheader=true&lang=html5'></script>
 
 The default debug value is `false` and you have to set this value before the framework loads. When set to true, the following will enabled:
 
@@ -200,7 +200,7 @@ The logger module is a simple appender for all the logs done in your application
 The Aria Templates framework stores debugging information on the DIV DOM elements which contain a template. This way, you can easily know the classpath of the template loaded in the DIV, you can access its data, its module controller, and its template object. Here is a screenshot showing how to access these pieces of information in Firebug:
 
 
-[656px](image:firebug.png)
+<img src="../images/firebug.png"/>
 
 As illustrated in the screenshot:
 

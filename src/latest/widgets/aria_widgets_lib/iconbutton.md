@@ -6,7 +6,7 @@ IconButton widget is an extension of [Button widget](button), so both holds the 
 
 The simple way to include an IconButton to your application is
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/iconbutton/Snippet.tpl?tag=wgtIconButton1&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/iconbutton/Snippet.tpl?tag=wgtIconButton1&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [IconButtonCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:IconButtonCfg).
 
@@ -24,6 +24,6 @@ The following properties are bindable for IconButton widget
 * tooltip
 For more information please read the article on [widget_bindings](widget_bindings).
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/iconbutton/Snippet.tpl?tag=wgtIconButton2&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/iconbutton/Snippet.tpl?tag=wgtIconButton2&lang=at&outdent=true'></script>
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/iconbutton/binding/?skip=1' ></iframe>

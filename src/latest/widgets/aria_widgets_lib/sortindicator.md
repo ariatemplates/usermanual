@@ -6,7 +6,7 @@ A sorting indicator is simply a label followed by an icon that is used to trigge
 Sorting indicator uses current functionality of views and sections to sort and render the data. For more information on [Views click here](views)
 
 The simple way to add SortIndicator widget to your application is as follows 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/sortindicator/Snippet.tpl?tag=wgtSortIndicatorSnippet1&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/sortindicator/Snippet.tpl?tag=wgtSortIndicatorSnippet1&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [SortIndicatorCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:SortIndicatorCfg).
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/sortindicator/?skip=1' ></iframe>
@@ -15,6 +15,6 @@ The whole list of configuration parameters is available in [SortIndicatorCfg bea
 The only property that is bindable for SortIndicator widget
 * tooltip
 For more information please read the article on [widget_bindings](widget_bindings).
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/sortindicator/Snippet.tpl?tag=wgtSortIndicatorSnippet2&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/sortindicator/Snippet.tpl?tag=wgtSortIndicatorSnippet2&lang=at&outdent=true'></script>
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/sortindicator/binding/?skip=1' ></iframe>

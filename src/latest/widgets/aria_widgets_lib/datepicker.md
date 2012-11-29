@@ -5,7 +5,7 @@ DatePicker is a highly configurable widget that adds datepicker functionality to
 
 The simple way to add DatePicker widget to the application is as follows
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/datepicker/Snippet.tpl?tag=wgtDatePickerSimple&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/datepicker/Snippet.tpl?tag=wgtDatePickerSimple&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [DatePickerCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:DatePickerCfg ).
 
@@ -13,7 +13,7 @@ The whole list of configuration parameters is available in [DatePickerCfg bean](
 
 For Instance,you can also add a customized calender to select the date.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/datepicker/Snippet.tpl?tag=wgtDatePickerCustom&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/datepicker/Snippet.tpl?tag=wgtDatePickerCustom&lang=at&outdent=true'></script>
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/datepicker/customized/?skip=1' ></iframe>
 

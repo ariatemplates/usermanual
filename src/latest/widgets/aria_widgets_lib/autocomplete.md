@@ -4,7 +4,7 @@ Title: AutoComplete
 
 The Autocomplete widget is a text input that allow to quickly find and filter values from a list of resources.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/autocomplete/Snippet.tpl?tag=autocomplete&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/autocomplete/Snippet.tpl?tag=autocomplete&lang=at&outdent=true'></script>
 
 By entering some text in the filed, the Autocomplete controller starts searching for entries that match the search string and displays a list of possible results. The search can start immediately as you type a single letter or after 2, 3  or more letters.
 

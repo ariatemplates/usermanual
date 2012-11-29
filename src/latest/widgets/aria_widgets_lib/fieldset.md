@@ -12,7 +12,7 @@ Also, when focusing on the elements and pressing ENTER, it executes the onSubmit
 
 The simple way to add Fieldset widget to your application is as follows
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/fieldset/Snippet.tpl?tag=wgtFieldsetSimple&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/fieldset/Snippet.tpl?tag=wgtFieldsetSimple&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [FieldsetCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:FieldsetCfg).
 
@@ -21,14 +21,14 @@ The whole list of configuration parameters is available in [FieldsetCfg bean](ht
 ## Nested Fieldset
 Fieldsets can be nested.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/fieldset/Snippet.tpl?tag=wgtFieldsetNested&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/fieldset/Snippet.tpl?tag=wgtFieldsetNested&lang=at&outdent=true'></script>
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/fieldset/nested/?skip=1' ></iframe>
 
 ## Action
 Fieldset is an action widget, meaning that it can call an onSubmit callback function called when the user presses ENTER in a field inside the fieldset.For instance, if an onSubmit callback is implemented on the root Fieldset, then all the nested fieldset bubbles to the root fieldset, provided that the child fieldset implemented onSubmit callback should return true.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/fieldset/Snippet.tpl?tag=wgtFieldsetAction&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/fieldset/Snippet.tpl?tag=wgtFieldsetAction&lang=at&outdent=true'></script>
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/fieldset/action/?skip=1' ></iframe>
 
@@ -37,6 +37,6 @@ For fieldset widget, the property bindable is tooltip and can be bound to a valu
 
 For more information please read the article on [widget_bindings](widget_bindings).
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/fieldset/Snippet.tpl?tag=wgtFieldsetBinding&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/fieldset/Snippet.tpl?tag=wgtFieldsetBinding&lang=at&outdent=true'></script>
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/fieldset/binding/?skip=1' ></iframe>

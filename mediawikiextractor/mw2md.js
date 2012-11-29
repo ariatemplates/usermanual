@@ -50,6 +50,11 @@ module.exports = {
             return "";
         });
 
+        // Images
+        markdown = markdown.replace(/\[\[Image\:(.+?)(?:\|[^\]\]]+)?\]\]/ig, function(matches, image) {
+            return '<img src="../images/' + image.toLowerCase().replace(/ /ig,"_") + '"/>';
+        });
+        
         // Internal links (links)
         markdown = markdown.replace(/\[\[([^\|\[\]]+)\]\]/ig, function(match, url) {
             if (url.indexOf("|") !== -1) {
@@ -74,10 +79,7 @@ module.exports = {
         markdown = markdown.replace(/'''(.+?)'''/ig, '**$1**');
         markdown = markdown.replace(/''(.+?)''/ig, '_$1_');
 
-        // Images
-        markdown = markdown.replace(/\[\[Image\:(.+?)(?:\|[^\]\]]+)?\]\]/ig, function(matches, image) {
-            return '<img src="images/' + image.toLowerCase().replace(/ /ig,"_") + '"/>';
-        });
+       
         
         
         // We finally inject the Markdown header information about Title, Author ...

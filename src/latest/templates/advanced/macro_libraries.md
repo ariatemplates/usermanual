@@ -9,7 +9,7 @@ A macro library is a collection of macros which can be used by templates.
 A macro library can be defined as in the example below:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/macros/Library.tml?lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/macros/Library.tml?lang=at&outdent=true'></script>
 
 Notes:
 
@@ -22,7 +22,7 @@ Notes:
 
 A macro library can be declared in the `macrolibs` section of the Template statement. The declaration includes a configuration, which is a number of `handles` and a `classpaths`. The handles can then be used throughout the template to access the library's macros as shown in the example below.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/macros/Template.tpl?lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/macros/Template.tpl?lang=at&outdent=true'></script>
 
 The declaration takes as parameter a Javascript Object, in which every property is an identifier (the handle which will be used in the template) and each corresponding value is a string (the classpath of the library which will be bound to the handle). Furthermore the declaration:
 
@@ -37,15 +37,15 @@ Libraries can use scripts just like templates by providing them in the Library d
 
 ### Script
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/macros/LibScript.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/macros/LibScript.js?lang=javascript&outdent=true'></script>
 
 ### Library
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/macros/Lib.tml?lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/macros/Lib.tml?lang=at&outdent=true'></script>
 
 ### Template
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/macros/TemplateForLib.tpl?lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/macros/TemplateForLib.tpl?lang=at&outdent=true'></script>
 
 Libraries inherit from [aria.templates.Template](http://ariatemplates.com/api/#aria.templates.Template), therefore any library script should do the same, following the concepts explained in the article about [Template Scripts](scripts).
 

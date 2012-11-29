@@ -4,7 +4,7 @@ Title: NumberField
 
 NumberField widget enables the creation of input fields that should contain a numeric value. It also provides formatting facilities to handle numeric and currency patterns.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/numberfield/Snippet.tpl?tag=wgtNumberField&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/numberfield/Snippet.tpl?tag=wgtNumberField&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [NumberFieldCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:NumberFieldCfg).
 

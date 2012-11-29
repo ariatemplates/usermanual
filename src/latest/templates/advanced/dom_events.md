@@ -21,7 +21,7 @@ Please note that all events are not necessarily available on all tags. This depe
 To attach events to DOM elements in templates you must use the [`on`](writing_templates#on) statement.
 Example:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=basic&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=basic&outdent=true'></script>
 
 The `on` statement is part of the element opening tag, as would an `on_event_` property be.
 
@@ -30,17 +30,17 @@ To specify the event handler method you may either use the short or complete not
 
 * short:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=short&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=short&outdent=true'></script>
 
 * complete: 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=complete&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=complete&outdent=true'></script>
 
 Check the [examples section](#examples) to learn which syntax you should use and when.
 
 You can use several `on` statements inside the same DOM element.
 For instance:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=multiple&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=multiple&outdent=true'></script>
 
 <div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> One limitation of the framework today is that no check is done on the event name passed to the `on` statement, meaning that you won't get any error if it is mispelled!</div>
 
@@ -74,7 +74,7 @@ In many situations, you will want to check information about the event that was 
 
 The `target` property of a DomEventWrapper is an instance of [aria.templates.DomElementWrapper](http://ariatemplates.com/api/#aria.templates.DomElementWrapper). Similarly to the DomEventWrapper, it acts as a cross-browser wrapper over the actual DOM element.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/MainScript.js?noheader=true&lang=at&tag=domelem&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/MainScript.js?noheader=true&lang=at&tag=domelem&outdent=true'></script>
 
 For more information please refer to the API documentation of these objects: [aria.templates.DomEventWrapper](http://ariatemplates.com/api/#aria.templates.DomEventWrapper), [aria.DomEvent](http://ariatemplates.com/api/#aria.DomEvent) and [aria.templates.DomElementWrapper](http://ariatemplates.com/api/#aria.templates.DomElementWrapper).
 

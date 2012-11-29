@@ -8,7 +8,7 @@ RadioButton widget is similar to the checkbox widget exempt that the latter can 
 
 The simple way to add radioButton widget to your application is as follows
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet1&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet1&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [RadioButtonCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:RadioButtonCfg).
 
@@ -17,7 +17,7 @@ The whole list of configuration parameters is available in [RadioButtonCfg bean]
 ## Styling
 RadioButton widget labels can be aligned to "left", "right", "top" and "bottom" depending on the user requirement. Also user can provide a css class via sclass property, determines which class defined in the skin is being used.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet2&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet2&lang=at&outdent=true'></script>
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/radiobutton/styling/?skip=1' ></iframe>
 
@@ -28,6 +28,6 @@ The whole list of configuration parameters is available in [RadioButtonCfg bean]
 
 For more information please read the article on [widget_bindings](widget_bindings).
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet3&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet3&lang=at&outdent=true'></script>
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/radiobutton/binding/?skip=1' ></iframe>

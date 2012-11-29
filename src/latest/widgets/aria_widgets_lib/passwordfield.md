@@ -3,7 +3,7 @@ Title: PasswordField
 
 PasswordField widget creates an input text field of type password. It has the same features as [textfield](textfield) widget, but the characters in the field are masked exactly like in a plain password input.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/passwordfield/Snippet.tpl?tag=wgtPasswordField&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/passwordfield/Snippet.tpl?tag=wgtPasswordField&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [PasswordFieldCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:PasswordFieldCfg).
 

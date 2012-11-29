@@ -4,7 +4,7 @@ Title: Calendar
 
 The Calendar widget is a JavaScript-based calendar that can be embedded within a page.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/calendar/Snippet.tpl?tag=autocomplete&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/calendar/Snippet.tpl?tag=autocomplete&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [CalendarCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:CalendarCfg).
 

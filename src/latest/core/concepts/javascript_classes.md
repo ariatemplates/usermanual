@@ -12,7 +12,7 @@ All these concepts make it easier to organize the different pieces of your code.
 In Aria Templates, all the different objects you can create are in the end classes. A class is created by calling the `classDefinition()` method on [the Aria singleton object](the_aria_singleton#classdefinition), giving as an argument a JSON configuration object, like so:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Fruit.js?outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Fruit.js?outdent=true'></script>
 
 Objects are then created and deleted as follows:
 
@@ -37,7 +37,7 @@ It is composed of 2 parts:
 Consider the following example:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Fruit.js?tag=stub&lang=javascript' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Fruit.js?tag=stub&lang=javascript'></script>
 
 As in Java, the classpath normally corresponds to the physical location of the file on the disk. The above classpath for instance should appear inside a class stored under the file `<rootFolderPath>/garden/tree/Fruit.js`.
 
@@ -52,7 +52,7 @@ Technically aria templates will generate the constructor function that correspon
 When a class extends another class, it must explicitly call the parent class constructor and destructor to have a proper initialization/destruction. In order to make this more simple, Aria Templates generates a shortcut to the parent class object through the $PARENT_CLASS_NAME property (e.g. _$Plant_ in the example below). As the destructor is not a default JavaScript function, you will note a slight variation between the parent constructor and destructor calls (i.e. '$' sign in the destructor method name):
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Vegetable.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Vegetable.js?lang=javascript&outdent=true'></script>
 
 **Note**: class load is asynchronous, as such you need to use the Aria.load(...) method or the $dependencies descriptor to make sure a class is loaded before instanciating it.
 
@@ -76,14 +76,14 @@ Because Javascript does not provide any native mechanism regarding visibility, i
 
 Statics are used to define constants at class level.  In this example, we use it to define a default value that can be used by the constructor when it is not provided with an argument.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Vehicle.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Vehicle.js?lang=javascript&outdent=true'></script>
 
 ### $singleton
 
 Sometimes, you do not need to create several instances from your class. You just need some kind of a library.
 In this particular cases, Aria Templates allows you to define a singleton class.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/MyLogger.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/MyLogger.js?lang=javascript&outdent=true'></script>
 
 ## More about classes
 

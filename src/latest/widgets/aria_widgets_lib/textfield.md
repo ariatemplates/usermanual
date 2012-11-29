@@ -3,7 +3,7 @@ Title: TextField
 
 TextField widget enables the creation of input text fields that function like traditional HTML form input fields whose content can be retrieved and used inside the application. In the following code snippet the binding mechanism is used to access the content of a TextField widget, indeed you could also put in place a onChange event listener to catch user triggered value changes.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/textfield/Snippet.tpl?tag=wgtTextField&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/textfield/Snippet.tpl?tag=wgtTextField&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [TextFieldCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TextFieldCfg).
 

@@ -24,7 +24,7 @@ For example, for requests sent by the `RequestMgr`, here are the properties avai
 The following filter looks for requests done by the `my.app.Controller` module through the request manager:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/filters/TargetedFilter.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/filters/TargetedFilter.js?lang=javascript&outdent=true'></script>
 
 ## Working Offline
 
@@ -38,10 +38,10 @@ Consider the following example:
 
 
 * The filter class
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/filters/OfflineFilter.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/filters/OfflineFilter.js?lang=javascript&outdent=true'></script>
 
 * The moduleCtrl class
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/filters/MyController.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/filters/MyController.js?lang=javascript&outdent=true'></script>
 
 In the previous example, requests are intercepted and, based on their action and json parameters, redirected to static XML files instead. The helper [`redirectToFile()`](http://ariatemplates.com/api/#aria.core.IOFilter:redirectToFile:method) method is used to simplify the redirection.
 

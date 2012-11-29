@@ -12,7 +12,7 @@ The prefilled values need to be explicitly confirmed, and it is also possible to
 In the example shown below the "prefill" text is gray and when focus is given to a field displaying a prefill value the value is confirmed and the text becomes black.
 
 
-[image:_lay008v2i0.gif](image:_lay008v2i0.gif)
+<img src="../images/_lay008v2i0.gif"/>
 
 In this animation, when a user fills in the first segment for a trip, all the following segments are updated. 
 For example, when the date of the first segment is set, the date of all the following segments is set to the date of the first one.
@@ -42,7 +42,7 @@ All `TextInput`-based widgets are endowed with a **`prefill`** state and a **`pr
 Consider the following example:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/prefill/Snippet.tpl?tag=textfield&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/prefill/Snippet.tpl?tag=textfield&lang=at&outdent=true'></script>
 
 If `data.value2` is not set (`[]`, `""`, `null` or `undefined`), whenever the value `data.value1` is set (different from `[]`, `""`, `null` or `undefined`), the widget will be in `prefill` state and the displayed text will correspond to the value contained in `data.value1`.
 
@@ -56,7 +56,7 @@ When both `data.value1` and `data.value2` are not set, then the widget is in `no
 Consider the following typical scenario:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/prefill/Snippet.tpl?tag=numberfield&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/prefill/Snippet.tpl?tag=numberfield&lang=at&outdent=true'></script>
 
 The value bound to the `prefill` for widgetA (`data.value1`) is also bound to the `value` property of widgetB. Typing an "incorrect" value in widgetB will not trigger the prefilling of widgetA. In particular, the following behaviour occurs:
 
@@ -77,11 +77,11 @@ It is important to remark that the prefill behaviour is slightly different depen
 ## Confirmation
 When a widget is in prefill state it is possible to confirm the displayed value either by focusing on the field or by explicitly setting the portion of the data model to which its `value` property is bound. Considering the example
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/prefill/Snippet.tpl?tag=textfield&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/prefill/Snippet.tpl?tag=textfield&lang=at&outdent=true'></script>
 
 it is possible to confirm a prefill value by
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/prefill/Snippet.tpl?tag=json&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/prefill/Snippet.tpl?tag=json&lang=at&outdent=true'></script>
 
 in a script (or module controller).
 

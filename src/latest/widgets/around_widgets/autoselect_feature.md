@@ -8,7 +8,7 @@ Automatic selection is not supposed to be the default and only behaviour for all
 The following figure illustrates the Autoselect behaviour of input fields:
 
 
-[image:_err001v2i0.png](image:_err001v2i0.png)
+<img src="../images/_err001v2i0.png"/>
 
 If the user clicks again in the field once the text is already selected, the selection disappears and the cursor position is set at the location where the click was actioned.
 
@@ -38,13 +38,13 @@ When a property is set on an application level then all widgets that contain thi
 Here is an example of setting the autoselect property for a text input based widget:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/autoselect/Snippet.tpl?tag=widgetsettings&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/autoselect/Snippet.tpl?tag=widgetsettings&lang=at&outdent=true'></script>
 
 ## Setting Autoselect on a specific input widget
 
 Here it can be overriden by setting the property on a widget level from within a template:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/autoselect/Snippet.tpl?tag=textfield&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/features/autoselect/Snippet.tpl?tag=textfield&lang=at&outdent=true'></script>
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/features/autoselect/?skip=1' ></iframe>

@@ -20,7 +20,7 @@ You're already familiar with the concept of templates if you have ever done web 
 
 With the advent of AJAX and the ability to generate asynchronous requests from the client, web apps became more flexible and communications between the browser and the server were not limited to transmitting whole streams of markup and JS code anymore and developers were free to only use chunks of markup or even pure data, a process that was made even easier with the help of JSON.
 
-[center](image:at_intro.png)
+<img src="../images/at_intro.png"/>
 
 Server-side templating has two undeniable advantages:
 
@@ -32,7 +32,7 @@ The idea behind client-side templating is to solve this issue by shifting part o
 
 Not only does this mechanism allow for less data to be transmitted over the network but, because the display is clearly separated from the data and the logic, this also makes customization of the interface much simpler: one template can be replaced by another very easily.
 
-[center](image:at_doc_template.jpg)
+<img src="../images/at_doc_template.jpg"/>
 
 ## Aria Templates principles
 
@@ -57,7 +57,7 @@ To illustrate practically how an AT app is built, let's have a look at a simple 
 First off, we start with the bootstrap, in our case a simple HTML page created from scratch:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/intro/index.html?lang=html5' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/intro/index.html?lang=html5'></script>
 
 There are 3 parts to look at here:
 
@@ -68,7 +68,7 @@ There are 3 parts to look at here:
 Now let's see what `SgtGreeters.tpl` looks like:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/intro/view/SgtGreeters.tpl?lang=at' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/intro/view/SgtGreeters.tpl?lang=at'></script>
 
 As you can see, AT introduces  a special kind of grammar to describe your interfaces, much of it being quite straightforward.  If we have a detailed look at the code we can see the following:
 

@@ -15,7 +15,7 @@ The goal of flow controllers is to contain the flow logic and keep it separated 
 For each module controller instance, there is an associated flow controller instance (if a flow controller is present). The following schema describes the relation between a module controller, its flow controller and templates:
 
 
-[image:at_doc_overview_flow_controller.png](image:at_doc_overview_flow_controller.png)
+<img src="../images/at_doc_overview_flow_controller.png"/>
 
 ## Similarities with module controllers
 
@@ -59,17 +59,17 @@ These methods are automatically called, if present, when the corresponding metho
 Let's consider the following public interface of the module controller:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/flow_controllers/IMyModule.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/flow_controllers/IMyModule.js?lang=javascript&outdent=true'></script>
 
 ### Flow controller interface
 
 Here is the public interface of the flow controller:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/flow_controllers/IMyModuleFlow.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/flow_controllers/IMyModuleFlow.js?lang=javascript&outdent=true'></script>
 
 ### Flow controller implementation
 
 Here is a flow controller implementation. Note: so that the flow controller is actually used, the associated module controller (`modules.mymodule.MyModule`) must contain `$hasFlowCtrl: true` on its prototype - like here - or as a property defined in the constructor.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/flow_controllers/MyModuleFlow.js?lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/flow_controllers/MyModuleFlow.js?lang=javascript&outdent=true'></script>

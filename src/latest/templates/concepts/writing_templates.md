@@ -31,16 +31,16 @@ Be careful though:
 
 Expressions are widely used in templates, essentially to output the content of a variable, like:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=basicStatementOne&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=basicStatementOne&lang=at&outdent=true'></script>
 or to display the value returned by the call to a method (defined in the [template script](template_scripts)), like this:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=basicStatementTwo&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=basicStatementTwo&lang=at&outdent=true'></script>
 
 Expressions can also be used to execute Javascript statements, but remember that the return value of this statement will be displayed in the template.
 
 For instance, if you write the following:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=basicStatementThree&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=basicStatementThree&lang=at&outdent=true'></script>
 the content of `myVar` will be pushed into `myArray` and the template output will be the array's new length.  If you want to execute Javascript code inside the template without displaying the return value, you can either:
 
 * store it in the Template Script file in a method that doesn't return anything or
@@ -80,7 +80,7 @@ This modifier is the same as default modifier, but it also returns the default v
 
 Example:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=emptyModifier&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=emptyModifier&lang=at&outdent=true'></script>
 returns the content of `myValue` to uppercase if it is not null, nor an empty string, nor a string composed of white spaces, otherwise it will return `MYDEFAULTVALUE`. 
 
 * **`dateformat`**
@@ -88,14 +88,14 @@ returns the content of `myValue` to uppercase if it is not null, nor an empty st
 This modifier formats a JSDate entry according to the given pattern.
 
 Example
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=dateModifier&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=dateModifier&lang=at&outdent=true'></script>
 More information on patterns can be [found here](localization_and_resources#date-and-time).
 * `**timeformat**`
  Parameter: the format pattern for the time to display.
 Similar to the dateformat this modifier formats a JSDate entry according to the given pattern.
 
 Example
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=timeModifier&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=timeModifier&lang=at&outdent=true'></script>
 More information on patterns can be [found here](localization_and_resources#date-and-time).
 * `**pad**`
  Parameters: 
@@ -105,14 +105,14 @@ More information on patterns can be [found here](localization_and_resources#date
 This modifier allows to add padding with non-breaking spaces in order to ensure a fixed length to the result string. This is particularly useful with displays using fixed-size fonts that use non-breaking spaces to align content in columns<br/>
 
 Example
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=padModifier&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=padModifier&lang=at&outdent=true'></script>
 
 It is not possible at the moment to create custom modifiers.  You can however easily manipulate any kind of variable by means of [methods](#methods) defined in your [template script](template_scripts).
 
 For example:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=customModifier&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=customModifier&lang=at&outdent=true'></script>
 
 calls the method `myCustomModifier` that you have defined in the template script and that, upon receiving `myValue` as a parameter, processes it to return the string to display.
 
@@ -128,7 +128,7 @@ calls the method `myCustomModifier` that you have defined in the template script
 
 `var` can be used to assign a value to a named variable that can then be used in your template.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=var&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=var&lang=at&outdent=true'></script>
 
 More information about template variables can be found [here](#variables).
 
@@ -136,7 +136,7 @@ More information about template variables can be found [here](#variables).
 
 `set` can be used to assign a new value to an already defined variable. It has to be used inside a [macro](#macro).
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=set&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=set&lang=at&outdent=true'></script>
 
 More information about template variables can be found [here](#variables).
 
@@ -147,7 +147,7 @@ The `checkDefault` statement can be used to assign a value to a named variable o
 The syntax is as follows:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=checkDefault&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=checkDefault&lang=at&outdent=true'></script>
 
 In the above example, assuming that `v` was already defined and is equal to `2`, then the statement would have no effect. However, if `v` was either null or undefined, then it would be set to `1`.
 
@@ -155,13 +155,13 @@ In the above example, assuming that `v` was already defined and is equal to `2`,
 
 The if statement, just like in a JavaScript file, evaluates a variable or expression, and if that variable or expression evaluates to "true" the contents of the block are executed.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=ifelse&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=ifelse&lang=at&outdent=true'></script>
 
 ### for
 
 Loops over a collection of items defined by a JavaScript expression. Any JavaScript expression permitted in the normal JavaScript `for` statement will work here.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=for&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=for&lang=at&outdent=true'></script>
 
 ### foreach
 
@@ -170,7 +170,7 @@ The `foreach` statement allows to loop over a map, an array or a [view](views).
 Consider the following syntax:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=aforeach&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=aforeach&lang=at&outdent=true'></script>
 
 * `myMap`, `myArray` and `myView` are respectively a map, an array and a view.
 * different `in...` keywords are available:
@@ -195,7 +195,7 @@ Consider the following syntax:
 Consider the following example:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=bforeachexample&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=bforeachexample&lang=at&outdent=true'></script>
 
 ### separator
 
@@ -205,13 +205,13 @@ If present, it must be the first statement inside a `foreach` loop.
 Consider the following example:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=separator&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=separator&lang=at&outdent=true'></script>
 
 ### macro
 
 A macro is an independent piece of template code that can be executed whenever needed (see the `call` statement).
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=macro&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=macro&lang=at&outdent=true'></script>
 
 Wrapping pieces of template code into macros is useful when a particular part needs to be reused in several places. It is also a good idea when a piece of code becomes complex with `if` and `for` statements and depends on parameters.
 
@@ -225,11 +225,11 @@ Macros can be defined also in separate templates that are called [macro librarie
 
 The `call` statement allows you to execute a macro.
 * call a macro defined inside the template (or inside a [parent template](template_inheritance))
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=acall&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=acall&lang=at&outdent=true'></script>
 * call a macro defined in a [macro library](macro_libraries) (called `myMacroLib`)
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=bcall&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=bcall&lang=at&outdent=true'></script>
 * when macro `myMacro` is defined in a parent template (with class name `$MyParentTemplate`) and overridden, it is still possible to call the parent template macro
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=ccall&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=ccall&lang=at&outdent=true'></script>
 
 ## DOM statements
 
@@ -241,7 +241,7 @@ The `id` statement should be used to add an id on a DOM element, so that it (or 
 
 It is used in the following way:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=id&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=id&lang=at&outdent=true'></script>
 
 Read the articles about [template scripts](template_scripts) and [DOM interactions](interactions_with_the_dom) in order to learn how to retrieve elements through their ids and interact with them.
 
@@ -261,7 +261,7 @@ The CDATA container is used to output character data in the template that will n
 
 The following code
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=cdata&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=cdata&lang=at&outdent=true'></script>
 
 will display in the page:
 
@@ -280,7 +280,7 @@ Examples
 * Simplest form:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=asection&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=asection&lang=at&outdent=true'></script>
 
 The configuration of a section requires to specify the following properties:
 
@@ -290,7 +290,7 @@ The configuration of a section requires to specify the following properties:
 
 * Advanced usage
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=bsection&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=bsection&lang=at&outdent=true'></script>
 This example contains all the configuration properties currently available for sections (see [aria.templates.CfgBeans.SectionCfg](http://ariatemplates.com/api/#aria.templates.CfgBeans.SectionCfg)). In particular:
 
 * **`macro`** is now a Json Object that contains the name of the macro, a list of parameters to pass to the macro, and also a scope (by default it is `this`, but it might be also a macro library or a parent template).
@@ -305,7 +305,7 @@ This example contains all the configuration properties currently available for s
 
 The `createView` statement is used to create a view on an array or a map. A view is an object through which sorting, filtering and paging can be achieved easily (for more information, the [Views](views) article explains in more details how this is done).
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=view&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=view&lang=at&outdent=true'></script>
 
 * `viewName` name of the view to be created. It is accessible through this name in the macro where the statement is, or in the whole template if the statement is out of any macro. `viewName` can have the form `baseName[param]` or `baseName[param1][param2]` ... with any number of parameters (if you need arrays of views).
 * `arrayOrMap` array or map on which the view has to be created.
@@ -315,7 +315,7 @@ The view is stored in the data model, as a private metadata of the template. The
 Consider the following example:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=anotherView&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=anotherView&lang=at&outdent=true'></script>
 
 ### repeater
 
@@ -327,7 +327,7 @@ The `repeater` statement is somehow similar to a
 Consider the following example:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=repeater&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=repeater&lang=at&outdent=true'></script>
 
 The `repeater` is a special kind of section, containing a dynamic number of child sections. All the properties from the section statement are supported, both in the parent section (except the macro property, as the content is managed by the repeater) and in the child sections.
 
