@@ -22,7 +22,7 @@ The following properties are bindable for IconButton widget
 * selected
 * disabled
 * tooltip
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/iconbutton/Snippet.tpl?tag=wgtIconButton2&lang=at&outdent=true' defer></script>
 

@@ -3,7 +3,7 @@ Title: What are Templates
 
 Templates are files that define the user interface of your application.  In AT, contrary to server-side templating language such as JSP or ASP, the interface is processed in the browser, which eliminates round-trips to the server to fetch graphical updates.  Another great advantage of client-side templating is that you, as a developer, don't have to manually alter the display by manipulating the DOM and its CSS: all you need to do is just refresh the parts that changed when needed. This is explained in details in [the dedicated article about refresh](refresh).
 
-This article will show you how to write and use a template. If you are already familiar with templates and are looking for statements documentation, you'll want to read about [how to write templates](writing templates).
+This article will show you how to write and use a template. If you are already familiar with templates and are looking for statements documentation, you'll want to read about [how to write templates](writing_templates).
 
 Note that templates have a specific client-side representation and that, when created, disposed or refreshed, DOM elements, DOM events and Javascript objects are manipulated. This means that depending on the structure of your application, there may be performance implications to consider (see [the disposal of a template](#destruction)).
 
@@ -15,8 +15,8 @@ Templates are defined in files with a `.tpl` extension and use a number of speci
 
 There are 3 kinds of tags:
 
-* **Statements**: like `{foreach}` or `{section}` explained in details in [this article](writing templates), are used to define the structure of dynamic pages.
-* **Widgets**: like `{@aria:Button}` explained in details in [ this article](the widgets collection) are graphical components that make it easy to design a flexible user interface.
+* **Statements**: like `{foreach}` or `{section}` explained in details in [this article](writing_templates), are used to define the structure of dynamic pages.
+* **Widgets**: like `{@aria:Button}` explained in details in [ this article](the_widgets_collection) are graphical components that make it easy to design a flexible user interface.
 * **Expressions**: like `${i + 10}` are used to evaluate Javascript expressions (variable references, functions calls, etc.)
 
 Templates always begin with a `{Template}` statement that defines its classpath and may provide additional configuration options.  They can contain several macros, which are the equivalent of methods, but must always contain one called `main`, that is the template entry point.
@@ -28,7 +28,7 @@ There are two ways to use templates in your application.
 
 ### The loadTemplate method
 
-The first one is to dynamically load them using `loadTemplate()` method of the [Aria](the aria singleton) global object.  This can be done anywhere in your code.  The two mandatory parameters of this method are the classpath of the template and the id of the container in which it should be loaded.
+The first one is to dynamically load them using `loadTemplate()` method of the [Aria](the_aria_singleton) global object.  This can be done anywhere in your code.  The two mandatory parameters of this method are the classpath of the template and the id of the container in which it should be loaded.
 
 <div data-sample="hardcoded"><code><pre>
 Aria.loadTemplate({
@@ -65,7 +65,7 @@ This is also the method you will use in the _bootstrap code_, i.e. the container
 </html>
 </code></pre></div>
 
-Note that in this example we've initialized the [data model](data model and data binding) directly at loading time using the `data` property of the configuration.  The complete list of parameters that are accepted by the `loadTemplate()` method configuration object is detailed [here](http://ariatemplates.com/api/#aria.templates.CfgBeans:LoadTemplateCfg).
+Note that in this example we've initialized the [data model](data_model_and_data_binding) directly at loading time using the `data` property of the configuration.  The complete list of parameters that are accepted by the `loadTemplate()` method configuration object is detailed [here](http://ariatemplates.com/api/#aria.templates.CfgBeans:LoadTemplateCfg).
 
 ### The template widget
 
@@ -86,15 +86,15 @@ Once a template is loaded, it needs to be parsed and interpreted by the AT engin
 
 ### Interpretation
 
-After it has been loaded, the template content is interpreted by the templating engine and compiled into [a class](aria templates classes).  As any other class, it may contain dependencies that would be recursively loaded from the server or from the cache. Such dependencies include widgets, localized resources or [template scripts](aria templates scripts).
+After it has been loaded, the template content is interpreted by the templating engine and compiled into [a class](aria_templates_classes).  As any other class, it may contain dependencies that would be recursively loaded from the server or from the cache. Such dependencies include widgets, localized resources or [template scripts](aria_templates_scripts).
 
 The resulting class is kept in a cache so that it doesn't need to be reloaded and reinterpreted in future uses, making subsequent executions of this template faster.
 
 ### Initialization
 
-If the template has been parsed and compiled successfully, the resulting class will be instantiated: its `constructor()` method, that you can overload in an associated [template script](template scripts), will be called.  Finally, its `$refresh()` method, inherited from `aria.templates.Template`, will be called so that it is displayed in its placeholder.
+If the template has been parsed and compiled successfully, the resulting class will be instantiated: its `constructor()` method, that you can overload in an associated [template script](template_scripts), will be called.  Finally, its `$refresh()` method, inherited from `aria.templates.Template`, will be called so that it is displayed in its placeholder.
 
-Four other inherited methods can be implemented to execute code at a specific template's phase.  Those are described in a [dedicated paragraph](template_scripts#intercepting-template-lifecycle-phases) of the [template script article](template scripts).
+Four other inherited methods can be implemented to execute code at a specific template's phase.  Those are described in a [dedicated paragraph](template_scripts#intercepting-template-lifecycle-phases) of the [template script article](template_scripts).
 
 ### Active state
 

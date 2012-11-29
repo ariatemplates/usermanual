@@ -18,9 +18,9 @@ Let's focus in this article on the 2 most important one, or at least, the 2 one 
 
 ## Ajax Helper
 
-The Ajax Helper is one the helpers which is directly embedded inside the Core Layer. It's available for you to use through the [aria.core.IO](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.core.IO) singleton class.
+The Ajax Helper is one of the helpers which is directly embedded inside the Core Layer. It's available for you to use through the [aria.core.IO](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.core.IO) singleton class.
 
-You can easily declared and execute an XHR call in your class within just a few lines of code.
+You can easily declare and execute an XHR call in your class within just a few lines of code.
 
 The usage of this helper is mainly described in the [Working in an Asynchronous World](working_in_an_asynchronous_world) article. If not already done, we strongly encouraged you to read it.
 
@@ -34,7 +34,7 @@ Using this helper, you basically can:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/helpers/JsonManipulation.js?tag=serialization&lang=javascript&outdent=true' defer></script>
 
-* Performs some tests over your objects, like does this object contains this key with [`contains()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:contains:method), or test is a particular node is a metadata node with [`isMetadata()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:isMetadata:method). You can also create a fresh new clone of an existing object using [`copy()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:copy:method)
+* Performs some tests over your objects, like checking whether this object contains this key with [`contains()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:contains:method), or testing if a particular node is a metadata node with [`isMetadata()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:isMetadata:method). You can also create a fresh new clone of an existing object using [`copy()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:copy:method)
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/helpers/JsonManipulation.js?tag=standard&lang=javascript&outdent=true' defer></script>
 
 * Apply the Observable pattern to any node of any of your Json object. What does it mean exactly ? It means that you can add listeners to your Json objects in order to be called back anytime a change is done to your data.

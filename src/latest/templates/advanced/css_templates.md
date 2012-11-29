@@ -47,7 +47,7 @@ Both of these properties are inherited from the [CSSTemplate](http://ariatemplat
 
 ### Declaration and configuration
 
-CSS Templates can use inheritance.  Using **`$extends`** and the classpath of another CSS template, it makes it easy to reuse styles defined in other templates (see the [article about template inheritance](template inheritance).)
+CSS Templates can use inheritance.  Using **`$extends`** and the classpath of another CSS template, it makes it easy to reuse styles defined in other templates (see the [article about template inheritance](template_inheritance).)
 
 CSS Templates also support scripts when the **`$hasScript`** property is true.  The script has to be defined in the same way as for [HTML Templates](template_scripts).)  This mechanism is particularly useful when complex logic has to be used.
 
@@ -58,7 +58,7 @@ Here's how a script method would be declared:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=script&lang=at&outdent=true' defer></script>
 
-<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> At the moment, [macro libraries](macro_libraries) cannot be used in CSS Templates.</div>
+<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> At the moment, [macro_libraries](macro_libraries) cannot be used in CSS Templates.</div>
 
 ## Using CSS templates
 

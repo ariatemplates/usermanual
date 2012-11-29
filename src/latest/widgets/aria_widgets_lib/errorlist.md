@@ -32,7 +32,7 @@ ErrorList widget is also a bind-able widget and the properties bindable are
 * message 
 * tooltip
 
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/errorlist/Snippet.tpl?tag=wgtErrorListBinding&lang=at&outdent=true' defer></script>
 

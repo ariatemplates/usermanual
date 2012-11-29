@@ -29,7 +29,7 @@ The properties bindable for dialog widget are
 
 If center is set to true, it will have precedence over xpos and ypos, which will be updated according to the actual position of the dialog. 
 
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/dialog/binding/?skip=1' ></iframe>
 

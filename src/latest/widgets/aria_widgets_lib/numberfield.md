@@ -40,7 +40,7 @@ You can use formatting patterns to specify how a number should be conventionally
 | Currency sign, replaced by currency symbol.
 |}
 
-The supported patterns are a subset of the [java.text.DecimalFormat](http://download.oracle.com/javase/1.4.2/docs/api/java/text/DecimalFormat.html) specs. More information are available at [localization and resources](localization_and_resources).
+The supported patterns are a subset of the [java.text.DecimalFormat](http://download.oracle.com/javase/1.4.2/docs/api/java/text/DecimalFormat.html) specs. More information are available at [localization_and_resources](localization_and_resources).
 
 ## Sample usage
 
@@ -51,4 +51,4 @@ The following sample shows how to create and use a NumberField widget, with a ma
 In this sample, the first 3 NumberFields are the same except for the state, which is respectively mandatory, normal and disabled.
 The fourth NumberField has a pattern, that is used both to interpret and display the number.
 
-More information about the pattern are available at [localization and resources](localization_and_resources).
+More information about the pattern are available at [localization_and_resources](localization_and_resources).

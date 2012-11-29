@@ -1,7 +1,6 @@
 Title: Tooltip
 
 
-{{ReadyForReview}}
 Tooltip widget allows application developer to specify an offset to position the tooltip in some palce where it does not hide important information. For instance, tooltip will be placed below the mouse pointer and this will sometimes hide the important information.
 
 The main features of Tooltip widget are as follows
@@ -21,4 +20,4 @@ The whole list of configuration parameters is available in [TooltipCfg bean](htt
 The only property that is bind-able for Tooltip widget is 
 * tooltip
 
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).

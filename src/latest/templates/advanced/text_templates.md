@@ -32,7 +32,7 @@ Text templates must be saved with the extension **`.tpl.txt`** (for instance the
 
 ## Allowed statements
 
-The statements allowed inside a text template definition are the following (see [ statements](aria templates statements ) for an explanation):
+The statements allowed inside a text template definition are the following (see [ statements](aria_templates_statements_) for an explanation):
 
 
 * `[if]`
@@ -56,7 +56,7 @@ Notice that, with respect to an HTML template, **it is not possible** to use the
 
 ## Special characters and comments
 
-Text templates have the same behaviour as HTML templates as far as [special characters](aria templates principles#special-characters-) and [comments](aria templates principles#comments-) are concerned. In particular, comments are eliminated.
+Text templates have the same behaviour as HTML templates as far as [special characters](aria_templates_principles#special-characters-) and [comments](aria_templates_principles#comments-) are concerned. In particular, comments are eliminated.
 
 ## Access to a text template
 

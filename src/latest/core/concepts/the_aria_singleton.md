@@ -11,7 +11,7 @@ Because as an Aria Templates user you will be using its functionality quite ofte
 The next articles in this section will describe in details core objects that AT provide to create your application, such as:
 
 
-[classes](javascript classes)
+[classes](javascript_classes)
 <div data-sample="hardcoded"><code><pre>
 Aria.classDefinition({
     $classpath: "garden.tree.Fruit"
@@ -27,7 +27,7 @@ Aria.interfaceDefinition({
 });
 </code></pre></div>
 
-[JSON Beans](json bean definitions)
+[JSON Beans](json_bean_definitions)
 <div data-sample="hardcoded"><code><pre>
 Aria.beanDefinitions({
     $package : "example.beans.SimpleBean",
@@ -35,7 +35,7 @@ Aria.beanDefinitions({
 });
 </code></pre></div>
 
-or [resources](localization and resources).
+or [resources](localization_and_resources).
 <div data-sample="hardcoded"><code><pre>
 Aria.resourcesDefinition({
     $classpath: 'samples.templates.localization.Res',

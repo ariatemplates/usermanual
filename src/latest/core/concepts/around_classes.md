@@ -1,8 +1,9 @@
 Title: Around Classes
+Category: core_layer,core_layer_concepts
 
 
 
-Most of the basic object-oriented concepts are detailed in [javascript classes](javascript_classes) article. Let's focus on more advanced functionalities that will allow you to using patterns such as inheritance, interfaces or even observable objects.
+Most of the basic object-oriented concepts are detailed in [javascript_classes](javascript_classes) article. Let's focus on more advanced functionalities that will allow you to using patterns such as inheritance, interfaces or even observable objects.
 
 ## Inheritance, $extends
 
@@ -120,8 +121,7 @@ The first thing you have to understand as far as dependencies are concerned is t
 <dd>This is more or less like the import declaration in Java.</dd>
 </dl>
 
-
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/StaticDeps.js?lang=javascript&tag=static&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/StaticDeps.js?lang=javascript' defer></script>
 
 <dl>
 <dt>Dynamic dependencies</dt>

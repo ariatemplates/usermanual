@@ -20,4 +20,4 @@ Link widget is an extension of ActionWidget meaning that a callback function can
 The only property that is bind-able for Link widget is 
 * tooltip
 
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).

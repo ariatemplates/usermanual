@@ -19,7 +19,7 @@ Checkbox widget labels can be aligned to "left", "right" and "top" depending on 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/checkbox/styling/?skip=1' ></iframe>
 
 ## Binding
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/checkbox/Snippet.tpl?tag=wgtCheckboxSnippet3&lang=at&outdent=true' defer></script>
 

@@ -58,7 +58,7 @@ Note, however, that in template scripts the `this` keyword has to be used.
 Some methods are available in the template scripts (declared in the interface of [aria.templates.ITemplate](http://ariatemplates.com/api/#aria.templates.ITemplate)). In particular:
 
 * **`$refresh`** is explained in detail in the [article about template refresh](refresh)
-* **`$getElementById`** is explained and used in the [article on the interactions with the DOM](interactions with the dom)
+* **`$getElementById`** is explained and used in the [article on the interactions with the DOM](interactions_with_the_dom)
 * **`$vdim`** and **`$hdim`** are detailed in the [article about adaptive display](adaptive_display).
 * **`$focus`** and **`$focusFromParent`** which allow to handle the focus inside a template. These methods are detailed in [this article](interactions_with_the_dom).
 
@@ -97,4 +97,4 @@ When the template and its subtemplates are ready to be displayed
 * `$afterRefresh`
 Called after any `$refresh` of the template
 
-For a description of the template lifecycle, refer to this [article](what are templates).
+For a description of the template lifecycle, refer to this [article](what_are_templates).

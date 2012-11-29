@@ -12,7 +12,7 @@ The prefilled values need to be explicitly confirmed, and it is also possible to
 In the example shown below the "prefill" text is gray and when focus is given to a field displaying a prefill value the value is confirmed and the text becomes black.
 
 
-<img src="images/ lay008v2i0.gif" />
+[image:_lay008v2i0.gif](image:_lay008v2i0.gif)
 
 In this animation, when a user fills in the first segment for a trip, all the following segments are updated. 
 For example, when the date of the first segment is set, the date of all the following segments is set to the date of the first one.

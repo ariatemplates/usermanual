@@ -200,7 +200,7 @@ The logger module is a simple appender for all the logs done in your application
 The Aria Templates framework stores debugging information on the DIV DOM elements which contain a template. This way, you can easily know the classpath of the template loaded in the DIV, you can access its data, its module controller, and its template object. Here is a screenshot showing how to access these pieces of information in Firebug:
 
 
-<img src="images/firebug.png" />
+[656px](image:firebug.png)
 
 As illustrated in the screenshot:
 

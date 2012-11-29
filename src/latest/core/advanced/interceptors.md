@@ -1,9 +1,9 @@
 Title: Interceptors
 
 
-AT Interceptors can be generally intented as extension points to [Aria Templates classes](javascript classes). Their main purpouse is to provide pre and post processing on class methods implemented from a specific interface, both synchronous and asynchronous ones. They are basically implemented as JavaScript functions.
+AT Interceptors can be generally intented as extension points to [Aria Templates classes](javascript_classes). Their main purpouse is to provide pre and post processing on class methods implemented from a specific interface, both synchronous and asynchronous ones. They are basically implemented as JavaScript functions.
 
-Originally introduced for [flow controllers](flow controllers), interceptors can be used against any AT Javascript [interface](around classes). Make sure you read the necessary documentation about [ Aria Templates JavaScript classes](javascript classes) and [interfaces](around classes) before reading further.
+Originally introduced for [flow controllers](flow_controllers), interceptors can be used against any AT Javascript [interface](around_classes). Make sure you read the necessary documentation about [ Aria Templates JavaScript classes](javascript_classes) and [interfaces](around_classes) before reading further.
 
 Indeed, if a class `C` implements an interface `I`, it then becomes possible for any other class to define an interceptor on an instance of `C`.
 
@@ -53,7 +53,7 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 * intercepted method execution
 * interceptor calls (Begin, End)
 
-<img src="images/interceptors  sync call.png" />
+[image:interceptors__sync_call.png](image:interceptors__sync_call.png)
 
 ### Asynchronous Method Call
 
@@ -64,7 +64,7 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 * interceptor calls (Begin, End, CallBack)
 * interaction with the backend server system
 
-<img src="images/interceptors  async call.png" />
+[image:interceptors__async_call.png](image:interceptors__async_call.png)
 
 ## Example
 

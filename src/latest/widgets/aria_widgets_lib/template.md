@@ -1,8 +1,7 @@
 Title: Template
 
 
-{{ReadyForReview}}
-Template widget allows application developer to include external template file in a template.This allows flexibility to separate common code and add as a sub template where ever needed.
+Template widget allows application developer to include external template file in a template. This allows for gathering of common code into a sub template.
 
 The simple way to add Template widget to your application is as follows
 
@@ -19,4 +18,4 @@ The whole list of configuration parameters is available in [TemplateCfg bean](ht
 ## Binding
 The only property bindable for template is
 * tooltip
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).

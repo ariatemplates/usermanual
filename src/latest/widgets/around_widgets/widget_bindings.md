@@ -12,7 +12,7 @@ Let's have a look at this template
 <srcinclude lang="at" outdent="true">templates/widget_bindings/Template.tpl
 </srcinclude>
 
-As you can see, it only contains a [`{@aria:TextField {}}`](textfield widget) widget. We are using the **bind** attribute of the widget itself.
+As you can see, it only contains a [`{@aria:TextField {}}`](textfield_widget) widget. We are using the **bind** attribute of the widget itself.
 
 ## Bindable Property Sample
 

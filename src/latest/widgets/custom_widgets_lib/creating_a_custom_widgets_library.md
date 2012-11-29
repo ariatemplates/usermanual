@@ -9,7 +9,7 @@ This article explains how to create a new widget class, how to create the corres
 
 ### BaseWidget
 
-Basically, implementing a widget means creating a class which extends `aria.widgetLibs.BaseWidget` and overriding some of its methods. In addition, some features provided by Aria Templates like [css templates](css_templates), [event delegation](http://ariatemplates.com/api/#aria.utils.Delegate) and [data model listeners](http://ariatemplates.com/api/#aria.utils.Json:addListener:method) are very useful when developing a widget.
+Basically, implementing a widget means creating a class which extends `aria.widgetLibs.BaseWidget` and overriding some of its methods. In addition, some features provided by Aria Templates like [css_templates](css_templates), [event delegation](http://ariatemplates.com/api/#aria.utils.Delegate) and [data model listeners](http://ariatemplates.com/api/#aria.utils.Json:addListener:method) are very useful when developing a widget.
 
 Here's a sample for a slider widget that uses all these concepts:
 

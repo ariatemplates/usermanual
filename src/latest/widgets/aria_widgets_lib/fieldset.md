@@ -35,7 +35,7 @@ Fieldset is an action widget, meaning that it can call an onSubmit callback func
 ## Binding
 For fieldset widget, the property bindable is tooltip and can be bound to a value in the datamodel.
 
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/fieldset/Snippet.tpl?tag=wgtFieldsetBinding&lang=at&outdent=true' defer></script>
 

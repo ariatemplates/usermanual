@@ -8,7 +8,7 @@ In AT's MVC model, templates are used to build the View, a graphical interface t
 This data model may contain all kinds of different information: UI content, business data, flow states, etc.  You are free to organize it as you wish, keeping in mind that it is an abstraction of your application and as such should not be linked to its representation, so don't structure it according to the display.
 E.g. use `data.shoppingBasket.items[0].price` instead of `data.rightPanel.divs[0].content`.
 
-You can read or write data model information from anywhere in your application, which ultimately means you can also create new entries in it at any point in your code.  It is recommended to avoid doing this and instead document the structure of your data model using [beans](json bean definitions).
+You can read or write data model information from anywhere in your application, which ultimately means you can also create new entries in it at any point in your code.  It is recommended to avoid doing this and instead document the structure of your data model using [beans](json_bean_definitions).
 
 There are different ways to initialize the data model.  An empty one can be created with default values using a bean definition but in most cases content will be retrieved from the server (this is covered in the [controllers](controllers) article.)  You may also provide initial values when the template is loaded as illustrated in the next paragraph.
 
@@ -27,7 +27,8 @@ The convention is to use the following prefixes:
 * **`view`**: for template-specific meta-data.
 * **`xxx`**: where xxx is a customizer unique-id used to reference customization meta-data.
 
-When several templates have access to the same data model, it is preferable to use template-specific prefixes to avoid meta-data collisions. It might also be happen that different instances of the same template have access to the same data model.
-
+When several templates have access to the same data model, it is preferable to use template-specific prefixes to avoid meta-data collisions. It might also happen that different instances of the same template have access to the same data model.
 
 ## Binding Principles
+
+TBD

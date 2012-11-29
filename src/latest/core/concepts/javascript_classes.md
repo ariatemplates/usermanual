@@ -1,4 +1,5 @@
 Title: Javascript Classes
+Category: core_layer,core_layer_concepts
 
 
 
@@ -88,7 +89,7 @@ In this particular cases, Aria Templates allows you to define a singleton class.
 
 Of course Aria Templates provides a lot more functionalities over Javascript classes, like inheritance, dependencies, or observable pattern...
 
-Just have a look at the [around classes](around_classes) article to get a hint.
+Just have a look at the [around_classes](around_classes) article to get a hint.
 
 **References**
 

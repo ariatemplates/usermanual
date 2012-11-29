@@ -11,12 +11,12 @@ requires the <i>core</i> layer, and so on...
 The first layer provides core JavaScript features that are used to build the framework, such as:
 
 
-* a Java-inspired [class syntax](javascript classes) that simplifies the management of the (prototype-based) object inheritance
+* a Java-inspired [class syntax](javascript_classes) that simplifies the management of the (prototype-based) object inheritance
 * support for class namespaces
 * on-demand load support through static & dynamic class dependencies management
-* support for [asynchronous programming](working in an asynchronous world), through asynchronous methods and generic callback patterns
-* support for [interfaces](around classes), to support safe service layers
-* support for a simple XSD-inspired [JSON grammar](json bean definitions), coming with dynamic validators and normalizers
+* support for [asynchronous programming](working_in_an_asynchronous_world), through asynchronous methods and generic callback patterns
+* support for [interfaces](around_classes), to support safe service layers
+* support for a simple XSD-inspired [JSON grammar](json_bean_definitions), coming with dynamic validators and normalizers
 * [utility classes](helpers), such as AJAX Connection support, log Manager and AJAX response mocks to redirect dynamic calls to static files
 * and last but not least, a simple Js Unit framework supporting asynchronous tests and loading tests on-demand
 
@@ -27,14 +27,14 @@ many interesting features, such as:
 
 
 * full and [partial template refresh](refresh)
-* [template inheritance](template inheritance) and nested templates
-* [template scripts](template scripts) to support advanced rendering logic
-* [CSS templates](css templates) - that allow to optimize the CSS payload, and also offer easy support for skinning and browser-specific CSS fixes
+* [template inheritance](template_inheritance) and nested templates
+* [template scripts](template_scripts) to support advanced rendering logic
+* [CSS templates](css_templates) - that allow to optimize the CSS payload, and also offer easy support for skinning and browser-specific CSS fixes
 * [sorting, filtering and paging](views) features on any data lists
-* [rich widget library](the aria templates widgets collection) - covering the most frequently used UI widgets
-* widget [data-bindings](data model and data binding) to automatically synchronize widget properties with the template data
-* [keyboard navigation](keyboard navigation)
-* [internationalization](localization and resources) and UI themes
+* [rich widget library](the_aria_templates_widgets_collection) - covering the most frequently used UI widgets
+* widget [data-bindings](data_model_and_data_binding) to automatically synchronize widget properties with the template data
+* [keyboard navigation](keyboard_navigation)
+* [internationalization](localization_and_resources) and UI themes
 * ...and soon complete support for widget libraries in order to let any developer provide its own widgets
 
 ### Layer #3: Modules
@@ -42,7 +42,7 @@ many interesting features, such as:
 The third layer provides the support for UI modules, that can be considered as mini application blocks, and as such
 are composed of files of different nature: JavaScript classes, JSON resources, HTML and CSS templates, image resources, etc.
 The interesting aspect of modules is that they can (and shall) be developed and tested independently and re-used in different
-applications or contexts. Modules can also load and interact with [sub-modules](using sub controllers) in order to implement complex functionalities.
+applications or contexts. Modules can also load and interact with [sub-modules](using_sub_controllers) in order to implement complex functionalities.
 
 On a technical point of view, modules have to follow an
 [MVC pattern](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) where:
@@ -53,7 +53,7 @@ On a technical point of view, modules have to follow an
 * The **Controller** is developed through JavaScript classes and is split in 2 entities:
 
 	* A service controller (aka [Module Controller](controllers)) that implements the core functional features exposed through a Service interface
-	* A [flow controller](flow controllers) - that technically belongs to the View layer - and that is in charge of managing the User Interface flow
+	* A [flow controller](flow_controllers) - that technically belongs to the View layer - and that is in charge of managing the User Interface flow
 
 ### Layer #4: Page Engine
 

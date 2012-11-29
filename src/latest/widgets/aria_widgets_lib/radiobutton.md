@@ -26,7 +26,7 @@ RadioButton widget alike Checkbox widget is highly configurable and for instance
 
 The whole list of configuration parameters is available in [RadioButtonCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:RadioButtonCfg).
 
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet3&lang=at&outdent=true' defer></script>
 

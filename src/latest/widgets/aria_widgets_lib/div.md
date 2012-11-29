@@ -18,6 +18,6 @@ You can easily change the style of div widget by setting sclass attribute to 'ba
 ## Binding
 Div widget allows to bind the tooltip property only.
 
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/div/binding/?skip=1' ></iframe>

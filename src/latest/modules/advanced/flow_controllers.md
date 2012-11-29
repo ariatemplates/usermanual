@@ -15,7 +15,7 @@ The goal of flow controllers is to contain the flow logic and keep it separated 
 For each module controller instance, there is an associated flow controller instance (if a flow controller is present). The following schema describes the relation between a module controller, its flow controller and templates:
 
 
-<img src="images/at_doc_overview_flow_controller.png" />
+[image:at_doc_overview_flow_controller.png](image:at_doc_overview_flow_controller.png)
 
 ## Similarities with module controllers
 

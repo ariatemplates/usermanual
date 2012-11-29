@@ -8,7 +8,7 @@ Aria Templates (later sometimes referred to as **AT** in this documentation), is
 
 ### A what?
 
-As a Javascript framework, AT provides a set of libraries and helpers that make it easier to develop your web application.  It provides familiar object-oriented features such as [class definitions](javascript classes) and [inheritance](around classes) as well as a number of useful ways to create your user interface such as [widgets](aria templates widgets library) and [CSS templates](css templates).
+As a Javascript framework, AT provides a set of libraries and helpers that make it easier to develop your web application.  It provides familiar object-oriented features such as [class definitions](javascript_classes) and [inheritance](around_classes) as well as a number of useful ways to create your user interface such as [widgets](widgets) and [CSS templates](css_templates).
 
 ### Based on what?
 
@@ -20,7 +20,7 @@ You're already familiar with the concept of templates if you have ever done web 
 
 With the advent of AJAX and the ability to generate asynchronous requests from the client, web apps became more flexible and communications between the browser and the server were not limited to transmitting whole streams of markup and JS code anymore and developers were free to only use chunks of markup or even pure data, a process that was made even easier with the help of JSON.
 
-<img src="images/at_intro.png" />
+[center](image:at_intro.png)
 
 Server-side templating has two undeniable advantages:
 
@@ -32,7 +32,7 @@ The idea behind client-side templating is to solve this issue by shifting part o
 
 Not only does this mechanism allow for less data to be transmitted over the network but, because the display is clearly separated from the data and the logic, this also makes customization of the interface much simpler: one template can be replaced by another very easily.
 
-<img src="images/at doc template.jpg" />
+[center](image:at_doc_template.jpg)
 
 ## Aria Templates principles
 
@@ -83,8 +83,8 @@ And here's what the result looks like:
 
 ## Going further
 
-Aria Templates aims at making it fast and easy to develop professional web applications.  It offers a wide variety of [widgets](widgets overview) covering most of modern UI use cases, as well as a complete [API](http://aria/aria-templates/apps/apidocs) to help tackle the common tasks of the application logic.
+Aria Templates aims at making it fast and easy to develop professional web applications.  It offers a wide variety of [widgets](widgets) covering most of modern UI use cases, as well as a complete [API](http://ariatemplates.com/aria/guide/apps/apidocs) to help tackle the common tasks of the application logic.
 
 Thanks to the clear separation between its MVC layers, it also makes it simple to customize an existing application by modifying its interface or enhancing its business logic.
 
-To go further, the rest of this documentation will present you each layer of the framework in detail.  To get a clear understanding of the basics, please refer to the Core Layer Concepts section.  The [Aria Templates Guide](http://aria/aria-templates) site is also a good place to find code samples and tutorials designed to illustrate practically various common patterns and use cases.  Finally, the [API reference](http://aria/aria-templates/apps/apidocs) is where you'll find documentation about all the classes and methods exposed by the framework.
+To go further, the rest of this documentation will present you each layer of the framework in detail.  To get a clear understanding of the basics, please refer to the Core Layer Concepts section.  The [Aria Templates Guide](http://ariatemplates.com/guides/) site is also a good place to find code samples and tutorials designed to illustrate practically various common patterns and use cases.  Finally, the [API reference](http://ariatemplates.com/aria/guide/apps/apidocs/) is where you'll find documentation about all the classes and methods exposed by the framework.

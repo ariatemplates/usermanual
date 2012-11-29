@@ -25,6 +25,6 @@ In the next sample there are two buttons with different _**onclick**_ callback, 
 
 ## Binding
 
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/button/binding/?skip=1' ></iframe>

@@ -8,7 +8,7 @@ Automatic selection is not supposed to be the default and only behaviour for all
 The following figure illustrates the Autoselect behaviour of input fields:
 
 
-<img src="images/ err001v2i0.png" />
+[image:_err001v2i0.png](image:_err001v2i0.png)
 
 If the user clicks again in the field once the text is already selected, the selection disappears and the cursor position is set at the location where the click was actioned.
 

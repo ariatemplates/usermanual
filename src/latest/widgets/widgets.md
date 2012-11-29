@@ -8,6 +8,6 @@ Widgets' complexity varies greatly as they can be as simple as a standard html t
 
 Aria Templates comes already with two widgets libraries that can be included seamlessly in your templates.
 * [Aria Templates Widgets Collection](the_aria_templates_widgets_collection). A comprehensive collection of widgets with a rich set of features.
-* [HTML Widgets Library](the html widgets library). Simple library in terms of markup, but still providing easy bindings and event listeners. You can use it as the building blocks for your html5 or mobile application.
+* [HTML Widgets Library](the_html_widgets_library). Simple library in terms of markup, but still providing easy bindings and event listeners. You can use it as the building blocks for your html5 or mobile application.
 
 Given the nature of Aria Templates and its well defined separation of responsibilities you can create your own [Custom Widget Library](creating_a_custom_widgets_library) in few step, either starting from scratch or extending from and reusing existing libraries.

@@ -1,6 +1,6 @@
 Title: Table of content
-notoc: true
-nonavbar: true
+Toc: false
+Navbar: false
 
 
 ## [Introduction](introduction)

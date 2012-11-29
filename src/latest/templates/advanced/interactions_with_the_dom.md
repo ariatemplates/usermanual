@@ -216,7 +216,7 @@ The constructor accepts the following arguments
 ### Examples
 
 #### HTML element that moves while dragged
-[file:draggable element.png](file:draggable_element.png)
+[file:draggable_element.png](file:draggable_element.png)
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/dragdrop/drag.html?tag=drag1html&lang=html5&outdent=true&noheader=true' defer></script>
 
@@ -224,7 +224,7 @@ The constructor accepts the following arguments
 
 #### HTML element that can be dragged only from an handle
 
-[file:dialog handle.png](file:dialog_handle.png)
+[file:dialog_handle.png](file:dialog_handle.png)
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/dragdrop/drag.html?tag=drag2html&lang=html5&outdent=true&noheader=true' defer></script>
 
@@ -232,13 +232,13 @@ The constructor accepts the following arguments
 
 #### Proxy element, box with borders
 
-<img src="images/box clone.png" />
+[image:box_clone.png](image:box_clone.png)
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/dragdrop/drag.html?tag=drag1html&lang=javascript&outdent=true&noheader=true' defer></script>
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/dragdrop/drag.html?tag=drag3js&lang=javascript&outdent=true&noheader=true' defer></script>
 
-The default classname is of the overlay element is xOverlay. Its style can be changed throught the skinning system by setting the desired background color, opacity and border corresponding to the following skin properties:
+The default classname of the overlay element is xOverlay. Its style can be changed throught the skinning system by setting the desired background color, opacity and border corresponding to the following skin properties:
 
  aria.templates.general.overlay.backgroundColor=#ddd
  aria.templates.general.overlay.opacity=40
@@ -246,7 +246,7 @@ The default classname is of the overlay element is xOverlay. Its style can be ch
 
 #### Proxy, clone of the draggable element
 
-<img src="images/transparent clone.png" />
+[image:transparent_clone.png](image:transparent_clone.png)
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/utils/dragdrop/drag.html?tag=drag1html&lang=javascript&outdent=true&noheader=true' defer></script>
 

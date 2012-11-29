@@ -30,10 +30,10 @@ To specify the event handler method you may either use the short or complete not
 
 * short:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=short&outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=short&outdent=true' defer></script>
 
 * complete: 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=complete&outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=complete&outdent=true' defer></script>
 
 Check the [examples section](#examples) to learn which syntax you should use and when.
 
@@ -166,6 +166,9 @@ Event delegation is always about striking a good balance between the amount of e
 
 This sample is again based on the keypad example. This time, a keydown is attached on the document using the [aria.utils.Event:addListener](http://ariatemplates.com/api/#aria.utils.Event:addListener) utility method. We filter the numkeys and the matching 1-9 box is selected when the user presses one of those keys. 
 
-<div data-sample="hardcoded"><code><pre>aria.utils.Event.addListener(document, "keydown", this.__onBodyKeydown, this, true);</code></pre></div>
+<div data-sample="hardcoded"><code><pre>aria.utils.Event.addListener(document, "keydown", { 
+    fn: this.__onBodyKeydown, 
+    scope: this
+}, true);</code></pre></div>
 
 Note that in the destructor of the template script, the addListener is mirrored by a removeListener to avoid leaving unwanted events on the page.

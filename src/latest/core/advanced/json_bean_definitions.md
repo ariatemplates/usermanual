@@ -15,7 +15,7 @@ Aria Templates allows you to define your own JSON Schemas by means of **Bean def
 
 A bean definition is a Json object that contains all the information on the data type that you want to define.
 
-Bean definitions are grouped into packages. In order to define a package you have to use the [Aria.beanDefinitions](http://ariatemplates.com/api/##Aria:beanDefinitions:method) method of the [Aria singleton object](the_aria_singleton#beandefinitions). Let us introduce an example of usage that will allow to explain in more detail how to specify bean definitions.
+Bean definitions are grouped into packages. In order to define a package you have to use the [Aria.beanDefinitions](http://ariatemplates.com/api/#Aria:beanDefinitions:method) method of the [Aria singleton object](the_aria_singleton#beandefinitions). Let us introduce an example of usage that will allow to explain in more detail how to specify bean definitions.
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/beans/SimpleBean.js?lang=javascript&outdent=true' defer></script> 
 
@@ -33,8 +33,8 @@ Aria Templates provides a set of built-in data types whose bean definitions are 
 
 There are two categories of built-in types (click on the links to learn more about them):
 
-* **simple types**: [String](http://ariatemplates.com/api/##aria.core.JsonTypes:String), [Boolean](http://ariatemplates.com/api/##aria.core.JsonTypes:Boolean), [Integer](http://ariatemplates.com/api/##aria.core.JsonTypes:Integer), [Float](http://ariatemplates.com/api/##aria.core.JsonTypes:Float), [Date](http://ariatemplates.com/api/##aria.core.JsonTypes:Date), [RegExp](http://ariatemplates.com/api/##aria.core.JsonTypes:RegExp), [ObjectRef](http://ariatemplates.com/api/##aria.core.JsonTypes:ObjectRef), [FunctionRef](http://ariatemplates.com/api/##aria.core.JsonTypes:FunctionRef), [JsonProperty](http://ariatemplates.com/api/##aria.core.JsonTypes:JsonProperty), [Enum](http://ariatemplates.com/api/##aria.core.JsonTypes:Enum)
-***complex types**: [Object](http://ariatemplates.com/api/##aria.core.JsonTypes:Object), [Array](http://ariatemplates.com/api/##aria.core.JsonTypes:Array), [Map](http://ariatemplates.com/api/##aria.core.JsonTypes:Map), [MultiTypes](http://ariatemplates.com/api/##aria.core.JsonTypes:MultiTypes)
+* **simple types**: [String](http://ariatemplates.com/api/#aria.core.JsonTypes:String), [Boolean](http://ariatemplates.com/api/#aria.core.JsonTypes:Boolean), [Integer](http://ariatemplates.com/api/#aria.core.JsonTypes:Integer), [Float](http://ariatemplates.com/api/#aria.core.JsonTypes:Float), [Date](http://ariatemplates.com/api/#aria.core.JsonTypes:Date), [RegExp](http://ariatemplates.com/api/#aria.core.JsonTypes:RegExp), [ObjectRef](http://ariatemplates.com/api/#aria.core.JsonTypes:ObjectRef), [FunctionRef](http://ariatemplates.com/api/#aria.core.JsonTypes:FunctionRef), [JsonProperty](http://ariatemplates.com/api/#aria.core.JsonTypes:JsonProperty), [Enum](http://ariatemplates.com/api/#aria.core.JsonTypes:Enum)
+***complex types**: [Object](http://ariatemplates.com/api/#aria.core.JsonTypes:Object), [Array](http://ariatemplates.com/api/#aria.core.JsonTypes:Array), [Map](http://ariatemplates.com/api/#aria.core.JsonTypes:Map), [MultiTypes](http://ariatemplates.com/api/#aria.core.JsonTypes:MultiTypes)
 
 
 When creating your bean definition, you can always include the following properties (an explanation is also available [here](http://ariatemplates.com/api/##aria.core.BaseTypes:Element)):
@@ -87,8 +87,8 @@ This special type allows you to specify the different alternative types that are
 The main purpose of defining schemas is to check the validity of data. Aria Templates allows you to perform data model validation by means of the class [aria.core.JsonValidator](http://ariatemplates.com/api/#aria.core.JsonValidator). There are two methods of this class that you can use for this purpose:
 
 
-* **[check](http://ariatemplates.com/api/##aria.core.JsonValidator:check:method)**: checks that the provided json object complies with a certain bean definition.
-* **[normalize](http://ariatemplates.com/api/##aria.core.JsonValidator:normalize:method)**: checks that the provided json object complies with a certain bean definition and adds default values. If you look at the method signature, you will notice that it accepts a second parameter which tells whether to throw errors or not.
+* **[check](http://ariatemplates.com/api/#aria.core.JsonValidator:check:method)**: checks that the provided json object complies with a certain bean definition.
+* **[normalize](http://ariatemplates.com/api/#aria.core.JsonValidator:normalize:method)**: checks that the provided json object complies with a certain bean definition and adds default values. If you look at the method signature, you will notice that it accepts a second parameter which tells whether to throw errors or not.
 
 For performance reasons, in both cases **the check is performed only when you are working in [debug mode](troubleshooting)**. Otherwise, the `check` method always returns `true` and the `normalize` method only applies default values when specified in the bean definition.
 

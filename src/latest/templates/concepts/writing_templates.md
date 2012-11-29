@@ -142,7 +142,6 @@ More information about template variables can be found [here](#variables).
 
 ### checkDefault
 
-
 The `checkDefault` statement can be used to assign a value to a named variable only if it is not already defined to a non-null value.
 
 The syntax is as follows:
@@ -244,7 +243,7 @@ It is used in the following way:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=id&lang=at&outdent=true' defer></script>
 
-Read the articles about [template scripts](template scripts) and [DOM interactions](interactions with the dom) in order to learn how to retrieve elements through their ids and interact with them.
+Read the articles about [template scripts](template_scripts) and [DOM interactions](interactions_with_the_dom) in order to learn how to retrieve elements through their ids and interact with them.
 
 ### on
 
@@ -252,7 +251,7 @@ Read the articles about [template scripts](template scripts) and [DOM interactio
 
 The `on` statement is used to attach events handlers to DOM elements.
 
-Please check the [dom events](dom_events) article for details about how to use it.
+Please check the [dom_events](dom_events) article for details about how to use it.
 
 ## Advanced template statements
 
@@ -297,7 +296,7 @@ This example contains all the configuration properties currently available for s
 * **`macro`** is now a Json Object that contains the name of the macro, a list of parameters to pass to the macro, and also a scope (by default it is `this`, but it might be also a macro library or a parent template).
 * **`type`** and **`attributes`** denote respectively the tag name of the HTML element that wraps the section content and the attributes that you want to set on that tag. The list of allowed attributes is specified [here](http://ariatemplates.com/api/#aria.templates.CfgBeans:HtmlAttribute).
 * **`bindRefreshTo`** specifies the values of the data model to which the referesh of the section is automatically bound. Bindings and automatic refreshes are key features of Aria Templates and are described in due details in [this article](refresh#section-automatic-refresh).
-* **`bindProcessingTo`** allows to display a loading indicator on top of a section depending on whether a certain value is true or false. Optionally, a **`processingLabel`** can be specified. Loading indicators are treated in [this article](interactions with the dom).
+* **`bindProcessingTo`** allows to display a loading indicator on top of a section depending on whether a certain value is true or false. Optionally, a **`processingLabel`** can be specified. Loading indicators are treated in [this article](interactions_with_the_dom).
 * **`keyMap`** and **`tableNav`** allow to define section-specific keyboard shortcuts and table navigation options. Refer to [this article](keyboard_navigation) to learn more about keyboard navigation.
 
 ### createView
@@ -355,17 +354,17 @@ When working with templates it is very frequently needed to manage template-spec
 
 When writing your templates, some variables are made automatically available by the framework. Here are the most relevant ones:
 
-* **`data`:** an object that references the data model. For a detailed presentation of the data model, refer to [this article](data model and data binding). This object should be used to store data that needs to be persisted through template refreshes.
+* **`data`:** an object that references the data model. For a detailed presentation of the data model, refer to [this article](data_model_and_data_binding). This object should be used to store data that needs to be persisted through template refreshes.
 ***`moduleCtrl`:** it is the interface of the [module controller](controllers) that is provided when loading the template, if any.
-***`flowCtrl`:** it is the interface of the [flow controller](flow controllers) associated with the module controller.
+***`flowCtrl`:** it is the interface of the [flow controller](flow_controllers) associated with the module controller.
 ***`moduleRes`:** resources available in the module controller.
-* any shortcut to [macro libraries](macro libraries), text templates and resources that you define in the configuration of your template.
+* any shortcut to [macro libraries](macro_libraries), text templates and resources that you define in the configuration of your template.
 
 Other variables are also available, but they are not used very frequently. In particular:
 
-* the configuration properties, for example `$classpath`, `$width` and `$height` (see the [article on adaptive display](adaptive display) for more information about the value that they are given), and so on.
+* the configuration properties, for example `$classpath`, `$width` and `$height` (see the [article on adaptive display](adaptive_display) for more information about the value that they are given), and so on.
 * **`$json`:** it is a reference to the singleton class [aria.utils.Json](http://ariatemplates.com/api/#aria.utils.Json).
-* references to the prototypes of the ancestor classes: every HTML template is transformed into a class that extends the [aria.templates.Template](http://ariatemplates.com/api/#aria.templates.Template) class, unless a parent template is specified (see the [article about template inheritance](template inheritance)). The prototypes of the ancestor classes are available at `$[name of the class]`.
+* references to the prototypes of the ancestor classes: every HTML template is transformed into a class that extends the [aria.templates.Template](http://ariatemplates.com/api/#aria.templates.Template) class, unless a parent template is specified (see the [article about template inheritance](template_inheritance)). The prototypes of the ancestor classes are available at `$[name of the class]`.
 
 ### Defining variables
 
@@ -374,12 +373,12 @@ When you want to define your own template-related variables, you have two option
 
 * **using the [var statement](#var)**: you can define _global-scope_ variables by using the `var` statement outside any macro, or you can define _macro-scope_ variables by using the `var` statement inside a macro. When refreshing the template, macro-scope variables are reinitialized, whereas global-scope variables are persistent. However, keep in mind that global-scope variables are destroyed when refreshing the template that contains your template: in fact, in that case the instance of your subtemplate is completely disposed.
 
-* **putting your variables inside the `data` object**: this is the correct solution if you want your data to be persistent over refreshes of any container template. However, you have to be aware of the origin of the data object: if it is the data model of a module controller that is disposed, you still lose all of your data. Most importantly, it is a good practice to use meta-data in order to store persistent information that is related to your template, as explained [here](data model and data binding).
+* **putting your variables inside the `data` object**: this is the correct solution if you want your data to be persistent over refreshes of any container template. However, you have to be aware of the origin of the data object: if it is the data model of a module controller that is disposed, you still lose all of your data. Most importantly, it is a good practice to use meta-data in order to store persistent information that is related to your template, as explained [here](data_model_and_data_binding).
 
 ## Methods
 
 The methods available inside a template are
-* those defined in [template script](template scripts). Furthermore, all [methods available in a template script](template_scripts#available-methods)
+* those defined in [template script](template_scripts). Furthermore, all [methods available in a template script](template_scripts#available-methods)
 * Those defined in the module controller and flow controller associated to the template in its loading configuration (`moduleCtrl.moduleMethod` and `flowCtrl.flowMethod`). In this case, only methods exposed by the module/flow interfaces will be available.
 
-Examples are available in the articles on [template scripts](template scripts), [module controllers](controllers) and [flow controllers](flow controllers).
+Examples are available in the articles on [template scripts](template_scripts), [module controllers](controllers) and [flow controllers](flow_controllers).

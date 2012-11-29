@@ -66,7 +66,7 @@ $atgen --config
 
 Here you can see some screenshot of the atgen running in different modes.
 
-[file:atgen screenshot.png](file:atgen_screenshot.png)
+[file:atgen_screenshot.png](file:atgen_screenshot.png)
 ### How to install atgen
 
 atgen is developed in nodejs, so you need to have it installed on your machine (v0.6.x or higher). If you don't have it, please [download](http://nodejs.org) it and choose the version which will install npm too.

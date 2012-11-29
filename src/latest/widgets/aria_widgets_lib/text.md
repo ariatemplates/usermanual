@@ -19,5 +19,5 @@ The bindable properties of text widget are
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/text/Snippet.tpl?tag=wgtTextSnippet2&lang=at&outdent=true' defer></script>
 
-For more information please read the article on [widget bindings](widget_bindings).
+For more information please read the article on [widget_bindings](widget_bindings).
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/text/binding/?skip=1' ></iframe>

@@ -85,7 +85,7 @@ Language and region are used to load a particular version of [#static-resources]
 
 More information are available on [Environment Base Configuration Bean](http://ariatemplates.com/api/#aria.core.environment.EnvironmentBaseCfgBeans).
 
-While changing the locale is quite easy, at least a full application templates refresh could be required to make the changes effective. For this pourpose the first method accept a callback parameter - i.e. a method/function - that should contain all the necessary code to achieve the afore mentioned goal.
+While changing the locale is quite easy, at least a full application templates refresh could be required to make the changes effective. For this pourpose the first method accept a callback parameter - i.e. a method/function - that should contain all the necessary code to achieve the aforementioned goal.
 
 ##### Resources organization
 
@@ -120,7 +120,7 @@ By default numbers are interpreted with en_US conventions:
 
 <div data-sample="missing">Numberfield with different patterns and separators</div>
 
-The option **strictGrouping** allows to enforce or not the match between the number patterna and what the user typed.
+The option **strictGrouping** allows to enforce or not the match between the number pattern and what the user typed.
 
 When _strictGrouping_ is enabled, the following rules apply:
 
@@ -187,8 +187,6 @@ The formatting patterns to specify how a number should be conventionally display
 |}
 
 The supported patterns are a subset of the [java.text.DecimalFormat](http://download.oracle.com/javase/1.4.2/docs/api/java/text/DecimalFormat.html) specs.
-
-
 
 #### Date and Time
 

@@ -1,6 +1,5 @@
 Title: MultiSelect
 
-{{Review}}
 
 A Widget to create a list of checkbox options.
 
