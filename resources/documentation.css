@@ -1,4 +1,4 @@
-/* 	
+/*
 	Aria Templates Documentation stylesheets
 */
 
@@ -114,8 +114,8 @@
 #search:focus {
     outline: none;
     background-color: white;
-	-webkit-box-shadow: 0px 0px 3px #007eff;  
-    -moz-box-shadow: 0px 0px 3px #007eff;  
+	-webkit-box-shadow: 0px 0px 3px #007eff;
+    -moz-box-shadow: 0px 0px 3px #007eff;
     box-shadow: 0px 0px 3px #007eff;
 }
 
@@ -227,12 +227,12 @@ body.internal article .callout.reviewed,
 }
 
 /*
-.navigationbar .nav-previous {	
+.navigationbar .nav-previous {
 	padding-left: 20px;
 	background: url(../blog/wp-content/themes/ariatemplates/images/post-previous.png) no-repeat left center;
 }
 
-.navigationbar .nav-next {	
+.navigationbar .nav-next {
 	padding-right: 20px;
 	background: url(../blog/wp-content/themes/ariatemplates/images/post-next.png) no-repeat right center;
 }*/
@@ -327,7 +327,7 @@ body.internal article .callout.reviewed,
 	100% { opacity: 1; -ms-animation-timing-function: linear; display:block; }
 }
 
-#dropdown:hover .menu-container {	
+#dropdown:hover .menu-container {
 	display: block;
 	opacity: 1;
 	-webkit-animation-duration:0.5s;
@@ -367,6 +367,7 @@ body.internal article .callout.reviewed,
 	padding: 0px;
 }
 
+
 iframe.samples {
     width: 100%;
     min-height: 400px;
@@ -382,4 +383,19 @@ iframe.samples {
 
 [data-sample="hardcoded"] {
     border: 1px solid red;
+}
+
+[data-sample="missing"] {
+    background-color: #EFFAB4;
+    border: 1px solid #D1F2A5;
+    font-size: 95%;
+    padding: 10px;
+    text-align: center;
+}
+
+[data-sample="missing"]:before {
+    content: "Missing Sample";
+    display: block;
+    font-weight: bold;
+    text-align: center;
 }
