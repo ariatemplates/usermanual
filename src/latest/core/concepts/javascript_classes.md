@@ -12,13 +12,11 @@ All these concepts make it easier to organize the different pieces of your code.
 In Aria Templates, all the different objects you can create are in the end classes. A class is created by calling the `classDefinition()` method on [the Aria singleton object](the_aria_singleton#classdefinition), giving as an argument a JSON configuration object, like so:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Fruit.js?outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Fruit.js'></script>
 
 Objects are then created and deleted as follows:
 
-
-<srcinclude tag="execute" outdent="true">core/classes/FruitUsage.js
-</srcinclude>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/FruitUsage.js?outdent=true&tag=execute'></script>
 
 The first thing to notice is that all keys to the configuration object start with the `$` prefix. The reason for this is that many of the keywords used like (extends, prototype, ...) are reserved keywords in Javascript and would result in a run-time exception if used without prefix.
 
@@ -36,10 +34,9 @@ It is composed of 2 parts:
 
 Consider the following example:
 
-
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Fruit.js?tag=stub&lang=javascript'></script>
 
-As in Java, the classpath normally corresponds to the physical location of the file on the disk. The above classpath for instance should appear inside a class stored under the file `<rootFolderPath>/garden/tree/Fruit.js`.
+As in Java, the classpath normally corresponds to the physical location of the file on the disk. The above classpath for instance should appear inside a class stored under the file `[rootFolderPath]/garden/tree/Fruit.js`.
 
 The `rootFolderPath` is automatically set by the framework to match the directory where the framework is located (this default setting can be overridden through the variable [`Aria.rootFolderPath`](the_aria_singleton#rootfolderpath)).
 
@@ -47,9 +44,9 @@ The `rootFolderPath` is automatically set by the framework to match the director
 
 Their description is pretty much what everyone would expect of them.  This is where code that must execute when an instance is created / destroyed should be placed.  The constructor is also a place where we can define instance members for your class and initialize them.
 
-Technically aria templates will generate the constructor function that corresponds to the _$classpath_ provided in the class definition. In other words, for the _x.y.AClass_ classpath, aria templates will generate a constructor function that will be accessible through _x.y.AClass_ once loaded 
+Technically aria templates will generate the constructor function that corresponds to the _$classpath_ provided in the class definition. In other words, for the _x.y.AClass_ classpath, aria templates will generate a constructor function that will be accessible through _x.y.AClass_ once loaded
 
-When a class extends another class, it must explicitly call the parent class constructor and destructor to have a proper initialization/destruction. In order to make this more simple, Aria Templates generates a shortcut to the parent class object through the $PARENT_CLASS_NAME property (e.g. _$Plant_ in the example below). As the destructor is not a default JavaScript function, you will note a slight variation between the parent constructor and destructor calls (i.e. '$' sign in the destructor method name):
+When a class extends another class, it must explicitly call the parent class constructor and destructor to have a proper initialization/destruction. In order to make this more simple, Aria Templates generates a shortcut to the parent class object through the $PARENT\_CLASS\_NAME property (e.g. _$Plant_ in the example below). As the destructor is not a default JavaScript function, you will note a slight variation between the parent constructor and destructor calls (i.e. '$' sign in the destructor method name):
 
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/classes/Vegetable.js?lang=javascript&outdent=true'></script>
@@ -89,7 +86,7 @@ In this particular cases, Aria Templates allows you to define a singleton class.
 
 Of course Aria Templates provides a lot more functionalities over Javascript classes, like inheritance, dependencies, or observable pattern...
 
-Just have a look at the [around_classes](around_classes) article to get a hint.
+Just have a look at the [Around Classes](around_classes) article to get a hint.
 
 **References**
 

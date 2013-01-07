@@ -49,13 +49,13 @@ and you also look at what it's producing as a result
 
 you easily understand that something will not work out the box, or at least not like it was so easy in synchronous pattern.
 
+
 ### Callback versus Return
 
 To be able to have the exact same behavior, you need to have a mechanism that will allow you to talk with the framework like this:
 
-<blockquote>
-Can you please _do that_, and _call me back_ when you're _done_ ?
-</blockquote>
+> Can you please _do that_, and _call me back_ when you're _done_ ?
+
 What is important in this quote ? **call me back** is important ! This was the missing piece!
 
 You just want your code to externalize some logic somewhere (the asynchronous execution) and then you want to be immediately notified when this execution is basically over. And to do so, you just need to give a callback object to the framework.

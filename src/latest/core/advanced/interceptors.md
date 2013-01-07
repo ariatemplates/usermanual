@@ -32,15 +32,15 @@ The type of the first parameter given to interceptor callbacks is described belo
 
 * `CallBegin`
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=CallBegin&lang=text'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=CallBegin&lang=javascript'></script>
 
 * `CallEnd`
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=CallEnd&lang=text'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=CallEnd&lang=javascript'></script>
 
 * `Callback`
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=Callback&lang=text'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/interceptors/ParameterTypes.txt?tag=Callback&lang=javascript'></script>
 
 ## Interceptor calls sequence diagrams
 
@@ -53,7 +53,7 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 * intercepted method execution
 * interceptor calls (Begin, End)
 
-<img src="../images/interceptors__sync_call.png"/>
+<img src="../images/interceptors_sync_call.png"/>
 
 ### Asynchronous Method Call
 
@@ -64,7 +64,7 @@ The following sequence diagram visualizes the calls chain in the simple case of 
 * interceptor calls (Begin, End, CallBack)
 * interaction with the backend server system
 
-<img src="../images/interceptors__async_call.png"/>
+<img src="../images/interceptors_async_call.png"/>
 
 ## Example
 
@@ -99,24 +99,17 @@ When the above piece of code is run, the following alerts will be displayed (in 
 
 
 * For `myItf.mySimpleFunction()`:
-
 	* Interceptor: mySimpleFunction [CallBegin]
 	* mySimpleFunction is called
 	* Interceptor: mySimpleFunction [CallEnd]
-
 * For `myObj.mySimpleFunction()`:
-
 	* mySimpleFunction is called
-
 * For `myItf.myAsynchronousFunction(myCallback)`:
-
 	* Interceptor: myAsynchronousFunction [CallBegin]
 	* myAsynchronousFunction is called
 	* Interceptor: myAsynchronousFunction [CallEnd]
 	* An answer (to the request done in myAsynchronousFunction) has been received from the server: null
 	* Interceptor: myAsynchronousFunction [Callback]
 	* myCallback is called.
-
 * For `myItf.mySimpleFunction(myCallback)` in `myCallback`:
-
 	* mySimpleFunction is called

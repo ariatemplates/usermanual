@@ -26,11 +26,12 @@ CssClass: maintoc
     - [Data Model and Data Binding](data_model_and_data_binding)
     - [Template Scripts](template_scripts)
     - [Refresh](refresh)
+- ### Special Templates
+    - [Macro Libraries](macro_libraries)
     - [CSS Templates](css_templates)
 - ### Advanced
     - [Template Inheritance](template_inheritance)
     - [Views](views)
-    - [Macro Libraries](macro_libraries)
     - [Interactions with the DOM](interactions_with_the_dom)
     - [DOM Events](dom_events)
     - [Keyboard Navigation](keyboard_navigation)

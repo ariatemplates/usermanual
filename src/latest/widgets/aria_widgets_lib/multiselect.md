@@ -1,5 +1,5 @@
 Title: MultiSelect
-
+Category: Widgets
 
 A Widget to create a list of checkbox options.
 

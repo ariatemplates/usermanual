@@ -1,5 +1,5 @@
 Title: AutoComplete
-
+Category: Widgets
 
 
 The Autocomplete widget is a text input that allow to quickly find and filter values from a list of resources.
@@ -14,7 +14,7 @@ Local handlers are the best choice for small/medium datasets and give you the fa
 This input also provides keyboard navigation allowing you to navigate thorugh and select an option with the keyboard.
 Additionally it can be configured to automatically highlight and/or select one of the options if this matches exactly what you typed already in the field.
 
-This article will show you how to 
+This article will show you how to
 * include an Autocomplete widget in your template
 * use the default Label-Code Resource Handlers for local entries
 * define your own Resource Handler, either for more advanced suggestions of for remote data
@@ -65,7 +65,7 @@ To see the difference, type _**s**_ in the field and press _down_ key, in the fi
 	* _always_: the first option is always highlighted.
 	* _none_: the first option is never highlighted.
 
-You can type _ENG_ or _England_ in the three AutoComplete below and check how suggestions are highlighted. 
+You can type _ENG_ or _England_ in the three AutoComplete below and check how suggestions are highlighted.
 In _**strict**_ mode the suggestion is highlighted only when you type entirely _ENG_ or _England_, in _**always**_ mode as soon as you type the letter _e_ and in _**none**_ mode highlight is disabled completely.
 
 <template templateclasspath="ariadoc.samples.widgets.autocomplete.HighlightPreselect" />

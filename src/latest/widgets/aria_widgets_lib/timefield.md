@@ -1,5 +1,5 @@
 Title: TimeField
-
+Category: Widgets
 
 TimeField widget enables the creation of time input fields targeted at time formatted input, packed with specific formatting facilities to handle diverse time formats, as required by the locale and/or the application needs.
 
@@ -20,7 +20,6 @@ The difference between **H** and **h** is that the first is 0-24 while the latte
 
 Some time patterns are defined at application level. There are currently two default formats:
 
-
 * **shortFormat** (hh:mm)
 * **fullFormat** (HH:mm:ss)
 
@@ -28,8 +27,7 @@ These formats can be accessed through `aria.core.AppEnvironment.getTimeFormats()
 
 Indeed, default time patterns at the application level can be overridden and/or extended as you need:
 
-
-<div data-sample="hardcoded"><code><pre>
+<div data-sample="hardcoded"><pre><code>
 aria.core.AppEnvironment.setEnvironment({
   "timeFormats":{
     "shortFormat" : "hh-mm",
@@ -42,6 +40,8 @@ Please keep in mind that "setEnvironment" will override all settings, use "updat
 
 ## Sample usage
 
-The following sample shows how to create and use a TextField widget, packed with number format patterns. In order to fetch the entered value, variable binding is to be considered as the preferred solution. Please refer to the [textfield](textfield) widget for more informations.
+The following sample shows how to create and use a TextField widget, packed with number format patterns.
+In order to fetch the entered value, variable binding is to be considered as the preferred solution.
+Please refer to the [textfield](textfield) widget for more informations.
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/timefield/?skip=1' ></iframe>

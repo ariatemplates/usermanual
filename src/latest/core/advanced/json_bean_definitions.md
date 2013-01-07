@@ -17,7 +17,7 @@ A bean definition is a Json object that contains all the information on the data
 
 Bean definitions are grouped into packages. In order to define a package you have to use the [Aria.beanDefinitions](http://ariatemplates.com/api/#Aria:beanDefinitions:method) method of the [Aria singleton object](the_aria_singleton#beandefinitions). Let us introduce an example of usage that will allow to explain in more detail how to specify bean definitions.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/beans/SimpleBean.js?lang=javascript&outdent=true'></script> 
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/core/beans/SimpleBean.js?lang=javascript&outdent=true'></script>
 
 This method allows to define the package **`ariadoc.snippets.core.beans.SimpleBean`** which contains the two bean definitions **`Name`** and **`Age`**.
 
@@ -34,16 +34,16 @@ Aria Templates provides a set of built-in data types whose bean definitions are 
 There are two categories of built-in types (click on the links to learn more about them):
 
 * **simple types**: [String](http://ariatemplates.com/api/#aria.core.JsonTypes:String), [Boolean](http://ariatemplates.com/api/#aria.core.JsonTypes:Boolean), [Integer](http://ariatemplates.com/api/#aria.core.JsonTypes:Integer), [Float](http://ariatemplates.com/api/#aria.core.JsonTypes:Float), [Date](http://ariatemplates.com/api/#aria.core.JsonTypes:Date), [RegExp](http://ariatemplates.com/api/#aria.core.JsonTypes:RegExp), [ObjectRef](http://ariatemplates.com/api/#aria.core.JsonTypes:ObjectRef), [FunctionRef](http://ariatemplates.com/api/#aria.core.JsonTypes:FunctionRef), [JsonProperty](http://ariatemplates.com/api/#aria.core.JsonTypes:JsonProperty), [Enum](http://ariatemplates.com/api/#aria.core.JsonTypes:Enum)
-***complex types**: [Object](http://ariatemplates.com/api/#aria.core.JsonTypes:Object), [Array](http://ariatemplates.com/api/#aria.core.JsonTypes:Array), [Map](http://ariatemplates.com/api/#aria.core.JsonTypes:Map), [MultiTypes](http://ariatemplates.com/api/#aria.core.JsonTypes:MultiTypes)
+* **complex types**: [Object](http://ariatemplates.com/api/#aria.core.JsonTypes:Object), [Array](http://ariatemplates.com/api/#aria.core.JsonTypes:Array), [Map](http://ariatemplates.com/api/#aria.core.JsonTypes:Map), [MultiTypes](http://ariatemplates.com/api/#aria.core.JsonTypes:MultiTypes)
 
 
 When creating your bean definition, you can always include the following properties (an explanation is also available [here](http://ariatemplates.com/api/##aria.core.BaseTypes:Element)):
 
-***`$type`:** the mandatory parent type
-***`$description`:** a short literal description of your data type. It is mandatory when inheriting directly from a built-in data type. When inheriting from a user-defined schema, it is not necessarily required.
-***`$sample`:** an example
-***`$mandatory`:** a boolean telling whether the element has to be provided for the Json object containing it to be valid. More detail on validation will be provided [later](#validation).
-***`$default`:** the default value. If the data is mandatory, it obviously does not make sense to provide a default value.
+* **`$type`:** the mandatory parent type
+* **`$description`:** a short literal description of your data type. It is mandatory when inheriting directly from a built-in data type. When inheriting from a user-defined schema, it is not necessarily required.
+* **`$sample`:** an example
+* **`$mandatory`:** a boolean telling whether the element has to be provided for the Json object containing it to be valid. More detail on validation will be provided [later](#validation).
+* **`$default`:** the default value. If the data is mandatory, it obviously does not make sense to provide a default value.
 
 
 Furthermore, depending on the built-in type that you want your schema to inherit from, some additional properties can be specified (and others are automatically added by the framework). Most of them are useful for validation purposes.

@@ -1,7 +1,8 @@
 Title: PasswordField
+Category: Widgets
 
-
-PasswordField widget creates an input text field of type password. It has the same features as [textfield](textfield) widget, but the characters in the field are masked exactly like in a plain password input.
+PasswordField widget creates an input text field of type password.
+It has the same features as [textfield](textfield) widget, but the characters in the field are masked exactly like in a plain password input.
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/widgets/passwordfield/Snippet.tpl?tag=wgtPasswordField&lang=at&outdent=true'></script>
 

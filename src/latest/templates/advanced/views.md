@@ -7,7 +7,6 @@ A View allows you to work on any part of your data model you want without actual
 
 To use Views, you first need to create one.  You do that using the `createView` statement:
 
-
 <div data-sample="hardcoded"><code><pre>
 {createView vHotels on data.hotels/}
 </code></pre></div>
@@ -22,7 +21,6 @@ In order to use the View filtering mechanism, <span style="background:#ffc">you 
 
 Let's see how it is used in a template script:
 
-
 <div data-sample="hardcoded"><code><pre>
 this.vHotels.filterIn(this.vHotels.FILTER_SET, function(o) {
     return (o.value.price < 200);
@@ -34,13 +32,14 @@ This example tells the view to keep only hotels for which the daily rate is beyo
 Two arguments are passed to `filterIn()`:
 
 * The **filter type**, which defines how the filter should be applied to the View.  In this example, the `FILTER_SET` property of the View class states that the filter must be applied to all the items in the View.  We will see other possible values below.
+
 * The **filter method** (inline or reference), which is provided with a single argument, a [View item](http://ariatemplates.com/api/#aria.templates.ViewCfgBeans), and must return a boolean value indicating whether this item should be kept or not.  This object gives access to the following properties:
 
-	*`value`: the item itself.
-	*`initIndex`: the index of the item if the initial container is an array, or its key if it is a map.
-	*`sortKey`: (when using sorting) the last used sort key of the item.
-	*`filteredIn`: (when using filtering) a boolean value indicating whether the item is filtered in.
-	*`pageIndex`: (when using paging) the index of the page in which the item appears.
+	* `value`: the item itself.
+	* `initIndex`: the index of the item if the initial container is an array, or its key if it is a map.
+	* `sortKey`: (when using sorting) the last used sort key of the item.
+	* `filteredIn`: (when using filtering) a boolean value indicating whether the item is filtered in.
+	* `pageIndex`: (when using paging) the index of the page in which the item appears.
 
 To display the content of a View using the filter mode, you must <span style="background:#ffc">iterate over the items using the `inFilteredView` keyword</span> as follows:
 
@@ -136,7 +135,6 @@ this.vHotels.toggleSortOrder("sortByPrice", function(o) {
 
 The paging functionality of a View is triggered by the `setPageSize()` method:
 
-
 <div data-sample="hardcoded"><code><pre>
 this.vHotels.setPageSize(3);
 </code></pre></div>
@@ -184,7 +182,6 @@ The View class provides information about its content through two interesting pr
 
 Let's illustrate these properties with an example.  Consider the following array of data:
 
-
 <div data-sample="hardcoded"><code><pre>
 [{desc:"Item1", price:42},
  {desc:"Item2", price:27},
@@ -199,7 +196,6 @@ Let's illustrate these properties with an example.  Consider the following array
 
 If we create a View on it to which we apply the following features:
 
-
 <div data-sample="hardcoded"><code><pre>
 this.vItems.setSort(this.vItems.SORT_ASCENDING, "sortByPrice", function(o) {
     return o.value.price;
@@ -212,7 +208,7 @@ this.vItems.filterIn(this.vItems.FILTER_SET, function(o) {
 
 Here's what the `items` array looks like and the value of the different properties:
 
-[file:views.png](file:views.png)
+![Views][view_image]
 
 ### Example
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/templates/views/?skip=1' ></iframe>
@@ -260,3 +256,5 @@ initView : function() {
     });
 }
 </code></pre></div>
+
+[view_image]: ../images/views.png

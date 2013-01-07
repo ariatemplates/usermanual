@@ -1,5 +1,5 @@
 Title: DateField
-
+Category: Widgets
 
 The DateField is a simple textfield whose content is interpreted as a date.There are two modes for date parsing: the European mode and the US mode.A global setting specifies which mode is actually used.
 The simple way to add datefield widget is

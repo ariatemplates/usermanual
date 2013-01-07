@@ -1,5 +1,5 @@
 Title: CheckBox
-
+Category: Widgets
 
 Checkbox widget provides easy way to add custom checkbox to the user application and can be in any one of the two states, either checked or unchecked. When the user click on the checkbox it toggles the state.
 

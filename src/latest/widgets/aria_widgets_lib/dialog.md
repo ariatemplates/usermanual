@@ -1,5 +1,5 @@
 Title: Dialog
-
+Category: Widgets
 
 A dialog widget is a div based popup window that contains a title bar and a content area. The dialog widget can be dragged, resized and close with the X icon.If the content height exceeds the maximum height, a scroll bar will come automatically. An overlay can be turned on by setting modal attribute to true.
 
@@ -25,11 +25,11 @@ The properties bindable for dialog widget are
 * visible
 * xpos
 * ypos
-* center 
+* center
 
-If center is set to true, it will have precedence over xpos and ypos, which will be updated according to the actual position of the dialog. 
+If center is set to true, it will have precedence over xpos and ypos, which will be updated according to the actual position of the dialog.
 
-For more information please read the article on [widget_bindings](widget_bindings).
+For more information please read the article on [Widget bindings](widget_bindings).
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/widgets/dialog/binding/?skip=1' ></iframe>
 

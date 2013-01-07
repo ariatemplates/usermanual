@@ -3,16 +3,18 @@ Title: Using Sub Controllers
 
 ## Concept
 
-Very often having only one module controller class to handle all the functional code is not a good idea. It is recommended to divide the application in smaller entities to achieve better reusability, testing and maintainability:
-
+Very often having only one module controller class to handle all the functional code is not a good idea.
+It is recommended to divide the application in smaller entities to achieve better reusability, testing and maintainability:
 
 * First of all, any generic utility needed for the module can be extracted to a separate class.
 * If the controller has several states and transitions between those states, using a [flow controller](flow_controllers) will make sure that this part is also outside the module controller.
 * Finally, independent **functional** part of the application with an independent piece of display can be identified: this will be extracted to so-called "sub modules".
 
+
 ## Case study: a list of incremental counters
 
 This feature will be illustrated starting with the sample built in [controllers](controllers) documentation. Goal for this case study is to build an application displaying a list of incremental counters.
+
 
 ## Hierarchical Data Model
 
@@ -23,16 +25,15 @@ The structure of this application will be the following:
 
 The data model will follow the same structure: it will simply be an array of objects corresponding to the data model used by the counter module controller:
 
-
-<div data-sample="hardcoded"><code><pre>
+<div data-sample="hardcoded"><pre><code>
 {
     counters : [
         {
             count : 0
-        }, 
+        },
         {
             count : 0
-        }, 
+        },
        ...
         {
             count : 0
@@ -45,29 +46,33 @@ The data model will follow the same structure: it will simply be an array of obj
 
 The very same hierarchy will be used on module controllers. The application will be handled by a main controller which will create sub controllers to handle each counter.
 
-Creating the sub controllers is done through the `loadSubModules` method or [aria.templates.Modules](http://ariatemplates.com/api/#aria.templates.Modules). This method is asynchronous, as it will also handle dependency loading for the sub controllers. It takes two arguments:
+Creating the sub controllers is done through the `loadSubModules()` method or [`aria.templates.Modules`](http://ariatemplates.com/api/#aria.templates.Modules). This method is asynchronous, as it will also handle dependency loading for the sub controllers. It takes two arguments:
 
-* A list of configuration of sub controllers. A configuration contains the classpath of the sub module controllers, and the path in the data model for the data associated to the sub module. This path can be completed with an index if it is part of an array. 
-* A callback to be called when the sub module controllers are loaded. This callback first argument will be an object describing the load result:
+* A list of configuration of sub controllers. A configuration contains the classpath of the sub module controllers, and the path in the data model for the data associated to the sub module. This path can be completed with an index if it is part of an array.
+* A callback to be called when the sub module controllers are loaded.
+  This callback first argument will be an object describing the load result:
+  <div data-sample="hardcoded"><pre><code>
+      {
+        errors : 0, // number of sub module controllers that could not be loaded
+        subModules : [...] // list of the sub module controller instances created
+      }
+  </code></pre></div>
 
-
-<div data-sample="hardcoded"><code><pre>
-{
-   errors : 0, // number of sub module controllers that could not be loaded
-   subModules : [...] // list of the sub module controller instances created
-}
-</code></pre></div>
-
-Once the sub controllers are loaded, they can be accessed from public properties of the main controller using the same path as the path for their data inside the data model. For previous example, a method to add a sub controller is added. Path to use is the path to the array of counters in the data model and the next index in this array:
-
+Once the sub controllers are loaded, they can be accessed from public properties of the main controller using the same path as the path for their data inside the data model.
+For previous example, a method to add a sub controller is added.
+Path to use is the path to the array of counters in the data model and the next index in this array:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/subcontrollers/MyMainController.js?tag=add&lang=javascript&outdent=true'></script>
 
 Then, assuming `moduleCtrl` is the main module controller public interface, the sub module controller public interface for the first counter will be accessible through `moduleCtrl.counters[0]`.
 
+
 ### Communication between sub module controllers and parent module
 
-The communication from the parent to the sub modules controllers is straight forward as the parent hold a reference to them on its instance. Communication from sub modules to a parent module is done through the event raised by the sub modules. Module controllers have a method that can be overridden to listen to events coming from all sub module controllers : `onSubModuleEvent`, but listener can also be added manually by the parent controller after the sub module controller is loaded.
+The communication from the parent to the sub modules controllers is straight forward as the parent hold a reference to them on its instance.
+Communication from sub modules to a parent module is done through the event raised by the sub modules.
+Module controllers have a method that can be overridden to listen to events coming from all sub module controllers : `onSubModuleEvent`, but listener can also be added manually by the parent controller after the sub module controller is loaded.
+
 
 ## Templates and sub module controllers
 
@@ -82,6 +87,5 @@ Using the Template widget from the Aria widget library allow to use different fe
 
 Using this feature the view can be structured the same way the data and the module controllers are. For the list of counters, the main template will then be:
 
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/subcontrollers/MyMainView.tpl?lang=at'></script>
 
-
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/modules/subcontrollers/MyMainView.tpl?lang=at&outdent=true'></script>

@@ -1,5 +1,5 @@
 Title: Button
-
+Category: Widgets
 
 Button widget enables the creation of rich, graphical buttons that function like traditional HTML form buttons and trigger an action when pressed.
 

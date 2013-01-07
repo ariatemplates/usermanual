@@ -9,11 +9,13 @@ CSS templates are special kinds of templates designed to bring the flexibility o
 CSS Templates are defined using the `CSSTemplate` statement and stored with the `.tpl.css` extension:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/cssTemplates/MyCSSTemplate.tpl.css?noheader=true&lang=at&outdent=true'></script>
+
 As shown above, in its simplest form, a CSS template really is a template file in which styles declarations are defined directly inside the `main` macro.
 
 To use these declarations from an HTML template, you just need to reference the classpath in the `$css` configuration property:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/cssTemplates/MyTemplate.tpl?noheader=true&lang=at&outdent=true'></script>
+
 Note that `$css` expects an array since you might want to include more than just one CSS template.
 
 ## Similarities and differences with HTML templates
@@ -34,16 +36,16 @@ As illustrated in the example below, CSS templates really come in handy when con
 
 Because they are meant to be shared among different modules, CSS templates do not have access to external data by design. They do however provide access to two special variables besides those explicitly declared in the template itself using `var`.  They are:
 
+* **`cssPath`**: the complete classpath of the CSS Template file, using folder notation, e.g. `ariadoc/snippets/templates/cssTemplates/MyCssTemplate`.
 
-***`cssPath`**: the complete classpath of the CSS Template file, using folder notation, e.g. `ariadoc/snippets/templates/cssTemplates/MyCssTemplate`.
-
-***`cssFolderPath`**: the URL of the CSS template location, relative to the [Aria.rootFolderPath](http://ariatemplates.com/api/#Aria:rootFolderPath:property).
+* **`cssFolderPath`**: the URL of the CSS template location, relative to the [Aria.rootFolderPath](http://ariatemplates.com/api/#Aria:rootFolderPath:property).
 
 The latter in particular is quite useful to define URLs of images located in the same folder as your CSS files.  Note that it takes into account the rootMap (not the urlMap) defined through the [download manager](core_layer_configuration#download-manager-configuration).
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=specialvars&lang=at&outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=specialvars&lang=css&outdent=true'></script>
 
 Both of these properties are inherited from the [CSSTemplate](http://ariatemplates.com/api/#aria.templates.CSSTemplate) class.
+
 
 ### Declaration and configuration
 
@@ -54,18 +56,19 @@ CSS Templates also support scripts when the **`$hasScript`** property is true.  
 Here's how a script method would be declared:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/cssTemplates/AnotherCSSTemplateScript.js?noheader=true&lang=javascript'></script>
+
 ...and then used in a CSS template:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=script&lang=at&outdent=true'></script>
 
-<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> At the moment, [macro_libraries](macro_libraries) cannot be used in CSS Templates.</div>
+<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;">**Note:** At the moment, [macro_libraries](macro_libraries) cannot be used in CSS Templates.</div>
+
 
 ## Using CSS templates
 
 The framework provides automatic scoping for style rules defined in CSS templates in order to avoid collisions.  This is done transparently by prefixing all the definitions with a unique global class selector assigned to the HTML element in which the template is rendered.
 
 For instance, an application may include two different templates with their own css style for the main header:
-
 
 <div data-sample="hardcoded"><code><pre>
 h1 {
@@ -83,7 +86,6 @@ h1 {
 
 These 2 rules will be translated as follow by AT:
 
-
 <div data-sample="hardcoded"><code><pre>
 .CSS1 h1 {
     color: red;
@@ -93,7 +95,8 @@ These 2 rules will be translated as follow by AT:
 }
 </code></pre></div>
 
-This definition is ultimately injected in a `<style>` statement inside the `<head>` of the page.  The HTML container of the respective templates are then assigned the `CSS1` and `CSS2` classes.
+
+This definition is ultimately injected in a <`style`> statement inside the <`head`> of the page.  The HTML container of the respective templates are then assigned the `CSS1` and `CSS2` classes.
 
 Note that it is also possible to include a CSS template as dependency in a normal class, using the `$css` property.  This is mainly used when defining [custom widgets](widget_libraries).
 
@@ -103,11 +106,11 @@ Note that it is also possible to include a CSS template as dependency in a norma
 
 A few remarks on this example:
 
-
 * Two macros are defined inside the css template (**`opacity`** and **`roundedCorners`**). Macros and control statements can be useful for generating CSS rules that depend on the browser.
 
 * The **`cssFolderPath`** has been used in order to specify the path of the background pattern image.
 
-* The **`cssClass`** and **`type`** configuration properties of sections have been used in order to style them in the CSS template.
+* The **`cssClass`** and **`type`** configuration properties of sections have been used in order to style them in
+the CSS template.
 
 * The **`getClassName`** and **`setClassName`** methods of the [aria.templates.DomElementWrapper](http://ariatemplates.com/api/#aria.templates.DomElementWrapper) class are used in the template script in order to change the appearance of each item after clicking on it.

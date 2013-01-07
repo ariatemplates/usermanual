@@ -11,9 +11,9 @@ Template Scripts are special types of classes whose existence is strictly relate
 The Aria Templates framework automatically copies the template script prototype members to the template prototype so that the template is given access to everything declared in the template script.
 
 ## Script definition
-The template script is similar to a normal Aria Templates class but it has to be defined with the [Aria.tplScriptDefinition](http://ariatemplates.com/api/#Aria:tplScriptDefinition:method) method. This method accepts an object of type [aria.templates.CfgBeans.TplScriptDefinitionCfg](http://ariatemplates.com/api/#aria.templates.CfgBeans:TplScriptDefinitionCfg).
+The template script is similar to a normal Aria Templates class but it has to be defined with the [`Aria.tplScriptDefinition`](http://ariatemplates.com/api/#Aria:tplScriptDefinition:method) method. This method accepts an object of type [`aria.templates.CfgBeans.TplScriptDefinitionCfg`](http://ariatemplates.com/api/#aria.templates.CfgBeans:TplScriptDefinitionCfg).
 
-Its properties are a subset of the properties accepted in a standard [Aria.classDefinition](http://ariatemplates.com/api/#Aria:classDefinition:method). Please refer to the [this APIDOC page](http://ariatemplates.com/api/#aria.core.CfgBeans:ClassDefinitionCfg) for the complete list and to the [article about Aria Templates Javascript classes](javascript_classes).
+Its properties are a subset of the properties accepted in a standard [`Aria.classDefinition`](http://ariatemplates.com/api/#Aria:classDefinition:method). Please refer to the [this APIDOC page](http://ariatemplates.com/api/#aria.core.CfgBeans:ClassDefinitionCfg) for the complete list and to the [article about Aria Templates Javascript classes](javascript_classes).
 
 As with class definitions, the physical file that contains a template script definition has **`.js`** extension.
 
@@ -21,14 +21,11 @@ As with class definitions, the physical file that contains a template script def
 
 When you want to associate a template script, you have to set the **`$hasScript`** property of the Template configuration to `true`. Consider the following example:
 
-
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MyTemplate.tpl?lang=at&outdent=true'></script>
 
 When this template is loaded, the framework automatically looks for script definition whose classpath is obtained by adding the keyword **`Script`** to the classpath of the template. So in this case you have to provide a script definition whose classpath is `ariadoc.snippets.templates.templateScripts.MyTemplateScript`. Here is the definition of a basic script that would be loaded:
 
-
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/templates/templateScripts/MyTemplateScript.js?lang=at&outdent=true'></script>
-
 
 You can notice that the script defines the method `showAlert` in its prototype. This method can be used inside the template (`${showAlert("my message")}`) because the template script prototype members are automatically copied to the template prototype.
 
@@ -88,11 +85,11 @@ It is possible to define methods that are called when a template is initialized 
 
 * `$beforeRefresh`
 Called at the beginning of any `$refresh` of the template.
-* [$dataReady](http://ariatemplates.com/api/#aria.templates.Template:$dataReady:method)
+* [`$dataReady`](http://ariatemplates.com/api/#aria.templates.Template:$dataReady:method)
 When the data has been loaded and the module associated to this template has been initialized
-* [$viewReady](http://ariatemplates.com/api/#aria.templates.Template:$viewReady:method)
+* [`$viewReady`](http://ariatemplates.com/api/#aria.templates.Template:$viewReady:method)
 When the template (but not its subtemplates) is ready to be displayed
-* [$displayReady](http://ariatemplates.com/api/#aria.templates.Template:$displayReady:method)
+* [`$displayReady`](http://ariatemplates.com/api/#aria.templates.Template:$displayReady:method)
 When the template and its subtemplates are ready to be displayed
 * `$afterRefresh`
 Called after any `$refresh` of the template

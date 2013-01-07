@@ -6,7 +6,10 @@ Keyboard navigation plays an important role in the usability and accessibility o
 
 ## Tab Navigation
 
-Using the tab key to navigate through the list of controls in your interface is the most basic keyboard navigation that is natively available in any browser.  Control of this behavior can be achieved using the `tabindex` property of elements that defines the order in which they should receive focus.  This property being also supported by AT widgets, it is very intuitive to indicate the tabbing sequence for the controls of a template.
+Using the tab key to navigate through the list of controls in your interface is the most basic keyboard navigation that is natively available in any browser.
+Control of this behavior can be achieved using the `tabindex` property of elements that defines the order in which they should receive focus.
+This property being also supported by AT widgets, it is very intuitive to indicate the tabbing sequence for the controls of a template.
+
 <div data-sample="hardcoded"><code><pre>
 <div style="float:left; margin-right:10px">
     <input type="text" tabindex=1 />
@@ -14,7 +17,7 @@ Using the tab key to navigate through the list of controls in your interface is 
         label : "First",
         tabIndex: 3,
         block: true
-    } /}        
+    } /}
 </div>
 
 <div style="float:left">
@@ -23,13 +26,14 @@ Using the tab key to navigate through the list of controls in your interface is 
         label : "Second",
         tabIndex: 4,
         block: true
-    } /}        
+    } /}
 </div>
 </code></pre></div>
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/templates/keyboardnavigation/tabnavigation/?skip=1' ></iframe>
 
-Because it is possible in the same application to use templates in which the same `tabIndex` is used for different widgets, or simply because the same template may be used several times in the same panel, collisions may occur.  To avoid this issue, the Template widget provides a [`baseTabIndex`](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TemplateCfg) property that sets the base index from which all of its widgets' `tabIndex` should be computed.
+Because it is possible in the same application to use templates in which the same `tabIndex` is used for different widgets, or simply because the same template may be used several times in the same panel, collisions may occur.
+To avoid this issue, the Template widget provides a [`baseTabIndex`](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TemplateCfg) property that sets the base index from which all of its widgets' `tabIndex` should be computed.
 
 Consider the following code:
 
@@ -46,14 +50,17 @@ Consider the following code:
 }/}
 </code></pre></div>
 
-In this example, each `tabindex` used by widgets in `Search.tpl` will be incremented by 100, and those in `Results.tpl` by 200.  Thus, if the following button is defined in `Search.tpl`...
+In this example, each `tabindex` used by widgets in `Search.tpl` will be incremented by 100, and those in `Results.tpl` by 200.
+Thus, if the following button is defined in `Search.tpl`...
+
 <div data-sample="hardcoded"><code><pre>
 {@aria:Button {
     label : "Search",
     tabIndex: 4,
     onclick: "search"
-} /}        
+} /}
 </code></pre></div>
+
 ...its real `tabindex` in the resulting page will be 104.
 
 Keep in mind the following when using `baseTabIndex`:
@@ -63,13 +70,16 @@ Keep in mind the following when using `baseTabIndex`:
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/templates/keyboardnavigation/subTemplate/?skip=1' ></iframe>
 
+
 ## Keymaps
 
-Keymaps are mechanisms that AT uses to catch sets of keystrokes and assign them to specific actions.  They can be created to handle keyboard shortcuts inside a specific section or at application level.
+Keymaps are mechanisms that AT uses to catch sets of keystrokes and assign them to specific actions.
+They can be created to handle keyboard shortcuts inside a specific section or at application level.
+
 
 ### Creating keymaps
 
-The [keymap object](http://ariatemplates.com/api/#aria.templates.CfgBeans:KeyMapConfiguration) defines a keystroke and which method it should execute.  It has the following properties:
+The [`keymap object`](http://ariatemplates.com/api/#aria.templates.CfgBeans:KeyMapConfiguration) defines a keystroke and which method it should execute.  It has the following properties:
 
 * **`key`**: a key (see below)
 * **`shift`**: _ (optional)_ a boolean indicating whether or not the Shift key must be pressed
@@ -80,109 +90,108 @@ The [keymap object](http://ariatemplates.com/api/#aria.templates.CfgBeans:KeyMap
 The `key` parameter can either be:
 
 * A key code, e.g. `120`
-* An [aria.DomEvent](http://ariatemplates.com/api/#aria.DomEvent) code constant, e.g. `aria.DomEvent.KC_F9`
+* An [`aria.DomEvent`](http://ariatemplates.com/api/#aria.DomEvent) code constant, e.g. `aria.DomEvent.KC_F9`
 * The `"*"` wildcard character (see [using keymaps at section level](keyboard_navigation#at-section-level))
 * A key shortcut string, e.g. `"F9"`
-<pre style="height:146px;overflow:auto;width:150px;">
-backspace
-tab
-num_center
-enter
-return
-shift
-ctrl
-control
-alt
-pause
-caps_lock
-escape
-space
-pageup
-page_up
-pagedown
-page_down
-end
-home
-left
-arrow_left
-up
-arrow_up
-right
-arrow_right
-down
-arrow_down
-print_screen
-insert
-delete
-zero
-one
-two
-three
-four
-five
-six
-seven
-eight
-nine
-a
-b
-c
-d
-e
-f
-g
-h
-i
-j
-k
-l
-m
-n
-o
-p
-q
-r
-s
-t
-u
-v
-w
-x
-y
-z
-context_menu
-num_zero
-num_one
-num_two
-num_three
-num_four
-num_five
-num_six
-num_seven
-num_eight
-num_nine
-multiply
-plus
-minus
-period
-division
-divide
-f1
-f2
-f3
-f4
-f5
-f6
-f7
-f8
-f9
-f10
-f11
-f12
-</pre>
+  <pre style="height:146px;overflow:auto;width:150px;">
+    backspace
+    tab
+    num_center
+    enter
+    return
+    shift
+    ctrl
+    control
+    alt
+    pause
+    caps_lock
+    escape
+    space
+    pageup
+    page_up
+    pagedown
+    page_down
+    end
+    home
+    left
+    arrow_left
+    up
+    arrow_up
+    right
+    arrow_right
+    down
+    arrow_down
+    print_screen
+    insert
+    delete
+    zero
+    one
+    two
+    three
+    four
+    five
+    six
+    seven
+    eight
+    nine
+    a
+    b
+    c
+    d
+    e
+    f
+    g
+    h
+    i
+    j
+    k
+    l
+    m
+    n
+    o
+    p
+    q
+    r
+    s
+    t
+    u
+    v
+    w
+    x
+    y
+    z
+    context_menu
+    num_zero
+    num_one
+    num_two
+    num_three
+    num_four
+    num_five
+    num_six
+    num_seven
+    num_eight
+    num_nine
+    multiply
+    plus
+    minus
+    period
+    division
+    divide
+    f1
+    f2
+    f3
+    f4
+    f5
+    f6
+    f7
+    f8
+    f9
+    f10
+    f11
+    f12
+  </pre>
 
 Example:
-
 
 <div data-sample="hardcoded"><code><pre>
 {
@@ -195,28 +204,36 @@ Example:
 }
 </code></pre></div>
 
+
 ### Using keymaps
 
 There are two ways to assign keymaps to your app depending on the scope you want your shortcuts to have.
 
+
 #### At Section Level
 
-Keymaps assigned to a section will only be active when the focus is inside this section.  To do so, you need to supply an array of keymaps objects to the `keyMap` property of your [section](http://ariatemplates.com/api/#aria.templates.CfgBeans:SectionCfg), like in this example:
-
+Keymaps assigned to a section will only be active when the focus is inside this section.
+To do so, you need to supply an array of keymaps objects to the `keyMap` property of your [section](http://ariatemplates.com/api/#aria.templates.CfgBeans:SectionCfg), like in this example:
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/templates/keyboardnavigation/sectionkeyMap/?skip=1' ></iframe>
 
-The return value of a section keymap's callback method defines whether or not the keyboard event should bubble or not.  If the method returns `true`, the event will be propagated to parent sections and globally defined keymaps hooks (see below), if it returns `false` the shortcut will only be interpreted by the current section.
+The return value of a section keymap's callback method defines whether or not the keyboard event should bubble or not.
+If the method returns `true`, the event will be propagated to parent sections and globally defined keymaps hooks (see below), if it returns `false` the shortcut will only be interpreted by the current section.
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/templates/keyboardnavigation/bubbleKeyMap/?skip=1' ></iframe>
 
-We've seen earlier that it was possible to use the `"*"` wildcard character in a keymap definition.  In this case, the keymap will match any key (with specified modifiers if any) that was not previously caught by the other definition for the same section.  Because this happens before the keyboard event is passed to the parent section, a wildcard keymap can be used to trap shortcuts defined at a higher level inside a subsection.
+We've seen earlier that it was possible to use the `"*"` wildcard character in a keymap definition.
+In this case, the keymap will match any key (with specified modifiers if any) that was not previously caught by the other definition for the same section.
+Because this happens before the keyboard event is passed to the parent section, a wildcard keymap can be used to trap shortcuts defined at a higher level inside a subsection.
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/templates/keyboardnavigation/wildcardKeyMap/?skip=1' ></iframe>
 
+
 #### At Application Level
 
-Keymaps assigned at application level will be triggered wherever the focus is.  In this case, they must be set using the `addGlobalKeyMap()` method of [`aria.templates.NavigationManager`](http://ariatemplates.com/api/#aria.templates.NavigationManager:addGlobalKeyMap:method).  This can be done anywhere in your code.
+Keymaps assigned at application level will be triggered wherever the focus is.
+In this case, they must be set using the `addGlobalKeyMap()` method of [`aria.templates.NavigationManager`](http://ariatemplates.com/api/#aria.templates.NavigationManager:addGlobalKeyMap:method).
+This can be done anywhere in your code.
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/templates/keyboardnavigation/applicationLevelKeyMap/?skip=1' ></iframe>
 
@@ -224,20 +241,23 @@ Note that, if you can provide multiple keymap in a section configuration, `addGl
 
 It is also possible to delete a globally assigned keymap using the `removeGlobalKeyMap()` method to which you pass a simpler keymap definition without callback, as illustrated below:
 
-
 <div data-sample="hardcoded"><code><pre>
     aria.templates.NavigationManager.removeGlobalKeyMap({
 	key : "F4"
     });
 </code></pre></div>
 
-<span style="color:#D13838">Be careful!</span>  Hooks set using `addGlobalKeyMap()` are not automatically removed when the object that created them is destroyed.  Don't forget to remove them.
+<span style="color:#D13838">Be careful!</span> Hooks set using `addGlobalKeyMap()` are not automatically removed when the object that created them is destroyed.  Don't forget to remove them.
+
 
 ## Table-Like Navigation
 
-The table-like navigation feature of Aria Templates allows moving focus using arrow keys inside a section.  When set, using the `up` and `down` arrow keys (along with modifiers if activated) moves the focus from one element to the next one.  Note that in this context "next one" has to be understood as "the next element defined in the template": the `tabIndex` widgets property (explained at the beginning of this article) has no effect in this case.
+The table-like navigation feature of Aria Templates allows moving focus using arrow keys inside a section.
+When set, using the `up` and `down` arrow keys (along with modifiers if activated) moves the focus from one element to the next one.
+Note that in this context "next one" has to be understood as "the next element defined in the template": the `tabIndex` widgets property (explained at the beginning of this article) has no effect in this case.
 
-To enable table-like navigation for a section, you can simply set its `tableNav` property to `true` or to a [`TableNavConfiguration`](http://ariatemplates.com/api/#aria.templates.CfgBeans:TableNavConfiguration) object (a keymap definition without callback) to trigger it only when the specified modifiers are used.  The following example illustrates the functionality in a section where you can move from one textfield to another using `ctrl` + arrows keys.
+To enable table-like navigation for a section, you can simply set its `tableNav` property to `true` or to a [`TableNavConfiguration`](http://ariatemplates.com/api/#aria.templates.CfgBeans:TableNavConfiguration) object (a keymap definition without callback) to trigger it only when the specified modifiers are used.
+The following example illustrates the functionality in a section where you can move from one textfield to another using `ctrl` + arrows keys.
 
 <div data-sample="hardcoded"><code><pre>
      {section {
@@ -250,7 +270,8 @@ To enable table-like navigation for a section, you can simply set its `tableNav`
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/templates/keyboardnavigation/tableNavigation/?skip=1' ></iframe>
 
-In tables defined within sections that enable `tableNav`, focus can be moved from cell to cell using the `left` and `right` arrows on top of `up` and `down`.  This applies to cells that contain at least a focusable element and if more than one are present focus will be set on the first one.
+In tables defined within sections that enable `tableNav`, focus can be moved from cell to cell using the `left` and `right` arrows on top of `up` and `down`.
+This applies to cells that contain at least a focusable element and if more than one are present focus will be set on the first one.
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/%VERSION%/samples/templates/keyboardnavigation/tableNavigationFocus/?skip=1' ></iframe>
 
