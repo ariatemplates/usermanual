@@ -13,16 +13,22 @@ mixin toh
 mixin category(category)
     -category = category.split("_").map(function(x) { return x[0].toUpperCase() + x.substr(1) }).join(" ")
     li= category
-    
+
 mixin unescapeHtml(text)
     -text = text.replace(/\&lt;/ig, "<").replace(/\&gt;/ig, ">").replace(/\&quot;/ig, '"').replace(/\&#39;/ig, "'");
     mixin replaceVersion(text)
 
 mixin replaceVersion(text)
-  -text = text.replace(/%VERSION%/ig, metadata.version)
-  != text
+    -text = text.replace(/%VERSION%/ig, metadata.version)
+    != text
 
-  
+mixin includeNavBar(version)
+    if version == 'latest'
+        include navigationbar/latest.jade
+    else if version == '1.3.4'
+        include navigationbar/1.3.4.jade
+
+
 !!!5
 html(lang='en')
     head
@@ -43,7 +49,7 @@ html(lang='en')
                 .ie-hidden {display:none;}
         //if lt IE 8
             link(href='/styles/ie/ie7.css', rel='stylesheet', type='text/css')
-        
+
         script(type='text/javascript', src='/js/top-scrolling.js')
 
     body.documentation
@@ -79,15 +85,15 @@ html(lang='en')
                                 if metadata && metadata.Navbar
                                     nav.navigationbar
                                         div#dropdown.aligncenter.nav-main
-                                            include navigationbar.jade
+                                            mixin includeNavBar(metadata.version)
                                     mixin doc()
-                                        
+
                                     nav.navigationbar
                                         div.aligncenter.nav-main
-                                            include navigationbar.jade
+                                            mixin includeNavBar(metadata.version)
                                 else
                                     mixin doc()
-                            
+
                         aside.column.sidebar
                             include versionList
                             div.wiki-search
@@ -95,7 +101,7 @@ html(lang='en')
                               input(type='text', id='search', name='q', value='', placeholder='search inside doc', onkeyup="javascript: if (event.keyCode == 13) {var q = document.getElementById('search').value; if ((q == '') || (q == null)) {return false;} else {openSearchResults(q);}} function openSearchResults (query) {var popUp = window.open('http://www.google.com/search?q=' + encodeURIComponent(query) + ' site:ariatemplates.com', 'new_window_1'); if (popUp == null || typeof(popUp)=='undefined') {alert('Please disable your pop-up blocker and re do the search.');} else { popUp.focus();}}")
 
                             block sidebar
-                            
+
                             if toh && metadata && metadata.Toc
                                 div#toc
                                     h4 Contents
@@ -134,10 +140,10 @@ html(lang='en')
                             li: a(href='/about/team') The Team
             section.content.legal &copy; 2012 Aria Templates is licensed under Apache 2.0 license. See our
                 a(href='/license') licensing page
-                
+
         script(type='text/javascript')
             var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-29575860-1']); 
+            _gaq.push(['_setAccount', 'UA-29575860-1']);
             _gaq.push(['_setDomainName', 'ariatemplates.com']);
             _gaq.push(['_trackPageview']);
             (function() {
