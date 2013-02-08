@@ -35,9 +35,10 @@ module.exports = {
                 hash = hash.toLowerCase().replace(/[ _]/g, "-");
             }
             url = hash_parts[0];
-            url = url.toLowerCase().replace(/[\?-]/g, "").replace(/__/g, "_");
+            url = url.toLowerCase().replace(/[\?-]/g, "").replace(/__/g, "_").replace(/ /g, "_");
 
-            return "[["+ url + ( hash ? ("#" + hash ) : "" ) + ( title ? ("|" + title ) : "" ) + "]]";
+            var new_link = "[["+ url + ( hash ? ("#" + hash ) : "" ) + ( title ? ("|" + title ) : "" ) + "]]";
+            return new_link;
         });
 
         // APILinks
@@ -75,7 +76,7 @@ module.exports = {
                     .join("&");
             }
             file = file.replace(/\\/g, "/");
-            return "<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/"+ file + (options ? ("?"+options) : "") + "' defer></script>";
+            return "<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/%VERSION%/snippets/"+ file + (options ? ("?"+options) : "") + "'></script>";
         });
 
 

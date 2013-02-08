@@ -1,18 +1,17 @@
-require("colors");
+﻿require("colors");
 
 var argv = process.argv,
     fs = require('fs'),
     panda = require('panda-docs'),
-    _ =  require('underscore')._,
-    wrench = require('wrench');
+    async = require('async');
 
 argv.shift();
 argv.shift();
 
-var version = argv[0];                                                  // Takes the doc version param if provided
-var versions = [];                                                      // Array to store all the versions
+var version = argv[0];     // Takes the doc version param if provided
+var versions = [];         // Array to store all the versions
 
-console.log("GENERATING DOCUMENTATION".green);
+console.log("GENERATING DOCUMENTATION".cyan.bold);
 
 // Check if I have to build all the versions or just one (x.y.z or latest)
 fs.readdir("./src", function(err, files) {
@@ -28,103 +27,53 @@ fs.readdir("./src", function(err, files) {
             return (value === '' || value == "index.md" || value.match(/^\./)) ? 0 : 1;
         });
     }
+    
+    copyFileSync("./resources/documentation.css", "./out/documentation.css");
 
     // For each version generates the html files
-    versions.forEach(function(verj) {        
-        makeDevDocs(verj);
+    var series = []
+    versions.forEach(function(verj) {
+        series.push(function(cb) {
+            console.log("BUILDING ".green + verj.green);
+            makeDevDocs(verj, cb);
+        });
+    });
+    
+    async.series(series, function(err, results) {
+        if (!err) {
+            console.log("DOCUMENTATION GENERATED ✔".green);
+        } else {
+            console.log("GENERATION FAILED ⨯".red.bold);
+        }
     });
 });
 
 // Generates the html files for the documentation
-function makeDevDocs(verj) {
-    var outDir = "./out/" + verj;
-    var manifestFile = "./src/" + verj + "/manifest.json";
+function makeDevDocs(verj, callback) {
 
-    if (!fs.existsSync(outDir)) {
-        wrench.mkdirSyncRecursive(outDir);      
+    var options = {
+        title: "Aria Templates Usermanual (" + verj + ")",
+        skin: "./resources/articles/layout.jade",
+        assets: "./resources/assets",
+        disableTests: true,
+        output: "./out/" + verj,
+        outputAssets: "./out/",
+        extension: ".md"
     }
-
-    panda.make([manifestFile, "--template", "./resources/articles/layout.jade", "--assets", "./resources/assets", "-d", "-t", "Aria Templates Usermanual", "-o", outDir, "--outputAssets", "./out/" + verj], function(err) {
+    
+    panda.make(["./src/" + verj], options, function(err, stats) {
         if (err) {
             console.error(err);
-            process.exit(-1);
+            console.log("BUILD ⨯".red);
+            callback(err);
+        } else {
+            console.log(stats.files.length + ' files generated');
+            console.log("BUILD ✔".green);
+            callback(null)
         }
     });
-
-    copyFileSync("./resources/documentation.css", "./out/documentation.css");
 }
 
-function generateToc(input) {
-    var lines = input.split('\n'),
-        _lines = _(lines).chain(),
-
-        allHeaders = getHashedHeaders(_lines).concat(getUnderlinedHeaders(_lines)),
-        lowestRank = _(allHeaders).chain().pluck('rank').min().value(),
-        linkedHeaders = _(allHeaders).map(addLink);
-
-    if (linkedHeaders.length === 0) return false;
-
-    var toc = linkedHeaders.map(function (x) {
-            var indent = _(_.range(x.rank - lowestRank))
-                .reduce(function (acc, x) { return acc + '\t'; }, '');
-
-            return indent + '- [' + x.name + '](' + x.link + ')';
-        })
-        .join('\n') +
-        '\n';
-
-    return toc;
-}
-
-function getUnderlinedHeaders (_lines) {
-    // Find headers of the form
-    // h1       h2
-    // ==       --
-    
-    return _lines
-        .map(function (line, index, lines) {
-            if (index === 0) return null;
-            var rank;
-                
-            if (/^==+/.exec(line))      rank = 1;
-            else if (/^--+/.exec(line)) rank = 2;
-            else                        return null;
-
-            return {
-                rank  :  rank,
-                name  :  lines[index - 1],
-                line  :  index - 1
-            };
-        })
-        .filter(notNull)
-        .value();
-}
-
-function getHashedHeaders (_lines) {
-    // Find headers of the form '### xxxx xxx xx'
-    return _lines
-        .map(function (x, index) {
-            var match = /^(\#{1,8})[ ]*(.+)$/.exec(x);
-            
-            return match ?  { 
-                    rank  :  match[1].length,
-                    name :  match[2],
-                    line  :  index
-                } : null;
-        })
-        .filter(notNull)
-        .value();
-}
-
-function addLink(header) {
-    return _(header).extend({ 
-        link:  '#' + header.name.trim().toLowerCase()
-            .replace(/ /g,'-')
-            .replace(/[`.,()*]/g,'')
-    });
-}
-
-function notNull(x) { return  x !== null; }
 
 function copyFileSync(srcFile, destFile) {
     var BUF_LENGTH = 64*1024;

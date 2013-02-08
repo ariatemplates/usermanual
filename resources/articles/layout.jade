@@ -1,56 +1,155 @@
-include ../common_layout
+-metadata.version = whoAmI.split(/[\\\/]/)[1]
+-metadata.Navbar = (metadata.Navbar ? (metadata.Navbar === 'false' ? false: true ) : true)
+-metadata.Toc = (metadata.Toc ? (metadata.Toc === 'false' ? false: true ) : true)
 
-mixin doctype
-html(lang='en', dir='ltr', class='client-js')
+mixin doc
+    div.doc(class=(metadata.CssClass||""))
+        mixin unescapeHtml(content)
 
-  mixin head
+mixin toh
+    -toh.splice(0,0,{}) //adding a first fake h1 element
+    != headingTable(toh, ["toclevel", "toctext"])
 
-  body.documentation
+mixin category(category)
+    -category = category.split("_").map(function(x) { return x[0].toUpperCase() + x.substr(1) }).join(" ")
+    li= category
 
-    mixin header
+mixin unescapeHtml(text)
+    -text = text.replace(/\&lt;/ig, "<").replace(/\&gt;/ig, ">").replace(/\&quot;/ig, '"').replace(/\&#39;/ig, "'");
+    mixin replaceVersion(text)
 
-    mixin scrolling
+mixin replaceVersion(text)
+    -text = text.replace(/%VERSION%/ig, metadata.version)
+    != text
 
-    div.content-wrapper
+mixin includeNavBar(version)
+    if version == 'latest'
+        include navigationbar/latest.jade
+    else if version == '1.3.4'
+        include navigationbar/1.3.4.jade
 
-      mixin goToTop
 
-      section.content
-        div.wrapper
-          div.columns.two.title
-            article.column
-              if metadata && metadata.title
-                h1 #{metadata.title}
-              if metadata && metadata.author
-                span.cite by
-                  -var authors = metadata.author.split(",")
-                  -var urls = metadata.url.split(",")
-                  -for (var a = 0; a < authors.length; a++)
-                    a(href='#{urls[a]}') #{authors[a]}
-                    if (a != authors.length - 1)
-                      ,
-              if metadata && !metadata.nonavbar
-                nav.navigationbar
-                  div#dropdown.aligncenter.nav-main
-                    include navigationbar.jade
+!!!5
+html(lang='en')
+    head
+        title #{title} - #{metadata.Title}
+        meta(charset='utf-8')
+        link(href='/favicon.ico', type='image/ico', rel='shortcut icon')
+        link(rel='stylesheet', href='/styles/all.css', type='text/css')
+        //if IE 7
+            link(rel='stylesheet', href='/styles/versionselect.css', type='text/css')
 
-                div.doc
-                  mixin unescapeHtml(content)
-                nav.navigationbar
-                  div.aligncenter.nav-main
-                    include navigationbar.jade
-              else
-                div.doc.nonavbar
-                  mixin unescapeHtml(content)
+        link(rel='stylesheet', href='../documentation.css', type='text/css')
+        link(rel='stylesheet', href='http://snippets.ariatemplates.com/css/highlight_skin.css', type='text/css')
 
-            aside.column.sidebar
-              include versionList.jade
-              mixin search
+        //if lt IE 9
+            script(type='text/javascript', src='/js/iemap.js')
+            script(src='//html5shiv.googlecode.com/svn/trunk/html5.js', type='text/javascript', charset='utf-8')
+            style
+                .ie-hidden {display:none;}
+        //if lt IE 8
+            link(href='/styles/ie/ie7.css', rel='stylesheet', type='text/css')
 
-              if toc && metadata && !metadata.notoc
-                div#tableOfContent
-                  h4 Contents
-                  div.toc
-                    mixin toc
+        script(type='text/javascript', src='/js/top-scrolling.js')
 
-    mixin footer
+    body.documentation
+        div#top
+        header#header
+            div.logo
+                h5
+                    a(href='/')
+                        img(src='/images/logo-page.png', alt='Aria Templates')
+            nav
+                a.documentation(href='/documentation') Documentation
+                a.blog(href='/blog') Blog
+                a.contribute(href='/contribute') Contribute
+                a.about(href='/about') About
+                a.download.button.green(href='/download') Download
+
+        div.content-wrapper
+            div#scrollMenu.up
+                div
+                    a(href='#top', onclick="smoothScroll('top');return false") Top
+            section.content
+                div.wrapper
+                    div.columns.two.title
+                        article.column
+                            block content
+                                if metadata && metadata.Title
+                                    h1 #{metadata.Title}
+                                if metadata && metadata.Category
+                                    div.catlinks
+                                        ul
+                                            each cat in metadata.Category.split(",")
+                                                mixin category(cat)
+                                if metadata && metadata.Navbar
+                                    nav.navigationbar
+                                        div#dropdown.aligncenter.nav-main
+                                            mixin includeNavBar(metadata.version)
+                                    mixin doc()
+
+                                    nav.navigationbar
+                                        div.aligncenter.nav-main
+                                            mixin includeNavBar(metadata.version)
+                                else
+                                    mixin doc()
+
+                        aside.column.sidebar
+                            include versionList
+                            div.wiki-search
+                              h4 Search
+                              input(type='text', id='search', name='q', value='', placeholder='search inside doc', onkeyup="javascript: if (event.keyCode == 13) {var q = document.getElementById('search').value; if ((q == '') || (q == null)) {return false;} else {openSearchResults(q);}} function openSearchResults (query) {var popUp = window.open('http://www.google.com/search?q=' + encodeURIComponent(query) + ' site:ariatemplates.com', 'new_window_1'); if (popUp == null || typeof(popUp)=='undefined') {alert('Please disable your pop-up blocker and re do the search.');} else { popUp.focus();}}")
+
+                            block sidebar
+
+                            if toh && metadata && metadata.Toc
+                                div#toc
+                                    h4 Contents
+                                    mixin toh()
+
+        footer#footer
+            section.content
+                nav
+                    section.documentation
+                        h5
+                            a(href='/documentation') Documentation
+                        ul
+                            li: a(href='/usermanual') User Manual
+                            li: a(href='/aria/guide/apps/apidocs', target=' blank') Api Documentation
+                            li: a(href='/guides') Guides
+                            li: a(href='/faq') FAQ
+                    section.discuss
+                        h5
+                            a(href='/discuss') Discuss
+                        ul
+                            li: a(href='/blog') Blog
+                            li: a(href='/forum') Forum
+                            li: a(href='/blog/category/news') Latest News
+                    section.contribute
+                        h5
+                            a(href='/contribute') Contribute
+                        ul
+                            li: a(href='http://github.com/ariatemplates') Source Code
+                            li: a(href='http://github.com/ariatemplates/ariatemplates/issues') Bugs tracking
+                            li: a(href='/contribute/documentation') Documentation
+                    section.contact
+                        h5
+                            a(href='/about') About
+                        ul
+                            li: a(href='/about/contact') Contact
+                            li: a(href='/about/team') The Team
+            section.content.legal &copy; 2012 Aria Templates is licensed under Apache 2.0 license. See our
+                a(href='/license') licensing page
+
+        script(type='text/javascript')
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-29575860-1']);
+            _gaq.push(['_setDomainName', 'ariatemplates.com']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
