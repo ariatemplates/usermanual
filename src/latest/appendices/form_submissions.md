@@ -22,47 +22,20 @@ The IFrame technique is based on using the `target` attribute of a `form` HTML e
 *Remove the IFrame, and reset the target attribute of the form:''
 
 ### API
-A method is available to use the new IFrame transport, `aria.core.IO.asyncFormSubmit`.
+A method is available to use the new IFrame transport, [`aria.core.IO.asyncFormSubmit`](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.IO:asyncFormSubmit:method).
 
-The user will need to define one or more of the following:
+The user will need to use these parameters:
 
-* FormId is the ID used in the HTML form object (if passing a form object then FormId is not necessary).
-* HTML form object containing the inputs to be used in the form submission (if passing a formId then no form object is necessary).
-* URL to post the form to (optional - can be specified in the action attribute of the form or separately as a URL paramter of the `asyncFormSubmit` call.  Note if the URL parameter is used then this will override any action attribute defined within the form).
-* Method to use for the request (optional - can be specified in the HTML form object but if it is passed in using the method parameter then this value will override the forms method attribute).
-* Callback to be used when returning a response for the request.
-
-<div data-sample="hardcoded"><code><pre>
- asyncFormSubmit({     
-     "formId" : "myFormId", 
-     "form" : myForm, 
-     "url" : myURL,
-     "method" : "POST",
-     "callback" : {
-         fn:obj.method,      
-         scope:obj,       
-         onerror:obj2.method2,  
-         onerrorScope:obj2,
-         args:{x:123}     
-     }
- })
-</code></pre></div>
-
+* Either a `formId`, id of the HTML form, or `form`, the HTML form object containing the inputs to be used in the form submission.
+* `url`: the URL to post the form to.  This parameter is optional and can be specified in the action attribute of the form.  However, if this parameter is used, it will then override any action attribute defined within the form.
+* `method`: the method to use for the request.  This parameter is optional and can be specified in the method attribute of the form.  However, if this parameter is used, it will then override any action attribute defined within the form.
+* `callback`: the callback to be used when a response has been returned.
 
 ## Submitting a Form
 
-The following code is used to submit the form in the sample:
+Here's an example of form submission:
 
-<div data-sample="hardcoded"><code><pre>
-  aria.core.IO.asyncFormSubmit({
-    formId : "simulateAsyncFormSubmit",
-    callback : {
-      fn : this.onSuccess,
-      onerror : this.onError,
-      scope : this
-    }
-  });
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=submitExample1&lang=javascript&outdent=true'></script>
 
 In this example only the `formId` and the `callback` are needed.  The IFrame transport then extracts the form using the ID and completes the request calling the specific callback after the response has been received:
 
@@ -74,23 +47,11 @@ In this example only the `formId` and the `callback` are needed.  The IFrame tra
 
 In this example the file input is invisible to the user, instead there is a link which when clicked will trigger the file input click method to open the system dialog.
 
-<div data-sample="hardcoded"><code><pre>
- {@aria:Link {
-     label: "Import from file",
-     onclick: {
-         fn: "uploadFile"
-     }
-  }/}
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitView.tpl?tag=uploadExample&lang=at&outdent=true'></script>
 
 When the click event is triggered on the link the following handler is called:
 
-<div data-sample="hardcoded"><code><pre>
-  uploadFile : function () {
-   ...   
-    aria.utils.Dom.getElementById("simulateAsyncFileUpload").click();
-  }
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=uploadExample1&lang=javascript&outdent=true'></script>
 
 The hidden file input has an ID of "simulateAsyncFileUpload", therefore its click event is triggered which opens the system dialog.
 
@@ -98,28 +59,8 @@ The hidden file input has an ID of "simulateAsyncFileUpload", therefore its clic
 ### Catching the Change Event of the File Upload
 When a user opens a system dialog from the file input, they can browse directories select a file and click on open.  The system dialog then disappears and the file input contains the path and filename of the file to be uploaded.  To trigger a script when the user selects a file in the system dialog, you need to add a listener to the change event of the file input.
 
-
-<div data-sample="hardcoded"><code><pre>
-  uploadFile : function () {  
-    ... 
-    // add a listener on the change event of the file input.
-    aria.utils.Event.addListener("simulateAsyncFileUpload", "change", this.fileChosen, this);
-    ...			
-  }
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=uploadExample2&lang=javascript&outdent=true'></script>
 
 After the user has selected a file and clicked open the `fileChosen` method will be executed.
 
-<div data-sample="hardcoded"><code><pre>
-  fileChosen : function () {
-    // simulate async request to submit form
-    aria.core.IO.asyncFormSubmit({
-      formId : "simulateAsyncFormSubmit",
-      callback : {
-        fn : this.onSuccess,
-        onerror : this.onError,
-        scope : this
-      }
-    });
-  }
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=submitExample2&lang=javascript&outdent=true'></script>
