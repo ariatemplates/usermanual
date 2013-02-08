@@ -9,9 +9,9 @@ var config = require('./config');
 var mw2md = require('./mw2md');
 var mw2md_topspot = require('./mw2md_topspot');
 
-var wiki_destination = "mediawiki";
-var markdown_destination = "markdown";
-var images_destination = "images";
+var wiki_destination = __dirname + "/mediawiki";
+var markdown_destination = __dirname + "/markdown";
+var images_destination = __dirname + "/images";
 
 var directory_mappings = {
     "Around_Classes" :                          { dir: "core/concepts"                },
@@ -95,10 +95,10 @@ var directory_mappings = {
 
 
 console.log("Creating local folders".yellow);
-if (fs.existsSync(__dirname + '/' + markdown_destination)) {
-    wrench.rmdirSyncRecursive(__dirname + '/' + markdown_destination);
-    wrench.rmdirSyncRecursive(__dirname + '/' + wiki_destination);
-    wrench.rmdirSyncRecursive(__dirname + '/' + images_destination);
+if (fs.existsSync(markdown_destination)) {
+    wrench.rmdirSyncRecursive(markdown_destination);
+    wrench.rmdirSyncRecursive(wiki_destination);
+    wrench.rmdirSyncRecursive(images_destination);
 }
 
 fs.mkdirSync(markdown_destination);
@@ -162,7 +162,7 @@ connection.query(query, function(err, rows, fields) {
 
 var save_mediawiki_text = function(page, last) {
     connection.query("SELECT old_text FROM text WHERE old_id = ?", [page.textId], function(err, results) {
-        var wiki_filename = __dirname + '/' + wiki_destination + '/' + page.title + '.wiki';
+        var wiki_filename = wiki_destination + '/' + page.title + '.wiki';
         var md_filename = get_page_path(page);
         var text = results[0].old_text.toString();
         var markdown = mw2md_topspot.before(text);
@@ -186,7 +186,7 @@ var save_mediawiki_html = function(pageTitle, last) {
     };
 
     http_get(options, function(htmlPageContent, statusCode) {
-        var filename = __dirname + '/' + wiki_destination + '/html/' + pageTitle + '.html';
+        var filename = wiki_destination + '/html/' + pageTitle + '.html';
         console.log('Page title:'.yellow, pageTitle, 'Status code:'.green, statusCode);
 
         save_to_file(filename, htmlPageContent, function() {
@@ -199,7 +199,7 @@ var save_mediawiki_html = function(pageTitle, last) {
                     encoding: 'binary'
                 }
                 http_get(image_options, function(image, statusCode) {
-                    var image_filepath = __dirname + '/' + images_destination + '/' + image_name;
+                    var image_filepath = images_destination + '/' + image_name;
                     save_to_binary_file(image_filepath, image, function() {
                         console.log('Image retrieved:'.yellow, image_filepath);
                     });
@@ -235,7 +235,7 @@ var http_get = function(options, callback) {
 
 
 var get_page_path = function(pageDef) {
-    var lpath = __dirname + '/' + markdown_destination + '/' + pageDef.config.dir;
+    var lpath = markdown_destination + '/' + pageDef.config.dir;
     if (!fs.existsSync(lpath)) {
         wrench.mkdirSyncRecursive(lpath);
     }

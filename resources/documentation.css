@@ -1,41 +1,13 @@
-/* 	
+/*
 	Aria Templates Documentation stylesheets
 */
 
 /* Style for the TOC */
-#toc {
-	table-layout: fixed;
-	width: 245px;
+#toc ol {
+  padding-left: 20px;
 }
-
-#toc ul {
-	padding-left: 0;
- }
-
-#toc ul li {
-	list-style-type: none;
-	padding-left: 15px;
-}
-
-#toctitle {
-	padding-left: 15px;
-}
-
-#toctitle h2 {
-	font-size: 16px;
-	font-weight: 700;
-	text-transform: uppercase;
-	color: #888;
-}
-
-.tocnumber {
-	color: #888;
-	font-size: 90%;
-}
-
-.documentation dl {
-	margin-left: 2em;
-}
+#toc ol ol li { list-style-type: lower-alpha; }
+#toc ol ol ol li { list-style-type: lower-roman; }
 
 .documentation a.new {
 	color: #BA0000;
@@ -61,12 +33,9 @@
 
 .documentation article.column {
 	margin-right: 0 !important;
-
 	border-right: 1px solid #dedede;
-
 	padding: 0 20px 20px 20px;
 	background-color: #fff;
-
 	border-radius: 0 0 0 8px;
 }
 
@@ -145,8 +114,8 @@
 #search:focus {
     outline: none;
     background-color: white;
-	-webkit-box-shadow: 0px 0px 3px #007eff;  
-    -moz-box-shadow: 0px 0px 3px #007eff;  
+	-webkit-box-shadow: 0px 0px 3px #007eff;
+    -moz-box-shadow: 0px 0px 3px #007eff;
     box-shadow: 0px 0px 3px #007eff;
 }
 
@@ -239,10 +208,12 @@ body.internal article .callout.reviewed,
 .doc {
 	min-height: 500px;
 }
+.doc ul {
+    padding-left: 30px;
+}
 
-/* To display the main table of content properly */
-.doc.nonavbar ul li {
-	list-style: none;
+.maintoc ul li {
+    list-style-type: none;
 }
 
 /* Style for the navigation bar to go back to the main index */
@@ -256,12 +227,12 @@ body.internal article .callout.reviewed,
 }
 
 /*
-.navigationbar .nav-previous {	
+.navigationbar .nav-previous {
 	padding-left: 20px;
 	background: url(../blog/wp-content/themes/ariatemplates/images/post-previous.png) no-repeat left center;
 }
 
-.navigationbar .nav-next {	
+.navigationbar .nav-next {
 	padding-right: 20px;
 	background: url(../blog/wp-content/themes/ariatemplates/images/post-next.png) no-repeat right center;
 }*/
@@ -356,7 +327,7 @@ body.internal article .callout.reviewed,
 	100% { opacity: 1; -ms-animation-timing-function: linear; display:block; }
 }
 
-#dropdown:hover .menu-container {	
+#dropdown:hover .menu-container {
 	display: block;
 	opacity: 1;
 	-webkit-animation-duration:0.5s;
@@ -394,4 +365,37 @@ body.internal article .callout.reviewed,
 .column-2 {
 	width:140px;
 	padding: 0px;
+}
+
+
+iframe.samples {
+    width: 100%;
+    min-height: 400px;
+}
+
+/* Hardcoded */
+[data-sample="hardcoded"]:before {
+    content: "Hardcoded Snippet that was using Geshi directly";
+    color: #fff;
+    background-color: red;
+    display: block;
+}
+
+[data-sample="hardcoded"] {
+    border: 1px solid red;
+}
+
+[data-sample="missing"] {
+    background-color: #EFFAB4;
+    border: 1px solid #D1F2A5;
+    font-size: 95%;
+    padding: 10px;
+    text-align: center;
+}
+
+[data-sample="missing"]:before {
+    content: "Missing Sample";
+    display: block;
+    font-weight: bold;
+    text-align: center;
 }
