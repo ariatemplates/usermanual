@@ -1,24 +1,26 @@
 Title: CSS Templates
 
 
-
 CSS templates are special kinds of templates designed to bring the flexibility of Aria Templates to your style declarations.  CSS templates benefit from all the advantages of the template engine, such as variables, macros, control statements or scripts.
 
 ## Definition and use
 
 CSS Templates are defined using the `CSSTemplate` statement and stored with the `.tpl.css` extension:
-
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/MyCSSTemplate.tpl.css?noheader=true&lang=at&outdent=true' defer></script>
+
 As shown above, in its simplest form, a CSS template really is a template file in which styles declarations are defined directly inside the `main` macro.
 
 To use these declarations from an HTML template, you just need to reference the classpath in the `$css` configuration property:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/MyTemplate.tpl?noheader=true&lang=at&outdent=true' defer></script>
+
 Note that `$css` expects an array since you might want to include more than just one CSS template.
+
 
 ## Similarities and differences with HTML templates
 
 Of course, if CSS templates were just about embedding styles inside a template declaration they wouldn't be very useful.  Their interest obviously resides in the features offered by the templating engine.
+
 
 ### Syntax and allowed statements
 
@@ -35,15 +37,16 @@ As illustrated in the example below, CSS templates really come in handy when con
 Because they are meant to be shared among different modules, CSS templates do not have access to external data by design. They do however provide access to two special variables besides those explicitly declared in the template itself using `var`.  They are:
 
 
-***`cssPath`**: the complete classpath of the CSS Template file, using folder notation, e.g. `ariadoc/snippets/templates/cssTemplates/MyCssTemplate`.
+* **`cssPath`**: the complete classpath of the CSS Template file, using folder notation, e.g. `ariadoc/snippets/templates/cssTemplates/MyCssTemplate`.
 
-***`cssFolderPath`**: the URL of the CSS template location, relative to the [Aria.rootFolderPath](http://ariatemplates.com/api/#Aria:rootFolderPath:property).
+* **`cssFolderPath`**: the URL of the CSS template location, relative to the [Aria.rootFolderPath](http://ariatemplates.com/api/#Aria:rootFolderPath:property).
 
 The latter in particular is quite useful to define URLs of images located in the same folder as your CSS files.  Note that it takes into account the rootMap (not the urlMap) defined through the [download manager](core_layer_configuration#download-manager-configuration).
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=specialvars&lang=at&outdent=true' defer></script>
 
 Both of these properties are inherited from the [CSSTemplate](http://ariatemplates.com/api/#aria.templates.CSSTemplate) class.
+
 
 ### Declaration and configuration
 
@@ -59,6 +62,7 @@ Here's how a script method would be declared:
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=script&lang=at&outdent=true' defer></script>
 
 <div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> At the moment, [macro libraries](macro_libraries) cannot be used in CSS Templates.</div>
+
 
 ## Using CSS templates
 
@@ -93,7 +97,7 @@ These 2 rules will be translated as follow by AT:
 }
 </code></pre></div>
 
-This definition is ultimately injected in a `<style>` statement inside the `<head>` of the page.  The HTML container of the respective templates are then assigned the `CSS1` and `CSS2` classes.
+This definition is ultimately injected in a `< style >` statement inside the `< head >` of the page.  The HTML container of the respective templates are then assigned the `CSS1` and `CSS2` classes.
 
 In some cases, for example  for CSS3 @font-face/@keyframes rules, if users do not want to have a prefix generated from Aria Template they can set `$prefix` as false in CSS Template and below is the snippet for the same.
 

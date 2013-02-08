@@ -9,21 +9,7 @@ Aria Templates as a client side and javascript framework is obviously and massiv
 Development using synchronous paradigm, like for example in Java, implicitly involves understanding the `return` pattern.<br />
 When calling a synchronous method, the first thing you could expect from this method is that it could return an object.
 
-<div data-sample="hardcoded"><code><pre>
-public class MyClass {
-
-    private string myProperty;
-
-    public MyClass() {
-        this.myProperty = this.initMyProperty();
-    }
-
-    private String initMyProperty() {
-        // Do some initialization stuff
-        return "myValue";
-    }
-}
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/MyClass.java?noheader=true&lang=java' defer></script>
 
 You can call the `initProperty()` method. You know and you expect from this method to return a `String`
 
@@ -41,11 +27,8 @@ If you have a quick look at the below example
 
 and you also look at what it's producing as a result
 
-<div data-sample="hardcoded"><code><pre>
- [ariadoc.snippets.core.asynchronous.Async] Hi there!
- [ariadoc.snippets.core.asynchronous.Async] Yes, I'm here! there's me.
- [ariadoc.snippets.core.asynchronous.Async] Is there anybody in here?
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/console_output.text?noheader=true' defer></script>
+
 
 you easily understand that something will not work out the box, or at least not like it was so easy in synchronous pattern.
 

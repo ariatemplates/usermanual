@@ -49,7 +49,7 @@ Interfaces in Aria Templates support the following features:
 
 An interface can be defined through [Aria.interfaceDefinition](http://ariatemplates.com/api/#Aria:interfaceDefinition:method), as shown in the following sample:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/classes/ColorfulObject.js?lang=javascript&outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/classes/IColorfulObject.js?lang=javascript&outdent=true'></script>
 
 An interface definition contains the following parts:
 

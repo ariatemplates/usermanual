@@ -30,40 +30,12 @@ There are two ways to use templates in your application.
 
 The first one is to dynamically load them using `loadTemplate()` method of the [Aria](the_aria_singleton) global object.  This can be done anywhere in your code.  The two mandatory parameters of this method are the classpath of the template and the id of the container in which it should be loaded.
 
-<div data-sample="hardcoded"><code><pre>
-Aria.loadTemplate({
-    classpath: "ariadoc.snippets.SimpleTemplate",
-    div: "output"
-});
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/loadTemplates.html?noheader=true&tag=loadTemplate&lang=javascript&outdent=true'></script>
+
 
 This is also the method you will use in the _bootstrap code_, i.e. the container (HTML, JSP, PHP, etc.) of your application from which you will load the root template from.
 
-<div data-sample="hardcoded"><code><pre>
-<DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <script type="text/javascript" src="/my-webapp/aria/aria-templates-1.1-SNAPSHOT.js"></script>
-        <script type="text/javascript" src="/my-webapp/css/atdefskin-1.1-SNAPSHOT.js"></script>
-    </head>
-    <body>
-
-    <div id="output"></div>
-
-    <script type="text/javascript">
-        Aria.loadTemplate({
-            classpath: "ariadoc.snippets.SimpleTemplate",
-            div: "output",
-            data: {
-                appStarted : true,
-                searchEngines : ["google", "bing", "wikipedia"]
-            }
-        });
-    </script>
-
-    </body>
-</html>
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/loadTemplates.html?noheader=true&lang=html'></script>
 
 Note that in this example we've initialized the [data model](data_model_and_data_binding) directly at loading time using the `data` property of the configuration.  The complete list of parameters that are accepted by the `loadTemplate()` method configuration object is detailed [here](http://ariatemplates.com/api/#aria.templates.CfgBeans:LoadTemplateCfg).
 
@@ -71,12 +43,7 @@ Note that in this example we've initialized the [data model](data_model_and_data
 
 Another way to include a template in your application is to use the `{@aria:Template}` widget and providing it with the classpath of the file to load:
 
-
-<div data-sample="hardcoded"><code><pre>
-{@aria:Template {
-    defaultTemplate : "amadeus.training.playground.view.OtherTemplate"
-} /}
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/SimpleTemplate.tpl?noheader=true&lang=at&tag=templateWidget&outdent=true'></script>
 
 Doing so will display the content of `OtherTemplate.tpl` in the template it has been included in (note that we obviously don't need to give a container id in this case.)  Similarly to the `loadTemplate()` method, it is possible to provide the template to be loaded with several other parameters such as an pre-initialized data model.  The complete list of parameters that are accepted by the Template widget is detailed [here](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TemplateCfg)
 
