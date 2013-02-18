@@ -63,7 +63,7 @@ There are 3 parts to look at here:
 
 1. Lines 6 & 7 reference the needed files to include Aria Templates.
 1. Line 11 creates an empty container (a `DIV` in this case) which will be used to display our template.
-1. Finally, lines 14 to 21 contain the Javascript statement that will load a template called `amadeus.example.view.SgtGreeters` inside our `output` container.  In this example, it is also where we initialize some data to be used by the template.
+1. Finally, lines 14 to 21 contain the Javascript statement that will load a template called `ariadoc.snippets.intro.view.SgtGreeters` inside our `output` container.  In this example, it is also where we initialize some data to be used by the template.
 
 Now let's see what `SgtGreeters.tpl` looks like:
 
