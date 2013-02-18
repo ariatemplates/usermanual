@@ -16,7 +16,7 @@ var versions = [];         // Array to store all the versions
 console.log("GENERATING DOCUMENTATION".cyan.bold);
 
 // Check if I have to build all the versions or just one (x.y.z or latest)
-fs.readdir("./src", function(err, files) {
+fs.readdir(path.join(__dirname, "src"), function(err, files) {
     if ("latest" == version) {
         versions.push("latest");
     }
@@ -30,7 +30,7 @@ fs.readdir("./src", function(err, files) {
         });
     }
 
-    copyFileSync("./resources/documentation.css", "./out/documentation.css");
+    copyFileSync(path.join(__dirname,"resources", "documentation.css"), path.join(__dirname,"out", "documentation.css"));
 
     // For each version generates the html files
     var series = [];
@@ -55,15 +55,15 @@ function makeDevDocs(verj, callback) {
 
     var options = {
         title: "Aria Templates Usermanual (" + verj + ")",
-        skin: "./resources/articles/layout.jade",
-        assets: "./resources/assets",
+        skin: path.join(__dirname, "resources", "articles", "layout.jade"),
+        assets: path.join(__dirname,"resources", "assets"),
         disableTests: true,
-        output: "./out/" + verj,
-        outputAssets: "./out/",
+        output: path.join(__dirname,"out", verj),
+        outputAssets: path.join(__dirname, "out"),
         extension: ".md"
     };
 
-    panda.make(["./src/" + verj], options, function(err, stats) {
+    panda.make([path.join(__dirname, "src", verj)], options, function(err, stats) {
         if (err) {
             console.error(err);
             console.log("BUILD ⨯".red);
@@ -90,7 +90,7 @@ function copyFileSync(srcFile, destFile) {
     var bytesRead = 1;
     var pos = 0;
 
-    console.log("Copying documentation.css to " + destFile);
+    console.log("Copying " + srcFile +" to " + destFile);
 
     while (bytesRead > 0) {
         bytesRead = fs.readSync(fdr, _buff, 0, BUF_LENGTH, pos);
