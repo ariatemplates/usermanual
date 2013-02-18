@@ -58,6 +58,7 @@ function makeDevDocs(verj, callback) {
         skin: path.join(__dirname, "resources", "articles", "layout.jade"),
         assets: path.join(__dirname,"resources", "assets"),
         disableTests: true,
+        keepOutDir: false,
         output: path.join(__dirname,"out", verj),
         outputAssets: path.join(__dirname, "out"),
         extension: ".md"
