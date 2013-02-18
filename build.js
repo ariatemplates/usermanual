@@ -3,7 +3,9 @@
 var argv = process.argv,
     fs = require('fs'),
     panda = require('panda-docs'),
-    async = require('async');
+    async = require('async'),
+    path = require('path'),
+    wrench = require('wrench');
 
 argv.shift();
 argv.shift();
