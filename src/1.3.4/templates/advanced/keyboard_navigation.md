@@ -10,25 +10,8 @@ Using the tab key to navigate through the list of controls in your interface is 
 Control of this behavior can be achieved using the `tabindex` property of elements that defines the order in which they should receive focus.
 This property being also supported by AT widgets, it is very intuitive to indicate the tabbing sequence for the controls of a template.
 
-<div data-sample="hardcoded"><code><pre>
-<div style="float:left; margin-right:10px">
-    <input type="text" tabindex=1 />
-    {@aria:Button {
-        label : "First",
-        tabIndex: 3,
-        block: true
-    } /}
-</div>
+<script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/keyboard_nav/KeyboardNav.tpl?tag=simpleSample&lang=at&noheader=true&outdent=true" ></script>
 
-<div style="float:left">
-    <input type="text" tabindex=2 />
-    {@aria:Button {
-        label : "Second",
-        tabIndex: 4,
-        block: true
-    } /}
-</div>
-</code></pre></div>
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/keyboardnavigation/tabnavigation/' ></iframe>
 
@@ -37,29 +20,14 @@ To avoid this issue, the Template widget provides a [`baseTabIndex`](http://aria
 
 Consider the following code:
 
-<div data-sample="hardcoded"><code><pre>
-{@aria:Template {
-    block:true,
-    baseTabIndex:100,
-    defaultTemplate:'myapp.modules.booking.view.Search'
-}/}
-{@aria:Template {
-    block:true,
-    baseTabIndex:200,
-    defaultTemplate:'myapp.modules.booking.view.Results'
-}/}
-</code></pre></div>
+<script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/keyboard_nav/KeyboardNav.tpl?tag=subTpls&lang=at&noheader=true&outdent=true" ></script>
 
-In this example, each `tabindex` used by widgets in `Search.tpl` will be incremented by 100, and those in `Results.tpl` by 200.
-Thus, if the following button is defined in `Search.tpl`...
 
-<div data-sample="hardcoded"><code><pre>
-{@aria:Button {
-    label : "Search",
-    tabIndex: 4,
-    onclick: "search"
-} /}
-</code></pre></div>
+In this example, each `tabindex` used by widgets in `SubTpl1.tpl` will be incremented by 100, and those in `SubTpl2.tpl` by 200.
+Thus, if the following button is defined in `SubTpl1.tpl`...
+
+
+<script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/keyboard_nav/SubTpl1.tpl?tag=subTplIndex&lang=at&noheader=true&outdent=true" ></script>
 
 ...its real `tabindex` in the resulting page will be 104.
 
@@ -93,117 +61,22 @@ The `key` parameter can either be:
 * An [`aria.DomEvent`](http://ariatemplates.com/api/#aria.DomEvent) code constant, e.g. `aria.DomEvent.KC_F9`
 * The `"*"` wildcard character (see [using keymaps at section level](keyboard_navigation#at-section-level))
 * A key shortcut string, e.g. `"F9"`
-  <pre style="height:146px;overflow:auto;width:150px;">
-    backspace
-    tab
-    num_center
-    enter
-    return
-    shift
-    ctrl
-    control
-    alt
-    pause
-    caps_lock
-    escape
-    space
-    pageup
-    page_up
-    pagedown
-    page_down
-    end
-    home
-    left
-    arrow_left
-    up
-    arrow_up
-    right
-    arrow_right
-    down
-    arrow_down
-    print_screen
-    insert
-    delete
-    zero
-    one
-    two
-    three
-    four
-    five
-    six
-    seven
-    eight
-    nine
-    a
-    b
-    c
-    d
-    e
-    f
-    g
-    h
-    i
-    j
-    k
-    l
-    m
-    n
-    o
-    p
-    q
-    r
-    s
-    t
-    u
-    v
-    w
-    x
-    y
-    z
-    context_menu
-    num_zero
-    num_one
-    num_two
-    num_three
-    num_four
-    num_five
-    num_six
-    num_seven
-    num_eight
-    num_nine
-    multiply
-    plus
-    minus
-    period
-    division
-    divide
-    f1
-    f2
-    f3
-    f4
-    f5
-    f6
-    f7
-    f8
-    f9
-    f10
-    f11
-    f12
+  <pre>
+    BACKSPACE, TAB, NUM_CENTER, ENTER, RETURN, SHIFT, CTRL, CONTROL,
+    ALT, PAUSE, CAPS_LOCK, ESCAPE, SPACE, PAGEUP, PAGE_UP, PAGEDOWN,
+    PAGE_DOWN, END, HOME, LEFT, ARROW_LEFT, UP, ARROW_UP, RIGHT,
+    ARROW_RIGHT, DOWN, ARROW_DOWN, PRINT_SCREEN, INSERT, DELETE, ZERO,
+    ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, A, B, C, D,
+    E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+    CONTEXT_MENU, NUM_ZERO, NUM_ONE, NUM_TWO, NUM_THREE, NUM_FOUR,
+    NUM_FIVE, NUM_SIX, NUM_SEVEN, NUM_EIGHT, NUM_NINE, MULTIPLY,
+    PLUS, MINUS, PERIOD, DIVISION, DIVIDE, F1, F2, F3, F4, F5, F6,F7,
+    F8, F9, F10, F11, F12
   </pre>
 
 Example:
 
-<div data-sample="hardcoded"><code><pre>
-{
-    key : "F4",
-    shift : true,
-    callback : {
-        fn : "destroyTheWorld",
-        scope : this
-    }
-}
-</code></pre></div>
-
+<script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/keyboard_nav/KeyboardNavScript.js?tag=keyMapSyntax&lang=javascript&noheader=true&outdent=true" ></script>
 
 ### Using keymaps
 
@@ -241,11 +114,9 @@ Note that, if you can provide multiple keymap in a section configuration, `addGl
 
 It is also possible to delete a globally assigned keymap using the `removeGlobalKeyMap()` method to which you pass a simpler keymap definition without callback, as illustrated below:
 
-<div data-sample="hardcoded"><code><pre>
-    aria.templates.NavigationManager.removeGlobalKeyMap({
-	key : "F4"
-    });
-</code></pre></div>
+
+<script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/keyboard_nav/KeyboardNavScript.js?tag=removeGlobal&lang=javascript&noheader=true&outdent=true" ></script>
+
 
 <span style="color:#D13838">Be careful!</span> Hooks set using `addGlobalKeyMap()` are not automatically removed when the object that created them is destroyed.  Don't forget to remove them.
 
@@ -259,14 +130,8 @@ Note that in this context "next one" has to be understood as "the next element d
 To enable table-like navigation for a section, you can simply set its `tableNav` property to `true` or to a [`TableNavConfiguration`](http://ariatemplates.com/api/#aria.templates.CfgBeans:TableNavConfiguration) object (a keymap definition without callback) to trigger it only when the specified modifiers are used.
 The following example illustrates the functionality in a section where you can move from one textfield to another using `ctrl` + arrows keys.
 
-<div data-sample="hardcoded"><code><pre>
-     {section {
-         "id" : "mySection",
-         "tableNav" : {
-            ctrl:true
-         }
-     }}
-</code></pre></div>
+<script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/keyboard_nav/KeyboardNav.tpl?tag=tableLikeNav&lang=at&noheader=true&outdent=true" ></script>
+
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/keyboardnavigation/tableNavigation/' ></iframe>
 
