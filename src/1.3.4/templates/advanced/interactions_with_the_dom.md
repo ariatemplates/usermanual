@@ -221,9 +221,7 @@ All the other loading indicators are removed.
 Aria Templates allows to set an element as draggable and to specify how the element should be dragged.
 `aria.utils.dragdrop.Drag` is the class that defines the element that can be dragged, called _draggable element_ from now on.
 
-<div data-sample="hardcoded"><code><pre>
-aria.utils.dragdrop.Drag(element, params);
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=dragSyntax&lang=javascript&outdent=true&noheader=true'></script>
 
 The constructor accepts the following arguments
 
@@ -270,27 +268,27 @@ The constructor accepts the following arguments
 
 ![Draggable Element](../images/draggable_element.png)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/drag.html?tag=drag1html&lang=html5&outdent=true&noheader=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag1html&lang=html5&outdent=true&noheader=true'></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/drag.html?tag=drag1js&lang=javascript&outdent=true&noheader=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag1js&lang=javascript&outdent=true&noheader=true'></script>
 
 
 #### HTML element that can be dragged only from an handle
 
 ![Dialog Handle](../images/dialog_handle.png)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/drag.html?tag=drag2html&lang=html5&outdent=true&noheader=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag2html&lang=html5&outdent=true&noheader=true'></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/drag.html?tag=drag2js&lang=javascript&outdent=true&noheader=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag2js&lang=javascript&outdent=true&noheader=true'></script>
 
 
 #### Proxy element, box with borders
 
 ![Clone Element](../images/box_clone.png)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/drag.html?tag=drag1html&lang=javascript&outdent=true&noheader=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag1html&lang=javascript&outdent=true&noheader=true'></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/drag.html?tag=drag3js&lang=javascript&outdent=true&noheader=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag3js&lang=javascript&outdent=true&noheader=true'></script>
 
 The default classname of the overlay element is xOverlay.
 Its style can be changed throught the skinning system by setting the desired background color, opacity and border corresponding to the following skin properties:
@@ -304,9 +302,9 @@ Its style can be changed throught the skinning system by setting the desired bac
 
 ![Transparent Clone](../images/transparent_clone.png)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/drag.html?tag=drag1html&lang=javascript&outdent=true&noheader=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag1html&lang=javascript&outdent=true&noheader=true'></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/drag.html?tag=drag4js&lang=javascript&outdent=true&noheader=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag4js&lang=javascript&outdent=true&noheader=true'></script>
 
 The default opacity is 0.5/1.
 
