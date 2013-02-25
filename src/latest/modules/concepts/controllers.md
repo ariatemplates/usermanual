@@ -16,7 +16,7 @@ To understand the relations between those different elements and how an applicat
 ### A JavaScript model
 The model is a simple JavaScript object that keeps track of the counter current value.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyModuleController.js?tag=initialDataModel&lang=javascript&outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyModuleController.js?tag=initialDataModel&lang=javascript&outdent=true&noheader=true'></script>
 
 ### The controller interface
 
