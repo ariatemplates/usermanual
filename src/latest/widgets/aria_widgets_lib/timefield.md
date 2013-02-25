@@ -12,9 +12,10 @@ The whole list of configuration parameters is available in [TimeFieldCfg bean](h
 A formatting pattern is a sequence of the following, a subset from the Java [specs](http://java.sun.com/j2se/1.4.2/docs/api/java/text/SimpleDateFormat.html)
 
 * Separators: \;,.-/: and space
-* Letters: H h m s
+* L Letters: H h m s
 
-The difference between **H** and **h** is that the first is 0-24 while the latter 1-12 (am/pm).
+  The difference between **H** and **h** is that the first is 0-24 while the latter 1-12 (am/pm).
+
 
 ### Default patterns
 
@@ -27,14 +28,8 @@ These formats can be accessed through `aria.core.AppEnvironment.getTimeFormats()
 
 Indeed, default time patterns at the application level can be overridden and/or extended as you need:
 
-<div data-sample="hardcoded"><pre><code>
-aria.core.AppEnvironment.setEnvironment({
-  "timeFormats":{
-    "shortFormat" : "hh-mm",
-    "fullFormat"  : "hh-mm-ss"
-   }
-});
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/environment/bootstrap.js?tag=timeFormatEnv&lang=javascript&noheader=true'></script>
+
 
 Please keep in mind that "setEnvironment" will override all settings, use "updateEnvironment" to update one property.
 
