@@ -41,12 +41,8 @@ Calling the parent widget constructor is mandatory and important for it is neede
 
 For a simple widget this is typically done like this:
 
-<div data-sample="hardcoded"><pre><code>
-$constructor : function (cfg, context, lineNumber) {
-    this.$BaseWidget.constructor.apply(this, arguments);
-    ...
-}
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleLabel.js?tag=constructor&lang=javascript&outdent=true&noheader=true'></script>
+
 
 If CSS templates are defined in the `$css` section of the widget, the CSS manager is notified so that they are loaded before the markup is inserted in the DOM.
 
@@ -83,92 +79,12 @@ As a consequence, class names should be chosen carefully as they will apply to t
 
 Here's an example of a simple widget:
 
-<div data-sample="hardcoded"><pre><code>
-Aria.classDefinition({
-	$classpath : "samples.customlib.MyLabel",
-	$extends : "aria.widgetLibs.BaseWidget",
-	$dependencies : ["aria.utils.String"],
-	$constructor : function (cfg, ctxt, lineNumber) {
-		// The parent constructor takes care of storing the config in this._cfg, the template context in this._context
-		// and the line number in this._lineNumber
-		this.$BaseWidget.constructor.apply(this, arguments);
-	},
-	$prototype : {
-		/**
-		 * Main widget entry-point. Write the widget markup for a non-container widget.
-		 * @param {aria.templates.MarkupWriter} out
-		 */
-		writeMarkup : function (out) {
-			var cfg = this._cfg;
-			if (cfg.content) {
-				out.write(aria.utils.String.escapeHTML(this._cfg.content));
-			}
-			if (cfg.contentMacro) {
-				// it is possible to call a macro when generating the widget markup
-				out.callMacro(cfg.contentMacro);
-			}
-		}
-	}
-});
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleLabel.js?lang=javascript&outdent=true'></script>
+
 
 Here's an example of a simple container widget:
 
-<div data-sample="hardcoded"><pre><code>
-Aria.classDefinition({
-	$classpath : "samples.customlib.MyContainer",
-	$extends : "aria.widgetLibs.BaseWidget",
-	$dependencies : ["aria.utils.String", "aria.utils.Dom"],
-	$constructor : function (cfg, ctxt, lineNumber) {
-		this.$BaseWidget.constructor.apply(this, arguments);
-
-		/**
-		 * Id of the main DOM element of this widget.
-		 * @type String
-		 */
-		this._id = this._createDynamicId(); // This line creates a dynamic id to be used in the HTML markup.
-		// Ids are automatically released when the widget is disposed (so that they can be reused)
-		// Alternatively, it is possible to release an id manually with this._releaseDynamicId(this._id).
-
-		/**
-		 * Reference of the DOM element with id this._id.
-		 * @type HTMLElement
-		 */
-		this._domElt = null;
-	},
-	$prototype : {
-		/**
-		 * Main widget entry-point. Write the beginning of the widget markup, corresponding to the opening tag (for a
-		 * container widget).
-		 * @param {aria.templates.MarkupWriter} out
-		 */
-		writeMarkupBegin : function (out) {
-			var html = ['<div id="', this._id, '"><div class="customLibTitle">',
-				aria.utils.String.escapeHTML(this._cfg.title), '</div>'];
-			out.write(html.join(''));
-		},
-
-		/**
-		 * Write the end of the widget markup, corresponding to the closing tag (for a container widget).
-		 * @param {aria.templates.MarkupWriter} out
-		 */
-		writeMarkupEnd : function (out) {
-			out.write('</div>');
-		},
-
-		/**
-		 * Initialization method called after the markup of the widget has been inserted in the DOM.
-		 */
-		initWidget : function () {
-			// now that the markup has been inserted in the DOM, it is possible to access
-			// the HTML element corresponding to the id:
-
-			this._domElt = aria.utils.Dom.getElementById(this._id);
-			// and do what is needed with it...
-		}
-	}
-});
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleContainer.js?lang=javascript&outdent=true'></script>
 
 
 ### BindableWidget
@@ -205,22 +121,8 @@ Being a `BindableWidget` it has data model bindings, but it also handles _event 
 
 Let's imagine to create a widget extending from `aria.html.Element`
 
-<div data-sample="hardcoded"><pre><code>
-{@my:Widget {
-   bind : {
-      name : {
-         inside : data,
-         to : "name"
-      }
-   },
-   on : {
-      click : {
-         fn : "clicked",
-         scope : this
-      }
-   }
-} /}
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/MyWidgetUsage.tpl?tag=myWidgetInclusion&lang=at&outdent=true&noheader=true'></script>
+
 
 _Element_ class takes care of `bind` and `on` properties.
 Whenever a bound value changes the widget's public method [`onbind()`](http://ariatemplates.com/api/#aria.html.Element:onbind:method) is called with the name of the changed property and its new and old value, this signature is simpler to use than `_notifyDataChange()`.
@@ -228,15 +130,8 @@ Moreover every event in `on` statement is delegated and the associated callback 
 
 The constructor of `aria.html.Element` has the same signature as `aria.widgetLibs.BaseWidget`
 
-<div data-sample="hardcoded"><code><pre>
-/**
- * Create an instance of the widget.
- * @param {Object} cfg widget configuration, which is the parameter given in the template
- * @param {aria.templates.TemplateCtxt} context template context
- * @param {Number} lineNumber line number in the template
- */
-$constructor : function (cfg, context, lineNumber) {}
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleElement.js?tag=constructor&lang=javascript&outdent=true&noheader=true'></script>
+
 
 The configuration object `cfg` is normalized against the bean [`aria.html.beans.ElementCfg`](http://ariatemplates.com/api/#aria.html.beans.ElementCfg). This bean defines the properties
 
@@ -247,21 +142,13 @@ The configuration object `cfg` is normalized against the bean [`aria.html.beans.
 
 By default `aria.html.Element` generates a tag element of type `tagName` with the specified attributes, for instance
 
-<div data-sample="hardcoded"><pre><code>
-{
-   tagName : "div",
-   attributes : {
-    style : "display : inline",
-	  classList : ["container", "left"]
-   }
-}
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleElement.js?tag=widgetConfiguration&lang=javascript&outdent=true&noheader=true'></script>
+
 
 generates the following markup
 
-<div data-sample="hardcoded"><pre><code>
-<div class="container left" style="display : inline"></div>
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleElement.js?tag=widgetConfigurationResult&lang=html&outdent=true&noheader=true'></script>
+
 
 Widgets extending from `aria.html.Element` can optionally override `this.$bean` before calling the parent constructor to specify their own configuration bean in case they want to provide validation of configuration parameters.
 
@@ -285,60 +172,22 @@ A custom library is a singleton class which extends `aria.widgetLibs.WidgetLib` 
 
 It typical library looks like this (example defining two widgets):
 
-<div data-sample="hardcoded"><pre><code>
-Aria.classDefinition({
-	$classpath : "samples.customlib.MyCustomLibrary",
-	$extends : "aria.widgetLibs.WidgetLib",
-	$singleton : true,
-	$prototype : {
-		widgets : {
-			"Label" : "samples.customlib.MyLabel",
-			"Container" : "samples.customlib.MyCustomContainer"
-		}
-	}
-});
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/MyCustomWidgetsLib.js?lang=javascript'></script>
+
 
 ### Using a custom library
 
 To use a specific widget library in a template, you need to declare its classpath and an alias in the template's `$wlibs` section.  This alias can then be used as a prefix in the widget statement, as shown in the example below:
 
-<div data-sample="hardcoded"><pre><code>
-{Template {
-	$classpath: "samples.MyTemplate",
-	$wlibs: {
-		"mycustomlib": "samples.customlib.MyCustomLibrary"
-	}
-}}
-	{macro main()}
-		{@mycustomlib:Label {
-			content: "Hello"
-		}/}
 
-		{@mycustomlib:Container {
-			title: "Legend"
-		}}
-			${data.legend}
-		{/@mycustomlib:Container}
-	{/macro}
-{/Template}
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/MyWidgetUsage.tpl?lang=at'></script>
+
 
 If the widget library is supposed to be used in the whole application, it is possible to declare it as a global library in the application environment rather than referencing it in each template. Note that, in this case, the alias can still be overridden in a specific template (in the `$wlibs` section).
 
 The code below declares the `mycustomlib` library in the environment in addition to the default `aria` library, so that it is no longer necessary to declare mycustomlib in each template:
 
-<div data-sample="hardcoded"><pre><code>
-aria.core.AppEnvironment.setEnvironment({
-	// ...
-	defaultWidgetLibs : {
-		// the standard aria library can be changed for the whole application here
-		"aria" : "aria.widgets.AriaLib", // here, we keep the default aria library
-		// declare the custom library :
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/environment/bootstrap.js?tag=widgetLibs&lang=javascript&noheader=true'></script>
 
-		"mycustomlib" : "samples.customlib.MyCustomLibrary"
-	}
-});
-</code></pre></div>
 
 <div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;">**Note:** When using this mechanism, you need to explicitly declare **all** the libraries you will use, including `aria` if you need it, otherwise it won't be available unless referenced in the `$wlibs` section of a template.</div>
