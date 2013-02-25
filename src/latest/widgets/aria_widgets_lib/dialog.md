@@ -60,7 +60,7 @@ The syntax to add listeners on _dragstart_ and _dragend_ is as follow:
 It is possible to set the `movable` and `movableProxy` default properties at application level:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/dialog/SnippetScript.js?tag=wgtDialogMove&lang=javascript&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/dialog/SnippetScript.js?tag=setEnvironment&lang=javascript&outdent=true' defer></script>
 
 Here's a movable dialog example with code:
 
