@@ -6,7 +6,7 @@ This utility allows to display a processing indicator on a DOM element or on a S
 The simple way to show processing indicator is as follows
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/loadingoverlay/LoadingOverlayTemplate.tpl?tag=utlOverlay&lang=at&outdent=true' defer></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/loadingoverlay/LoadingOverlayTemplate.tpl?tag=utlOverlayScript&lang=at&outdent=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/loadingoverlay/LoadingOverlayTemplateScript.js?tag=utlOverlayScript&lang=javascript&outdent=true' defer></script>
 
 Please refer the API documentation on methods/properties defined on [Domoverlay](http://ariatemplates.com/api/#aria.utils.DomOverlay).
 
