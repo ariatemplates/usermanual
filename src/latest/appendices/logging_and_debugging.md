@@ -18,13 +18,8 @@ The AriaTemplates logger is based on the following concepts:
 
 There are 4 useful methods to know:
 
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/Logging.js?tag=methodsToKnow&outdent=true&noheader=true&lang=html'></script>
 
-<div data-sample="hardcoded"><code><pre>
-this.$logDebug(msg, msgArgs, o);
-this.$logInfo(msg, msgArgs, o);
-this.$logWarn(msg, msgArgs, o);
-this.$logError(msg, msgArgs, o);
-</code></pre></div>
 
 These methods may be used anywhere within the life-cycle of your class to either add valuable debugging information, or raise a warning or simply throw an error.
 
@@ -39,10 +34,7 @@ They all have the same signature:
 
 The simplest usage example is the following one:
 
-
-<div data-sample="hardcoded"><code><pre>
-this.$logInfo("Processing something ...");
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/Logging.js?tag=simpliestUsage&outdent=true&noheader=true&lang=javascript'></script>
 
 ### Visualizing logs
 
@@ -61,16 +53,13 @@ This appender can be used in browsers that do not have a JavaScript console.
 Manipulating appenders can be done with the `aria.core.Log` singleton object like so:
 
 
-<div data-sample="hardcoded"><code><pre>
-aria.core.Log.addAppender(new aria.core.log.WindowAppender());
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/environment/bootstrap.js?tag=addAppender&outdent=true&noheader=true&lang=javascript'></script>
+
 
 You may want to clear completely all appenders that are present at a given time:
 
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/environment/bootstrap.js?tag=clearAppenders&outdent=true&noheader=true&lang=javascript'></script>
 
-<div data-sample="hardcoded"><code><pre>
-aria.core.Log.clearAppenders();
-</code></pre></div>
 
 #### Levels
 
@@ -83,12 +72,7 @@ The way Aria Templates logging system is configured by default will only let mes
 However, when debugging an application, you might want to see more of what is going on in the system. For this reason, you can configure the levels to suit your needs:
 
 
-<div data-sample="hardcoded"><code><pre>
-aria.core.Log.resetLoggingLevels();
-aria.core.Log.setLoggingLevel("*", aria.core.Log.LEVEL_ERROR);
-aria.core.Log.setLoggingLevel("aria.*", aria.core.Log.LEVEL_INFO);
-aria.core.Log.setLoggingLevel("my.package.*", aria.core.Log.LEVEL_DEBUG);
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/environment/bootstrap.js?tag=resetLogLevel&outdent=true&noheader=true&lang=javascript'></script>
 
 The above code will do several things:
 
@@ -106,7 +90,7 @@ The above code will do several things:
 The debug mode in Aria Templates is enabled by setting the `debug` parameter of the Aria object to true _before it is instanciated by the framework_.  Practically, this means you should write something like this:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/logdebug/bootstrap.html?tag=logdebug&outdent=true&noheader=true&lang=html5'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/logdebug/bootstrap.html?tag=logdebug&outdent=true&noheader=true&lang=html'></script>
 
 The default debug value is `false` and you have to set this value before the framework loads. When set to true, the following will enabled:
 
@@ -136,16 +120,11 @@ When the debug mode of Aria Templates is enabled, the `CTRL Right-click` combina
 
 To enable the contextual menu even when not in debug mode, the following bookmarklet can be used:
 
-
-<div data-sample="hardcoded"><code><pre>
-javascript:aria.core.AppEnvironment.updateEnvironment({contextualMenu:{enabled:true}});
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/Logging.js?tag=enableContextualMenu&outdent=true&noheader=true&lang=javascript'></script>
 
 To disable the contextual menu, the following bookmarklet can be used:
 
-<div data-sample="hardcoded"><code><pre>
-javascript:aria.core.AppEnvironment.updateEnvironment({contextualMenu:{enabled:false}});
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/Logging.js?tag=disableContextualMenu&outdent=true&noheader=true&lang=javascript'></script>
 
 #### About module reloading
 
@@ -177,9 +156,7 @@ Debug Tools is a set of modules opened in a new window that helps you working on
 Debug Tools are started either with the contextual menu, or using the following Bookmarklet :
 
 
-<div data-sample="hardcoded"><code><pre>
-javascript:Aria.load({classes:['aria.tools.ToolsBridge'],oncomplete:function(){aria.tools.ToolsBridge.open()}});
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/Logging.js?tag=enableDebugTools&outdent=true&noheader=true&lang=javascript'></script>
 
 <div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> Popup blockers may prevent this tool from opening.</div>
 

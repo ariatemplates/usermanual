@@ -25,22 +25,7 @@ The structure of this application will be the following:
 
 The data model will follow the same structure: it will simply be an array of objects corresponding to the data model used by the counter module controller:
 
-<div data-sample="hardcoded"><pre><code>
-{
-    counters : [
-        {
-            count : 0
-        },
-        {
-            count : 0
-        },
-       ...
-        {
-            count : 0
-        }
-    ]
-}
-</code></pre></div>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/subcontrollers/MyMainController.js?tag=dataModelStruct&lang=javascript&outdent=true&noheader=true'></script>
 
 ## Hierarchy of modules
 
@@ -51,12 +36,8 @@ Creating the sub controllers is done through the `loadSubModules()` method or [`
 * A list of configuration of sub controllers. A configuration contains the classpath of the sub module controllers, and the path in the data model for the data associated to the sub module. This path can be completed with an index if it is part of an array.
 * A callback to be called when the sub module controllers are loaded.
   This callback first argument will be an object describing the load result:
-  <div data-sample="hardcoded"><pre><code>
-      {
-        errors : 0, // number of sub module controllers that could not be loaded
-        subModules : [...] // list of the sub module controller instances created
-      }
-  </code></pre></div>
+
+  <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/subcontrollers/MyMainController.js?tag=loadSubModulesCbSignature&lang=javascript&outdent=true&noheader=true'></script>
 
 Once the sub controllers are loaded, they can be accessed from public properties of the main controller using the same path as the path for their data inside the data model.
 For previous example, a method to add a sub controller is added.
