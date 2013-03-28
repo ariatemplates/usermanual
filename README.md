@@ -13,7 +13,7 @@ After you clone this repo, remember you have to install the dependencies. Call:
 
 # Running a Build
 	
-You should update documentation files inside the `src` folder, and run the build with this command:
+You should update documentation files inside the `src` folder, and run the build using this command:
 
     $ node build
 
