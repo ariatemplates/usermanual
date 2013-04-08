@@ -68,7 +68,7 @@ There are 3 parts to look at here:
 Now let's see what `SgtGreeters.tpl` looks like:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/intro/view/SgtGreeters.tpl?lang=at'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/intro/view/SgtGreeters.tpl?lang=at&numbers'></script>
 
 As you can see, AT introduces  a special kind of grammar to describe your interfaces, much of it being quite straightforward.  If we have a detailed look at the code we can see the following:
 
