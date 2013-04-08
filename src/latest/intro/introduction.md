@@ -57,7 +57,7 @@ To illustrate practically how an AT app is built, let's have a look at a simple 
 First off, we start with the bootstrap, in our case a simple HTML page created from scratch:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/intro/index.html?lang=html5'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/intro/index.html?lang=html5&numbers'></script>
 
 There are 3 parts to look at here:
 
