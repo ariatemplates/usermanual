@@ -73,7 +73,7 @@
 	float: left;
 	display: block;
 	padding-left: 24px;
-	background: url(../images/wiki/tag_green.png) 5px center no-repeat;
+	background: url(../images/tag_green.png) 5px center no-repeat;
 	margin-right: 5px;
 }
 
@@ -181,19 +181,19 @@ body.internal article .callout.reviewed,
 .documentation article .callout.reviewed {
 	background-color: #9BBB59;
 	border-color: #728940;
-	background-image: url(../images/wiki/tick.png);
+	background-image: url(../images/tick.png);
 }
 
 .documentation article .callout.reviewneeded {
 	background-color: #66B6E8;
 	border-color: #5092BD;
-	background-image: url(../images/wiki/thumb_up.png);
+	background-image: url(../images/thumb_up.png);
 }
 
 .documentation article .callout.draft {
 	background-color: #E55454;
 	border-color: #A33C3C;
-	background-image: url(../images/wiki/exclamation.png);
+	background-image: url(../images/exclamation.png);
 }
 
 
