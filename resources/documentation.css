@@ -9,6 +9,11 @@
 #toc ol ol li { list-style-type: lower-alpha; }
 #toc ol ol ol li { list-style-type: lower-roman; }
 
+.documentation p, .documentation li {
+	text-align: justify;
+	line-height: 150%;
+}
+
 .documentation a.new {
 	color: #BA0000;
 }
