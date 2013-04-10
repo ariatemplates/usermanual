@@ -26,6 +26,7 @@ Server-side templating has two undeniable advantages:
 
 1. it's efficient, because the processing is done on a powerful dedicated machine;
 1. it's pretty much standard, meaning that documentation and tools are easy to find for developers.
+
 However, as web applications became more and more complex, this mechanism quickly showed its limits: because of the amount of information needed to be sent back and forth, server-side templating weighs heavily on bandwidth and this has a huge impact on applications responsiveness.
 
 The idea behind client-side templating is to solve this issue by shifting part of the processing to the client.  Basically, upon initialization, the browser receives the necessary files to render the interface (the template engine and the templates) as well as the initial data set; then, each time a request is made to the server, the application only retrieves data that it needs to update the interface state.
