@@ -27,7 +27,7 @@ If you have a quick look at the below example
 
 and you also look at what it's producing as a result
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/console_output.text?noheader=true' defer></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/console_output.txt?noheader=true' defer></script>
 
 
 you easily understand that something will not work out the box, or at least not like it was so easy in synchronous pattern.
