@@ -53,17 +53,17 @@ An interface can be defined through [Aria.interfaceDefinition](http://ariatempla
 
 An interface definition contains the following parts:
 
-* `$classpath` _mandatory_ - the classpath is a unique identifier of the interface, just like in Java, and in [Aria Templates classes](javascript_classes). It corresponds to the package name + the interface name.
-* `$extends` _optional_ - the classpath of another interface declared with [Aria.interfaceDefinition](http://ariatemplates.com/api/#Aria:interfaceDefinition:method), which will be the super interface of this one.
+* `$classpath` (mandatory) - the classpath is a unique identifier of the interface, just like in Java, and in [Aria Templates classes](javascript_classes). It corresponds to the package name + the interface name.
+* `$extends` (optional) - the classpath of another interface declared with [Aria.interfaceDefinition](http://ariatemplates.com/api/#Aria:interfaceDefinition:method), which will be the super interface of this one.
 	* If an interface extends another interface, all interface members declared in the super interface, including methods, properties and events, are automatically inherited as if they were declared in this interface.
 	* Unlike in Java, multiple interface inheritance is not possible in Aria Templates. However, a class can implement several interfaces if needed.
-* `$interface` _mandatory_ - This section contains empty methods and empty properties that must be implemented in classes that implement the interface.
+* `$interface` (mandatory) - This section contains empty methods and empty properties that must be implemented in classes that implement the interface.
 	* The names used for interface members must not be JavaScript keywords and must match the `/^[a-zA-Z_\$][\w\$]*$/` regular expression.
 	* Interface members can be:
 		* A function: can be declared with either an empty function, or the string `"Function"`, or  a json structure with the `$type` property containing "Function". With this last syntax, it is possible to specify that the function is asynchronous by setting the `$callbackParam` property. This property must contain the index of the argument of the function which contains the callback. Declaring asynchronous functions in an interface is especially useful when using [interceptors](interceptors).
 		* An object or array: declared as shown in the above example. Note that the reference to the object or the array must stay the same in the object from its construction until it is disposed. This is because interface wrappers never update the references to the properties.
 		* An interface  must be declared with a json structure with the `$type` property containing "Interface", and the `$classpath` property containing the classpath of the interface. When creating the interface wrapper containing such a member, the corresponding member from the whole object must implement the interface specified here and only its interface wrapper will be published in the interface wrapper.
-* `$events` _optional_ - set of event definitions, using the same syntax as in [Aria Templates classes](javascript_classes#events).
+* `$events` (optional) - set of event definitions, using the same syntax as in [Aria Templates classes](javascript_classes#events).
 
 
 ### Interface implementation
