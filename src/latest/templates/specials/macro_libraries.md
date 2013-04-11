@@ -12,7 +12,7 @@ A macro library can be defined as in the example below:
 
 Notes:
 
-* All libraries have the extension `.tml` (template macro library), therefore the file above is called `Library.tml`.
+* All libraries have the extension `.tml` (template macro library), therefore the file above is called `MyLib.tml`.
 * Access to the data and the module controller is not allowed as the `data` and `moduleCtrl` object are not put in the Library's scope. The only way in which a Library can access this and other data supplied by the template is by taking them as macro parameters.
 * Libraries cannot use CSS templates. The option to do so will be offered in a future release.
 
@@ -47,7 +47,7 @@ Libraries can use scripts just like templates by providing them in the Library d
 
 ### Template
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/macros/MyOtherTemplate.tpl?lang=at&outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/macros/MyOtherTemplate.tpl?lang=at'></script>
 
 Libraries inherit from [`aria.templates.Template`](http://ariatemplates.com/api/#aria.templates.Template), therefore any library script should do the same, following the concepts explained in the article about [Template Scripts](scripts).
 
