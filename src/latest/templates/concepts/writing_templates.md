@@ -414,9 +414,9 @@ When working with templates it is very frequently needed to manage template-spec
 When writing your templates, some variables are made automatically available by the framework. Here are the most relevant ones:
 
 * **`data`:** an object that references the data model. For a detailed presentation of the data model, refer to [this article](data model and data binding). This object should be used to store data that needs to be persisted through template refreshes.
-***`moduleCtrl`:** it is the interface of the [module controller](controllers) that is provided when loading the template, if any.
-***`flowCtrl`:** it is the interface of the [flow controller](flow controllers) associated with the module controller.
-***`moduleRes`:** resources available in the module controller.
+* **`moduleCtrl`:** it is the interface of the [module controller](controllers) that is provided when loading the template, if any.
+* **`flowCtrl`:** it is the interface of the [flow controller](flow controllers) associated with the module controller.
+* **`moduleRes`:** resources available in the module controller.
 * any shortcut to [macro libraries](macro libraries), text templates and resources that you define in the configuration of your template.
 
 Other variables are also available, but they are not used very frequently. In particular:
@@ -440,4 +440,4 @@ The methods available inside a template are
 * those defined in [template script](template scripts). Furthermore, all [methods available in a template script](template_scripts#available-methods)
 * Those defined in the module controller and flow controller associated to the template in its loading configuration (`moduleCtrl.moduleMethod` and `flowCtrl.flowMethod`). In this case, only methods exposed by the module/flow interfaces will be available.
 
-Examples are available in the articles on [template scripts](template scripts), [module controllers](controllers) and [flow controllers](flow controllers).
+Examples are available in the articles on [template scripts](Template_Scripts), [module controllers](Controllers) and [flow controllers](Flow_Controllers).
