@@ -1,9 +1,9 @@
 Title: Views
 
 
-Among common use cases web application developers have to deal with on a daily basis, <span style="background:#ffc">filtering, sorting and paging</span> are probably the most frequent ones when it comes to manipulate sets of data.  Template Views, or just Views for short, have been designed to make implementation of these use cases easier.
+Among common use cases web application developers have to deal with on a daily basis, filtering, sorting and paging are probably the most frequent ones when it comes to manipulate sets of data.  Template Views, or just Views for short, have been designed to make implementation of these use cases easier.
 
-A View allows you to work on any part of your data model you want without actually modifying it: it provides a <span style="background:#ffc">copy of the data as well as a set of methods to manipulate it</span>.
+A View allows you to work on any part of your data model you want without actually modifying it: it provides a copy of the data as well as a set of methods to manipulate it.
 
 To use Views, you first need to create one.  You do that using the `createView` statement:
 
@@ -16,7 +16,7 @@ Let's now see how ways we can use this object.
 
 ## Filtering
 
-In order to use the View filtering mechanism, <span style="background:#ffc">you simply define which of its elements should be kept</span>.  This is achieved by using the `filterIn()` method.
+In order to use the View filtering mechanism, you simply define which of its elements should be kept.  This is achieved by using the `filterIn()` method.
 
 Let's see how it is used in a template script:
 
@@ -45,14 +45,14 @@ To display the content of a View using the filter mode, you must <span style="ba
 
 ### Combining filters
 
-Once a filter is set, you can add new ones to <span style="background:#ffc">filter in more items using the Views `FILTER_ADD`</span> property:
+Once a filter is set, you can add new ones to filter in more items using the Views `FILTER_ADD` property:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=filterAddElement&noheader=true&lang=javascript&outdent=true'></script>
 
 
 In this case, the filter method is applied to items that are not filtered in.  This example, added to the previously set filter, instructs the View to list all hotels for which the daily rate is beyond 200€ **or** which have at least 5 stars.
 
-Conversely, it is also possible to specify new filters to <span style="background:#ffc">refine the list of items to be kept using the `FILTER_REMOVE`</span> property:
+Conversely, it is also possible to specify new filters to refine the list of items to be kept using the `FILTER_REMOVE` property:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=filterRemoveElement&noheader=true&lang=javascript&outdent=true'></script>
 
@@ -86,12 +86,12 @@ This method requires three parameters:
 
 <span style="color:#D13838">Be careful!</span>  When using Views on maps, if you set the sort order to `SORT_INITIAL`, the order in which the elements of the View will be accessed is browser dependent.  You can check [this post](http://ejohn.org/blog/javascript-in-chrome/) by J. Resig to read details about this.
 
-To display the content of a View using the sorting mode, you must <span style="background:#ffc">iterate over the items using the `inSortedView` keyword</span> as follows:
+To display the content of a View using the sorting mode, you must iterate over the items using the `inSortedView` keyword as follows:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=inSortedView&noheader=true&lang=at'></script>
 
 
-Once a View has been sorted, <span style="background:#ffc">you can modify the sort order by changing its `sortOrder` property</span> to one of the values listed above.
+Once a View has been sorted, you can modify the sort order by changing its `sortOrder` property to one of the values listed above.
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=ascSortOrder&noheader=true&lang=javascript&outdent=true'></script>
 
@@ -115,7 +115,7 @@ The method requires one numeric parameter:
 * Any positive integer: the number of items per page.
 * `-1`: turns off paging.
 
-To display the content of a paged View, you must <span style="background:#ffc">iterate over the items using the `inView` keyword</span> as follows:
+To display the content of a paged View, you must iterate over the items using the `inView` keyword as follows:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=inView&noheader=true&lang=at'></script>
 
@@ -132,7 +132,7 @@ To modify the current page used by the View, you need to change its `currentPage
 
 ### Mixing filtering, sorting and paging
 
-You can combine the effects of the `filterIn()`, `setSort()` or `toggleSortOrder()` and `setPageSize()` methods on a single View.  In this case, to display its content, you must <span style="background:#ffc">iterate over the items using the `inView` keyword</span> as you would for a paged View.
+You can combine the effects of the `filterIn()`, `setSort()` or `toggleSortOrder()` and `setPageSize()` methods on a single View.  In this case, to display its content, you must iterate over the items using the `inView` keyword as you would for a paged View.
 
 The View class provides information about its content through two interesting properties:
 
