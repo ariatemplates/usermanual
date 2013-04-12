@@ -24,7 +24,7 @@ You can then localize a resource file creating different versions of the file an
 
 An example of a resource definition is the following:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/18n/statics/Res.js?lang=javascript&outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/localization/statics/LocalResources.js?lang=javascript&outdent=true'></script>
 
 
 ##### Conventions to be used
@@ -62,7 +62,7 @@ Of course, you can use an intermediate variable, like `label` here, to make the 
 
 Here is the script associated to the previous template, which displays a message, using localized resources.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/18n/statics/LocalizedTemplateScript.js?lang=javascript&outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/localization/statics/LocalizedTemplateScript.js?lang=javascript&outdent=true'></script>
 
 As the class generated from a template inherits from its script, localized resources are also available from the template script, through `this.res`.
 
