@@ -1,7 +1,5 @@
 Title: MultiSelect
 
-{{Review}}
-
 A Widget to create a list of checkbox options.
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/multiselect/Snippet.tpl?tag=wgtMultiSelect&lang=at&outdent=true' defer></script>
