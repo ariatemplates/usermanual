@@ -1,7 +1,7 @@
 Title: Select
 
 
-A dropdown list of selectable items, similar to the `<select>` html component.
+A dropdown list of selectable items, similar to the `&lt;select>` html component.
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/select/Snippet.tpl?tag=wgtSelectField&lang=at&outdent=true' defer></script>
 
