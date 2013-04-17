@@ -9,17 +9,17 @@ For the purposes of form submission, for instance when needing to upload files, 
 The IFrame technique is based on using the `target` attribute of a `form` HTML element in order to submit it into a hidden IFrame and therefore avoid the reload of the main page. The system can then simply check the `onreadystatechange` of the IFrame to know when the reply has been received and can optionally access the content of the IFrame (if on the same domain only).
 
 
-*Create an IFrame and insert into the page (shrink the IFrame to make it invisible to the user):''
+* Create an IFrame and insert into the page (shrink the IFrame to make it invisible to the user):''
 
-*Update the target attribute of the form to contain a reference to the IFrame:''
+* Update the target attribute of the form to contain a reference to the IFrame:''
 
-*Submit the form to the IFrame via the target attribute:''
+* Submit the form to the IFrame via the target attribute:''
 
-*IFrame will contain the response of the file upload:''
+* IFrame will contain the response of the file upload:''
 
-*Copy response content from the hidden IFrame to process the result:''
+* Copy response content from the hidden IFrame to process the result:''
 
-*Remove the IFrame, and reset the target attribute of the form:''
+* Remove the IFrame, and reset the target attribute of the form:''
 
 ### API
 A method is available to use the new IFrame transport, [`aria.core.IO.asyncFormSubmit`](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.IO:asyncFormSubmit:method).
@@ -39,8 +39,8 @@ Here's an example of form submission:
 
 In this example only the `formId` and the `callback` are needed.  The IFrame transport then extracts the form using the ID and completes the request calling the specific callback after the response has been received:
 
-:`callback.fn` _- for onSuccess_
-:`callback.onerror` _- for onFailure_
+* `callback.fn` for onSuccess
+* `callback.onerror` for onFailure
 
 
 ### Opening a File Upload Dialog From a Link
