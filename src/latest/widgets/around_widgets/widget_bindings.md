@@ -9,8 +9,8 @@ As soon as the bound link is done, refresh mechanism is automatic, and transpare
 ## Bindable Property Syntax
 
 Let's have a look at this template
-<srcinclude lang="at" outdent="true">templates/widget_bindings/Template.tpl
-</srcinclude>
+
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/widget_bindings/MyTemplate.tpl?lang=at&outdent=true' defer></script>
 
 As you can see, it only contains a [`{@aria:TextField {}}`](textfield_widget) widget. We are using the **bind** attribute of the widget itself.
 
