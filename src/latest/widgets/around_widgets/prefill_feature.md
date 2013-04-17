@@ -87,7 +87,7 @@ When a widget is in prefill state it is possible to confirm the displayed value 
 
 it is possible to confirm a prefill value by
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/features/prefill/Snippet.tpl?tag=json&lang=at&outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/features/SomeClass.js?tag=json&lang=js&outdent=true'></script>
 
 in a script (or module controller).
 
