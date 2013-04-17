@@ -4,7 +4,7 @@
 
 mixin doc
     div.doc(class=(metadata.CssClass||""))
-        mixin unescapeHtml(content)
+        mixin replaceVersion(content)
 
 mixin toh
     -toh.splice(0,0,{}) //adding a first fake h1 element
@@ -13,10 +13,6 @@ mixin toh
 mixin category(category)
     -category = category.split("_").map(function(x) { return x[0].toUpperCase() + x.substr(1) }).join(" ")
     li= category
-
-mixin unescapeHtml(text)
-    -text = text.replace(/\&lt;/ig, "<").replace(/\&gt;/ig, ">").replace(/\&quot;/ig, '"').replace(/\&#39;/ig, "'");
-    mixin replaceVersion(text)
 
 mixin replaceVersion(text)
     -text = text.replace(/%VERSION%/ig, metadata.version)
@@ -41,7 +37,7 @@ html(lang='en')
             link(rel='stylesheet', href='/styles/versionselect.css', type='text/css')
 
         link(rel='stylesheet', href='../documentation.css', type='text/css')
-        link(rel='stylesheet', href='http://snippets.ariatemplates.com/css/highlight_skin.css', type='text/css')
+        link(rel='stylesheet', href='http://ariatemplates.com/styles/snippets/highlight_skin.css', type='text/css')
 
         //if lt IE 9
             script(type='text/javascript', src='/js/iemap.js')
