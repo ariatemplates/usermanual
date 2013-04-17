@@ -38,7 +38,7 @@ It is also possible to override this application configuration for an individual
 
 Here is an example of setting the autoselect property for a text input based widget:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/features/autoselect/Snippet.tpl?tag=widgetsettings&lang=at&outdent=true'></script>
+<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/features/SomeClass.js?tag=widgetsettings&lang=js&outdent=true'></script>
 
 ## Setting Autoselect on a specific input widget
 
