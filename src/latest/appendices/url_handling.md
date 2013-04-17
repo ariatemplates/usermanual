@@ -107,7 +107,7 @@ aria.core.DownloadMgr.updateUrlMap({
 });
 </code></pre></div>
 
-{{Note|Classic callback descriptions, i.e. `{ fn : myMethod, scope : myScope }` cannot be used here as they would result in non-determinist maps structures.  You can however define such callbacks using the `aria.utils.Callback` class.}}
+<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> Classic callback descriptions, i.e. `{ fn : myMethod, scope : myScope }` cannot be used here as they would result in non-determinist maps structures.  You can however define such callbacks using the `aria.utils.Callback` class.</div>
 
 Example:
 
@@ -137,13 +137,6 @@ To define the way URLs are created, you need to create a class implementing the 
 
 Here is a sample method from an urlService class to create the call URL:
 
-<div class="callout">
-{{Color box |
-Border=#D1F2A5|
-Background=#EFFAB4|
-Width=95%|
-Title=Did you know?|
-Content=<div style="text-align: center;">`Aria.rootFolderPath` contains the path to the root of the framework, it can be used to build the server path.</div>
-}}
-</div>
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyUrlService.js?tag=actionUrl&lang=javascript&outdent=true'></script>
+
+<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> `Aria.rootFolderPath` contains the path to the root of the framework, it can be used to build the server path.</div>
