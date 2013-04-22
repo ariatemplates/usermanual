@@ -89,6 +89,12 @@
     margin: 20px 0 15px;
 }
 
+.documentation code {
+    background-color: #F9F9F9;
+    border-bottom: 1px solid #EEEEEE;
+    color: #666666;	
+}
+
 .documentation code a {
 	color: #8CA122 !important;
 }
