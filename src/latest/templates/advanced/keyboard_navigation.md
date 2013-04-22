@@ -16,7 +16,7 @@ This property being also supported by AT widgets, it is very intuitive to indica
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/keyboardnavigation/tabnavigation/' ></iframe>
 
 Because it is possible in the same application to use templates in which the same `tabIndex` is used for different widgets, or simply because the same template may be used several times in the same panel, collisions may occur.
-To avoid this issue, the Template widget provides a [`baseTabIndex`](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TemplateCfg) property that sets the base index from which all of its widgets' `tabIndex` should be computed.
+To avoid this issue, the Template widget provides a <code>[baseTabIndex](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TemplateCfg)</code> property that sets the base index from which all of its widgets' `tabIndex` should be computed.
 
 Consider the following code:
 
@@ -47,7 +47,7 @@ They can be created to handle keyboard shortcuts inside a specific section or at
 
 ### Creating keymaps
 
-The [`keymap object`](http://ariatemplates.com/api/#aria.templates.CfgBeans:KeyMapConfiguration) defines a keystroke and which method it should execute.  It has the following properties:
+The <code>[keymap object](http://ariatemplates.com/api/#aria.templates.CfgBeans:KeyMapConfiguration)</code> defines a keystroke and which method it should execute.  It has the following properties:
 
 * **`key`**: a key (see below)
 * **`shift`**: _ (optional)_ a boolean indicating whether or not the Shift key must be pressed
@@ -58,7 +58,7 @@ The [`keymap object`](http://ariatemplates.com/api/#aria.templates.CfgBeans:KeyM
 The `key` parameter can either be:
 
 * A key code, e.g. `120`
-* An [`aria.DomEvent`](http://ariatemplates.com/api/#aria.DomEvent) code constant, e.g. `aria.DomEvent.KC_F9`
+* An <code>[aria.DomEvent](http://ariatemplates.com/api/#aria.DomEvent)</code> code constant, e.g. `aria.DomEvent.KC_F9`
 * The `"*"` wildcard character (see [using keymaps at section level](keyboard_navigation#at-section-level))
 * A key shortcut string, e.g. `"F9"`
   <pre>
@@ -105,7 +105,7 @@ Because this happens before the keyboard event is passed to the parent section, 
 #### At Application Level
 
 Keymaps assigned at application level will be triggered wherever the focus is.
-In this case, they must be set using the `addGlobalKeyMap()` method of [`aria.templates.NavigationManager`](http://ariatemplates.com/api/#aria.templates.NavigationManager:addGlobalKeyMap:method).
+In this case, they must be set using the `addGlobalKeyMap()` method of <code>[aria.templates.NavigationManager](http://ariatemplates.com/api/#aria.templates.NavigationManager:addGlobalKeyMap:method)</code>.
 This can be done anywhere in your code.
 
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/keyboardnavigation/applicationLevelKeyMap/' ></iframe>
@@ -127,7 +127,7 @@ The table-like navigation feature of Aria Templates allows moving focus using ar
 When set, using the `up` and `down` arrow keys (along with modifiers if activated) moves the focus from one element to the next one.
 Note that in this context "next one" has to be understood as "the next element defined in the template": the `tabIndex` widgets property (explained at the beginning of this article) has no effect in this case.
 
-To enable table-like navigation for a section, you can simply set its `tableNav` property to `true` or to a [`TableNavConfiguration`](http://ariatemplates.com/api/#aria.templates.CfgBeans:TableNavConfiguration) object (a keymap definition without callback) to trigger it only when the specified modifiers are used.
+To enable table-like navigation for a section, you can simply set its `tableNav` property to `true` or to a <code>[TableNavConfiguration](http://ariatemplates.com/api/#aria.templates.CfgBeans:TableNavConfiguration)</code> object (a keymap definition without callback) to trigger it only when the specified modifiers are used.
 The following example illustrates the functionality in a section where you can move from one textfield to another using `ctrl` + arrows keys.
 
 <script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/keyboard_nav/KeyboardNav.tpl?tag=tableLikeNav&lang=at&noheader=true&outdent=true" ></script>

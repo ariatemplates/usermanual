@@ -4,7 +4,7 @@ Title: Widget Bindings
 
 All Aria Templates widgets can be automatically bound to properties contained inside your data model.
 
-As soon as the bound link is done, refresh mechanism is automatic, and transparent for you. Moreover, the link is bidirectional. If you update the data model, your widget is going to be fully refreshed. If your widget is for example a textfield [`{@aria:TextField {}}`](textfield), and you then type something inside it, the data model associated property will contain the new value as soon as you leave the widget (blur event in our example with a Textfield widget)
+As soon as the bound link is done, refresh mechanism is automatic, and transparent for you. Moreover, the link is bidirectional. If you update the data model, your widget is going to be fully refreshed. If your widget is for example a textfield <code>[{@aria:TextField {}}](textfield)</code>, and you then type something inside it, the data model associated property will contain the new value as soon as you leave the widget (blur event in our example with a Textfield widget)
 
 ## Bindable Property Syntax
 
@@ -12,7 +12,7 @@ Let's have a look at this template
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/widget_bindings/MyTemplate.tpl?lang=at&outdent=true' defer></script>
 
-As you can see, it only contains a [`{@aria:TextField {}}`](textfield_widget) widget. We are using the **bind** attribute of the widget itself.
+As you can see, it only contains a <code>[{@aria:TextField {}}](textfield_widget)</code> widget. We are using the **bind** attribute of the widget itself.
 
 ## Bindable Property Sample
 

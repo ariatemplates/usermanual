@@ -38,7 +38,7 @@ Its associated script could contain the following statements:
 
 It is possible to programmatically set focus on a specific widget or generic dom element from the template script.
 Note that it is only possible to do this from the template script of the same template in which the widget/element is defined.
-The template script is endowed with the [`$focus`](http://ariatemplates.com/api/#aria.templates.ITemplate:$focus:method) that receives an id as parameter and sets the focus on the widget/element with that id.
+The template script is endowed with the <code>[$focus](http://ariatemplates.com/api/#aria.templates.ITemplate:$focus:method)</code> that receives an id as parameter and sets the focus on the widget/element with that id.
 
 As far as widgets are concerned, each of them can implement a `focus` method that will be called whenever you try to set the focus on it.
 Suppose you are using a `TextField` widget from the `AriaLib` widget library in your HTML template:
@@ -124,7 +124,7 @@ The `DomElementWrapper` class provides methods to control the scroll positions o
 * `setScroll` which allows to set them
 * `scrollIntoView` whose purpose is to scroll the element until a certain element contained inside it becomes visible
 
-For more information, check the [`DomElementWrapper`](http://ariatemplates.com/api/#aria.templates.DomElementWrapper) class.
+For more information, check the <code>[DomElementWrapper](http://ariatemplates.com/api/#aria.templates.DomElementWrapper)</code> class.
 
 
 ## Processing indicators

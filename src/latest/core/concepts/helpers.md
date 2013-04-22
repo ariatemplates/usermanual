@@ -30,11 +30,11 @@ Working with Aria Templates means to manipulate a lot of JSON objects, and vario
 
 Using this helper, you basically can:
 
-* Serialize / Deserialize Json data using the 2 methods [`convertToJsonString()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:convertToJsonString:method) and [`load()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:load:method)
+* Serialize / Deserialize Json data using the 2 methods <code>[convertToJsonString()](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:convertToJsonString:method)</code> and <code>[load()](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:load:method)</code>
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/helpers/JsonManipulation.js?tag=serialization&lang=javascript&outdent=true'></script>
 
-* Performs some tests over your objects, like checking whether this object contains this key with [`contains()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:contains:method), or testing if a particular node is a metadata node with [`isMetadata()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:isMetadata:method). You can also create a fresh new clone of an existing object using [`copy()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:copy:method)
+* Performs some tests over your objects, like checking whether this object contains this key with <code>[contains()](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:contains:method)</code>, or testing if a particular node is a metadata node with <code>[isMetadata()](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:isMetadata:method)</code>. You can also create a fresh new clone of an existing object using <code>[copy()](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:copy:method)</code>
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/helpers/JsonManipulation.js?tag=standard&lang=javascript&outdent=true'></script>
 

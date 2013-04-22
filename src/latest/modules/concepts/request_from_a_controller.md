@@ -1,7 +1,7 @@
 Title: Request from a controller
 
 
-Asynchronous requests can be performed manually using [`aria.core.IO`](http://ariatemplates.com/api/#aria.core.IO). However, modules provide an extra layer above simple server calls in your modules.
+Asynchronous requests can be performed manually using <code>[aria.core.IO](http://ariatemplates.com/api/#aria.core.IO)</code>. However, modules provide an extra layer above simple server calls in your modules.
 
 ## Concept
 
@@ -24,7 +24,7 @@ Module controllers provide a simple method in order to focus on functional code 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/ModuleWithRequest.js?tag=call&lang=javascript&outdent=true'></script>
 
 This method will use several configuration described below to achieve the non-functional steps.
-Note that most of these configurations are also available on [`aria.modules.RequestMgr`](http://ariatemplates.com/api/#aria.modules.RequestMgr) as application configuration for all modules.
+Note that most of these configurations are also available on <code>[aria.modules.RequestMgr](http://ariatemplates.com/api/#aria.modules.RequestMgr)</code> as application configuration for all modules.
 
 ## Request parameters management
 
@@ -52,12 +52,12 @@ When an action or resources are required from the server, Aria Templates automat
 
 Response processing is delegated to an external handler that can be changed to fit specific needs.
 It will process the response (text, XML, JSON...) coming from the server to extract or build the data to provide to the module controller that issued the request.
-This handler is stored on the `$requestHandler` property of the module controller, and must implement the [`aria.modules.requestHandler.IRequestHandler`](http://ariatemplates.com/api/#aria.modules.requestHandler.IRequestHandler) interface. Two methods have to be provided: the success handler and the failure handler.
+This handler is stored on the `$requestHandler` property of the module controller, and must implement the <code>[aria.modules.requestHandler.IRequestHandler](http://ariatemplates.com/api/#aria.modules.requestHandler.IRequestHandler)</code> interface. Two methods have to be provided: the success handler and the failure handler.
 
 * The success handler will be called if the call to the server was successful.
 * Otherwise, the failure handler will be called with details regarding the error that occurred.
 
-After processing, a callback provided as an argument of these two methods needs to be called - even if an error occurs during processing - with an object of type [`aria.modules.RequestBeans.ProcessedResponse`](http://ariatemplates.com/api/#aria.modules.RequestBeans) as a parameter.
+After processing, a callback provided as an argument of these two methods needs to be called - even if an error occurs during processing - with an object of type <code>[aria.modules.RequestBeans.ProcessedResponse](http://ariatemplates.com/api/#aria.modules.RequestBeans)</code> as a parameter.
 
 Aria Templates provides several base handlers in the `aria.modules.requestHandler` package that can be used:
 
@@ -65,9 +65,9 @@ Aria Templates provides several base handlers in the `aria.modules.requestHandle
 
 ## JSON data serialization
 
-When sending requests to the server with the POST method, JSON data can be added in the request (see [`aria.templates.ModuleCtrl.submitJsonRequest`](http://ariatemplates.com/api/#aria.templates.ModuleCtrl:submitJsonRequest:method)).
+When sending requests to the server with the POST method, JSON data can be added in the request (see <code>[aria.templates.ModuleCtrl.submitJsonRequest](http://ariatemplates.com/api/#aria.templates.ModuleCtrl:submitJsonRequest:method)</code>).
 
-This data must be stringified before sending it to the server. It is possible to decide how the serialization has to be done by setting the public property [`$requestJsonSerializer`](http://ariatemplates.com/api/#aria.templates.ModuleCtrl:$requestJsonSerializer:property) property of the module:
+This data must be stringified before sending it to the server. It is possible to decide how the serialization has to be done by setting the public property <code>[$requestJsonSerializer](http://ariatemplates.com/api/#aria.templates.ModuleCtrl:$requestJsonSerializer:property)</code> property of the module:
 
 <div data-sample="hardcoded"><pre><code>
 this.$requestJsonSerializer = {
@@ -76,7 +76,7 @@ this.$requestJsonSerializer = {
 };
 </code></pre></div>
 
-The value specified is of type [`aria.modules.environment.EnvironmentCfgBeans.RequestJsonSerializerCfg`](http://ariatemplates.com/api/#aria.modules.environment.EnvironmentCfgBeans:RequestJsonSerializerCfg).
+The value specified is of type <code>[aria.modules.environment.EnvironmentCfgBeans.RequestJsonSerializerCfg](http://ariatemplates.com/api/#aria.modules.environment.EnvironmentCfgBeans:RequestJsonSerializerCfg)</code>.
 
 In particular it can contain
 

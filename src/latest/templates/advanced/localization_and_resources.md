@@ -17,7 +17,7 @@ There are currently available two kind of resources that can be defined and/or u
 
 #### Static resources
 
-Static resources can be defined inside plain JavaScript files using the [`Aria.resourcesDefinition`](http://ariatemplates.com/api/#Aria:resourcesDefinition:method) facility.
+Static resources can be defined inside plain JavaScript files using the <code>[Aria.resourcesDefinition](http://ariatemplates.com/api/#Aria:resourcesDefinition:method)</code> facility.
 They are usually physically stored as files on the back-end Web Server delivering your AT application, thus accessible through the HTTP(S) protocol.
 
 You can then localize a resource file creating different versions of the file and appending the locale to the end of each resource definition JavaScript file.
@@ -71,7 +71,7 @@ As the class generated from a template inherits from its script, localized resou
 
 Localization, meant as the process of adapting an internationalized application to a specific region or language, is achieved with application wide settings that can be changed anytime during applications's life cycle.
 
-All locale specific parameters can be configured through the [`aria.core.AppEnvironment`](http://ariatemplates.com/api/#aria.core.AppEnvironment).
+All locale specific parameters can be configured through the <code>[aria.core.AppEnvironment](http://ariatemplates.com/api/#aria.core.AppEnvironment)</code>.
 
 The framework allows you to configure:
 

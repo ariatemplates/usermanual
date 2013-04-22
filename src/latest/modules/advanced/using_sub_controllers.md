@@ -31,7 +31,7 @@ The data model will follow the same structure: it will simply be an array of obj
 
 The very same hierarchy will be used on module controllers. The application will be handled by a main controller which will create sub controllers to handle each counter.
 
-Creating the sub controllers is done through the `loadSubModules()` method or [`aria.templates.Modules`](http://ariatemplates.com/api/#aria.templates.Modules). This method is asynchronous, as it will also handle dependency loading for the sub controllers. It takes two arguments:
+Creating the sub controllers is done through the `loadSubModules()` method or <code>[aria.templates.Modules](http://ariatemplates.com/api/#aria.templates.Modules)</code>. This method is asynchronous, as it will also handle dependency loading for the sub controllers. It takes two arguments:
 
 * A list of configuration of sub controllers. A configuration contains the classpath of the sub module controllers, and the path in the data model for the data associated to the sub module. This path can be completed with an index if it is part of an array.
 * A callback to be called when the sub module controllers are loaded.

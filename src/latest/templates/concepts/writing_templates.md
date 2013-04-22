@@ -39,7 +39,7 @@ For instance, if you write the following:
 the content of `myVar` will be pushed into `myArray` and the template output will be the array's new length.  If you want to execute Javascript code inside the template without displaying the return value, you can either:
 
 * store it in the Template Script file in a method that doesn't return anything or
-* use the [`var`](writing_templates#var) statement that will assign the return value to a variable instead of displaying it, or
+* use the <code>[var](writing_templates#var)</code> statement that will assign the return value to a variable instead of displaying it, or
 * use the `eat` modifier described below.
 
 
@@ -241,7 +241,7 @@ Consider the following example:
 
 ### separator
 
-The separator statement is a convenient way to add a separator between each loop in a [`foreach`](#foreach) structure.
+The separator statement is a convenient way to add a separator between each loop in a <code>[foreach](#foreach)</code> structure.
 If present, it must be the first statement inside a `foreach` loop.
 
 Consider the following example:
@@ -258,7 +258,7 @@ Wrapping pieces of template code into macros is useful when a particular part ne
 
 Macros are equivalent to JavaScript functions, and in fact, they are actually transformed into functions when a [template is interpreted and turned into a class](what_are_templates#lifecycle).
 
-**The macro `main` serves as the entry point to the template** - its arguments are those passed when [loading the template](what_are_template). Other macros must be called through the [`call`](#call) statement.
+**The macro `main` serves as the entry point to the template** - its arguments are those passed when [loading the template](what_are_template). Other macros must be called through the <code>[call](#call)</code> statement.
 
 Macros can be defined also in separate templates that are called [macro libraries](macro_libraries). Also, they can be inherited from parent templates thanks to [template inheritance](template_inheritance).
 

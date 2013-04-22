@@ -38,7 +38,7 @@ Consider the following example:
 
 As in Java, the classpath normally corresponds to the physical location of the file on the disk. The above classpath for instance should appear inside a class stored under the file `[rootFolderPath]/garden/tree/Fruit.js`.
 
-The `rootFolderPath` is automatically set by the framework to match the directory where the framework is located (this default setting can be overridden through the variable [`Aria.rootFolderPath`](the_aria_singleton#rootfolderpath)).
+The `rootFolderPath` is automatically set by the framework to match the directory where the framework is located (this default setting can be overridden through the variable <code>[Aria.rootFolderPath](the_aria_singleton#rootfolderpath)</code>).
 
 ### $constructor/$destructor
 

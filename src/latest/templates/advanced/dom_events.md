@@ -19,7 +19,7 @@ Please note that all events are not necessarily available on all tags. This depe
 
 ### Attach an event handler
 
-To attach events to DOM elements in templates you must use the [`on`](writing_templates#on) statement.
+To attach events to DOM elements in templates you must use the <code>[on](writing_templates#on)</code> statement.
 Example:
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=basic&outdent=true'></script>
@@ -76,16 +76,16 @@ where:
 ### DomEventWrapper and DomElementWrapper
 
 In many situations, you will want to check information about the event that was raised.
-You may do so by checking the [`aria.templates.DomEventWrapper`](http://ariatemplates.com/api/#aria.templates.DomEventWrapper) parameter of your callback, thus accessing all the event properties in a cross browser manner (`type, target, altKey, ctrlKey`...).
+You may do so by checking the <code>[aria.templates.DomEventWrapper](http://ariatemplates.com/api/#aria.templates.DomEventWrapper)</code> parameter of your callback, thus accessing all the event properties in a cross browser manner (`type, target, altKey, ctrlKey`...).
 In addition to the usual properties, the DomEventWrapper also gives access to helper methods such as
-[`stopPropagation()`](http://ariatemplates.com/api/#aria.DomEvent:stopPropagation:method) or [`preventDefault()`](http://ariatemplates.com/api/#aria.DomEvent:preventDefault:method) inherited from the DomEvent class.
+<code>[stopPropagation()](http://ariatemplates.com/api/#aria.DomEvent:stopPropagation:method)</code> or <code>[preventDefault()](http://ariatemplates.com/api/#aria.DomEvent:preventDefault:method)</code> inherited from the DomEvent class.
 
-The `target` property of a DomEventWrapper is an instance of [`aria.templates.DomElementWrapper`](http://ariatemplates.com/api/#aria.templates.DomElementWrapper).
+The `target` property of a DomEventWrapper is an instance of <code>[aria.templates.DomElementWrapper](http://ariatemplates.com/api/#aria.templates.DomElementWrapper)</code>.
 Similarly to the DomEventWrapper, it acts as a cross-browser wrapper over the actual DOM element.
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=domelem&outdent=true'></script>
 
-For more information please refer to the API documentation of these objects: [`aria.templates.DomEventWrapper`](http://ariatemplates.com/api/#aria.templates.DomEventWrapper), [`aria.DomEvent`](http://ariatemplates.com/api/#aria.DomEvent) and [`aria.templates.DomElementWrapper`](http://ariatemplates.com/api/#aria.templates.DomElementWrapper).
+For more information please refer to the API documentation of these objects: <code>[aria.templates.DomEventWrapper](http://ariatemplates.com/api/#aria.templates.DomEventWrapper)</code>, <code>[aria.DomEvent](http://ariatemplates.com/api/#aria.DomEvent)</code> and <code>[aria.templates.DomElementWrapper](http://ariatemplates.com/api/#aria.templates.DomElementWrapper)</code>.
 
 
 ## Advanced Features
@@ -100,14 +100,14 @@ Here are a few guidelines to keep in mind when using events.
 
 * An obvious consequence of the first point is: **do not create events in loops**.
 
-* **Use [`DomElementWrappers`](interactions_with_the_dom#dom-elements-wrappers) for light changes**.
+* **Use <code>[DomElementWrappers](interactions_with_the_dom#dom-elements-wrappers)</code> for light changes**.
 	If you need to update a CSS class, it is more efficient to using the dedicated methods rather than performing a refresh.
 
 
 ### Events outside of a template
 
 You might want in some cases to attach events to elements outside of your template, like <`body`> for instance.
-To do so, the [`addListener()`](http://ariatemplates.com/api/#aria.utils.Event:addListener:method) method of the [`aria.utils.Event`](http://ariatemplates.com/api/#aria.utils.Event) singleton provides a way bind an event handler to any DOM element.
+To do so, the <code>[addListener()](http://ariatemplates.com/api/#aria.utils.Event:addListener:method)</code> method of the <code>[aria.utils.Event](http://ariatemplates.com/api/#aria.utils.Event)</code> singleton provides a way bind an event handler to any DOM element.
 
 <div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;">**Note:** It is not recommended to use this approach for DOM elements inside a template. If you choose to do so, your application is likely to be less stable and leak memory.</div>
 
@@ -129,8 +129,8 @@ This sample is the first of a series of samples all based on a 1-9 keypad. In th
 
 This sample is based upon the keypad example used for the Mouse Event sample.
 The mouse selection is here replaced with a keyboard navigation using the arrows key.
-In this sample, the callback handler takes advantage of the [`DomEventWrapper`](http://ariatemplates.com/api/#aria.templates.DomEventWrapper) to retrieve the keyCode of the event.
-Then using the statics available on [`DomEventWrapper`](http://ariatemplates.com/api/#aria.templates.DomEventWrapper), we easily check if the event was triggered by on of the arrow keys or not.
+In this sample, the callback handler takes advantage of the <code>[DomEventWrapper](http://ariatemplates.com/api/#aria.templates.DomEventWrapper)</code> to retrieve the keyCode of the event.
+Then using the statics available on <code>[DomEventWrapper](http://ariatemplates.com/api/#aria.templates.DomEventWrapper)</code>, we easily check if the event was triggered by on of the arrow keys or not.
 
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=checkboxKeyDown&outdent=true'></script>
@@ -148,7 +148,7 @@ On IE, we force a blur before we refresh, to trigger the change event to be fire
 
 A listener on focus is added and is now responsible for updating the datamodel and trigger the refresh.
 Thanks to this new design, the selection updates automatically if the user navigates using the TAB key.
-The actual keyboard navigation now triggers a focus on the [`DomElementWrapper`](http://ariatemplates.com/api/#aria.templates.DomElementWrapper) target of the event.
+The actual keyboard navigation now triggers a focus on the <code>[DomElementWrapper](http://ariatemplates.com/api/#aria.templates.DomElementWrapper)</code> target of the event.
 
 ### Event delegation
 
@@ -171,7 +171,7 @@ Checking the tagName is the easiest way to make sure the event was fired on an e
 
 We also need to know what is the index of the clicked input.
 To retrieve this information dynamically in the callback, we will use **expandos**. **Expandos** are extra attributes that you can use on a DOM element inside your template.
-An expando is prefixed by an underscore, and can be retrieved using the [`getExpando`](http://ariatemplates.com/api/#aria.templates.DomElementWrapper:getExpando) method on a DomElementWrapper.
+An expando is prefixed by an underscore, and can be retrieved using the <code>[getExpando](http://ariatemplates.com/api/#aria.templates.DomElementWrapper:getExpando)</code> method on a DomElementWrapper.
 Here we store the index of the item in `_index` and retrieve it using `getExpando("index")`.
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=simpleHtmlWithData&outdent=true'></script>
@@ -193,7 +193,7 @@ Event delegation is always about striking a good balance between the amount of e
 [Samples.Utilities.DOM Events.Event singleton](http://aria/aria-templates/aria/guide/#spl=Samples.Utilities.DOM%20Events.Event%20singleton)
 
 This sample is again based on the keypad example.
-This time, a keydown is attached on the document using the [`aria.utils.Event.addListener()`](http://ariatemplates.com/api/#aria.utils.Event:addListener) utility method.
+This time, a keydown is attached on the document using the <code>[aria.utils.Event.addListener()](http://ariatemplates.com/api/#aria.utils.Event:addListener)</code> utility method.
 We filter the numkeys and the matching 1-9 box is selected when the user presses one of those keys.
 
 

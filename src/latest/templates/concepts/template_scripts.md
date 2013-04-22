@@ -11,9 +11,9 @@ Template Scripts are special types of classes whose existence is strictly relate
 The Aria Templates framework automatically copies the template script prototype members to the template prototype so that the template is given access to everything declared in the template script.
 
 ## Script definition
-The template script is similar to a normal Aria Templates class but it has to be defined with the [`Aria.tplScriptDefinition`](http://ariatemplates.com/api/#Aria:tplScriptDefinition:method) method. This method accepts an object of type [`aria.templates.CfgBeans.TplScriptDefinitionCfg`](http://ariatemplates.com/api/#aria.templates.CfgBeans:TplScriptDefinitionCfg).
+The template script is similar to a normal Aria Templates class but it has to be defined with the <code>[Aria.tplScriptDefinition](http://ariatemplates.com/api/#Aria:tplScriptDefinition:method)</code> method. This method accepts an object of type <code>[aria.templates.CfgBeans.TplScriptDefinitionCfg](http://ariatemplates.com/api/#aria.templates.CfgBeans:TplScriptDefinitionCfg)</code>.
 
-Its properties are a subset of the properties accepted in a standard [`Aria.classDefinition`](http://ariatemplates.com/api/#Aria:classDefinition:method). Please refer to the [this APIDOC page](http://ariatemplates.com/api/#aria.core.CfgBeans:ClassDefinitionCfg) for the complete list and to the [article about Aria Templates Javascript classes](javascript_classes).
+Its properties are a subset of the properties accepted in a standard <code>[Aria.classDefinition](http://ariatemplates.com/api/#Aria:classDefinition:method)</code>. Please refer to the [this APIDOC page](http://ariatemplates.com/api/#aria.core.CfgBeans:ClassDefinitionCfg) for the complete list and to the [article about Aria Templates Javascript classes](javascript_classes).
 
 As with class definitions, the physical file that contains a template script definition has **`.js`** extension.
 
@@ -85,11 +85,11 @@ It is possible to define methods that are called when a template is initialized 
 
 * `$beforeRefresh`
 Called at the beginning of any `$refresh` of the template.
-* [`$dataReady`](http://ariatemplates.com/api/#aria.templates.Template:$dataReady:method)
+* <code>[$dataReady](http://ariatemplates.com/api/#aria.templates.Template:$dataReady:method)</code>
 When the data has been loaded and the module associated to this template has been initialized
-* [`$viewReady`](http://ariatemplates.com/api/#aria.templates.Template:$viewReady:method)
+* <code>[$viewReady](http://ariatemplates.com/api/#aria.templates.Template:$viewReady:method)</code>
 When the template (but not its subtemplates) is ready to be displayed
-* [`$displayReady`](http://ariatemplates.com/api/#aria.templates.Template:$displayReady:method)
+* <code>[$displayReady](http://ariatemplates.com/api/#aria.templates.Template:$displayReady:method)</code>
 When the template and its subtemplates are ready to be displayed
 * `$afterRefresh`
 Called after any `$refresh` of the template

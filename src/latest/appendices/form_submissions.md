@@ -22,7 +22,7 @@ The IFrame technique is based on using the `target` attribute of a `form` HTML e
 * Remove the IFrame, and reset the target attribute of the form:''
 
 ### API
-A method is available to use the new IFrame transport, [`aria.core.IO.asyncFormSubmit`](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.IO:asyncFormSubmit:method).
+A method is available to use the new IFrame transport, <code>[aria.core.IO.asyncFormSubmit](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.IO:asyncFormSubmit:method)</code>.
 
 The user will need to use these parameters:
 

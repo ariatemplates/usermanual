@@ -19,7 +19,7 @@ For example, for requests sent by the `RequestMgr`, here are the properties avai
 * `classpath`: contains **aria.modules.RequestMgr** (allows to check if the request was made through the `RequestMgr`).
 * `requestObject`: contains information about the module which did the request (its `moduleName` and `actionName`).
 
-* `requestData`: contains the posted data as a json object. If the filter needs to change it, it can modify this property, but it should then call [`setJsonPostData()`](http://ariatemplates.com/api/#aria.core.IOFilter:setJsonPostData:method) to update the encoded string in `request.postData`.
+* `requestData`: contains the posted data as a json object. If the filter needs to change it, it can modify this property, but it should then call <code>[setJsonPostData()](http://ariatemplates.com/api/#aria.core.IOFilter:setJsonPostData:method)</code> to update the encoded string in `request.postData`.
 
 * `responseData`: `null` by default, this property can be set by a filter, and in this case, the request manager will use this value as the `data` retrieved to the calling module (bypassing the connection handler).
 
@@ -47,7 +47,7 @@ Consider the following example:
   <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/filters/MyController.js?lang=javascript&outdent=true'></script>
 
 In the previous example, requests are intercepted and, based on their action and json parameters, redirected to static XML files instead.
-The helper [`redirectToFile()`](http://ariatemplates.com/api/#aria.core.IOFilter:redirectToFile:method) method is used to simplify the redirection.
+The helper <code>[redirectToFile()](http://ariatemplates.com/api/#aria.core.IOFilter:redirectToFile:method)</code> method is used to simplify the redirection.
 
 
 ### Creating the XML responses

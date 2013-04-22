@@ -22,7 +22,7 @@ When your class inherit an another one, it then inherit from all properties, sta
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/classes/DevicesMain.js?tag=execute&lang=javascript&outdent=true'></script>
 
 
-In Aria Templates, any object inherit from [`aria.core.JsObject`](http://ariatemplates.com/api/#aria.core.JsObject). Thus, your class automatically has access to several helpers coming from this parent root object, like for example logging methods: [`$logDebug()`](http://ariatemplates.com/api/#aria.core.JsObject:$logDebug:method), [`$logWarn()`](http://ariatemplates.com/api/#aria.core.JsObject:$logWarn:method), [`$logError()`](http://ariatemplates.com/api/#aria.core.JsObject:$logError:method), and many more.
+In Aria Templates, any object inherit from <code>[aria.core.JsObject](http://ariatemplates.com/api/#aria.core.JsObject)</code>. Thus, your class automatically has access to several helpers coming from this parent root object, like for example logging methods: <code>[$logDebug()](http://ariatemplates.com/api/#aria.core.JsObject:$logDebug:method)</code>, <code>[$logWarn()](http://ariatemplates.com/api/#aria.core.JsObject:$logWarn:method)</code>, <code>[$logError()](http://ariatemplates.com/api/#aria.core.JsObject:$logError:method)</code>, and many more.
 
 
 ## Interfaces, $implements
@@ -128,7 +128,7 @@ The first thing you have to understand as far as dependencies are concerned is t
 
 ## Events, $events
 
-Natively, all Aria Templates objects are Observable. Because of the implicit inheritance from the original root object ([`aria.core.JsObject`](http://ariatemplates.com/api/#aria.core.JsObject)) on all of your classes, Aria Templates  gives you the ability to declare and listen to events. Any class could listen to events that could be raised by any other class.
+Natively, all Aria Templates objects are Observable. Because of the implicit inheritance from the original root object (<code>[aria.core.JsObject](http://ariatemplates.com/api/#aria.core.JsObject)</code>) on all of your classes, Aria Templates  gives you the ability to declare and listen to events. Any class could listen to events that could be raised by any other class.
 
 The _emitter_ class declares the events it is able to fire using the `$events` keyword property on the classDefinition. This property is basically a list of event names along with their description and potential custom properties.
 

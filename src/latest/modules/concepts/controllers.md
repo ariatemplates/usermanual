@@ -7,7 +7,7 @@ In order to build rich, interactive and scalable application, we recommend to re
 
 * First of all, templates: they will be the View part of the architecture. They render the model and provide user interaction.
 * A JavaScript object, which will be used as a model. It holds the data of your application.
-* An instance of [`aria.modules.ModuleCtrl`](http://ariatemplates.com/api/#aria.modules.ModuleCtrl). It plays the role of the controller, and also keeps a reference to the JavaScript object used as a model. This instance will hold the functional code of the application: executing calls, interpreting results...
+* An instance of <code>[aria.modules.ModuleCtrl](http://ariatemplates.com/api/#aria.modules.ModuleCtrl)</code>. It plays the role of the controller, and also keeps a reference to the JavaScript object used as a model. This instance will hold the functional code of the application: executing calls, interpreting results...
 
 ## Case Study
 
@@ -43,7 +43,7 @@ For the case study, second solution is used: the data model described above will
 
 #### Exposing the module controller and its data to the view
 
-When a template is loaded into a page through [`Aria.loadTemplate()`](http://ariatemplates.com/api/#Aria:loadTemplate:method), the classpath or an instance of a module controller can be provided as a configuration parameter. If so:
+When a template is loaded into a page through <code>[Aria.loadTemplate()](http://ariatemplates.com/api/#Aria:loadTemplate:method)</code>, the classpath or an instance of a module controller can be provided as a configuration parameter. If so:
 
 * The data for the template will be automatically retrieved from the module controller `getData` method.
 * The module controller interface will be exposed in the `moduleCtrl` variable in the template. This interface can be called on user action. For the case study, the template will call the `incrementCount` method of the module controller when the button is pressed.
