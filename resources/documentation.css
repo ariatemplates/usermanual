@@ -95,15 +95,6 @@
     color: #666666;	
 }
 
-.documentation code a {
-	color: #8CA122 !important;
-}
-
-.documentation code a:hover {
-    color: #BFD730 !important;
-	text-decoration: underline;
-}
-
 .documentation aside a, .documentation aside a:hover, .documentation aside a:visited {
 	color:#5092BD;
 }
