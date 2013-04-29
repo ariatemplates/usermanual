@@ -7,5 +7,5 @@ A simple way to add Splitter widget to the application is as follows
 
 The whole list of configuration parameters is available in [Splitter](http://ariatemplates.com/api/#aria.widgets.CfgBeans:SplitterCfg).
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/splitter/' height="450"></iframe>
+<iframe class='samples' style="height:500px" src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/splitter/' height="450"></iframe>
 

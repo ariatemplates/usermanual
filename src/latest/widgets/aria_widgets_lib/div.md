@@ -13,7 +13,7 @@ The whole list of configuration parameters is available in [DivCfg bean](http://
 
 You can easily change the style of div widget by setting sclass attribute to 'basic','errortip','list','dlg'.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/div/styling/' ></iframe>
+<iframe class='samples' style="height:500px" src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/div/styling/' ></iframe>
 
 ## Binding
 

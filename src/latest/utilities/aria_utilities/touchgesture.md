@@ -23,4 +23,4 @@ Tap Sample Usage
 
 Swipe Sample Usage
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/touch/swipe/' ></iframe>
+<iframe class='samples' style="height:450px" src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/touch/swipe/' ></iframe>

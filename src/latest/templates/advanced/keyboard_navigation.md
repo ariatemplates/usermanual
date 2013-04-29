@@ -147,4 +147,4 @@ There are few things to note when using table-like navigation:
 * Subsections can set their `tableNav` property to `false` to prevent inheritance.
 * In a section using table-like navigation, focus always moves to the next (or previous) element, including elements outside of the section where `tableNav` might not be enabled.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/keyboardnavigation/tableNavigationInherit/' ></iframe>
+<iframe class='samples' style="height:450px" src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/keyboardnavigation/tableNavigationInherit/' ></iframe>

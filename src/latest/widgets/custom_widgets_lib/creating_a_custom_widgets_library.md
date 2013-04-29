@@ -162,7 +162,7 @@ Every event raised by the user (mouse, keyboard, ...) is handled by `_delegate` 
 
 #### Example
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/html/custom/gallery/' ></iframe>
+<iframe class='samples' style="height:700px" src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/html/custom/gallery/' ></iframe>
 
 ## Creating a custom widget library
 

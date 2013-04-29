@@ -46,4 +46,4 @@ Here it can be overriden by setting the property on a widget level from within a
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/features/autoselect/Snippet.tpl?tag=textfield&lang=at&outdent=true'></script>
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/features/autoselect/' ></iframe>
+<iframe class='samples' style="height:650px" src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/features/autoselect/' ></iframe>

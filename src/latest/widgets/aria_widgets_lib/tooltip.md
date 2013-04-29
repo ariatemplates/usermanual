@@ -20,7 +20,7 @@ The simple way to add Tooltip widget to the application is as follows
 
 The whole list of configuration parameters is available in [TooltipCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TooltipCfg).
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/tooltip/' ></iframe>
+<iframe class='samples' style="height:700px" src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/tooltip/' ></iframe>
 
 ## Binding
 

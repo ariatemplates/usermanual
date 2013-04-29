@@ -141,7 +141,7 @@ Both techniques can be mixed:
 
 #### Example of Validators and Events
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/validators/event/' ></iframe>
+<iframe class='samples' style="height:450px" src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/validators/event/' ></iframe>
 
 ### Validators and Groups
 

@@ -107,7 +107,7 @@ Like any other state, the `prefill` state can be skinned by setting the desired 
 
 In this sample it is possible to find some examples of the above-mentioned features including all `TextInput`-based widgets.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/features/prefill/basic/' ></iframe>
+<iframe class='samples' style="height:950px" src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/features/prefill/basic/' ></iframe>
 
 In this sample it is possible to find an example that realizes one of the scenarios that triggered the implementation of this feature.
 
