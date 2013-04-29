@@ -342,12 +342,14 @@ body.internal article .callout.reviewed,
 #dropdown:hover .menu-container {
 	display: block;
 	opacity: 1;
+	/*
 	-webkit-animation-duration:0.5s;
 	-webkit-animation-name:fadeDiv;
 	-moz-animation-duration:0.5s;
 	-moz-animation-name:fadeDiv;
 	-ms-animation-duration:0.5s;
 	-ms-animation-name:fadeDiv;
+	*/
 }
 
 
