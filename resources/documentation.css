@@ -298,6 +298,7 @@ body.internal article .callout.reviewed,
 	background:#333;
 	z-index:99999;
 	margin-left: -283px;
+	margin-top: 10px;
 	-webkit-box-shadow: 0 4px 6px -6px black;
 	-moz-box-shadow: 0 4px 6px -6px black;
 	box-shadow: 0 4px 6px -6px black;
