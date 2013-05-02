@@ -1,5 +1,4 @@
 Title: NumberField
-Category: Widgets
 
 
 NumberField widget enables the creation of input fields that should contain a numeric value. It also provides formatting facilities to handle numeric and currency patterns.

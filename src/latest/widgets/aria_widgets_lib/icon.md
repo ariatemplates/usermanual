@@ -1,5 +1,4 @@
 Title: Icon
-Category: Widgets
 
 Icon widget provides easy way to add an icon image to the user application. This widget adds the icons as an  image sprite.
 

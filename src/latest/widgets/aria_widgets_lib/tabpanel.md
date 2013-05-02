@@ -1,5 +1,4 @@
 Title: TabPanel
-Category: Widgets
 
 The content of the Tab widget is presented by using TabPanel widget.
 The TabPanel widget loads the content in one of 2 ways.

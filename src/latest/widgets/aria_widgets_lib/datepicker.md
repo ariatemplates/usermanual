@@ -1,5 +1,4 @@
 Title: DatePicker
-Category: Widgets
 
 DatePicker is a highly configurable widget that adds datepicker functionality to the application. For instance, you can customize the date format, restrict the selectable date ranges, add customized calender and provide date reference as per your requirement.
 

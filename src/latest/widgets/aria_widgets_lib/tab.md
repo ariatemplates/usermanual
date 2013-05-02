@@ -1,5 +1,4 @@
 Title: Tab
-Category: Widgets
 
 Tabs, in any graphical user interface, are very often used to optimize the space taken by some content on the screen.
 They make it possible to show several content areas, one at a time, by clicking on the corresponding tab.

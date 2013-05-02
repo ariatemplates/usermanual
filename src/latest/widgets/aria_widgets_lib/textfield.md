@@ -1,5 +1,4 @@
 Title: TextField
-Category: Widgets
 
 TextField widget enables the creation of input text fields that function like traditional HTML form input fields whose content can be retrieved and used inside the application.
 In the following code snippet the binding mechanism is used to access the content of a TextField widget, indeed you could also put in place a onChange event listener to catch user triggered value changes.

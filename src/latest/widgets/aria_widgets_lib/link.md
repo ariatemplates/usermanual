@@ -1,5 +1,4 @@
 Title: Link
-Category: Widgets
 
 Link widget creates a link with href attribute set to an empty function.
 Link widget is very useful, when you want to have a link and on click of that link needs to make an asynchronous requests.

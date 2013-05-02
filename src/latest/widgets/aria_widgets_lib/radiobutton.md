@@ -1,5 +1,4 @@
 Title: RadioButton
-Category: Widgets
 
 
 RadioButton widget is similar to the checkbox widget exempt that the latter can be grouped.

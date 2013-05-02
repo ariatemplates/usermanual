@@ -1,5 +1,4 @@
 Title: TimeField
-Category: Widgets
 
 TimeField widget enables the creation of time input fields targeted at time formatted input, packed with specific formatting facilities to handle diverse time formats, as required by the locale and/or the application needs.
 

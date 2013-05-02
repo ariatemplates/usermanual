@@ -1,5 +1,4 @@
 Title: Gauge
-Category: Widgets
 
 Gauge widget is a graphical horizontal bar displaying its current value.
 Changing the value itself results in a simple way to display a Progress Indicator.

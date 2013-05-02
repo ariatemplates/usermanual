@@ -1,5 +1,4 @@
 Title: Text
-Category: Widgets
 
 Text widget is a simple label widget containing only textual information.The width is optional on the text widget. If width is not set, then the contents of the text widget will not be ellipsed and the text widget will expand to the width of it's contents.
 

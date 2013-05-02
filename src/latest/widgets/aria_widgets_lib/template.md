@@ -1,5 +1,4 @@
 Title: Template
-Category: Widgets
 
 Template widget allows application developer to include external template file in a template. This allows for gathering of common code into a sub template.
 

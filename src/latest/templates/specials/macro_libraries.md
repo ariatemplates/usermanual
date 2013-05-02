@@ -1,5 +1,4 @@
 Title: Macro Libraries
-Category: Special Templates
 Author: Benoit Charbonnier
 
 A macro library is a collection of macros which can be used by templates.

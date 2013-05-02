@@ -1,5 +1,4 @@
 Title: List
-Category: Widgets
 
 List widget is a container widget which can hold a list of selectable items.
 

@@ -1,5 +1,4 @@
 Title: Around Classes
-Category: core_layer,core_layer_concepts
 
 
 Most of the basic object-oriented concepts are detailed in [Javascript Classes](javascript_classes) article. Let's focus on more advanced functionalities that will allow you to using patterns such as inheritance, interfaces or even observable objects.

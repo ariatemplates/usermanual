@@ -1,5 +1,4 @@
 Title: Div
-Category: Widgets
 
 Div widget is a container for any content, and the main purpose of div widget is to create borders. Depending on the 'sclass' attribute value it will use different types of frame. Div widget is used inside other widgets (Dialog, tooltip) but can also be used in a template.
 

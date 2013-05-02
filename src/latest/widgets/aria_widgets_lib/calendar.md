@@ -1,5 +1,4 @@
 Title: Calendar
-Category: Widgets
 
 
 The Calendar widget is a JavaScript-based calendar that can be embedded within a page.

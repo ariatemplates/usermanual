@@ -1,5 +1,4 @@
 Title: ErrorList
-Category: Widgets
 
 ErrorList widget can be used to display list of errors (client-side or server-side / technical or functional). These errors and messages can be triggered via error management subsystem in Aria Template, which produces nested list of messages that can be displayed by the widget by binding.
 

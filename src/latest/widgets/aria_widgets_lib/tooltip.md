@@ -1,5 +1,4 @@
 Title: Tooltip
-Category: Widgets
 
 Tooltip widget allows application developer to specify an offset to position the tooltip in some palce where it does not hide important information.
 For instance, tooltip will be placed below the mouse pointer and this will sometimes hide the important information.

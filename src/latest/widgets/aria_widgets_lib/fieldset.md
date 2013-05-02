@@ -1,5 +1,4 @@
 Title: Fieldset
-Category: Widgets
 
 
 Fieldset is a container widget and is mainly used for the following ones:

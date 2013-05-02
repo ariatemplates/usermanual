@@ -1,5 +1,4 @@
 Title: Javascript Classes
-Category: core_layer,core_layer_concepts
 
 
 

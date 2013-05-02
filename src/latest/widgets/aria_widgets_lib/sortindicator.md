@@ -1,5 +1,4 @@
 Title: SortIndicator
-Category: Widgets
 
 A sorting indicator is simply a label followed by an icon that is used to trigger an ascending or descending sort operation on a list of elements.
 The main purpose of this widget is, when the user click on it, switch from ascending to descending sorting.
