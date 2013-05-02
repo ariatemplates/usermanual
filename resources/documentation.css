@@ -98,6 +98,7 @@
     background-color: #F9F9F9;
     border-bottom: 1px solid #EEEEEE;
     color: #666666;	
+    overflow-x: auto;
 }
 
 .documentation aside a, .documentation aside a:hover, .documentation aside a:visited {
