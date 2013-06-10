@@ -239,7 +239,8 @@ When unloading the page (whether because an external navigation has occurred, or
 
 It is possible to perform animations in navigating from one page to another. As described in [this bean](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageDefinition), a page definition can contain an `animation` property (of type [PageAnimation](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageAnimation)). It consists in an Object in which you can specify:
 * how the new page has to be displayed (`animateIn`),
-* how the previous page has to be removed (`animateOut`).
+* how the previous page has to be removed (`animateOut`),
+* the `type` of animation to activate (1: normal/2: with hardware acceleration/3: 3D).
 
 The list of animations can be found [here](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageAnimation). Animations are based on class [aria.utils.css.Animations](http://ariatemplates.com/api/#aria.utils.css.Animations)<!-- , some documentation on its generic usage can be found [here](Aria_Templates_-_CSS3_animations) -->.
 
