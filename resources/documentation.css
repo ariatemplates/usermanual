@@ -97,7 +97,7 @@
 .documentation code {
     background-color: #F9F9F9;
     border-bottom: 1px solid #EEEEEE;
-    color: #666666;	
+    color: #666666;
     overflow-x: auto;
 }
 
@@ -381,6 +381,23 @@ body.internal article .callout.reviewed,
 .column-2 {
 	width:140px;
 	padding: 0px;
+}
+
+
+/* Sidebar Searchbox */
+.search-box .search-query {
+  box-sizing: border-box;
+  width: 98%;
+  padding: 4px 2px;
+  border: 1px solid #BCCDF0;
+  border-radius: 3px;
+}
+
+.search-box .search-button-cell {
+  width: 1%;
+}
+.search-box .search-button-cell input {
+  padding: 4px 2px;
 }
 
 

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Table of content - Aria Templates Usermanual (latest)</title>
+    <meta charset="utf-8">
+    <link href="/favicon.ico" type="image/ico" rel="shortcut icon">
+    <link rel="stylesheet" href="/styles/all.css" type="text/css"><!--[if IE 7]>
+    <link rel="stylesheet" href="/styles/versionselect.css" type="text/css"><![endif]-->
+    <link rel="stylesheet" href="../documentation.css" type="text/css">
+    <link rel="stylesheet" href="http://ariatemplates.com/styles/snippets/highlight_skin.css" type="text/css"><!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/iemap.js"></script>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript" charset="utf-8"></script>
+    <style>.ie-hidden {display:none;}</style><![endif]--><!--[if lt IE 8]>
+    <link href="/styles/ie/ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+    <script type="text/javascript" src="/js/top-scrolling.js"></script>
+    <script>
+      (function() {
+        var cx = '013512901283316812857:WMX1249253182';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <style type="text/css">
+      table.search-box {
+        border-style: none;
+        border-width: 0;
+        border-spacing: 0 0;
+        width: 100%;
+        margin-bottom: 2px;
+      }
+      .search-box .search-query {
+        border-radius: 3px;
+        padding: 5px;
+        border: 1px solid #BCCDF0;
+        width: 98%;
+      }
+
+      .search-box .search-button-cell {
+        width: 1%;
+      }
+
+      .search-box .search-button {
+        padding: 5px;
+        height: auto;
+      }
+
+      .gsc-control-cse {
+        font-family: "Helvetica Neue",Arial,"Lucida Grande",sans-serif !important;
+        padding: 0 !important;
+        margin-top: 10px;
+      }
+
+      .gsc-results {
+        width: auto;
+      }
+
+      .gsc-results .gsc-expansionArea .gsc-result:nth-child(2n+1) {
+        background-color: #e8edff;
+        border-radius: 3px;
+      }
+
+      .gcsc-branding-img-noclear img {
+        max-width: none;
+      }
+
+      .documentation .content .wrapper .columns {
+        border-right: none;
+      }
+
+      .documentation .content .wrapper .column {
+        float: none;
+      }
+
+    </style>
+  </head>
+  <body class="documentation">
+    <div id="top"></div>
+    <header id="header">
+      <div class="logo">
+        <h5><a href="/"><img src="/images/logo-page.png" alt="Aria Templates"></a></h5>
+      </div>
+      <nav><a href="/documentation" class="documentation">Documentation</a><a href="/blog" class="blog">Blog</a><a href="/forum" class="forum">Forum</a><a href="/contribute" class="contribute">Contribute</a><a href="/about" class="about">About</a><a href="/download" class="download button green">Download</a></nav>
+    </header>
+    <div class="content-wrapper">
+      <div id="scrollMenu" class="up">
+        <div><a href="#top" onclick="smoothScroll('top');return false">Top</a></div>
+      </div>
+      <section class="content">
+        <div class="wrapper">
+          <div class="columns">
+            <article class="column">
+              <h1>Search the documentation</h1>
+              <form action="/usermanual/search/" method="get">
+                <table class="search-box">
+                  <tr>
+                    <td><input id="search-query" autocomplete="off" style="outline:none" type="text" size="10" class="search-query" name="q" title="search" spellcheck="false" /></td>
+                    <td class="search-button-cell"><input type="submit" value="Search" class="search-button" title="search"></td>
+                  </tr>
+                </table>
+                <script type="text/javascript">
+                  (function() {
+                    var query = document.location.search.substr(1);
+                    if (query && query.indexOf("q=") !== -1) {
+                      var params = query.split("&"), i, l= params.length;
+                      for(i = 0; i < l; i++) {
+                        if (params[i].indexOf("q=") === 0) {
+                          var parts = params[i].split("=");
+                          document.getElementById("search-query").value = decodeURIComponent(parts[1]);
+                          return;
+                        }
+                      }
+                    }
+                  })();
+
+                </script>
+              </form>
+              <gcse:searchresults-only></gcse:searchresults-only>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer id="footer">
+      <section class="content">
+        <nav>
+          <section class="documentation">
+            <h5><a href="/documentation">Documentation</a></h5>
+            <ul>
+              <li><a href="/usermanual">User Manual</a></li>
+              <li><a href="/aria/guide/apps/apidocs" target=" blank">Api Documentation</a></li>
+              <li><a href="/guides">Guides</a></li>
+              <li><a href="/faq">FAQ</a></li>
+            </ul>
+          </section>
+          <section class="discuss">
+            <h5><a href="/discuss">Discuss</a></h5>
+            <ul>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/forum">Forum</a></li>
+              <li><a href="/blog/category/news">Latest News</a></li>
+            </ul>
+          </section>
+          <section class="contribute">
+            <h5><a href="/contribute">Contribute</a></h5>
+            <ul>
+              <li><a href="http://github.com/ariatemplates">Source Code</a></li>
+              <li><a href="http://github.com/ariatemplates/ariatemplates/issues">Bugs tracking</a></li>
+              <li><a href="/contribute/documentation">Documentation</a></li>
+            </ul>
+          </section>
+          <section class="contact">
+            <h5><a href="/about">About</a></h5>
+            <ul>
+              <li><a href="/about/contact">Contact</a></li>
+              <li><a href="/about/team">The Team</a></li>
+            </ul>
+          </section>
+        </nav>
+      </section>
+      <section class="content legal">&copy; 2012 Aria Templates is licensed under Apache 2.0 license. See our<a href="/license">licensing page</a></section>
+    </footer>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-29575860-1']);
+      _gaq.push(['_setDomainName', 'ariatemplates.com']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+          var ga = document.createElement('script');
+          ga.type = 'text/javascript';
+          ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

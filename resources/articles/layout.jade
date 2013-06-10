@@ -42,7 +42,7 @@ html(lang='en')
         //if lt IE 9
             script(type='text/javascript', src='/js/iemap.js')
             script(src='//html5shiv.googlecode.com/svn/trunk/html5.js', type='text/javascript', charset='utf-8')
-            style
+            style.
                 .ie-hidden {display:none;}
         //if lt IE 8
             link(href='/styles/ie/ie7.css', rel='stylesheet', type='text/css')
@@ -88,15 +88,21 @@ html(lang='en')
 
                                     nav.navigationbar
                                         div.aligncenter.nav-main
-                                            mixin includeNavBar(metadata.version)
+                                            a(id="menu", href="/usermanual/" + metadata.version + "/") Main Table of Contents
                                 else
                                     mixin doc()
 
                         aside.column.sidebar
                             include versionList
-                            div.wiki-search
+                            div
                               h4 Search
-                              input(type='text', id='search', name='q', value='', placeholder='search inside doc', onkeyup="javascript: if (event.keyCode == 13) {var q = document.getElementById('search').value; if ((q == '') || (q == null)) {return false;} else {openSearchResults(q);}} function openSearchResults (query) {var popUp = window.open('http://www.google.com/search?q=' + encodeURIComponent(query) + ' site:ariatemplates.com', 'new_window_1'); if (popUp == null || typeof(popUp)=='undefined') {alert('Please disable your pop-up blocker and re do the search.');} else { popUp.focus();}}")
+                              form(action="/usermanual/search/", method="get")
+                                table.search-box
+                                    tr
+                                        td
+                                            input#search-query(autocomplete="off",type="text",size="10",class="search-query",name="q",title="Search latest version of doc",spellcheck="false",placeholder="Search latest version of doc")
+                                        td.search-button-cell
+                                            input(type="submit",value="Search",class="search-button",title="search")
 
                             block sidebar
 
