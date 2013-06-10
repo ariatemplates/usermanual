@@ -50,6 +50,7 @@ Some remarks:
 * `navigation` can be either "hash"-based or "history"-based. More details will be discussed [later](#Urls).
 * `css` is an array of standard css files that are global to the application. They are added as `rel` tags and survive page navigations. This feature is not encouraged because css rules should be managed throught CSSTemplates in an AT-based application. Nevertheless, It is possible to declare standard css files as site dependencies.
 * `animations` has to be set to true if you want to use animations for page transitions. The page engine will preload all the classes needed for the animation, so that everything is ready when navigating to the first page. If no animations are needed, the load of useless classes will be avoided. See [below](#Animations) for more details.
+* `storage` allows you to control the way in which the page engine is able to store navigation information across external navigations or page refreshes. See [below](#Page_reload_and_external_navigation) for more details.
 
 ## Page definition
 
@@ -232,7 +233,14 @@ As shortly explained in [above](#Site_configuration), there are two types of nav
 
 ### Page reload and external navigation
 
-When unloading the page (whether because an external navigation has occurred, or because you pressed F5), the page engine is automatically storing some information about the mapping between urls and pageId's inside the browser local storage. At re-initialization, this information is recovered, so that the page engine is already able to direct you to the page that you were at when leaving. This mechanism also allows to keep the history of your navigation: if you navigate to a couple of pages and then navigate to an external resource, you can click on the back button several times and really see the pages you visited, as in a standard web 1.0 website (in IE7, due to some browsers limitations, the full history is lost, but the last visited page is still correctly restored).
+When unloading the page (whether because an external navigation has occurred, or because you pressed F5), the page engine is able to store some information about the mapping between urls and pageId's inside the browser local storage. At re-initialization, this information is recovered, so that the page engine is already able to direct you to the page that you were at when leaving. This mechanism also allows to keep the history of your navigation: if you navigate to a couple of pages and then navigate to an external resource, you can click on the back button several times and really see the pages you visited, as in a standard web 1.0 website (in IE7, due to some browsers limitations, the full history is lost, but the last visited page is still correctly restored).
+
+This storage mechanism is by default enabled. Nevertheless, it can be disabled and customized by properly setting the `storage` property in the site configuration, as shown [above](#Site_configuration). In particular, you can decide:
+* whether the storage is activated or not (`active`).
+* The suffix that is appended to the default string that is used as key for local storage.
+* The number of seconds after which the items in the cache retrieved from the local storage are considered expired.
+
+Take a look at the [apidocs](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:Site) for more details.
 
 
 ### Animations
