@@ -12,7 +12,7 @@ Let's have a look at this template
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/widget_bindings/MyTemplate.tpl?lang=at&outdent=true' defer></script>
 
-As you can see, it only contains a <code>[{@aria:TextField {}}](textfield_widget)</code> widget. We are using the **bind** attribute of the widget itself.
+As you can see, it only contains a <code>[{@aria:TextField {}}](textfield)</code> widget. We are using the **bind** attribute of the widget itself.
 
 ## Bindable Property Sample
 

@@ -10,6 +10,6 @@ The whole list of configuration parameters is available in [PasswordFieldCfg bea
 ## Features
 <iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/passwordfield/' ></iframe>
 
-Features such as [bindings](widget_bindings) and [transforms](transforms), styling and [validation](validators) is done exactly in the same way as [textfield](textfield) widget.
+Features such as [bindings](widget_bindings) and [transforms](widget_bindings#transforms), styling and [validation](validators) is done exactly in the same way as [textfield](textfield) widget.
 
 The only constraint is that PasswordField does **not** allow the use of _helptext_.

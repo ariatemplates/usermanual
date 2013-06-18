@@ -15,7 +15,7 @@ Be careful though:
 
 * If a single line comment is preceded by a colon, it will be ignored (and parsed as a URL)
 
-    http://obviously.not.a.comment
+    `http://obviously.not.a.comment`
 
 * If you need to use the `/*` sequence inside a string, you will need to escape it, otherwise it will be interpreted as a comment:
 
@@ -258,7 +258,7 @@ Wrapping pieces of template code into macros is useful when a particular part ne
 
 Macros are equivalent to JavaScript functions, and in fact, they are actually transformed into functions when a [template is interpreted and turned into a class](what_are_templates#lifecycle).
 
-**The macro `main` serves as the entry point to the template** - its arguments are those passed when [loading the template](what_are_template). Other macros must be called through the <code>[call](#call)</code> statement.
+**The macro `main` serves as the entry point to the template** - its arguments are those passed when [loading the template](what_are_templates). Other macros must be called through the <code>[call](#call)</code> statement.
 
 Macros can be defined also in separate templates that are called [macro libraries](macro_libraries). Also, they can be inherited from parent templates thanks to [template inheritance](template_inheritance).
 
@@ -407,7 +407,7 @@ See also the repeater [configuration](http://ariatemplates.com/api/#aria.templat
 
 ## Variables
 
-When working with templates it is very frequently needed to manage template-specific variables. Since templates can have [a very volatile existence](what_are_templates%3f#lifecycle), internal template variables persistence should be looked at very carefully. This section aims at explaining how to manage variables in your templates.
+When working with templates it is very frequently needed to manage template-specific variables. Since templates can have [a very volatile existence](what_are_templates#lifecycle), internal template variables persistence should be looked at very carefully. This section aims at explaining how to manage variables in your templates.
 
 ### Predefined variables
 
@@ -437,7 +437,7 @@ When you want to define your own template-related variables, you have two option
 ## Methods
 
 The methods available inside a template are
-* those defined in [template script](template scripts). Furthermore, all [methods available in a template script](template_scripts#available-methods)
+* those defined in [template script](template_scripts). Furthermore, all [methods available in a template script](template_scripts#available-methods)
 * Those defined in the module controller and flow controller associated to the template in its loading configuration (`moduleCtrl.moduleMethod` and `flowCtrl.flowMethod`). In this case, only methods exposed by the module/flow interfaces will be available.
 
-Examples are available in the articles on [template scripts](Template_Scripts), [module controllers](Controllers) and [flow controllers](Flow_Controllers).
+Examples are available in the articles on [template scripts](template_scripts), [module controllers](controllers) and [flow controllers](flow_controllers).

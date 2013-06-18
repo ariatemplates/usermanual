@@ -16,7 +16,7 @@ Templates are defined in files with a `.tpl` extension and use a number of speci
 There are 3 kinds of tags:
 
 * **Statements**: like `{foreach}` or `{section}` explained in details in [this article](writing_templates), are used to define the structure of dynamic pages.
-* **Widgets**: like `{@aria:Button}` explained in details in [ this article](the_widgets_collection) are graphical components that make it easy to design a flexible user interface.
+* **Widgets**: like `{@aria:Button}` explained in details in [this article](widgets) are graphical components that make it easy to design a flexible user interface.
 * **Expressions**: like `${i + 10}` are used to evaluate Javascript expressions (variable references, functions calls, etc.)
 
 Templates always begin with a `{Template}` statement that defines its classpath and may provide additional configuration options.  They can contain several macros, which are the equivalent of methods, but must always contain one called `main`, that is the template entry point.
@@ -53,7 +53,7 @@ Once a template is loaded, it needs to be parsed and interpreted by the AT engin
 
 ### Interpretation
 
-After it has been loaded, the template content is interpreted by the templating engine and compiled into [a class](aria_templates_classes).  As any other class, it may contain dependencies that would be recursively loaded from the server or from the cache. Such dependencies include widgets, localized resources or [template scripts](aria_templates_scripts).
+After it has been loaded, the template content is interpreted by the templating engine and compiled into [a class](javascript_classes).  As any other class, it may contain dependencies that would be recursively loaded from the server or from the cache. Such dependencies include widgets, localized resources or [template scripts](template_scripts).
 
 The resulting class is kept in a cache so that it doesn't need to be reloaded and reinterpreted in future uses, making subsequent executions of this template faster.
 

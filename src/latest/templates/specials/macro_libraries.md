@@ -48,7 +48,7 @@ Libraries can use scripts just like templates by providing them in the Library d
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/macros/MyOtherTemplate.tpl?lang=at'></script>
 
-Libraries inherit from <code>[aria.templates.Template](http://ariatemplates.com/api/#aria.templates.Template)</code>, therefore any library script should do the same, following the concepts explained in the article about [Template Scripts](scripts).
+Libraries inherit from <code>[aria.templates.Template](http://ariatemplates.com/api/#aria.templates.Template)</code>, therefore any library script should do the same, following the concepts explained in the article about [Template Scripts](template_scripts).
 
 
 ## Sample Usage

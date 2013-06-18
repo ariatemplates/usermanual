@@ -115,17 +115,20 @@ To do so, the <code>[addListener()](http://ariatemplates.com/api/#aria.utils.Eve
 
 ### Mouse events
 
-[Samples.Utilities.DOM Events.Simple Syntax](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Simple%20Syntax)
+<!-- [Samples.Utilities.DOM Events.Simple Syntax](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Simple%20Syntax) -->
 
 This first sample page contains various examples of mouse events, with several event types being used : click, mouseover, mouseleave.
 
-[Samples.Utilities.DOM Events.Mouse Events](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Mouse%20Events)
+<!-- [Samples.Utilities.DOM Events.Mouse Events](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Mouse%20Events) -->
+
+`missing sample`
 
 This sample is the first of a series of samples all based on a 1-9 keypad. In this first sample, we look at click events. The event handler is designed to be simple : a simple datamodel update followed by a refresh.
 
 ### Keyboard events
 
-[Samples.Utilities.DOM Events.Keyboard Events.Step 1](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%201)
+<!-- [Samples.Utilities.DOM Events.Keyboard Events.Step 1](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%201) -->
+`missing sample`
 
 This sample is based upon the keypad example used for the Mouse Event sample.
 The mouse selection is here replaced with a keyboard navigation using the arrows key.
@@ -138,13 +141,15 @@ Then using the statics available on <code>[DomEventWrapper](http://ariatemplates
 
 ### Form events
 
-[Samples.Utilities.DOM Events.Keyboard Events.Step 2](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%202)
+<!-- [Samples.Utilities.DOM Events.Keyboard Events.Step 2](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%202) -->
+`missing sample`
 
 Still based on the keypad example, this sample uses input events such as `{on change}`.
 As you can see in the template script, the change event is the rough DOM Event, therefore we have to take care of the browser specific behavior of the change event.
 On IE, we force a blur before we refresh, to trigger the change event to be fired.
 
-[Samples.Utilities.DOM Events.Keyboard Events.Step 3](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%203)
+<!-- [Samples.Utilities.DOM Events.Keyboard Events.Step 3](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%203) -->
+`missing sample`
 
 A listener on focus is added and is now responsible for updating the datamodel and trigger the refresh.
 Thanks to this new design, the selection updates automatically if the user navigates using the TAB key.
@@ -152,7 +157,8 @@ The actual keyboard navigation now triggers a focus on the <code>[DomElementWrap
 
 ### Event delegation
 
-[Samples.Utilities.DOM Events.Keyboard Events.Step 4](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%204)
+<!-- [Samples.Utilities.DOM Events.Keyboard Events.Step 4](http://aria/aria-templates-dave/#spl=Samples.Utilities.DOM%20Events.Keyboard%20Events.Step%204) -->
+`missing sample`
 
 This example is the exact same as the example 3, but the event handlers have been moved at the topmost element of the template.
 Before they were repeated in a loop.
@@ -190,7 +196,8 @@ Event delegation is always about striking a good balance between the amount of e
 
 ### Using aria.utils.Event
 
-[Samples.Utilities.DOM Events.Event singleton](http://aria/aria-templates/aria/guide/#spl=Samples.Utilities.DOM%20Events.Event%20singleton)
+<!-- [Samples.Utilities.DOM Events.Event singleton](http://aria/aria-templates/aria/guide/#spl=Samples.Utilities.DOM%20Events.Event%20singleton) -->
+`missing sample`
 
 This sample is again based on the keypad example.
 This time, a keydown is attached on the document using the <code>[aria.utils.Event.addListener()](http://ariatemplates.com/api/#aria.utils.Event:addListener)</code> utility method.

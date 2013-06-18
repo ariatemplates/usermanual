@@ -241,7 +241,7 @@ It is possible to perform animations in navigating from one page to another. As 
 * how the new page has to be displayed (`animateIn`),
 * how the previous page has to be removed (`animateOut`).
 
-The list of animations can be found [here](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageAnimation). Animations are based on class [aria.utils.css.Animations](http://ariatemplates.com/api/#aria.utils.css.Animations), some documentation on its generic usage can be found [here](Aria_Templates_-_CSS3_animations).
+The list of animations can be found [here](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageAnimation). Animations are based on class [aria.utils.css.Animations](http://ariatemplates.com/api/#aria.utils.css.Animations)<!-- , some documentation on its generic usage can be found [here](Aria_Templates_-_CSS3_animations) -->.
 
 ## Content processors
 

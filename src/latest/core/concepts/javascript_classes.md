@@ -64,7 +64,7 @@ Note that visibility, be it for members or methods, rely only on naming conventi
 * `_` means _protected_
 * `__` means _private_
 
-Because Javascript does not provide any native mechanism regarding visibility, it is possible to access protected and private members from places you shouldn’t.  However, this convention is also very important for [documentation purposes](writing_documentation).
+Because Javascript does not provide any native mechanism regarding visibility, it is possible to access protected and private members from places you shouldn’t.  However, this convention is also very important for documentation purposes<!-- [documentation purposes](writing_documentation) -->.
 
 **NB**: Technically all properties defined in the _$prototype_ section will be assigned to the actual prototype of the generated ojbect. In other words, if we consider the _x.y.AClass_, its prototype properties will be stored in _x.y.AClass.protototype_
 

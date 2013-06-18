@@ -90,7 +90,7 @@ The main purpose of defining schemas is to check the validity of data. Aria Temp
 * **[check](http://ariatemplates.com/api/#aria.core.JsonValidator:check:method)**: checks that the provided json object complies with a certain bean definition.
 * **[normalize](http://ariatemplates.com/api/#aria.core.JsonValidator:normalize:method)**: checks that the provided json object complies with a certain bean definition and adds default values. If you look at the method signature, you will notice that it accepts a second parameter which tells whether to throw errors or not.
 
-For performance reasons, in both cases **the check is performed only when you are working in [debug mode](troubleshooting)**. Otherwise, the `check` method always returns `true` and the `normalize` method only applies default values when specified in the bean definition.
+For performance reasons, in both cases **the check is performed only when you are working in [debug mode](logging_and_debugging)**. Otherwise, the `check` method always returns `true` and the `normalize` method only applies default values when specified in the bean definition.
 
 
 <span style="color: red;">Warning:</span> At the moment Aria Templates does not support validation for schemas that inherit from `aria.core.JsonTypes.MultiTypes` because normalization can be ambiguous in some cases. Hence normalization for those types of data will be automatically skipped. This feature might be added in the future.

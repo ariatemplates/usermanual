@@ -103,7 +103,7 @@ In some cases, for example  for CSS3 @font-face/@keyframes rules, if users do no
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/CSSWithoutPrefix.tpl.css?noheader=true&lang=at&outdent=true' defer></script>
 
-Note that it is also possible to include a CSS template as dependency in a normal class, using the `$css` property.  This is mainly used when defining [custom widgets](widget_libraries).
+Note that it is also possible to include a CSS template as dependency in a normal class, using the `$css` property.  This is mainly used when defining [custom widgets](creating_a_custom_widgets_library).
 
 ## CSS Template code sample
 
