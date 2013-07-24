@@ -9,6 +9,10 @@
 #toc ol ol li { list-style-type: lower-alpha; }
 #toc ol ol ol li { list-style-type: lower-roman; }
 
+li.toctext {
+	text-align: left;
+}
+
 .documentation img {
 	max-width: 100%;
 	height: auto;
@@ -311,6 +315,7 @@ body.internal article .callout.reviewed,
 }
 .menu-container li {
 	list-style-type:none;
+	text-align:left;
 }
 
 
@@ -431,4 +436,11 @@ iframe.samples {
     display: block;
     font-weight: bold;
     text-align: center;
+}
+
+/* Have some indication of TAB-focused link from keyboard */
+a:focus {
+    background-color: #5092BD !important;
+    color: #FFF !important;
+    border-radius: 2px;
 }
