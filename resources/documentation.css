@@ -18,6 +18,10 @@ li.toctext {
 	height: auto;
 }
 
+#header > .logo img { /* AT logo */
+	float:left;
+}
+
 .documentation p, .documentation li {
 	text-align: justify;
 	line-height: 150%;
