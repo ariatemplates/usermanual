@@ -24,6 +24,9 @@
 
 .documentation p, .documentation li {
 	text-align: justify;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto; /* IE10+ */
+	/* not adding -webkit-hyphens; it's not supported in Chrome, and in Safari, the hyphenation is lame inside <code> */
 	line-height: 150%;
 }
 
