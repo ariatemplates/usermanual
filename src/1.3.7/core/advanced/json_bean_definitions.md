@@ -37,7 +37,7 @@ There are two categories of built-in types (click on the links to learn more abo
 * **complex types**: [Object](http://ariatemplates.com/api/#aria.core.JsonTypes:Object), [Array](http://ariatemplates.com/api/#aria.core.JsonTypes:Array), [Map](http://ariatemplates.com/api/#aria.core.JsonTypes:Map), [MultiTypes](http://ariatemplates.com/api/#aria.core.JsonTypes:MultiTypes)
 
 
-When creating your bean definition, you can always include the following properties (an explanation is also available [here](http://ariatemplates.com/api/##aria.core.BaseTypes:Element)):
+When creating your bean definition, you can always include the following properties (an explanation is also available [here](http://ariatemplates.com/api/#aria.core.BaseTypes:Element)):
 
 * **`$type`:** the mandatory parent type
 * **`$description`:** a short literal description of your data type. It is mandatory when inheriting directly from a built-in data type. When inheriting from a user-defined schema, it is not necessarily required.
@@ -110,4 +110,4 @@ As you can see in the previous code snippet, bean definitions allow you to assoc
 
 ## Bean definitions inside classes
 
-It is also possible to specify class-specific bean definitions inside the `$beans` key of the [classDefintion configuration Json object](http://ariatemplates.com/api/##aria.core.CfgBeans:ClassDefinitionCfg). However, the schemas thus defined cannot be used in any way at the moment.
+It is also possible to specify class-specific bean definitions inside the `$beans` key of the [classDefintion configuration Json object](http://ariatemplates.com/api/#aria.core.CfgBeans:ClassDefinitionCfg). However, the schemas thus defined cannot be used in any way at the moment.

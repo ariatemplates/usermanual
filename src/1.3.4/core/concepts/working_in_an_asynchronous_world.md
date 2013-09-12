@@ -94,4 +94,4 @@ Aria Templates allows users to make `GET`, `POST`,`PUT`,`DELETE`,`HEAD`,`TRACE`,
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=sampleAsyncRequest&lang=javascript&outdent=true' defer></script>
 
-The whole list of configuration parameters is available in [Async Request](http://ariatemplates.com/api/##aria.core.CfgBeans:IOAsyncRequestCfg).
+The whole list of configuration parameters is available in [Async Request](http://ariatemplates.com/api/#aria.core.CfgBeans:IOAsyncRequestCfg).
