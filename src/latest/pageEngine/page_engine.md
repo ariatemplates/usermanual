@@ -21,7 +21,7 @@ Here is a sample `index.html` file that initializes the page engine.
 
 The main entry point is the class [aria.pageEngine.PageEngine](http://ariatemplates.com/api/#aria.pageEngine.PageEngine) class. After creating an instance of this class, it is possible to start the page engine by providing a page provider, which will be discussed [later](#Page_providers).
 
-'''Remark:''' It is important to add the [aria.embed.EmbedLib](http://ariatemplates.com/api/#aria.embed.EmbedLib) library to the default widget libraries needed in your templates. Indeed, the [Placeholder](http://ariatemplates.com/api/#aria.embed.Placeholder) widget has a key role in embedding contents, templates and modules inside pages. We will see examples later in this article.
+**Remark:** It is important to add the [aria.embed.EmbedLib](http://ariatemplates.com/api/#aria.embed.EmbedLib) library to the default widget libraries needed in your templates. Indeed, the [Placeholder](http://ariatemplates.com/api/#aria.embed.Placeholder) widget has a key role in embedding contents, templates and modules inside pages. We will see examples later in this article.
 
 
 ## Page providers
@@ -62,13 +62,13 @@ Here is the [bean for the page definition](http://ariatemplates.com/api/#aria.pa
 
 A page definition is made of two main parts:
 * [PageContents](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageContents) represents pure content that can be retrieved, for example, from a Content Management System (within your custom page provider). It contains
-** menus that will be automatically available in `appData.navigation`.
-** `placeholderContents`, which is a map whose keys correspond to `contentId`s present in the placeholder descriptions of the page composition.
+    * menus that will be automatically available in `appData.navigation`.
+    * `placeholderContents`, which is a map whose keys correspond to `contentId`s present in the placeholder descriptions of the page composition.
 * [PageComposition](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageComposition), which represents the description of the layout and of the functional parts of the page, namely modules. It contains
-** the main template used to display the page.
-** a list of standard css files that are specific to the page. They are added as `rel` when the page is loaded, and removed when navigating away from the page. This feature is not encouraged because css rules should be managed throught CSSTemplates in an AT-based application. Nevertheless, It is possible to declare standard css files as page dependencies. The removal of the `rel` tags on page change helps managing the styling of your application and helps preventing that the number of css rules actually applied in a page overcomes the limitations imposed by certain browsers.
-** The list of placeholders. The description of a placeholder will be detailed [later](#Placeholders ).
-** The description of page-specific modules. If one or more placeholders need this module, an instance will be created before loading the page.
+    * the main template used to display the page.
+    * a list of standard css files that are specific to the page. They are added as `rel` when the page is loaded, and removed when navigating away from the page. This feature is not encouraged because css rules should be managed throught CSSTemplates in an AT-based application. Nevertheless, It is possible to declare standard css files as page dependencies. The removal of the `rel` tags on page change helps managing the styling of your application and helps preventing that the number of css rules actually applied in a page overcomes the limitations imposed by certain browsers.
+    * The list of placeholders. The description of a placeholder will be detailed [later](#Placeholders ).
+    * The description of page-specific modules. If one or more placeholders need this module, an instance will be created before loading the page.
 
 This separation of the pageDefinition has been conceived in order to clearly split pure contents, that can be reused in different parts of the page, from layout-related and functional parts.
 
@@ -78,7 +78,7 @@ The page definition can be decorated with other information, like the url and th
 ### Placeholders
 
 The description of a placeholder is very flexible. Look at the [bean definition](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:Placeholder) to find out all the available options.
-The keys used in `pageComposition.placeholders` allows to define nested placeholders in a flat data structure. By looking at the above example of page definition, it is possible to realize that `"applicationBox.albums.noPhotos"` placeholder is nested under `"applicationBox.albums"`. 
+The keys used in `pageComposition.placeholders` allow to define nested placeholders in a flat data structure. By looking at the above example of page definition, it is possible to realize that `"applicationBox.albums.noPhotos"` placeholder is nested under `"applicationBox.albums"`. 
 
 There are mainly three properties that determine the nature of a single placeholder:
 * `template`: the classpath of the template to display. If no `module` or `contentId` is provided, then it is likely that the template is needed to create a certain layout, and the real embedded content is in nested placeholders.
@@ -122,7 +122,7 @@ Common modules have to be declared in the site configuration, as shown [above](#
 
 #### Page-specific modules
 
-Page specific modules have to be declared in the `pageComposition.modules` map of the page definition. A unique instance is created.
+Page specific modules have to be declared in the `pageComposition.modules` map of the page definition. A unique instance is created and available in the page.
 
 
 ### Usage
@@ -132,7 +132,7 @@ In a placeholder declaration (see [above](#Placeholders)), the module property c
 
 ### Lifecycle
 
-All these modules are automatically loaded as sub-modules of the site root module, which is an instance of [aria.pageEngine.SiteRootModule](http://ariatemplates.com/api/#aria.pageEngine.SiteRootModule). When used in a placeholder of a page, all their dependencies are loaded and all modules are initialized just before displaying the page. When navigating away from a page, page-specific modules are not disposed, they keep on living just in case the page is visited again.
+All these modules are automatically loaded as sub-modules of the site root module, which is an instance of [aria.pageEngine.SiteRootModule](http://ariatemplates.com/api/#aria.pageEngine.SiteRootModule). When used in a placeholder of a page, all their dependencies are loaded and all modules are initialized just before displaying the page. When navigating away from a page, page-specific modules instances are not disposed, they keep on living in order to guarantee the persistence of their data model across different navigations to the same page.
 
 ### Bindings
 
@@ -163,7 +163,7 @@ The following methods are available on the `PageEngine` instance:
 * [navigate](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:method), in order to change page or update the information on the current page (see [below](#Navigation) for more informtation).
 * [getData](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:getData:method), which returns the data model of the page engine (more information [below](#Access_to_data)).
 * [getPageProvider](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:getPageProvider:method), which returns instance of page provider given as argument to the `start` method. It can be useful to have it because you might have defined other methods in a customized page provider, and you might want to access them from your modules.
-* [isModuleInPage](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:isModuleInPage:method), which accepts an instance of module controller and returns `true` if the module is currently present in the page. This feature is useful because page-specific modules are not destroyed when navigating away from the page (this allows persistence of data model across different navigations to the same page). Since a page-specific module is still alive even when the page is not didplayed, it can be important to know when it is actually present so that some actions (most notably calls to the server) that depend on data model changes (especially in the case of module bindings) can be avoided when they have no impact on the current UI.
+* [isModuleInPage](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:isModuleInPage:method), which accepts an instance of module controller and returns `true` if the module is currently present in the page. This feature is useful because page-specific modules are not destroyed when navigating away from the page (this allows persistence of data model across different navigations to the same page). Since a page-specific module is still alive even when the page is not displayed, it can be important to know when it is actually present so that some actions (most notably calls to the server) that depend on data model changes (especially in the case of module bindings) can be avoided when they have no impact on the current UI.
 
 
 ## Access to data
@@ -180,7 +180,7 @@ where:
 
 You can access these data
 * from a template that is not associated to a module controller, in `data.storage`.
-* by using the [getData](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:getData:method) method on the [instance of page provider](#Access_to_the_PageEngine_instance).
+* by using the [getData](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:getData:method) method on the [instance of page engine](#Access_to_the_PageEngine_instance).
 
 
 ## Navigation
@@ -196,9 +196,10 @@ It is possible to navigate to a page from templates or modules.
 If the template is associated to the site root module, then it is possible to call `this.moduleCtrl.navigate(pageRequest);`, where `pageRequest` is of type [PageNavigationInformation](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageNavigationInformation).
 You can provide a pageId and/or a url. If the url has already been targeted before, the pageId will be known by the page engine, otherwise it is up to the specified [page provider](#Page_providers) to be aware of the correct mapping.
 
+The `title` property can be used to change the title of the document.
+
 If you set the type of navigation to `"history"` (see [below](#Urls)), then if is also possible to provide
 * `data`: used in pushing the new state (as part of the history API),
-* `title`: used in pushing the new state (as part of the history API),
 * `replace`: in case you want to replace the current state instead of simply pushing the new one.
 
 If the `pageId` corresponds to the current one, no real navigation will be performed, but all the other information provided (`url`, `data`, `title`) will be taken into account and reflected in the application.
@@ -228,7 +229,7 @@ As long as you have access to the instance of pageEngine (or to its interface), 
 
 As shortly explained in [above](#Site_configuration), there are two types of navigation:
 
-* '''hash-based''': the url that you specify for a certain page is add in the hash. It is not possible to set a title for the page or to specify some data to be saved in the history state.
+* '''hash-based''': the url that you specify for a certain page is added in the hash. It is possible to set a title for the page but no data can be saved in the history state.
 * '''history-based''': it is based on the [aria.utils.History](http://ariatemplates.com/api/#aria.utils.History) utility, which provides a cross-browser implementation of the HTML5 History API. For browsers that do not natively support it, it falls back on a hash-based implementation, but it still provides the same API, so that it is possible to set a title, save some data in the history state, and replace a state in the history (all these properties can be specified in the [navigate](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:method) method of the page engine).
 
 ### Page reload and external navigation
