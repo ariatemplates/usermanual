@@ -80,6 +80,7 @@ CssClass: maintoc
 
 ## Utilities
 - ### The Aria Templates Utilities
+    - [Animations](animations)
     - [Drag and Drop](dragdrop)
     - [Persistence](persistencestorage)
     - [Processing Indicator](processingindicator)
