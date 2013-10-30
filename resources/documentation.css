@@ -330,7 +330,7 @@ body.internal article .callout.reviewed,
 	font-weight: bold;
 }
 
-.menu-container li.son {
+.menu-container li.son > a {
 	padding-left: 15px;
 }
 
@@ -349,11 +349,15 @@ body.internal article .callout.reviewed,
 	100% { opacity: 1; -ms-animation-timing-function: linear; display:block; }
 }
 
-#dropdown:hover {
+#dropdown:hover,
+#dropdown:focus,
+#dropdown:active {
 	background: #333;
 }
 
-#dropdown:hover .menu-container {
+#dropdown:hover .menu-container,
+#dropdown:focus .menu-container,
+#dropdown:active .menu-container {
 	display: block;
 	opacity: 1;
 	/*
@@ -373,6 +377,17 @@ body.internal article .callout.reviewed,
 	display:inline;
 	float:left;
 	position:relative;
+}
+
+.column-1 a,.column-2 a {
+	display:block;
+}
+
+a.currentURL {
+	color: #A2D8FA;
+}
+a.currentURL:hover {
+	color: #000;
 }
 
 .column-1 li:hover,.column-2 li:hover {

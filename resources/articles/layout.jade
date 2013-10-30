@@ -82,7 +82,7 @@ html(lang='en')
                                                 mixin category(cat)
                                 if metadata && metadata.Navbar
                                     nav.navigationbar
-                                        div#dropdown.aligncenter.nav-main
+                                        div#dropdown.aligncenter.nav-main(tabindex="0")
                                             mixin includeNavBar(metadata.version)
                                     mixin doc()
 
@@ -144,6 +144,9 @@ html(lang='en')
                             li: a(href='/about/team') The Team
             section.content.legal &copy; 2012 Aria Templates is licensed under Apache 2.0 license. See our
                 a(href='/license') licensing page
+
+        script(type='text/javascript')
+            document.querySelector && document.querySelector("a[href='" + document.URL.slice(document.URL.lastIndexOf('/')+1) + "']").className += " currentURL";
 
         script(type='text/javascript')
             var _gaq = _gaq || [];
