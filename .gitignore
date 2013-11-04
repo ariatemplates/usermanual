@@ -1,4 +1,5 @@
 node_modules
+/.project
 resources/images/Thumbs.db
 out/*
 test
