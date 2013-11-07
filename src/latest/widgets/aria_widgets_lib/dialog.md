@@ -19,7 +19,7 @@ Dialog widgets are highly configurable, as user can define callback functions fo
 
 ## Binding
 The properties bindable for dialog widget are
-* contentMacro
+* macro
 * title
 * tooltip
 * visible
