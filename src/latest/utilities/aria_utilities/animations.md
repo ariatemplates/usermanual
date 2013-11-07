@@ -1,6 +1,6 @@
 Title: Animations
 
-This utility allows to animate an element on a set of CSS properties. 
+This utility allows to animate an element on a set of CSS properties.
 Users can define one or several queues of animations in order to build complex scenarios, register callbacks to some animation events and use different pre-defined or custom easing functions. Other features are also shown in this document.
 
 The simple way to launch an animation is as follows
@@ -66,39 +66,33 @@ By exploiting the described features, it is possible to build complex scenarios 
 
 The animable style properties are the following:
 
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/backgroundPositionX/" target="_blank">backgroundPositionX</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/backgroundPositionY/" target="_blank">backgroundPositionY</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/borderWidth/" target="_blank">borderWidth</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/borderBottomWidth/" target="_blank">borderBottomWidth</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/borderLeftWidth/" target="_blank">borderLeftWidth</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/borderLeftWidth/" target="_blank">borderLeftWidth</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/borderRightWidth/" target="_blank">borderRightWidth</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/borderTopWidth/" target="_blank">borderTopWidth</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/borderSpacing/" target="_blank">borderSpacing</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/bottom/" target="_blank">bottom</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/fontSize/" target="_blank">fontSize</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/height/" target="_blank">height</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/left/" target="_blank">left</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/letterSpacing/" target="_blank">letterSpacing</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/lineHeight/" target="_blank">lineHeight</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/margin/" target="_blank">margin</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/marginBottom/" target="_blank">marginBottom</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/marginLeft/" target="_blank">marginLeft</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/marginRight/" target="_blank">marginRight</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/marginTop/" target="_blank">marginTop</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/outlineWidth/" target="_blank">outlineWidth</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/padding/" target="_blank">padding</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/paddingBottom/" target="_blank">paddingBottom</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/paddingLeft/" target="_blank">paddingLeft</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/paddingRight/" target="_blank">paddingRight</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/paddingTop/" target="_blank">paddingTop</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/maxHeight/" target="_blank">maxHeight</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/minHeight/" target="_blank">minHeight</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/minWidth/" target="_blank">minWidth</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/right/" target="_blank">right</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/textIndent/" target="_blank">textIndent</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/scrollLeft/" target="_blank">scrollLeft</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/scrollTop/" target="_blank">scrollTop</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/top/" target="_blank">top</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/width/" target="_blank">width</a>**
-* **<a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/wordSpacing/" target="_blank">wordSpacing</a>**
+* borderSpacing
+* bottom
+* fontSize
+* height
+* left
+* letterSpacing
+* lineHeight
+* margin
+* marginBottom
+* marginLeft
+* marginRight
+* marginTop
+* outlineWidth
+* padding
+* paddingBottom
+* paddingLeft
+* paddingRight
+* paddingTop
+* maxHeight
+* minHeight
+* minWidth
+* right
+* textIndent
+* scrollLeft
+* scrollTop
+* top
+* width
+* wordSpacing
+
+see them live in <a href="http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/" target="_blank">this dedicated sample</a>
