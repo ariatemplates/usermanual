@@ -13,7 +13,7 @@ Basically, implementing a widget means creating a class which extends `aria.widg
 
 Here's a sample for a slider widget that uses all these concepts:
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/widgetlibs/' ></iframe>
+<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/customSlider/' ></iframe>
 
 #### Lifecycle
 
