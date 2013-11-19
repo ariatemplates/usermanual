@@ -76,6 +76,7 @@ CssClass: maintoc
     - [Prefill Feature](prefill_feature)
     - [Autoselect Feature](autoselect_feature)
 - ### [The HTML Widgets Library](the_html_widgets_library)
+    - [HTML TextArea](html_textarea)
 - ### [Creating A Custom Widgets Library](creating_a_custom_widgets_library)
 
 ## Utilities
