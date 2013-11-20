@@ -1,10 +1,11 @@
 -metadata.version = whoAmI.split(/usermanual[\\\/]src[\\\/]/)[1].split(/[\\\/]/)[0]
 -metadata.Navbar = (metadata.Navbar ? (metadata.Navbar === 'false' ? false: true ) : true)
 -metadata.Toc = (metadata.Toc ? (metadata.Toc === 'false' ? false: true ) : true)
+-urlSnippet = (process.env.NODE_ENV === 'production' ? 'http://snippets.ariatemplates.com' : 'http://localhost:3000')
 
 mixin doc
     div.doc(class=(metadata.CssClass||""))
-        mixin replaceVersion(content)
+        mixin replaceURL(content)
 
 mixin toh
     -toh.splice(0,0,{}) //adding a first fake h1 element
@@ -14,8 +15,8 @@ mixin category(category)
     -category = category.split("_").map(function(x) { return x[0].toUpperCase() + x.substr(1) }).join(" ")
     li= category
 
-mixin replaceVersion(text)
-    -text = text.replace(/%VERSION%/ig, metadata.version)
+mixin replaceURL(text)
+    -text = text.replace(/%SNIPPETS_SERVER_URL%/igm, urlSnippet)
     != text
 
 mixin includeNavBar(version)
@@ -71,14 +72,14 @@ html(lang='en')
         link(rel='stylesheet', href='http://ariatemplates.com/styles/snippets/highlight_skin.css', type='text/css')
 
         //if lt IE 9
-            script(type='text/javascript', src='/js/iemap.js')
-            script(src='//html5shiv.googlecode.com/svn/trunk/html5.js', type='text/javascript', charset='utf-8')
+            script(type='text/javascript', src='/js/iemap.js').
+            script(src='//html5shiv.googlecode.com/svn/trunk/html5.js', type='text/javascript', charset='utf-8').
             style.
                 .ie-hidden {display:none;}
         //if lt IE 8
             link(href='/styles/ie/ie7.css', rel='stylesheet', type='text/css')
 
-        script(type='text/javascript', src='/js/top-scrolling.js')
+        script(type='text/javascript', src='/js/top-scrolling.js').
 
     body.documentation
         div#top
@@ -177,7 +178,7 @@ html(lang='en')
             section.content.legal &copy; 2012 Aria Templates is licensed under Apache 2.0 license. See our
                 a(href='/license') licensing page
 
-        script(type='text/javascript')
+        script(type='text/javascript').
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-29575860-1']);
             _gaq.push(['_setDomainName', 'ariatemplates.com']);
