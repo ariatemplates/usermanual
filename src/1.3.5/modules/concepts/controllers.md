@@ -16,13 +16,13 @@ To understand the relations between those different elements and how an applicat
 ### A JavaScript model
 The model is a simple JavaScript object that keeps track of the counter current value.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyModuleController.js?tag=initialDataModel&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyModuleController.js?tag=initialDataModel&lang=javascript&outdent=true&noheader=true'></script>
 
 ### The controller interface
 
 Next step is to define an interface for the controller associated to this model. A simple method which increments the count parameter of the data model is required. This interface needs to extend the default module controller interface:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/IMyModuleController.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/IMyModuleController.js?lang=javascript&outdent=true'></script>
 
 An interface on a module controller is **mandatory**. If not specified, default interface will be used and the methods added to the module controller will not be accessible.
 
@@ -36,7 +36,7 @@ The module controller is used as a container for the data model, and will be res
 
 For the case study, second solution is used: the data model described above will be created and stored in the controller using `setData()` in its constructor, and the `incrementCount` method exposed by the module controller will act on the data model returned by `getData()`.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyModuleController.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyModuleController.js?lang=javascript&outdent=true'></script>
 
 
 ### Interaction with Templates
@@ -48,7 +48,7 @@ When a template is loaded into a page through [`Aria.loadTemplate()`](http://ari
 * The data for the template will be automatically retrieved from the module controller `getData` method.
 * The module controller interface will be exposed in the `moduleCtrl` variable in the template. This interface can be called on user action. For the case study, the template will call the `incrementCount` method of the module controller when the button is pressed.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyView.tpl?tag=button&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyView.tpl?tag=button&lang=at&outdent=true'></script>
 
 #### Interact with the view
 
@@ -57,7 +57,7 @@ Module controller can interact with the view in several ways:
 * With events: template listen to events coming from the module controller they are attached to. By overriding the `onModuleEvent` of the template script, the view can update itself when an event is raised in the module controller.
 * Using autorefresh: if changes on the data model are done using the methods from the [aria.utils.Json](http://ariatemplates.com/api/#aria.utils.Json) utility, template can use the binding mechanism to benefit from automatic refresh. See [refresh](refresh) for more details.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyView.tpl?tag=display&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyView.tpl?tag=display&lang=at&outdent=true'></script>
 
 ## Summary
 

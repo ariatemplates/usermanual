@@ -40,7 +40,7 @@ There should not be any assumption made on which flow controller is associated t
 
 If a special flow controller has to be used, the `$hasFlowCtrl` property can be set directly to the flow controller classpath:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/flow_controllers/MyModuleController.js?lang=javascript'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/flow_controllers/MyModuleController.js?lang=javascript'></script>
 
 
 ## Intercepting module controller calls
@@ -62,16 +62,16 @@ These methods are automatically called, if present, when the corresponding metho
 
 Let's consider the following public interface of the module controller:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/flow_controllers/IMyModule.js?lang=javascript'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/flow_controllers/IMyModule.js?lang=javascript'></script>
 
 ### Flow controller interface
 
 Here is the public interface of the flow controller:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/flow_controllers/IMyModuleFlow.js?lang=javascript'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/flow_controllers/IMyModuleFlow.js?lang=javascript'></script>
 
 ### Flow controller implementation
 
 Here is a flow controller implementation. Note: so that the flow controller is actually used, the associated module controller (`modules.mymodule.MyModule`) must contain `$hasFlowCtrl: true` on its prototype - like here - or as a property defined in the constructor.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/flow_controllers/MyModuleFlow.js?lang=javascript'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/flow_controllers/MyModuleFlow.js?lang=javascript'></script>

@@ -146,4 +146,4 @@ Title=Did you know?|
 Content=<div style="text-align: center;">`Aria.rootFolderPath` contains the path to the root of the framework, it can be used to build the server path.</div>
 }}
 </div>
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyUrlService.js?tag=actionUrl&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyUrlService.js?tag=actionUrl&lang=javascript&outdent=true'></script>

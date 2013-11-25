@@ -13,7 +13,7 @@ Basically, implementing a widget means creating a class which extends `aria.widg
 
 Here's a sample for a slider widget that uses all these concepts:
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/customSlider/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/customSlider/' ></iframe>
 
 #### Lifecycle
 
@@ -41,7 +41,7 @@ Calling the parent widget constructor is mandatory and important for it is neede
 
 For a simple widget this is typically done like this:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleLabel.js?tag=constructor&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleLabel.js?tag=constructor&lang=javascript&outdent=true&noheader=true'></script>
 
 
 If CSS templates are defined in the `$css` section of the widget, the CSS manager is notified so that they are loaded before the markup is inserted in the DOM.
@@ -79,12 +79,12 @@ As a consequence, class names should be chosen carefully as they will apply to t
 
 Here's an example of a simple widget:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleLabel.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleLabel.js?lang=javascript&outdent=true'></script>
 
 
 Here's an example of a simple container widget:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleContainer.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleContainer.js?lang=javascript&outdent=true'></script>
 
 
 ### BindableWidget
@@ -121,7 +121,7 @@ Being a `BindableWidget` it has data model bindings, but it also handles _event 
 
 Let's imagine to create a widget extending from `aria.html.Element`
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/MyWidgetUsage.tpl?tag=myWidgetInclusion&lang=at&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/MyWidgetUsage.tpl?tag=myWidgetInclusion&lang=at&outdent=true&noheader=true'></script>
 
 
 _Element_ class takes care of `bind` and `on` properties.
@@ -130,7 +130,7 @@ Moreover every event in `on` statement is delegated and the associated callback 
 
 The constructor of `aria.html.Element` has the same signature as `aria.widgetLibs.BaseWidget`
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleElement.js?tag=constructor&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleElement.js?tag=constructor&lang=javascript&outdent=true&noheader=true'></script>
 
 
 The configuration object `cfg` is normalized against the bean <code>[aria.html.beans.ElementCfg](http://ariatemplates.com/api/#aria.html.beans.ElementCfg)</code>. This bean defines the properties
@@ -142,12 +142,12 @@ The configuration object `cfg` is normalized against the bean <code>[aria.html.b
 
 By default `aria.html.Element` generates a tag element of type `tagName` with the specified attributes, for instance
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleElement.js?tag=widgetConfiguration&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleElement.js?tag=widgetConfiguration&lang=javascript&outdent=true&noheader=true'></script>
 
 
 generates the following markup
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleElement.js?tag=widgetConfigurationResult&lang=html&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/SimpleElement.js?tag=widgetConfigurationResult&lang=html&outdent=true&noheader=true'></script>
 
 
 Widgets extending from `aria.html.Element` can optionally override `this.$bean` before calling the parent constructor to specify their own configuration bean in case they want to provide validation of configuration parameters.
@@ -162,7 +162,7 @@ Every event raised by the user (mouse, keyboard, ...) is handled by `_delegate` 
 
 #### Example
 
-<iframe class='samples' style="height:700px" src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/html/custom/gallery/' ></iframe>
+<iframe class='samples' style="height:700px" src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/html/custom/gallery/' ></iframe>
 
 ## Creating a custom widget library
 
@@ -172,7 +172,7 @@ A custom library is a singleton class which extends `aria.widgetLibs.WidgetLib` 
 
 It typical library looks like this (example defining two widgets):
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/MyCustomWidgetsLib.js?lang=javascript'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/MyCustomWidgetsLib.js?lang=javascript'></script>
 
 
 ### Using a custom library
@@ -180,14 +180,14 @@ It typical library looks like this (example defining two widgets):
 To use a specific widget library in a template, you need to declare its classpath and an alias in the template's `$wlibs` section.  This alias can then be used as a prefix in the widget statement, as shown in the example below:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/MyWidgetUsage.tpl?lang=at'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/custom-widgets/MyWidgetUsage.tpl?lang=at'></script>
 
 
 If the widget library is supposed to be used in the whole application, it is possible to declare it as a global library in the application environment rather than referencing it in each template. Note that, in this case, the alias can still be overridden in a specific template (in the `$wlibs` section).
 
 The code below declares the `mycustomlib` library in the environment in addition to the default `aria` library, so that it is no longer necessary to declare mycustomlib in each template:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/environment/bootstrap.js?tag=widgetLibs&lang=javascript&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/environment/bootstrap.js?tag=widgetLibs&lang=javascript&noheader=true'></script>
 
 
 <div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;">**Note:** When using this mechanism, you need to explicitly declare **all** the libraries you will use, including `aria` if you need it, otherwise it won't be available unless referenced in the `$wlibs` section of a template.</div>

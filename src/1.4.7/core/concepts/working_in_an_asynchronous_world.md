@@ -9,7 +9,7 @@ Aria Templates as a client side and javascript framework is obviously and massiv
 Development using synchronous paradigm, like for example in Java, implicitly involves understanding the `return` pattern.<br />
 When calling a synchronous method, the first thing you could expect from this method is that it could return an object.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/MyClass.java?noheader=true&lang=java' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/MyClass.java?noheader=true&lang=java' defer></script>
 
 You can call the `initProperty()` method. You know and you expect from this method to return a `String`
 
@@ -19,15 +19,15 @@ Now, let's have a look at the pending mechanism when being in the asynchronous w
 ## What about when you play around with asynchronous?
 
 What you cannot do when dealing with asynchronous code execution is this
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?noheader=true&tag=notWorking&lang=javascript&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?noheader=true&tag=notWorking&lang=javascript&outdent=true' defer></script>
 
 If you have a quick look at the below example
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?noheader=true&tag=playingAsynchronous&lang=javascript&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?noheader=true&tag=playingAsynchronous&lang=javascript&outdent=true' defer></script>
 
 and you also look at what it's producing as a result
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/console_output.txt?noheader=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/console_output.txt?noheader=true' defer></script>
 
 
 you easily understand that something will not work out the box, or at least not like it was so easy in synchronous pattern.
@@ -48,7 +48,7 @@ For you to be able to do this, Aria Templates provides you a simple way to execu
 
 First you need to be familiar with the syntax of a callback object:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=sampleCallbackObject&lang=javascript&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=sampleCallbackObject&lang=javascript&outdent=true' defer></script>
 
 An Aria Templates callback object is always composed of a combination of 3 different properties:
 
@@ -68,8 +68,8 @@ Finally, because all the different types of objects that you can create with Ari
 
 Though, whenever you would have a `return` statement at the end of a function in the synchronous world, you will instead have `this.$callback( /* Reference to a callback object */)` in an asynchronous environment.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=sampleSyncReturn&lang=javascript&outdent=true' defer></script>
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=sampleAsyncReturn&lang=javascript&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=sampleSyncReturn&lang=javascript&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=sampleAsyncReturn&lang=javascript&outdent=true' defer></script>
 
 ## Propagating  the Callback Object
 
@@ -80,7 +80,7 @@ The easiest way to perform such an execution chain is to propagate all your call
 Let's have a quick look at a standard file retrieval using an asynchronous call to the server to see how to propagate all our callback objects:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=propagatingCallback&lang=javascript&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=propagatingCallback&lang=javascript&outdent=true' defer></script>
 
 At this point of this article, this is what you need to remember, so write it down somewhere in your mind
 <blockquote>
@@ -92,6 +92,6 @@ And don't forget to execute it when the async job is over using `this.$callback(
 
 Aria Templates allows users to make `GET`, `POST`,`PUT`,`DELETE`,`HEAD`,`TRACE`,`OPTIONS`,`CONNECT`,`PATCH` requests to a Restful server. The default method will be `GET` if request method is not defined. The following snippet demonstrates how to make an asynchronous request in Aria Templates.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=sampleAsyncRequest&lang=javascript&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=sampleAsyncRequest&lang=javascript&outdent=true' defer></script>
 
 The whole list of configuration parameters is available in [Async Request](http://ariatemplates.com/api/#aria.core.CfgBeans:IOAsyncRequestCfg).

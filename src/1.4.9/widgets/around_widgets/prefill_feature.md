@@ -44,7 +44,7 @@ All `TextInput`-based widgets are endowed with a **`prefill`** state and a **`pr
 
 Consider the following example:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/features/prefill/Snippet.tpl?tag=textfield&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/features/prefill/Snippet.tpl?tag=textfield&lang=at&outdent=true'></script>
 
 If `data.value2` is not set (`[]`, `""`, `null` or `undefined`), whenever the value `data.value1` is set (different from `[]`, `""`, `null` or `undefined`), the widget will be in `prefill` state and the displayed text will correspond to the value contained in `data.value1`.
 
@@ -59,7 +59,7 @@ When both `data.value1` and `data.value2` are not set, then the widget is in `no
 
 Consider the following typical scenario:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/features/prefill/Snippet.tpl?tag=numberfield&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/features/prefill/Snippet.tpl?tag=numberfield&lang=at&outdent=true'></script>
 
 The value bound to the `prefill` for widgetA (`data.value1`) is also bound to the `value` property of widgetB. Typing an "incorrect" value in widgetB will not trigger the prefilling of widgetA. In particular, the following behaviour occurs:
 
@@ -83,11 +83,11 @@ It is important to remark that the prefill behaviour is slightly different depen
 
 When a widget is in prefill state it is possible to confirm the displayed value either by focusing on the field or by explicitly setting the portion of the data model to which its `value` property is bound. Considering the example
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/features/prefill/Snippet.tpl?tag=textfield&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/features/prefill/Snippet.tpl?tag=textfield&lang=at&outdent=true'></script>
 
 it is possible to confirm a prefill value by
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/features/SomeClass.js?tag=json&lang=js&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/features/SomeClass.js?tag=json&lang=js&outdent=true'></script>
 
 in a script (or module controller).
 
@@ -107,8 +107,8 @@ Like any other state, the `prefill` state can be skinned by setting the desired 
 
 In this sample it is possible to find some examples of the above-mentioned features including all `TextInput`-based widgets.
 
-<iframe class='samples' style="height:950px" src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/features/prefill/basic/' ></iframe>
+<iframe class='samples' style="height:950px" src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/features/prefill/basic/' ></iframe>
 
 In this sample it is possible to find an example that realizes one of the scenarios that triggered the implementation of this feature.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/features/prefill/usecase/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/features/prefill/usecase/' ></iframe>

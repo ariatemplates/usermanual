@@ -32,15 +32,15 @@ Using this helper, you basically can:
 
 * Serialize / Deserialize Json data using the 2 methods [`convertToJsonString()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:convertToJsonString:method) and [`load()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:load:method)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/helpers/JsonManipulation.js?tag=serialization&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/helpers/JsonManipulation.js?tag=serialization&lang=javascript&outdent=true'></script>
 
 * Performs some tests over your objects, like checking whether this object contains this key with [`contains()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:contains:method), or testing if a particular node is a metadata node with [`isMetadata()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:isMetadata:method). You can also create a fresh new clone of an existing object using [`copy()`](http://www.ariatemplates.com/aria/guide/apps/apidocs#aria.utils.Json:copy:method)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/helpers/JsonManipulation.js?tag=standard&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/helpers/JsonManipulation.js?tag=standard&lang=javascript&outdent=true'></script>
 
 * Apply the Observable pattern to any node of any of your Json object. What does it mean exactly ? It means that you can add listeners to your Json objects in order to be called back anytime a change is done to your data.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/helpers/JsonManipulation.js?tag=listeners&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/helpers/JsonManipulation.js?tag=listeners&lang=javascript&outdent=true'></script>
 
 Again, as you can see, the second argument of the `aria.utils.Json.addListener()` method is an Aria Templates callback object. Once inside your callback, you will be provided as argument an object that contains few properties:
 

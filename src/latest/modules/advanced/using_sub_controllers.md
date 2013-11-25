@@ -25,7 +25,7 @@ The structure of this application will be the following:
 
 The data model will follow the same structure: it will simply be an array of objects corresponding to the data model used by the counter module controller:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/subcontrollers/MyMainController.js?tag=dataModelStruct&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/subcontrollers/MyMainController.js?tag=dataModelStruct&lang=javascript&outdent=true&noheader=true'></script>
 
 ## Hierarchy of modules
 
@@ -37,13 +37,13 @@ Creating the sub controllers is done through the `loadSubModules()` method or <c
 * A callback to be called when the sub module controllers are loaded.
   This callback first argument will be an object describing the load result:
 
-  <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/subcontrollers/MyMainController.js?tag=loadSubModulesCbSignature&lang=javascript&outdent=true&noheader=true'></script>
+  <script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/subcontrollers/MyMainController.js?tag=loadSubModulesCbSignature&lang=javascript&outdent=true&noheader=true'></script>
 
 Once the sub controllers are loaded, they can be accessed from public properties of the main controller using the same path as the path for their data inside the data model.
 For previous example, a method to add a sub controller is added.
 Path to use is the path to the array of counters in the data model and the next index in this array:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/subcontrollers/MyMainController.js?tag=add&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/subcontrollers/MyMainController.js?tag=add&lang=javascript&outdent=true'></script>
 
 Then, assuming `moduleCtrl` is the main module controller public interface, the sub module controller public interface for the first counter will be accessible through `moduleCtrl.counters[0]`.
 
@@ -68,5 +68,5 @@ Using the Template widget from the Aria widget library allow to use different fe
 
 Using this feature the view can be structured the same way the data and the module controllers are. For the list of counters, the main template will then be:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/subcontrollers/MyMainView.tpl?lang=at'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/subcontrollers/MyMainView.tpl?lang=at'></script>
 

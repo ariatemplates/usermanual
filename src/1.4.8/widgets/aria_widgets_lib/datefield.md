@@ -2,14 +2,14 @@ Title: DateField
 
 The DateField is a simple textfield whose content is interpreted as a date.There are two modes for date parsing: the European mode and the US mode.A global setting specifies which mode is actually used.
 The simple way to add datefield widget is
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/datefield/Snippet.tpl?tag=wgtDatefieldSnippet&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/datefield/Snippet.tpl?tag=wgtDatefieldSnippet&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [DateFieldCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:DateFieldCfg).
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/datefield/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/datefield/' ></iframe>
 
 ## Binding
 The "value" property in the dateField is bind-able and can be bound to a property in the data model.
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/datefield/binding/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/datefield/binding/' ></iframe>
 
 * In the European mode,the following date formats are recognized (all are interpreted as the 13th of June; when the year is not specified, the current year is used if the date is in the future, otherwise the next year):
 
