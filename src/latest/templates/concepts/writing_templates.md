@@ -284,7 +284,7 @@ The `id` statement should be used to add an id on a DOM element, so that it (or 
 It is used in the following way:
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=id&lang=at&outdent=true' defer></script>
 
-Read the articles about [template scripts](template scripts) and [DOM interactions](interactions with the dom) in order to learn how to retrieve elements through their ids and interact with them.
+Read the articles about [template scripts](template_scripts) and [DOM interactions](interactions_with_the_dom) in order to learn how to retrieve elements through their ids and interact with them.
 
 
 ### on
@@ -351,7 +351,7 @@ In particular:
   allows to display a loading indicator on top of a section
   depending on whether a certain value is true or false.
   Optionally, a **`processingLabel`** can be specified.
-  Loading indicators are treated in [this article](interactions with the dom).
+  Loading indicators are treated in [this article](interactions_with_the_dom).
 
 * **`keyMap`** and **`tableNav`**
   allow to define section-specific keyboard shortcuts and table navigation options.
