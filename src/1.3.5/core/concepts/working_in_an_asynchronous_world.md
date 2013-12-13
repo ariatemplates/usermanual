@@ -90,7 +90,7 @@ And don't forget to execute it when the async job is over using `this.$callback(
 
 ## Rest API calls
 
-Aria Templates allows users to make `GET`, `POST`,`PUT`,`DELETE`,`HEAD`,`TRACE`,`OPTIONS`,`CONNECT`,`PATCH` requests to a Restful server. The default method will be `GET` if request method is not defined. The following snippet demonstrates how to make an asynchronous request in Aria Templates.
+Aria Templates allows users to make `GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `TRACE`, `OPTIONS`, `CONNECT`, `PATCH` requests to a Restful server. The default method will be `GET` if request method is not defined. The following snippet demonstrates how to make an asynchronous request in Aria Templates.
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=sampleAsyncRequest&lang=javascript&outdent=true' defer></script>
 
