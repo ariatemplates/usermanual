@@ -12,7 +12,7 @@ mixin version(version, latest)
 
 h4 Documentation Version
 div.styled-select
-  select(onchange='document.location = "/usermanual/" + this.options[this.selectedIndex].value + "/"')
+  select(onchange='document.location = "/usermanual/" + this.options[this.selectedIndex].value + document.URL.match(/\\\/[^\\\/]*$/)')
     mixin version("1.4.13", true)
     mixin version("1.4.12")
     mixin version("1.4.11")
