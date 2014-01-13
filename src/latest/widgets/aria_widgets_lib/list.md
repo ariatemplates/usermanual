@@ -39,8 +39,16 @@ The following properties are bindable for List widget
 * selectedValues
 * tooltip
 
-For more information please read the article on [widget_bindings](widget_bindings).
+When you bind the list items to the data model, everytime you add or remove an item from the widget list, the widget is automatically refreshed and it displays the updates.
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/list/Snippet.tpl?tag=wgtListSnippet5&lang=at&outdent=true'></script>
+
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/list/editing/' ></iframe>
+
+Here in this sample you can see how the binding works for multipleSelect and selectedValues properties.
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/list/Snippet.tpl?tag=wgtListSnippet4&lang=at&outdent=true'></script>
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/list/binding/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/list/binding/' ></iframe>
+
+For more information please read the article on [widget_bindings](widget_bindings).
