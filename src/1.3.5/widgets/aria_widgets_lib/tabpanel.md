@@ -11,7 +11,7 @@ This method is considerable faster and is recommended where possible.
 
 Here is an example of initialising a TabPanel widget
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/tabpanel/Snippet.tpl?tag=wgtTabPanelSnippet1&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/tabpanel/Snippet.tpl?tag=wgtTabPanelSnippet1&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [TabPanelCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TabPanelCfg).
 
@@ -19,4 +19,4 @@ Since TabPanel widget is used along with Tab widget, for more understanding plea
 
 Here is an example for TabPanel widget using macro content
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/tab/tabpanel/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/tab/tabpanel/' ></iframe>

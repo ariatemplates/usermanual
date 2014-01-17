@@ -10,7 +10,7 @@ As soon as the bound link is done, refresh mechanism is automatic, and transpare
 
 Let's have a look at this template
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/widget_bindings/MyTemplate.tpl?lang=at&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/widget_bindings/MyTemplate.tpl?lang=at&outdent=true' defer></script>
 
 As you can see, it only contains a <code>[{@aria:TextField {}}](textfield)</code> widget. We are using the **bind** attribute of the widget itself.
 
@@ -18,7 +18,7 @@ As you can see, it only contains a <code>[{@aria:TextField {}}](textfield)</code
 
 The following sample shows how to bind a TextField widget to a data model level defined variable.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/textfield/binding/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/textfield/binding/' ></iframe>
 
 ## Transforms
 
@@ -26,4 +26,4 @@ The widget binding mechanism offers a powerful feature to enhance the way a valu
 
 This feature is called **tranform**, which basically consists - as the name itself says - to transform a displayed/entered value after fetching it from the bound variable - for displaying purpouses - or before giving it back - alignment - to the variable bound the widget.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/textfield/transform/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/textfield/transform/' ></iframe>

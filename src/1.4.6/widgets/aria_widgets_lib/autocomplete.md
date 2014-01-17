@@ -4,7 +4,7 @@ Title: AutoComplete
 
 The Autocomplete widget is a text input that allow to quickly find and filter values from a list of resources.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/autocomplete/Snippet.tpl?tag=autocomplete&lang=at&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/autocomplete/Snippet.tpl?tag=autocomplete&lang=at&outdent=true' defer></script>
 
 By entering some text in the filed, the Autocomplete controller starts searching for entries that match the search string and displays a list of possible results. The search can start immediately as you type a single letter or after 2, 3  or more letters.
 
@@ -32,7 +32,7 @@ The resources for the Autocomplete in this samples are the nations that particip
 
 You can navigate the results with up/down key and select the highlighted option pressing _tab_ or _enter_. _Esc_ key closes the dropdown without selecting anything.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/autocomplete/basic/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/autocomplete/basic/' ></iframe>
 
 By default, **preselect** is set to _strict_ so typing the exact short code of a nation selects that option (you can try typing ENG, FRA, ...). For more samples on _preselect_ please have a look at the paragraph [#highlight-behavior](#highlight-behavior).
 
@@ -48,7 +48,7 @@ AutoComplete specific options are
 This sample uses a custom resource handler that extends from LCResourceHandler and uses also a customized suggestions template in order to display spellcheck suggestions.
 Try typing _fraance_ or any other country doubling its third letter and you'll see _**spellcheck**_ in action.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/autocomplete/spellcheck/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/autocomplete/spellcheck/' ></iframe>
 
 The second AutoComplete in the previous samples uses the sclass _**underlineError**_ to change the style of a field in error.
 
@@ -79,4 +79,4 @@ AutoComplete is a form widget, meaning that it is a good addition to your forms 
 
 In this sample the _**onchange**_ callback shows a small notification above the AutoComplete. If you type something in the field and highlight its options the callback is not called, but if you select one option clicking on it, pressing _Enter_ or _Tab_, the notification appears. The callback is called also if you type an invalid text.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/autocomplete/onchange/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/autocomplete/onchange/' ></iframe>

@@ -3,7 +3,7 @@ Title: NumberField
 
 NumberField widget enables the creation of input fields that should contain a numeric value. It also provides formatting facilities to handle numeric and currency patterns.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/numberfield/Snippet.tpl?tag=wgtNumberField&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/numberfield/Snippet.tpl?tag=wgtNumberField&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [NumberFieldCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:NumberFieldCfg).
 
@@ -56,7 +56,7 @@ More information are available at [localization_and_resources](localization_and_
 The following sample shows how to create and use a NumberField widget, with a mandatory attribute for error checking and number format patterns.
 In order to fetch the entered value, variable binding is to be considered as the preferred solution. Please refer to the [textfield](textfield) widget for more informations.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/numberfield/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/numberfield/' ></iframe>
 
 In this sample, the first 3 NumberFields are the same except for the state, which is respectively mandatory, normal and disabled.
 The fourth NumberField has a pattern, that is used both to interpret and display the number.

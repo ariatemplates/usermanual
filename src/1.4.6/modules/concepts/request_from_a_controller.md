@@ -21,7 +21,7 @@ Module controllers provide a simple method in order to focus on functional code 
 * The JavaScript object that have to be sent.
 * The callback to be called with the call result.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/ModuleWithRequest.js?tag=call&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/ModuleWithRequest.js?tag=call&lang=javascript&outdent=true'></script>
 
 This method will use several configuration described below to achieve the non-functional steps.
 Note that most of these configurations are also available on <code>[aria.modules.RequestMgr](http://ariatemplates.com/api/#aria.modules.RequestMgr)</code> as application configuration for all modules.
@@ -34,13 +34,13 @@ Module provides a dedicated API to manage a session tag in the request: `setSess
 This allows storing an ID that can be used by the URL creating service.
 Using this API is recommended as this will also propagate the change to sub module controllers.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/ModuleWithRequest.js?tag=session&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/ModuleWithRequest.js?tag=session&lang=javascript&outdent=true'></script>
 
 ### Adding other parameters to a request
 
 Other parameters can be added to the request at [aria.modules.RequestMgr](http://ariatemplates.com/api/#aria.modules.RequestMgr) level, for all modules:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/ModuleWithRequest.js?tag=params&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/ModuleWithRequest.js?tag=params&lang=javascript&outdent=true'></script>
 
 Check the API for a complete description of what can be done with request parameters.
 
@@ -61,7 +61,7 @@ After processing, a callback provided as an argument of these two methods needs 
 
 Aria Templates provides several base handlers in the `aria.modules.requestHandler` package that can be used:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/ModuleWithRequest.js?tag=requestHandler&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/ModuleWithRequest.js?tag=requestHandler&lang=javascript&outdent=true'></script>
 
 ## JSON data serialization
 

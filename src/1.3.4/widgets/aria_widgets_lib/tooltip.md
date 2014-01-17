@@ -16,11 +16,11 @@ The main features of Tooltip widget are as follows:
 
 The simple way to add Tooltip widget to the application is as follows
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/tooltip/Snippet.tpl?tag=wgtTooltipSnippet&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/tooltip/Snippet.tpl?tag=wgtTooltipSnippet&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [TooltipCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TooltipCfg).
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/tooltip/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/tooltip/' ></iframe>
 
 ## Binding
 

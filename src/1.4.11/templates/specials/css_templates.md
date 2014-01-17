@@ -6,13 +6,13 @@ CSS templates are special kinds of templates designed to bring the flexibility o
 ## Definition and use
 
 CSS Templates are defined using the `CSSTemplate` statement and stored with the `.tpl.css` extension:
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/MyCSSTemplate.tpl.css?noheader=true&lang=at&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/MyCSSTemplate.tpl.css?noheader=true&lang=at&outdent=true' defer></script>
 
 As shown above, in its simplest form, a CSS template really is a template file in which styles declarations are defined directly inside the `main` macro.
 
 To use these declarations from an HTML template, you just need to reference the classpath in the `$css` configuration property:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/MyTemplate.tpl?noheader=true&lang=at&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/MyTemplate.tpl?noheader=true&lang=at&outdent=true' defer></script>
 
 Note that `$css` expects an array since you might want to include more than just one CSS template.
 
@@ -28,7 +28,7 @@ You write CSS templates the same way you would write an HTML template.  The main
 
 Most of the AT statements can be used in CSS templates and irrelevant ones (`id`, `on`, `section`, `checkDefault`, and `createView`) are noted as such in the [Writing Templates](writing_templates#common-statements) article.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=statements&lang=at&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=statements&lang=at&outdent=true' defer></script>
 
 As illustrated in the example below, CSS templates really come in handy when conditional processing or repetitive declarations are concerned.
 
@@ -43,7 +43,7 @@ Because they are meant to be shared among different modules, CSS templates do no
 
 The latter in particular is quite useful to define URLs of images located in the same folder as your CSS files.  Note that it takes into account the rootMap (not the urlMap) defined through the [download manager](core_layer_configuration#download-manager-configuration).
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=specialvars&lang=at&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=specialvars&lang=at&outdent=true' defer></script>
 
 Both of these properties are inherited from the [CSSTemplate](http://ariatemplates.com/api/#aria.templates.CSSTemplate) class.
 
@@ -56,10 +56,10 @@ CSS Templates also support scripts when the **`$hasScript`** property is true.  
 
 Here's how a script method would be declared:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/AnotherCSSTemplateScript.js?noheader=true&lang=javascript' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/AnotherCSSTemplateScript.js?noheader=true&lang=javascript' defer></script>
 ...and then used in a CSS template:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=script&lang=at&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/AnotherCSSTemplate.tpl.css?noheader=true&tag=script&lang=at&outdent=true' defer></script>
 
 <div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> At the moment, [macro libraries](macro_libraries) cannot be used in CSS Templates.</div>
 
@@ -101,13 +101,13 @@ This definition is ultimately injected in a `< style >` statement inside the `< 
 
 In some cases, for example  for CSS3 @font-face/@keyframes rules, if users do not want to have a prefix generated from Aria Template they can set `$prefix` as false in CSS Template and below is the snippet for the same.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/CSSWithoutPrefix.tpl.css?noheader=true&lang=at&outdent=true' defer></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/CSSWithoutPrefix.tpl.css?noheader=true&lang=at&outdent=true' defer></script>
 
 Note that it is also possible to include a CSS template as dependency in a normal class, using the `$css` property.  This is mainly used when defining [custom widgets](creating_a_custom_widgets_library).
 
 ## CSS Template code sample
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/cssTemplates/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/cssTemplates/' ></iframe>
 
 A few remarks on this example:
 

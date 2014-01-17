@@ -21,7 +21,7 @@ You should update documentation files inside the `src` folder, and run the build
 
     $ node test // and follow instructions
 
-Anytime your build a new version of the documentation, you can test your changes using the test server. Just open a browser on `http://localhost:8000/` and navigate to your page.
+Anytime you build a new version of the documentation, you can test your changes using the test server. Just open a browser on `http://localhost:8000/` and navigate to your page.
     
 # Hooks
 
@@ -34,7 +34,7 @@ to perform on this repository
 
 * Copy `/src/latest/` to `/src/<% new version here %>/`
 * Do the same for `/resources/articles/navigationbar/latest.md`
-* Edit `/resources/articles/versionList.jade` to add the new version (have a look at the bottom of th efile)
+* Edit `/resources/articles/versionList.jade` to add the new version (have a look at the bottom of the file)
   
   from 
 
@@ -58,7 +58,7 @@ to perform on this repository
 
 # Contributing
 
-If you find any typos or have any ideas of somthing that should be documentation, we'll very gladly take any pull requests for new documentation!
+If you find any typos or have any ideas of something that should be documented, we'll very gladly take any pull requests for new documentation!
 
 This source material is intended to be open and sharable to all.
 

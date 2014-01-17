@@ -32,15 +32,15 @@ The type of the first parameter given to interceptor callbacks is described belo
 
 * `CallBegin`
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/ParameterTypes.txt?tag=CallBegin&lang=javascript'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/ParameterTypes.txt?tag=CallBegin&lang=javascript'></script>
 
 * `CallEnd`
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/ParameterTypes.txt?tag=CallEnd&lang=javascript'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/ParameterTypes.txt?tag=CallEnd&lang=javascript'></script>
 
 * `Callback`
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/ParameterTypes.txt?tag=Callback&lang=javascript'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/ParameterTypes.txt?tag=Callback&lang=javascript'></script>
 
 ## Interceptor calls sequence diagrams
 
@@ -79,21 +79,21 @@ Basically the whole interceptors mechanism can be properly setup by the followin
 
 Here is the example of a simple interface definition with two functions, `mySimpleFunction` and `myAsynchronousFunction`.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/MyInterface.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/MyInterface.js?lang=javascript&outdent=true'></script>
 
 ### Interface implementation
 
 Here is an implementation of the previous interface:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/MyClass.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/MyClass.js?lang=javascript&outdent=true'></script>
 
 ### Interceptor registration
 
 Here is an example of how to register an interceptor on an instance of the previous object with the previous interface and how to unregister it:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/Interceptor.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/interceptors/Interceptor.js?lang=javascript&outdent=true'></script>
 
 When the above piece of code is run, the following alerts will be displayed (in this order):
 

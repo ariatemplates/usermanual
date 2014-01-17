@@ -17,7 +17,7 @@ A bean definition is a Json object that contains all the information on the data
 
 Bean definitions are grouped into packages. In order to define a package you have to use the [Aria.beanDefinitions](http://ariatemplates.com/api/#Aria:beanDefinitions:method) method of the [Aria singleton object](the_aria_singleton#beandefinitions). Let us introduce an example of usage that will allow to explain in more detail how to specify bean definitions.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/beans/SimpleBean.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/beans/SimpleBean.js?lang=javascript&outdent=true'></script>
 
 This method allows to define the package **`ariadoc.snippets.core.beans.SimpleBean`** which contains the two bean definitions **`Name`** and **`Age`**.
 
@@ -50,7 +50,7 @@ Furthermore, depending on the built-in type that you want your schema to inherit
 For example, when using the Integer type, you might want to specify the allowed range (minimum and maximum value), or when using a String type as parent you might want to specify a regular expression that it has to match in order to be valid. The basic example introduced earlier can be enhanced a little by adding extra properties to the bean definitions:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/beans/AnotherSimpleBean.js?tag=example&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/beans/AnotherSimpleBean.js?tag=example&lang=javascript&outdent=true'></script>
 
 The list of extra properties that can be added to the schema according to the ancestor built-in type can be found [here](http://ariatemplates.com/api/#aria.core.BaseTypes)
 
@@ -59,7 +59,7 @@ The list of extra properties that can be added to the schema according to the an
 In this section we will introduce more complex examples involving complex built-in data types like Arrays, Objects and MultiTypes, as well as the inheritance from a user-defined schema. Consider the following example:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/beans/BaseContactBeans.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/beans/BaseContactBeans.js?lang=javascript&outdent=true'></script>
 
 The following explanatory remarks might be useful:
 
@@ -71,7 +71,7 @@ The following explanatory remarks might be useful:
 Consider the following example:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/beans/ContactBeans.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/beans/ContactBeans.js?lang=javascript&outdent=true'></script>
 
 Remarks:
 
@@ -97,7 +97,7 @@ For performance reasons, in both cases **the check is performed only when you ar
 
 In order to provide an example that interacts with the previously defined schemas, a class that performs some data normalization is reported here.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/beans/GroupManager.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/beans/GroupManager.js?lang=javascript&outdent=true'></script>
 
 You can see that:
 

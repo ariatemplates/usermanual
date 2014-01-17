@@ -22,24 +22,24 @@ In most cases, the most appropriate refresh mechanism is the automatic one. In A
 
 The [section statement](writing_templates#section) allows to bind the refresh of a container to a list of values. Consider this example:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/Refresh.tpl?tag=sectionDefTwo&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/Refresh.tpl?tag=sectionDefTwo&lang=at&outdent=true'></script>
 
 The property `bindRefreshTo` is an array of objects of type [`aria.templates.CfgBeans.BindingConfiguration`](http://ariatemplates.com/api/#aria.templates.CfgBeans:BindingConfiguration). Each binding configuration allows to specify a portion of data by its container (`inside`) and its key (`to`) inside the container. The framework will automatically [add a listener](helpers#json-manipulation) to react to data changes. Indeed, you can also specify whether the listener has to be recursive or not by setting the `recursive` property of the binding (which defaults to true). A recursive listener will be notified if the specified node or any of its subnodes are changed. A non-recursive listener is notified only when the node itself is changed.
 
 In the example above, the section `"autoSection"` is refreshed whenever `data.myContainer["myFirstValue"]` (or any of its subnodes) changes. The following code inside the template script would be able to change `data.myContainer["myFirstValue"]` and trigger a refresh at the same time:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=refreshThree&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=refreshThree&lang=at&outdent=true'></script>
 
 On the contrary, since the second binding is not recursive, the following code
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=refreshFour&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=refreshFour&lang=at&outdent=true'></script>
 would not trigger a refresh because a subnode of `data.myContainer["mySecondValue"]` is modified. The section would be refreshed by the following expression
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=refreshFive&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=refreshFive&lang=at&outdent=true'></script>
 
 `this.$json` is a shortcut for the singleton class [`aria.utils.Json`](http://ariatemplates.com/api/#aria.utils.Json). [This article](helpers#json-manipulation) explains its role and introduces in more detail the concept of recursive/non-recursive listeners. Keep in mind that non-recursive listeners perform better.
 
 Consider the following sample. By clicking on the "Increase" box, the score of a team is augmented and at the same time the display is refreshed.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/refresh/automatic/'></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/refresh/automatic/'></iframe>
 
 By looking at the data model of the sample, it is also possible to identify the metadata due to the automatic addition of a listener on the specified portion of the data model.
 
@@ -47,7 +47,7 @@ By looking at the data model of the sample, it is also possible to identify the 
 
 When you have an array or map that you iterate through to display the properties of their entries, it is a good idea to use a repeater. The [repeater statement](writing_templates#repeater) is somehow similar to a foreach loop, with the main difference that it creates refreshable sections for each item in the loop, so that insertion and removal of these sections can be done without refreshing the other sections. Consider the following sample:
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/refresh/repeater/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/refresh/repeater/' ></iframe>
 
 You can see that:
 
@@ -71,7 +71,7 @@ Aria Templates allows to refresh a template from its template script by means of
 
 A full template refresh is achieved by calling the `$refresh` method with no parameters in a template script. Consider the following sample.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/refresh/full/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/refresh/full/' ></iframe>
 
 When clicking on the "refresh" div, the `fullTemplateRefresh` defined in the script is called. As you can see, this method simply calles the `$refresh` method with no parameters.
 
@@ -80,20 +80,20 @@ When clicking on the "refresh" div, the `fullTemplateRefresh` defined in the scr
 It is cumbersome to perform a full refresh when it is not strictly needed. Indeed, it is possible to refresh only a section of a template by specifying the section id as parameter of the `$refresh` method. Suppose you define the following section in a template:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/Refresh.tpl?tag=sectionDef&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/Refresh.tpl?tag=sectionDef&lang=at&outdent=true'></script>
 
 You can refresh this section in the template script by using the following statements:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=refreshOne&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=refreshOne&lang=at&outdent=true'></script>
 
 Consider the following sample.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/refresh/partial/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/refresh/partial/' ></iframe>
 
 Additionally, you can also specify a `macro` property in the argument of the `$refresh` method:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=refreshTwo&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=refreshTwo&lang=at&outdent=true'></script>
 
 By default, the macro that is called is the one specified in the configuration of the section with id `"mySectionId"`. In this case, the macro parameter is only useful to provide new parameters to the macro that would be called anyway.
 
@@ -104,18 +104,18 @@ However, if another macro is specified, the section markup will be replaced by t
 In order to avoid duplicate and/or unnecessary refreshes, two statements are introduced:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=stopResumeOne&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=stopResumeOne&lang=at&outdent=true'></script>
 
 The statements should be called, respectively, _before_ and _after_ a number of updates to the data model:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=stopResumeTwo&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/RefreshScript.js?tag=stopResumeTwo&lang=at&outdent=true'></script>
 
 When the `resume()` is called, the framework will automatically work out the minimum number of refreshes which account for all the changes occurred while in the <i>stopped</i> state. It is important to note that [module controllers](controllers) methods are automatically wrapped in `stop()`/`resume()`.
 
 Play with the following sample that uses the repeater seen above with the possibility to stop and resume the refresh manager.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/refresh/stopresume/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/refresh/stopresume/' ></iframe>
 
 ## Indirect DOM access
 

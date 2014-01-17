@@ -12,16 +12,16 @@ The next articles in this section will describe in details core objects that AT 
 
 
 [classes](javascript_classes)
-<script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=classDefinition&lang=javascript" defer></script>
+<script src="%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=classDefinition&lang=javascript" defer></script>
 
 and [interfaces](around_classes#interface-definition),
-<script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=interfaceDefinition&lang=javascript" defer></script>
+<script src="%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=interfaceDefinition&lang=javascript" defer></script>
 
 [JSON Beans](json_bean_definitions)
-<script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=beanDefinitions&lang=javascript" defer></script>
+<script src="%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=beanDefinitions&lang=javascript" defer></script>
 
 or [resources](localization_and_resources).
-<script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=resourcesDefinition&lang=javascript" defer></script>
+<script src="%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=resourcesDefinition&lang=javascript" defer></script>
 
 These objects are all defined in structures declared using the `Aria` object.
 
@@ -29,12 +29,12 @@ These objects are all defined in structures declared using the `Aria` object.
 
 * The main entry-point method to load a template: Aria.loadTemplate(...)
 
-  <script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=loadTemplate&lang=javascript" defer></script>
+  <script src="%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=loadTemplate&lang=javascript" defer></script>
 
 
 * A mechanism to load asynchronous dependencies: Aria.load(...)
 
-  <script src="http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=load&lang=javascript" defer></script>
+  <script src="%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/AriaSingleton.js?noheader=true&tag=load&lang=javascript" defer></script>
 
 ## Configuration
 

@@ -35,7 +35,7 @@ The user will need to use these parameters:
 
 Here's an example of form submission:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=submitExample1&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=submitExample1&lang=javascript&outdent=true'></script>
 
 In this example only the `formId` and the `callback` are needed.  The IFrame transport then extracts the form using the ID and completes the request calling the specific callback after the response has been received:
 
@@ -47,11 +47,11 @@ In this example only the `formId` and the `callback` are needed.  The IFrame tra
 
 In this example the file input is invisible to the user, instead there is a link which when clicked will trigger the file input click method to open the system dialog.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitView.tpl?tag=uploadExample&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitView.tpl?tag=uploadExample&lang=at&outdent=true'></script>
 
 When the click event is triggered on the link the following handler is called:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=uploadExample1&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=uploadExample1&lang=javascript&outdent=true'></script>
 
 The hidden file input has an ID of "simulateAsyncFileUpload", therefore its click event is triggered which opens the system dialog.
 
@@ -59,8 +59,8 @@ The hidden file input has an ID of "simulateAsyncFileUpload", therefore its clic
 ### Catching the Change Event of the File Upload
 When a user opens a system dialog from the file input, they can browse directories select a file and click on open.  The system dialog then disappears and the file input contains the path and filename of the file to be uploaded.  To trigger a script when the user selects a file in the system dialog, you need to add a listener to the change event of the file input.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=uploadExample2&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=uploadExample2&lang=javascript&outdent=true'></script>
 
 After the user has selected a file and clicked open the `fileChosen` method will be executed.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=submitExample2&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/FormSubmitViewScript.js?tag=submitExample2&lang=javascript&outdent=true'></script>

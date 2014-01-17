@@ -8,20 +8,20 @@ A radioButton widget can exists single, in that case it acts same as Checkbox wi
 
 The simple way to add radioButton widget to your application is as follows
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet1&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet1&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [RadioButtonCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:RadioButtonCfg).
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/radiobutton/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/radiobutton/' ></iframe>
 
 ## Styling
 
 RadioButton widget labels can be aligned to _left_, _right_, _top_ and _bottom_ depending on the user requirement.
 Also user can provide a css class via sclass property, determines which class defined in the skin is being used.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet2&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet2&lang=at&outdent=true'></script>
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/radiobutton/styling/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/radiobutton/styling/' ></iframe>
 
 ## Binding
 
@@ -31,6 +31,6 @@ The whole list of configuration parameters is available in [RadioButtonCfg bean]
 
 For more information please read the article on [Widget bindings](widget_bindings).
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet3&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/radiobutton/Snippet.tpl?tag=wgtRadioButtonSnippet3&lang=at&outdent=true'></script>
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/radiobutton/binding/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/radiobutton/binding/' ></iframe>

@@ -7,7 +7,7 @@ A View allows you to work on any part of your data model you want without actual
 
 To use Views, you first need to create one.  You do that using the `createView` statement:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=createView&noheader=true&lang=at'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=createView&noheader=true&lang=at'></script>
 
 
 Provided that `data.hotels` is an Array or a Map, this statement will create a `vHotels` variable.  If it has been created inside a macro (including the `main` macro), its scope will be local and the view will only be available from inside the macro.  If it has been set as a global variable, the view will be available both from the template using `vHotels` and from its associated script using `this.vHotels`.
@@ -21,7 +21,7 @@ In order to use the View filtering mechanism, <span style="background:#ffc">you 
 Let's see how it is used in a template script:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=filterIn&noheader=true&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=filterIn&noheader=true&lang=javascript&outdent=true'></script>
 
 
 This example tells the view to keep only hotels for which the daily rate is beyond 200€.
@@ -40,21 +40,21 @@ Two arguments are passed to `filterIn()`:
 
 To display the content of a View using the filter mode, you must <span style="background:#ffc">iterate over the items using the `inFilteredView` keyword</span> as follows:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=inFilteredView&noheader=true&lang=at'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=inFilteredView&noheader=true&lang=at'></script>
 
 
 ### Combining filters
 
 Once a filter is set, you can add new ones to <span style="background:#ffc">filter in more items using the Views `FILTER_ADD`</span> property:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=filterAddElement&noheader=true&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=filterAddElement&noheader=true&lang=javascript&outdent=true'></script>
 
 
 In this case, the filter method is applied to items that are not filtered in.  This example, added to the previously set filter, instructs the View to list all hotels for which the daily rate is beyond 200€ **or** which have at least 5 stars.
 
 Conversely, it is also possible to specify new filters to <span style="background:#ffc">refine the list of items to be kept using the `FILTER_REMOVE`</span> property:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=filterRemoveElement&noheader=true&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=filterRemoveElement&noheader=true&lang=javascript&outdent=true'></script>
 
 
 In this case, the filter method is applied to items that are already filtered in.  This example, added with the first filter we've set, tells the View to list all hotels for which the daily rate is beyond 200€ **and** which have more than 2 stars.
@@ -69,13 +69,13 @@ The [aria.templates.View](http://ariatemplates.com/api/#aria.templates.View) cla
 * `filteredInCount`: a property that returns the number of items currently filtered in.
 
 ### Example
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/views/filtering/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/views/filtering/' ></iframe>
 
 ## Sorting
 
 Sorting items of a View is achieved by using the `setSort()` method, as illustrated in this example:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=sortByPrice&noheader=true&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=sortByPrice&noheader=true&lang=javascript&outdent=true'></script>
 
 
 This method requires three parameters:
@@ -88,26 +88,26 @@ This method requires three parameters:
 
 To display the content of a View using the sorting mode, you must <span style="background:#ffc">iterate over the items using the `inSortedView` keyword</span> as follows:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=inSortedView&noheader=true&lang=at'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=inSortedView&noheader=true&lang=at'></script>
 
 
 Once a View has been sorted, <span style="background:#ffc">you can modify the sort order by changing its `sortOrder` property</span> to one of the values listed above.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=ascSortOrder&noheader=true&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=ascSortOrder&noheader=true&lang=javascript&outdent=true'></script>
 
 You can also alternatively use `toggleSortOrder()` instead of `setSort()`: provided with a sort name and a sort key method, this method will toggle the sort order of your View from `SORT_ASCENDING` to `SORT_DESCENDING` each time it is called.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=toggleSortOrder&noheader=true&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=toggleSortOrder&noheader=true&lang=javascript&outdent=true'></script>
 
 
 ### Example
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/views/sorting/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/views/sorting/' ></iframe>
 
 ## Paging
 
 The paging functionality of a View is triggered by the `setPageSize()` method:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=pageNumber&noheader=true&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=pageNumber&noheader=true&lang=javascript&outdent=true'></script>
 
 
 The method requires one numeric parameter:
@@ -117,18 +117,18 @@ The method requires one numeric parameter:
 
 To display the content of a paged View, you must <span style="background:#ffc">iterate over the items using the `inView` keyword</span> as follows:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=inView&noheader=true&lang=at'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=inView&noheader=true&lang=at'></script>
 
 
 When the page size has not been set, this will display the entire list of items in the View.  If `setPageSize(n)` has been set to a positive integer, the loop will display the `n` first items in the first page of the View.
 
 To modify the current page used by the View, you need to change its `currentPageIndex` property:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=nextPage&noheader=true&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=nextPage&noheader=true&lang=javascript&outdent=true'></script>
 
 
 ### Example
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/views/pagination/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/views/pagination/' ></iframe>
 
 ### Mixing filtering, sorting and paging
 
@@ -148,18 +148,18 @@ The View class provides information about its content through two interesting pr
 
 Let's illustrate these properties with an example.  Consider the following array of data:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=defaultData&noheader=true&lang=javascript'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=defaultData&noheader=true&lang=javascript'></script>
 
 If we create a View on it to which we apply the following features:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=defaultInit&noheader=true&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=defaultInit&noheader=true&lang=javascript&outdent=true'></script>
 
 Here's what the `items` array looks like and the value of the different properties:
 
 ![Views][view_image]
 
 ### Example
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/views/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/views/' ></iframe>
 
 ## Using Views
 
@@ -169,11 +169,11 @@ When using paging, or when you need your View to be displayed sorted and/or filt
 
 This is illustrated in the following example: note the `initView()` call from the template:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=simpleUsage&noheader=true&lang=at'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/View.tpl?tag=simpleUsage&noheader=true&lang=at'></script>
 
 And `initView` could be defined like this in your script:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=initView&noheader=true&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/views/ViewScript.js?tag=initView&noheader=true&lang=javascript&outdent=true'></script>
 
 
 [view_image]: ../images/views.png
