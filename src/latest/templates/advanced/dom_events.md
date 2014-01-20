@@ -176,11 +176,12 @@ Checking the tagName is the easiest way to make sure the event was fired on an e
 
 
 We also need to know what is the index of the clicked input.
-To retrieve this information dynamically in the callback, we will use **expandos**. **Expandos** are extra attributes that you can use on a DOM element inside your template.
-An expando is prefixed by an underscore, and can be retrieved using the <code>[getExpando](http://ariatemplates.com/api/#aria.templates.DomElementWrapper:getExpando)</code> method on a DomElementWrapper.
-Here we store the index of the item in `_index` and retrieve it using `getExpando("index")`.
+To retrieve this information dynamically in the callback, we will use [**data attributes**](http://www.w3schools.com/tags/att_global_data.asp). **data attributes** are extra attributes that you can use on a DOM element inside your template and that start with the prefix <code>data-</code>.
+Modern browsers provide a specific API to retrieve them from an element. Aria templates provides method <code>[getData](http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.DomElementWrapper:getData:method)</code> on top of instances of <code>[DomElementWrapper](http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.DomElementWrapper)</code>. Here we store the index as `data-index`.
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=simpleHtmlWithData&outdent=true'></script>
+
+Thus, we can retrieve it using `getData("index")`.
 
 <script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=getDataIndex&outdent=true'></script>
 
