@@ -53,6 +53,8 @@ Note that in modifiers parameters, pipe characters `|` have to be escaped.
 
 Modifiers may only accept one parameter, but it can be of any type.  They also can be chained.  In the code example above, `modifier1` is applied to `value`, `modifier2` is then applied to the result, and so on.
 
+<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> If for any reason you want to use the corresponding singleton class [`aria.templates.Modifiers`](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.Modifiers), please note that the methods described below can't be called directly, you will __have to__ use the method `callModifier` instead, giving the name of the desired mofifier along with the list of arguments to pass to it. Read the [corresponding API Doc](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.Modifiers) for more information.</div>
+
 ### Default Available Modifiers
 
 #### eat
