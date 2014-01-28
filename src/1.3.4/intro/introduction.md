@@ -57,7 +57,7 @@ To illustrate practically how an AT app is built, let's have a look at a simple 
 First off, we start with the bootstrap, in our case a simple HTML page created from scratch:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/intro/index.html?lang=html5'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/intro/index.html?lang=html5'></script>
 
 There are 3 parts to look at here:
 
@@ -68,7 +68,7 @@ There are 3 parts to look at here:
 Now let's see what `SgtGreeters.tpl` looks like:
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/intro/view/SgtGreeters.tpl?lang=at'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/intro/view/SgtGreeters.tpl?lang=at'></script>
 
 As you can see, AT introduces  a special kind of grammar to describe your interfaces, much of it being quite straightforward.  If we have a detailed look at the code we can see the following:
 
@@ -79,7 +79,7 @@ As you can see, AT introduces  a special kind of grammar to describe your interf
 And here's what the result looks like:
 
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/intro/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/intro/' ></iframe>
 
 ## Going further
 

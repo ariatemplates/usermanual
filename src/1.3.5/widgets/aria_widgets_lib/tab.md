@@ -15,11 +15,11 @@ A tab should be able to be deactivated after it has been created.
 
 The simple way to add Tab widget to your application is as follows
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/tab/Snippet.tpl?tag=wgtTabSnippet1&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/tab/Snippet.tpl?tag=wgtTabSnippet1&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [TabCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TabCfg).
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/tab/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/tab/' ></iframe>
 
 Tab widget is not a container widget, so the content of the Tab widget have to be placed in [tabpanel](tabpanel) widget.
 
@@ -29,9 +29,9 @@ Tab widget is not a container widget, so the content of the Tab widget have to b
 * It is possible to give several types of styling to a tab (the images and colors used for the normal, disabled and active tabs should be skinnable)
 * It is possible to add ellipse to the tab.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/tab/Snippet.tpl?tag=wgtTabSnippet2&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/tab/Snippet.tpl?tag=wgtTabSnippet2&lang=at&outdent=true'></script>
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/tab/styling/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/tab/styling/' ></iframe>
 
 ## Binding
 
@@ -40,8 +40,8 @@ The bindable properties of tab widget are
 * selectedTab
 * tooltip
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/tab/Snippet.tpl?tag=wgtTabSnippet3&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/tab/Snippet.tpl?tag=wgtTabSnippet3&lang=at&outdent=true'></script>
 
 For more information please read the article on [Widget bindings](widget_bindings).
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/tab/binding/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/tab/binding/' ></iframe>

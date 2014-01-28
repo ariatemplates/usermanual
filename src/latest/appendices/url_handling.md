@@ -23,11 +23,11 @@ URL mapping provides a way to modify this behavior.  It may be useful in two cas
 
 Let's say you want to force the definition of the `foo.bar.BarClass` Javascript class to be fetched from `foo/bar/AnotherBarClass.js` instead of `foo/bar/BarClass.js`; you would then write:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmap1&outdent=true&noheader=true&lang=js'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmap1&outdent=true&noheader=true&lang=js'></script>
 
 You could also specify that all classes of a package are available in one file like this:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmap2&outdent=true&noheader=true&lang=js'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmap2&outdent=true&noheader=true&lang=js'></script>
 
 In the example above, any class which classpath starts with `foo.bar` is expected to be declared inside the bar.js file.
 
@@ -35,7 +35,7 @@ In the example above, any class which classpath starts with `foo.bar` is expecte
 
 You can define what to use as a root path for a given package using the `updateRootMap()` method:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=rootmap&outdent=true&noheader=true&lang=js'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=rootmap&outdent=true&noheader=true&lang=js'></script>
 
 In this example:
 
@@ -52,25 +52,25 @@ UrlMap and RootMap accept function references and instances of `aria.utils.Callb
 
 * An **urlMap** callback receives one argument: the logical path to a file (e.g. `foo/bar/MyClass.js`) and it must return the new path (relative to rootUrl.)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmapper1&outdent=true&noheader=true&lang=js'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmapper1&outdent=true&noheader=true&lang=js'></script>
 
 * A **rootMap** callback also receives the logical path to a file (e.g. `bar/MyClass.js`) and must return the new root path to be used.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=rootmapper1&outdent=true&noheader=true&lang=js'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=rootmapper1&outdent=true&noheader=true&lang=js'></script>
 
 The callbacks can be used this way:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmapper2&outdent=true&noheader=true&lang=js'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmapper2&outdent=true&noheader=true&lang=js'></script>
 
 or using anonymous functions:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmapper3&outdent=true&noheader=true&lang=js'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmapper3&outdent=true&noheader=true&lang=js'></script>
 
 <div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> Classic callback descriptions, i.e. `{ fn : myMethod, scope : myScope }` cannot be used here as they would result in non-determinist maps structures.  You can however define such callbacks using the `aria.utils.Callback` class.</div>
 
 Example:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmapperCB&outdent=true&noheader=true&lang=js'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/appendices/URLhandling.js?tag=urlmapperCB&outdent=true&noheader=true&lang=js'></script>
 
 ## Server requests URL handling
 
@@ -89,6 +89,6 @@ To define the way URLs are created, you need to create a class implementing the 
 
 Here is a sample method from an urlService class to create the call URL:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyUrlService.js?tag=actionUrl&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyUrlService.js?tag=actionUrl&lang=javascript&outdent=true'></script>
 
 <div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> `Aria.rootFolderPath` contains the path to the root of the framework, it can be used to build the server path.</div>

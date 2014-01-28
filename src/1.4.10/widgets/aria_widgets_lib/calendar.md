@@ -3,7 +3,7 @@ Title: Calendar
 
 The Calendar widget is a JavaScript-based calendar that can be embedded within a page.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/calendar/Snippet.tpl?tag=autocomplete&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/calendar/Snippet.tpl?tag=autocomplete&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [CalendarCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:CalendarCfg).
 
@@ -33,10 +33,10 @@ Supported patterns are similar to: http://download.oracle.com/javase/1.4.2/docs/
 
 ## Samples
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/calendar/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/calendar/' ></iframe>
 
 ## Bindings
 
 Calendar can accept custom template thanks to property _defaultTemplate_, where user can implement there own template. Here is a customized version showing days vertically. Both calendars are bound to each other, so that selecting a day or navigating inside one calendar changes the other.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/calendar/binding/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/calendar/binding/' ></iframe>

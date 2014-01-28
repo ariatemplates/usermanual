@@ -22,7 +22,7 @@ Please note that all events are not necessarily available on all tags. This depe
 To attach events to DOM elements in templates you must use the [`on`](writing_templates#on) statement.
 Example:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=basic&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=basic&outdent=true'></script>
 
 The `on` statement is part of the element opening tag, as would an `on_event_` property be.
 
@@ -31,18 +31,18 @@ To specify the event handler method you may either use the short or complete not
 
 #### short
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=short&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=short&outdent=true'></script>
 
 #### complete
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=complete&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=complete&outdent=true'></script>
 
 Check the [examples section](#examples) to learn which syntax you should use and when.
 
 You can use several `on` statements inside the same DOM element.
 For instance:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=multiple&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=multiple&outdent=true'></script>
 
 
 <div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;">**Note:** One limitation of the framework today is that no check is done on the event name passed to the `on` statement, meaning that you won't get any error if it is mispelled!</div>
@@ -63,7 +63,7 @@ Depending on how you declared it, the scope of the callback (what `this` represe
 
 A callback assigned with `on` must conform to the following signature :
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=callbackSignature&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=callbackSignature&outdent=true'></script>
 
 
 where:
@@ -83,7 +83,7 @@ In addition to the usual properties, the DomEventWrapper also gives access to he
 The `target` property of a DomEventWrapper is an instance of [`aria.templates.DomElementWrapper`](http://ariatemplates.com/api/#aria.templates.DomElementWrapper).
 Similarly to the DomEventWrapper, it acts as a cross-browser wrapper over the actual DOM element.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=domelem&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=domelem&outdent=true'></script>
 
 For more information please refer to the API documentation of these objects: [`aria.templates.DomEventWrapper`](http://ariatemplates.com/api/#aria.templates.DomEventWrapper), [`aria.DomEvent`](http://ariatemplates.com/api/#aria.DomEvent) and [`aria.templates.DomElementWrapper`](http://ariatemplates.com/api/#aria.templates.DomElementWrapper).
 
@@ -133,7 +133,7 @@ In this sample, the callback handler takes advantage of the [`DomEventWrapper`](
 Then using the statics available on [`DomEventWrapper`](http://ariatemplates.com/api/#aria.templates.DomEventWrapper), we easily check if the event was triggered by on of the arrow keys or not.
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=checkboxKeyDown&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=checkboxKeyDown&outdent=true'></script>
 
 
 ### Form events
@@ -166,7 +166,7 @@ Indeed, since the event is attached on a container element, it will be fired eac
 Checking the tagName is the easiest way to make sure the event was fired on an element that interests us.
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=eventDelegation&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=eventDelegation&outdent=true'></script>
 
 
 We also need to know what is the index of the clicked input.
@@ -174,16 +174,16 @@ To retrieve this information dynamically in the callback, we will use **expandos
 An expando is prefixed by an underscore, and can be retrieved using the [`getExpando`](http://ariatemplates.com/api/#aria.templates.DomElementWrapper:getExpando) method on a DomElementWrapper.
 Here we store the index of the item in `_index` and retrieve it using `getExpando("index")`.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=simpleHtmlWithData&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/Main.tpl?noheader=true&lang=at&tag=simpleHtmlWithData&outdent=true'></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=getDataIndex&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=getDataIndex&outdent=true'></script>
 
 
 All this overhead has been mutualized in a single method and is used in each event callback of the template script.
 The rest of the implementation then remains strictly similar to the non-delegated version.
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=getTargetIndex&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=getTargetIndex&outdent=true'></script>
 
 
 Event delegation is always about striking a good balance between the amount of events and the amount of dynamic processing in the callback.
@@ -197,7 +197,7 @@ This time, a keydown is attached on the document using the [`aria.utils.Event.ad
 We filter the numkeys and the matching 1-9 box is selected when the user presses one of those keys.
 
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=ariaUtilsEvent&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domEvents/MainScript.js?noheader=true&lang=javascript&tag=ariaUtilsEvent&outdent=true'></script>
 
 
 Note that in the destructor of the template script, the `addListener` is mirrored by a `removeListener` to avoid leaving unwanted events on the page.

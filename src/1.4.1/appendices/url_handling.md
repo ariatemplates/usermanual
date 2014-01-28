@@ -137,6 +137,6 @@ To define the way URLs are created, you need to create a class implementing the 
 
 Here is a sample method from an urlService class to create the call URL:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyUrlService.js?tag=actionUrl&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/modules/controller/MyUrlService.js?tag=actionUrl&lang=javascript&outdent=true'></script>
 
 <div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> `Aria.rootFolderPath` contains the path to the root of the framework, it can be used to build the server path.</div>

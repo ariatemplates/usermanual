@@ -27,11 +27,11 @@ The argument to provide to the `$getElementById` method is an id that you have a
 
 Consider the following code extracted from a HTML template.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/DomInteractionTemplate.tpl?tag=domInteractions&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/DomInteractionTemplate.tpl?tag=domInteractions&lang=at&outdent=true'></script>
 
 Its associated script could contain the following statements:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/DomInteractionTemplateScript.js?tag=domInteractions&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/DomInteractionTemplateScript.js?tag=domInteractions&lang=at&outdent=true'></script>
 
 
 ## Focus handling
@@ -43,11 +43,11 @@ The template script is endowed with the <code>[$focus](http://ariatemplates.com/
 As far as widgets are concerned, each of them can implement a `focus` method that will be called whenever you try to set the focus on it.
 Suppose you are using a `TextField` widget from the `AriaLib` widget library in your HTML template:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/DomInteractionTemplate.tpl?tag=focusExample&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/DomInteractionTemplate.tpl?tag=focusExample&lang=at&outdent=true'></script>
 
 In the associated template script you can use
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/DomInteractionTemplateScript.js?tag=focusExample&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/DomInteractionTemplateScript.js?tag=focusExample&lang=at&outdent=true'></script>
 
 which will set the input focus on the text field.
 A side effect of this is that the browser will scroll to make the focused widget visible to the user, so this feature can also be used to programatically scroll to different parts of the template.
@@ -60,20 +60,20 @@ When you include a template inside another one, you can provide an id and focus 
 
 Suppose you have the following template:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/TemplateA.tpl?lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/TemplateA.tpl?lang=at&outdent=true'></script>
 
 `TemplateA` includes two other templates (`TemplateB` and `TemplateC`) as sub-templates.
 
 Suppose that, as soon as the template is ready to be displayed, you want to give focus to the sub-template C.
 You can implement this behaviour in the script associated to template A.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/TemplateAScript.js?lang=at&tag=first'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/TemplateAScript.js?lang=at&tag=first'></script>
 
 As soon as template A and its sub-templates are ready to be displayed, the `$focus` method is called (for more information about the `$displayReady` go to [this article](template_scripts#intercepting-template-lifecycle-phases)).
 
 Suppose that template C is defined in the following way:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/TemplateC.tpl?lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/TemplateC.tpl?lang=at&outdent=true'></script>
 
 Basically it has two text fields with id's `textFieldA` and `textFieldB`.
 What happens when it receives the focus from template A?
@@ -82,7 +82,7 @@ You can specify the actions to take after a sub-template is given focus by defin
 For example, suppose that you want to give focus to the textfield with id `textFieldB`.
 You can do that in the template script
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/TemplateCScript.js?lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/TemplateCScript.js?lang=at&outdent=true'></script>
 
 If the method `$focusFromParent` is not implemented on Template C, then the focus received from the parent template would be cast onto the first focusable element (`TextField` with id `"textFieldA"` in the above example).
 
@@ -91,14 +91,14 @@ In these cases it is possible to define the method `$afterRefresh` in the templa
 Whenever the `$refresh` method is called on the template, the `$afterRefresh` method is invoked (when it has been defined).
 For example, in the `$prototype` property of the template A script definition, it is possible to add the method
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/TemplateAScript.js?tag=afterRefresh&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/TemplateAScript.js?tag=afterRefresh&lang=at&outdent=true'></script>
 
 so that the focus is given to the sub-template C whenever template A is refreshed.
 For more information about the `$afterRefresh` method go to [this article](template_scripts#intercepting-template-lifecycle-phases)).
 
 #### Example
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/domInteractions/focushandling/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/domInteractions/focushandling/' ></iframe>
 
 In this sample you can see how sub-template A gives focus to the second checkbox after receiving it from the containing template (its script implements the `$focusFromParent` method).
 Sub-template B, instead, does not have any script at all.
@@ -143,11 +143,11 @@ Once you retrieve a DOM element wrapper through the `$getElementById` method, yo
 
 Suppose you create a span in your template:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplate.tpl?tag=procIndOne&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplate.tpl?tag=procIndOne&lang=at&outdent=true'></script>
 
 You can then retrieve its associated DOM element wrapper and trigger the display of a processing indicator on top of it:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplateScript.js?tag=procIndOne&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplateScript.js?tag=procIndOne&lang=at&outdent=true'></script>
 
 You can see that it is also possible to provide a message to be displayed on the overlay that contains the processing indicator image.
 
@@ -165,11 +165,11 @@ Since the `SectionWrapper` class extends the `DomElementWrapper` class, you can 
 
 In the template:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplate.tpl?tag=procIndTwo&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplate.tpl?tag=procIndTwo&lang=at&outdent=true'></script>
 
 In the template script:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplateScript.js?tag=procIndTwo&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplateScript.js?tag=procIndTwo&lang=at&outdent=true'></script>
 
 **Remark:** the processing indicator is removed when a template refresh occurs.
 If you want to keep the processing indicator through refreshes, you have to bind its presence to the data-model, as explained in next section.
@@ -182,11 +182,11 @@ Moreover, you can also set a message to be displayed on the overlay in the **`pr
 
 In the template:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplate.tpl?tag=procIndThree&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplate.tpl?tag=procIndThree&lang=at&outdent=true'></script>
 
 In the template script:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplateScript.js?tag=procIndThree&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplateScript.js?tag=procIndThree&lang=at&outdent=true'></script>
 
 The information on whether the processing indicator is displayed or not becomes persistent through template refreshes and can be set also from a [module controller](controllers) or a [flow controller](flow_controllers).
 
@@ -201,16 +201,16 @@ However, make sure you use the API described [above](#on-dom-element-wrappers) i
 
 Suppose you have the following <`body`> in your `index.html` file:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/index.html?lang=html5'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/index.html?lang=html5'></script>
 
 You can use the following methods (inside any class, module controller, flow controller, template script, ...)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplateScript.js?tag=procIndFour&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/domInteractions/ProcIndTemplateScript.js?tag=procIndFour&lang=at&outdent=true'></script>
 
 
 ### Example
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/domInteractions/processingIndicator/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/domInteractions/processingIndicator/' ></iframe>
 
 You can see that, after refreshing the template, the loading indicator on the the section with id `"mySecondSection"` persists because it is bound to the data-model.
 All the other loading indicators are removed.
@@ -221,7 +221,7 @@ All the other loading indicators are removed.
 Aria Templates allows to set an element as draggable and to specify how the element should be dragged.
 `aria.utils.dragdrop.Drag` is the class that defines the element that can be dragged, called _draggable element_ from now on.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=dragSyntax&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=dragSyntax&lang=javascript&outdent=true&noheader=true'></script>
 
 The constructor accepts the following arguments
 
@@ -268,27 +268,27 @@ The constructor accepts the following arguments
 
 ![Draggable Element](../images/draggable_element.png)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag1html&lang=html5&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag1html&lang=html5&outdent=true&noheader=true'></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag1js&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag1js&lang=javascript&outdent=true&noheader=true'></script>
 
 
 #### HTML element that can be dragged only from an handle
 
 ![Dialog Handle](../images/dialog_handle.png)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag2html&lang=html5&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag2html&lang=html5&outdent=true&noheader=true'></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag2js&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag2js&lang=javascript&outdent=true&noheader=true'></script>
 
 
 #### Proxy element, box with borders
 
 ![Clone Element](../images/box_clone.png)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag1html&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag1html&lang=javascript&outdent=true&noheader=true'></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag3js&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag3js&lang=javascript&outdent=true&noheader=true'></script>
 
 The default classname of the overlay element is xOverlay.
 Its style can be changed throught the skinning system by setting the desired background color, opacity and border corresponding to the following skin properties:
@@ -302,13 +302,13 @@ Its style can be changed throught the skinning system by setting the desired bac
 
 ![Transparent Clone](../images/transparent_clone.png)
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag1html&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/Drag.tpl?tag=drag1html&lang=javascript&outdent=true&noheader=true'></script>
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag4js&lang=javascript&outdent=true&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/dragdrop/DragScript.js?tag=drag4js&lang=javascript&outdent=true&noheader=true'></script>
 
 The default opacity is 0.5/1.
 
 
 ### Example
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/utils/dragdrop/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/utils/dragdrop/' ></iframe>

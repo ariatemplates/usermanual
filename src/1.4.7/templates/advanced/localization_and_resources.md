@@ -24,7 +24,7 @@ You can then localize a resource file creating different versions of the file an
 
 An example of a resource definition is the following:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/localization/statics/LocalResources.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/localization/statics/LocalResources.js?lang=javascript&outdent=true'></script>
 
 
 ##### Conventions to be used
@@ -53,7 +53,7 @@ Here's an explanation of each scheme component and accepted values:
 You must first declare the classpath of the resources to use with the `$res` parameter of the Template statement.
 Then, localized resources are made available through the `res` variable, which can be seen be seen as an alias to the automatically loaded resource classpath.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/localization/statics/LocalizedTemplate.tpl?lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/localization/statics/LocalizedTemplate.tpl?lang=at&outdent=true'></script>
 
 Of course, you can use an intermediate variable, like `label` here, to make the references to localized resources less verbose.
 
@@ -62,7 +62,7 @@ Of course, you can use an intermediate variable, like `label` here, to make the 
 
 Here is the script associated to the previous template, which displays a message, using localized resources.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/templates/localization/statics/LocalizedTemplateScript.js?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/localization/statics/LocalizedTemplateScript.js?lang=javascript&outdent=true'></script>
 
 As the class generated from a template inherits from its script, localized resources are also available from the template script, through `this.res`.
 
@@ -109,7 +109,7 @@ A potential structure, could be for instance the following, with translations in
 Please note how the first resource is indeed the base resource name to be referenced inside your classes, modules and/or templates.
 While keeping this name you should then append the proper locale code according to the language contained in each resource file.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/templates/i18n/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/i18n/' ></iframe>
 
 #### Number and currency
 

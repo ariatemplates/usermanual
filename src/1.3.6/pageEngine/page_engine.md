@@ -17,7 +17,7 @@ The page engine comes with the following features:
 
 Here is a sample `index.html` file that initializes the page engine.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/index.html?lang=html5'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/index.html?lang=html5'></script>
 
 The main entry point is the class [aria.pageEngine.PageEngine](http://ariatemplates.com/api/#aria.pageEngine.PageEngine) class. After creating an instance of this class, it is possible to start the page engine by providing a page provider, which will be discussed [later](#Page_providers).
 
@@ -41,7 +41,7 @@ The framework provides a base page provider [aria.pageEngine.pageProviders.BaseP
 
 The site configuration is a json object described in [this bean](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:Site). Here is an example of page configuration.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/siteConfiguration.json?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/siteConfiguration.json?lang=javascript&outdent=true'></script>
 
 Some remarks:
 * the `containerId` is the id of the HTMLElement in which the pages will be loaded. As you can see in the index.html above, there is a div in the body with that id.
@@ -57,7 +57,7 @@ Page definitions are the core structures of the page engine. A page definition i
 
 Here is the [bean for the page definition](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageDefinition). As an example:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/pageDefinition.json?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/pageDefinition.json?lang=javascript&outdent=true'></script>
 
 A page definition is made of two main parts:
 * [PageContents](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageContents) represents pure content that can be retrieved, for example, from a Content Management System (within your custom page provider). It contains
@@ -83,11 +83,11 @@ There are mainly three properties that determine the nature of a single placehol
 * `template`: the classpath of the template to display. If no `module` or `contentId` is provided, then it is likely that the template is needed to create a certain layout, and the real embedded content is in nested placeholders.
 As an example, consider the placeholder declaration
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/pageDefinition.json?tag=placeholder&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/pageDefinition.json?tag=placeholder&lang=javascript&outdent=true'></script>
 
 The corresponding template looks like this
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/FacebookResults.tpl?lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/FacebookResults.tpl?lang=at&outdent=true'></script>
 
 
 As you can see, the role of this placeholder is to define a position for the nested placeholders `"applicationBox.title"`, `"applicationBox.user"` and `"applicationBox.albums"`. Notice how the name of the placeholder corresponds to the last part of the path.
@@ -111,7 +111,7 @@ When we talk about modules in the context of the page engine, we always refer to
 
 A module declaration corresponds to the [Module bean definition](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:Module). The classpath of the module controller class is mandatory, initialization arguments can also be provided, which is also the case when normally using module controllers inside AT-based applications. As an example,
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/pageDefinition.json?tag=friendfinder&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/pageDefinition.json?tag=friendfinder&lang=javascript&outdent=true'></script>
 
 There two types of modules: common and page-specific ones.
 
@@ -139,7 +139,7 @@ The interaction between the page engine and module controllers has been conceive
 
 Consider the excerpt of the previously shown site configuration:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/siteConfiguration.json?tag=facebookUser&lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/siteConfiguration.json?tag=facebookUser&lang=javascript&outdent=true'></script>
 
 
 The "bind" syntax means that "profile" (namely `this._data.profile` inside the module controller) is synchronized with `appData.selected.facebook`. It is also possible to bind module data to page-specific data, which can be retrieved from the page definition. In that case, instead of using the prefix `"appData:"`, `"pageData:"` must be used.
@@ -169,7 +169,7 @@ The following methods are available on the `PageEngine` instance:
 
 The data model of the page engine consists in an object that looks like this:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/dataModel.json?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/dataModel.json?lang=javascript&outdent=true'></script>
 
 where:
 
@@ -249,13 +249,13 @@ Before passing contents over to the placeholder widget, which is able to display
 
 Consider the following site configuration:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/simpleSiteConfig.json?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/simpleSiteConfig.json?lang=javascript&outdent=true'></script>
 
 When the page engine is initialized, class `my.markdown.Processor` will be loaded and an instance of it will be created. All classes registered as content processors have to offer a method `processContent`, which receives an object of type [Content](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:Content) and returns an object of the same type. Content processors are chained until the returned value has no contentType, or its contentType has no registered processor.
 
 When a content is of type "markdown"
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/simplePageDef.json?lang=javascript&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/simplePageDef.json?lang=javascript&outdent=true'></script>
 
 the method `processContent` of the instance of `my.markdown.Processor` is called.
 

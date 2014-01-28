@@ -3,7 +3,7 @@ Category: Widgets
 
 TimeField widget enables the creation of time input fields targeted at time formatted input, packed with specific formatting facilities to handle diverse time formats, as required by the locale and/or the application needs.
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/timefield/Snippet.tpl?tag=wgtTimeField&lang=at&outdent=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/timefield/Snippet.tpl?tag=wgtTimeField&lang=at&outdent=true'></script>
 
 The whole list of configuration parameters is available in [TimeFieldCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TimeFieldCfg).
 
@@ -28,7 +28,7 @@ These formats can be accessed through `aria.core.AppEnvironment.getTimeFormats()
 
 Indeed, default time patterns at the application level can be overridden and/or extended as you need:
 
-<script src='http://snippets.ariatemplates.com/snippets/github.com/ariatemplates/documentation-code/snippets/environment/bootstrap.js?tag=timeFormatEnv&lang=javascript&noheader=true'></script>
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/environment/bootstrap.js?tag=timeFormatEnv&lang=javascript&noheader=true'></script>
 
 
 Please keep in mind that "setEnvironment" will override all settings, use "updateEnvironment" to update one property.
@@ -39,4 +39,4 @@ The following sample shows how to create and use a TextField widget, packed with
 In order to fetch the entered value, variable binding is to be considered as the preferred solution.
 Please refer to the [textfield](textfield) widget for more informations.
 
-<iframe class='samples' src='http://snippets.ariatemplates.com/samples/github.com/ariatemplates/documentation-code/samples/widgets/timefield/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/timefield/' ></iframe>
