@@ -1,7 +1,7 @@
 -metadata.version = whoAmI.split(/usermanual[\\\/]src[\\\/]/)[1].split(/[\\\/]/)[0]
 -metadata.Navbar = (metadata.Navbar ? (metadata.Navbar === 'false' ? false: true ) : true)
 -metadata.Toc = (metadata.Toc ? (metadata.Toc === 'false' ? false: true ) : true)
--urlSnippet = (process.env.NODE_ENV === 'production' ? 'http://snippets.ariatemplates.com' : 'http://localhost:3000')
+-urlSnippet = (process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'http://snippets.ariatemplates.com')
 
 mixin doc
     div.doc(class=(metadata.CssClass||""))
