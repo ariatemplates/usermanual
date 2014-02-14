@@ -119,3 +119,22 @@ A few remarks on this example:
 * The **`cssClass`** and **`type`** configuration properties of sections have been used in order to style them in the CSS template.
 
 * The **`getClassName`** and **`setClassName`** methods of the [aria.templates.DomElementWrapper](http://ariatemplates.com/api/#aria.templates.DomElementWrapper) class are used in the template script in order to change the appearance of each item after clicking on it.
+
+## Processing urls inside CSS Templates
+It is possible to set at application level a method that process all the urls specified inside css templates. The property to use is **`imgUrlMapping`** that specifies the name of the method to call.
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/CSSWithUrlPrefixed.js?noheader=true&tag=imgUrlMapping&lang=js&outdent=true' defer></script>
+
+The property's type is **`json:FunctionRef`** and its default value is null.
+
+When the method is set, the framework calls it and waits for a string to use to replace all the urls inside all the CSS templates.
+
+One use case is url prefixing for media defined inside CSS rules. Using this feature the framework prefixes all the images, font-faces and basically every CSS property that accepts url. So the feature gives the possibility to the users to easily add medias without useless worries about paths and use a specific method to handle them.
+
+For example, let's say the user wants to add a background image using CSS, but he doesn't where the static files will be finally deployed, so he writes something like this:
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/PrefixedCSSTemplate.tpl.css?noheader=true&tag=first&lang=at&outdent=true' defer></script>
+
+using this property the final result is something like this:
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/cssTemplates/PrefixedCSSTemplate.tpl.css?noheader=true&tag=second&lang=at&outdent=true' defer></script>
