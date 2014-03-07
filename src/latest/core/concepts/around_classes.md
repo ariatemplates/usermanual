@@ -23,6 +23,10 @@ When your class inherit an another one, it then inherit from all properties, sta
 
 In Aria Templates, any object inherit from <code>[aria.core.JsObject](http://ariatemplates.com/api/#aria.core.JsObject)</code>. Thus, your class automatically has access to several helpers coming from this parent root object, like for example logging methods: <code>[$logDebug()](http://ariatemplates.com/api/#aria.core.JsObject:$logDebug:method)</code>, <code>[$logWarn()](http://ariatemplates.com/api/#aria.core.JsObject:$logWarn:method)</code>, <code>[$logError()](http://ariatemplates.com/api/#aria.core.JsObject:$logError:method)</code>, and many more.
 
+Finally, note that, besides single inheritance, two other restrictions apply to inheritance in Aria Templates:
+
+* It is not possible for a class to use the same name as its parent.
+* A Singleton cannot be extended.
 
 ## Interfaces, $implements
 
