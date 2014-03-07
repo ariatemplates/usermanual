@@ -7,7 +7,7 @@ The simple way to launch an animation is as follows
 <script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/css/AnimationsScript.js?tag=utlAnimations&lang=at&outdent=true' defer></script>
 
 Animation Sample Usage
-<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/sampleUsage/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/utils/css/animations/' ></iframe>
 
 ## Notable features
 
