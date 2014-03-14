@@ -10,8 +10,23 @@ var argv = process.argv,
 argv.shift();
 argv.shift();
 
-var version = argv[0];     // Takes the doc version param if provided
+var version;               // Takes the doc version param if provided
 var versions = [];         // Array to store all the versions
+
+// Usage:
+//  node build [--production|--development] [<version>]
+
+var arg1 = argv[0];
+if (arg1 == "--production" || arg1 == "--development") {
+    arg1 = arg1.slice(2);
+    console.log("Setting NODE_ENV to " + arg1);
+    process.env.NODE_ENV = arg1;
+    version = argv[1];
+} else {
+    version = argv[0];
+}
+var samplesOrigin = (process.env.NODE_ENV == "production") ? "ariatemplates.com" : "localhost:3000";
+console.log(("Samples will be fetched from " + samplesOrigin + "\n").yellow.bold);
 
 console.log("GENERATING DOCUMENTATION".cyan.bold);
 

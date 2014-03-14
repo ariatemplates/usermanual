@@ -6,6 +6,10 @@
         "type": "git",
         "url": "git://github.com/ariatemplates/usermanual.git"
     },
+    "scripts": {
+        "start": "node build --production latest && node test",
+        "start-dev": "node build --development latest && node test"
+    },
     "dependencies": {
         "colors": "",
         "async": "0.1.22",
