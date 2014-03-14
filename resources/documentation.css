@@ -245,6 +245,16 @@ body.internal article .callout.reviewed,
 	border-top: 1px solid #EDEDED;
 }
 
+.ghIssuesLinkBox {
+  padding: 5px;
+  background-color: #EDEDED;
+  color: #666;
+  border-radius: 3px;
+}
+.ghIssuesLink:link, .ghIssuesLink:visited {
+  text-decoration: underline;
+}
+
 /*
 .navigationbar .nav-previous {
 	padding-left: 20px;
