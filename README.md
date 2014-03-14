@@ -1,5 +1,7 @@
 # Usermanual
 
+**Note: in order to run the whole documentation stack locally (with snippets and samples), see [the forum entry](http://ariatemplates.com/forum/showthread.php?tid=126).**
+
 This is both the source documentation and build system for the [Aria Templates Usermanual](http://ariatemplates.com/usermanual). It consists of:
 
 * Sources files for the usermanual documentation (located in *src/*)
@@ -21,12 +23,14 @@ If you want to just build the latest version of documentation for quick testing:
 
     $ node build latest
 
+**Note that build works with Node 0.8.x, it doesn't run properly on Node 0.10.x.**
+
 # Launching the test server
 
     $ node test // and follow instructions
 
 Anytime you build a new version of the documentation, you can test your changes using the test server. Just open a browser on `http://localhost:8000/` and navigate to your page.
-    
+
 # Hooks
 
 Note that this repository uses a git commit hook. Any pushes or merges into the master branch rebuilds all versions of the documentation on the website.
