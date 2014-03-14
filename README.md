@@ -17,6 +17,10 @@ You should update documentation files inside the `src` folder, and run the build
 
     $ node build
 
+If you want to just build the latest version of documentation for quick testing:
+
+    $ node build latest
+
 # Launching the test server
 
     $ node test // and follow instructions
