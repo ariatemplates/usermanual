@@ -14,6 +14,12 @@ Interceptors can also prevent the call of the original method if needed or chang
 
 ## General considerations
 
+<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;">
+<strong>Note:</strong> Until 1.4.17, the interceptors were automatically added for module controller's public methods.
+Since 1.5.1, this is no longer the case, for performance reasons. You may set `this._enableMethodEvents = true` in your
+module controller's constructor if you want that behavior. It must be done <strong>before</strong> calling parent's constructor.
+</div>
+
 * An interceptor is similar to an event listener: it is an Aria Templates callback that can be added or removed from an object for a given interface. An interceptor can be added to an object `obj` for an interface by a call to `obj.$addInterceptor(interfaceName, interceptorCallback)`. It can be removed by a call to `obj.$removeInterceptors(interfaceName, scope, fn)`.
 
 * Interceptor callbacks registered on an object `obj` for an interface `MyInterface` are called when a method is called through the `MyInterface` interface wrapper, or the interface wrapper of one of its super interfaces.
