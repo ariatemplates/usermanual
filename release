@@ -1,0 +1,41 @@
+#!/bin/bash
+if [ $# -eq 1 ] ; then
+    VERSION="$1"
+else
+    CMD="$0"
+    echo -e "Usage:   $CMD <version>"
+    echo -e "Example: $CMD 1.5.1"
+    exit 1
+fi
+
+if [[ -n $(git status -s) ]]; then
+    echo -e "Seems your Git repo is not in clean state. Aborting the release.\n---"
+    echo -e "$ git status\n"
+    git status
+    exit 1
+fi
+
+### 1. Add awareness of the new release to JADE templates (to have the dropdown, and proper item list per release in navbar)
+
+# Mind the "" and '' usage below so that $VERSION and $TOKEN are read properly (need "" for that)
+# sed -i -e "s/AA/BB" foo.txt means, search for AA in foo.txt and replace it with BB.
+
+# Note that regexes syntax in sed is opposite to JS regex syntax in many places: some of the regexy stuff like (, ), + etc.
+# need \ in front to be treated as regex special chars, otherwise they're treated as text
+
+TOKEN="\/\/\-NEW_RELEASE_HERE"
+sed -i -e "s/$TOKEN/else if version == '$VERSION'\n        include navigationbar\/$VERSION.jade\n    $TOKEN/" resources/articles/layout.jade
+TOKEN="\/\/-LATEST_RELEASE_HERE"
+sed -i -e 's/version("[0-9]\.[0-9]\+\.[0-9]\+", true)/version("'$VERSION'", true)/' \
+        -e "s/$TOKEN/$TOKEN"'\n    mixin version("'$VERSION'")/' resources/articles/versionList.jade
+
+cp resources/articles/navigationbar/next.jade resources/articles/navigationbar/$VERSION.jade
+
+### 2. Copy "next" to "latest" and "$VERSION"
+cp -rf ./src/next/* ./src/latest/ # overwrite latest
+mkdir -p "./src/$VERSION/"
+cp -r  ./src/next/* "./src/$VERSION/"
+
+### 3. Commit
+git add -A .   # need to add modified AND newly created files
+git commit -m "Release $VERSION"
