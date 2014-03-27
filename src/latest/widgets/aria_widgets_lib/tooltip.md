@@ -1,30 +1,21 @@
 Title: Tooltip
 
-Tooltip widget allows application developer to specify an offset to position the tooltip in some palce where it does not hide important information.
-For instance, tooltip will be placed below the mouse pointer and this will sometimes hide the important information.
+The Tooltip widget allows to create a piece of markup that can be shown when hovering over other widgtes, for example a Link or a Div.
 
-The main features of Tooltip widget are as follows:
-
-* **Initial delay** - the delay after which the tooltip will be shown if the the mouse remains stationary over the element
-
-* **Removal delay** - the delay after which the tooltip is removed, even if the mouse remains stationary
-
-* **Reshow delay** - the delay after which the tooltip is displayed again if the user moves the mouse over an element and is supposed to be shorter than the initial delay
-
-* **Timeframe** - the delay after which to show the tooltip is reset to the initial delay
-
-The simple way to add Tooltip widget to the application is as follows
+The simplest way to add Tooltip widget to the application is as follows
 
 <script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/widgets/tooltip/Snippet.tpl?tag=wgtTooltipSnippet&lang=at&outdent=true'></script>
 
+You can notice that the
+* the `id` property is mandatory because it will be used by other widgets to use the tooltip
+* the `macro` property is mandatory because the corresponding macro is responsible for the content of the tooltip.
+
 The whole list of configuration parameters is available in [TooltipCfg bean](http://ariatemplates.com/api/#aria.widgets.CfgBeans:TooltipCfg).
 
+You can notice some interesting features:
+* `showDelay` - the delay after which the tooltip will be shown if the the mouse remains stationary over the element
+* `closeOnMouseOutDelay` - the delay after which the tooltip is removed
+
+Here is a sample showing some examples of usage.
+
 <iframe class='samples' style="height:700px" src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/tooltip/' ></iframe>
-
-## Binding
-
-The only property that is bind-able for Tooltip widget is
-
-* tooltip
-
-For more information please read the article on [Widget bindings](widget_bindings).
