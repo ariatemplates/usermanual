@@ -25,23 +25,46 @@ Be careful though:
 
 **`${...}`** displays the value returned by the evaluation of the JavaScript expression it contains.
 
+<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note: </strong>The final result of an expression is automatically escaped for safe insertion into the generated HTML. Please refer to the [corresponding section](#automatic-escaping) below for more information.</div>
+
 Expressions are widely used in templates, essentially to output the content of a variable, like:
 <script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=basicStatementOne&lang=at&outdent=true' defer></script>
 
 or to display the value returned by the call to a method (defined in the [template script](template_scripts)), like this:
 <script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=basicStatementTwo&lang=at&outdent=true' defer></script>
 
-Expressions can also be used to execute Javascript statements, but remember that the return value of this statement will be displayed in the template.
+Expressions can also be used to execute JavaScript statements, but remember that the return value of this statement will be displayed in the template.
 
 For instance, if you write the following:
 <script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/writingTemplates/TemplateStatements.tpl?noheader=true&tag=basicStatementThree&lang=at&outdent=true' defer></script>
 
-the content of `myVar` will be pushed into `myArray` and the template output will be the array's new length.  If you want to execute Javascript code inside the template without displaying the return value, you can either:
+the content of `myVar` will be pushed into `myArray` and the template output will be the array's new length.  If you want to execute JavaScript code inside the template without displaying the return value, you can either:
 
 * store it in the Template Script file in a method that doesn't return anything or
 * use the <code>[var](writing_templates#var)</code> statement that will assign the return value to a variable instead of displaying it, or
 * use the `eat` modifier described below.
 
+### Automatic escaping
+
+It was already possible to escape the content of an expression by using the modifier `escapeForHTML` (see in [section below](#escapeforhtml) for more information) in order to prevent security issues when the expression outputs data coming from external sources.
+
+Now, if this modifier is not present at the very end of an expression, it will be added automatically, and configured to escape the output for every context (safest option).
+
+To make it more clear:
+
+`${input|capitalize}`
+
+will be transformed into
+
+`${input|capitalize|escapeForHTML}`
+
+but
+
+`${input|escapeForHTML|highlight:pattern|escapeForHTML:false}`
+
+will be left untouched.
+
+Therefore, if you want to disable the final escaping or to refine its configuration (by passing proper arguments), just use the modifier explicitly at the end of the modifiers' chain, as the second example above shows.
 
 ### Modifiers
 
@@ -51,9 +74,9 @@ Modifiers are predefined functions that you can use to change a value you want t
 
 Note that in modifiers parameters, pipe characters `|` have to be escaped.
 
-Modifiers may only accept one parameter, but it can be of any type.  They also can be chained.  In the code example above, `modifier1` is applied to `value`, `modifier2` is then applied to the result, and so on.
+Modifiers can accept multiple parameters, just list them as you would do to pass a list of arguments to a standard JavaScript function (separate each with a comma).  They also can be chained.  In the code example above, `modifier1` is applied to `value`, `modifier2` is then applied to the result, and so on.
 
-<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note:</strong> If for any reason you want to use the corresponding singleton class [`aria.templates.Modifiers`](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.Modifiers), please note that the methods described below can't be called directly, you will __have to__ use the method `callModifier` instead, giving the name of the desired mofifier along with the list of arguments to pass to it. Read the [corresponding API Doc](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.Modifiers) for more information.</div>
+<div style="background:#FAFFDD;border:1px solid #EFFAB4;border-radius:3px;color:#666;font-size:12px;padding:2px 5px;"><strong>Note: </strong>If for any reason you want to use the corresponding singleton class [`aria.templates.Modifiers`](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.Modifiers), please note that the methods described below can't be called directly, you will __have to__ use the method `callModifier` instead, giving the name of the desired modifier along with the list of arguments to pass to it. Read the [corresponding API Doc](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.Modifiers) for more information.</div>
 
 ### Default Available Modifiers
 
@@ -67,12 +90,13 @@ This modifier returns the entry with &lt;, &gt; and &amp; escaped.
 
 #### escapeForHTML
 
-This modifier uses the utility function [escapeForHTML](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.Modifiers:escapeForHTML:method) (please refer to its documentation).
+This modifier uses the string utility function [escapeForHTML](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.String:escapeForHTML:method): please refer to its documentation to know what it does, and which arguments can be passed.
 
-However the modifier does the following processing before calling this function:
+However the [modifier itself](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.templates.Modifiers:escapeForHTML:method) does some additional things:
 
-  1. it checks if the value is null: if so, the value is not processed and is returned immediately (so that you can still use the modifier `default`)
-  2. otherwise, it converts for you the input value to a string
+1. if the input is null or undefined, the value is left untouched
+1. if no escaping has to be done (you passed `false` directly or for every context), the value is left untouched too
+1. otherwise, it converts the input to a string and escapes it (even if maybe nothing will change): the important thing is that you will get a string in the output
 
 #### capitalize
 
@@ -346,7 +370,7 @@ In particular:
   The list of allowed attributes is specified [here](http://ariatemplates.com/api/#aria.templates.CfgBeans:HtmlAttribute).
 
 * **`bindRefreshTo`**
-  specifies the values of the data model to which the referesh of the section is automatically bound.
+  specifies the values of the data model to which the refresh of the section is automatically bound.
   Bindings and automatic refreshes are key features of Aria Templates and are described in due details in [this article](refresh#section-automatic-refresh).
 
 * **`bindProcessingTo`**
@@ -400,7 +424,7 @@ For child section properties, it is possible to set either a constant value (to 
 * **iteratedSet**: reference to the iterated set (the one declared in content, either an array, a view or a map)
 * **item**: reference to the current item in the iterated set
 * **index**: when iterating over arrays and maps, it is the index of the element inside the array or the map (`item = iteratedSet[index]`); when iterating over views, it is the index inside the items property of the view (`item = iteratedSet.items[index].value`)
-* **ct**: counter starting from 1 for the first section and incremented at each section. This is a reliable variable to know the visual position of the section (may be used to determine the color for pyjama tables).
+* **ct**: counter starting from 1 for the first section and incremented at each section. This is a reliable variable to know the visual position of the section (may be used to determine the color for [zebra striped tables](http://en.wikipedia.org/wiki/Zebra_striping)).
 * **info**: when iterating over views, contains information about the item (json object of type [aria.templates.ViewCfgBeans.Item](http://ariatemplates.com/api/#aria.templates.ViewCfgBeans:Item), `info = iteratedSet.items[index]`)
 
 Check [this article](refresh#repeater) for more information about repeaters.
