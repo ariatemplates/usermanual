@@ -56,6 +56,7 @@ var directory_mappings = {
     "Macro_Libraries" :                         { dir: "templates/advanced"           },
     //"Main" :                                    "main" ,
     "Modules_Filters" :                         { dir: "modules/advanced"             },
+    "MultiAutoComplete" :                       { dir: "widgets/aria_widgets_lib"     },
     "MultiSelect" :                             { dir: "widgets/aria_widgets_lib"     },
     "NumberField" :                             { dir: "widgets/aria_widgets_lib"     },
     "Overview" :                                { dir: "intro"                        },
