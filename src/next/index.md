@@ -54,6 +54,7 @@ CssClass: maintoc
     - [IconButton](iconbutton)
     - [Link](link)
     - [List](list)
+    - [MultiAutoComplete](multiautocomplete)
     - [MultiSelect](multiselect)
     - [NumberField](numberfield)
     - [PasswordField](passwordfield)
