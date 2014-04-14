@@ -46,6 +46,7 @@ fs.readdir(path.join(__dirname, "src"), function(err, files) {
     }
 
     copyFileSync(path.join(__dirname,"resources", "documentation.css"), path.join(__dirname,"out", "documentation.css"));
+    copyFileSync(path.join(__dirname,"resources", "follow-the-scroll-menu.js"), path.join(__dirname,"out", "follow-the-scroll-menu.js"));
 
     // For each version generates the html files
     var series = [];
