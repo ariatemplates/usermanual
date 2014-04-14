@@ -30,10 +30,10 @@ console.log(("Samples will be fetched from " + samplesOrigin + "\n").yellow.bold
 
 console.log("GENERATING DOCUMENTATION".cyan.bold);
 
-// Check if I have to build all the versions or just one (x.y.z or latest)
+// Check if I have to build all the versions or just one (x.y.z or latest/next)
 fs.readdir(path.join(__dirname, "src"), function(err, files) {
-    if ("latest" == version) {
-        versions.push("latest");
+    if ("latest" == version || "next" == version) {
+        versions.push(version);
     }
     else if (/[\d]\.[\d]\.[\d]/.test(version)) {
         versions.push(version);

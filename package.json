@@ -7,8 +7,9 @@
         "url": "git://github.com/ariatemplates/usermanual.git"
     },
     "scripts": {
-        "start": "node build --production latest && node test",
-        "start-dev": "node build --development latest && node test"
+        "test": "npm start",
+        "start": "node build --production next && node build --production latest && node test",
+        "start-dev": "node build --development next && node build --development latest && node test"
     },
     "dependencies": {
         "colors": "",
