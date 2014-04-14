@@ -20,6 +20,8 @@ mixin replaceURL(text)
     != text
 
 mixin includeNavBar(version)
+    if version == 'next'
+        include navigationbar/next.jade
     if version == 'latest'
         include navigationbar/latest.jade
     else if version == '1.3.4'
