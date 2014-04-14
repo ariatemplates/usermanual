@@ -68,11 +68,10 @@
 
 .documentation .columns aside.sidebar {
     background: transparent url(../images/bd-sidebar.png) left top no-repeat;
-    float: right;
+    float: left;
     left: -1px;
     padding-left: 19px;
     padding-top: 5px;
-	padding-right: 20px;
     position: relative;
     width: 218px;
 	margin: 0;
