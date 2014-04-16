@@ -23,9 +23,16 @@
                 if (footerIsInViewport) {
                     maxHeight -= (footerVisibleHeight + reserve);
                 }
+                var oldScrollTop = toc.scrollTop;
+                var maxScrollTop = toc.scrollHeight - toc.clientHeight;
+                // changing max-height doesn't change scrollTop, though if we're scrolled
+                // all the way to the bottom, it would make sense to stick to it
                 var cssText = "max-height: " + maxHeight + "px;";
                 cssText += "max-width: 240px; overflow-y: auto; position: fixed; top: 0;";
                 toc.style.cssText = cssText;
+                if (oldScrollTop == maxScrollTop) {
+                    toc.scrollTop = (toc.scrollHeight - toc.clientHeight);
+                }
             } else if (offsetTop <= tocDefaultTopPosition) {
                 toc.style.cssText = "";
             }
