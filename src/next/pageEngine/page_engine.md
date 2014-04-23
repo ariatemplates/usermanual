@@ -19,7 +19,7 @@ Here is a sample `index.html` file that initializes the page engine.
 
 <script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/index.html?lang=html5'></script>
 
-The main entry point is the class [aria.pageEngine.PageEngine](http://ariatemplates.com/api/#aria.pageEngine.PageEngine) class. After creating an instance of this class, it is possible to start the page engine by providing a page provider, which will be discussed [later](#Page_providers).
+The main entry point is the class [aria.pageEngine.PageEngine](http://ariatemplates.com/api/#aria.pageEngine.PageEngine) class. After creating an instance of this class, it is possible to start the page engine by providing a page provider, which will be discussed [later](#page-providers).
 
 **Remark:** It is important to add the [aria.embed.EmbedLib](http://ariatemplates.com/api/#aria.embed.EmbedLib) library to the default widget libraries needed in your templates. Indeed, the [Placeholder](http://ariatemplates.com/api/#aria.embed.Placeholder) widget has a key role in embedding contents, templates and modules inside pages. We will see examples later in this article.
 
@@ -45,12 +45,12 @@ The site configuration is a json object described in [this bean](http://ariatemp
 
 Some remarks:
 * the `containerId` is the id of the HTMLElement in which the pages will be loaded. As you can see in the index.html above, there is a div in the body with that id.
-* `appData` consists in data that are shared across the whole application. It typically contains data that is bound to the data models of modules, and also menus. In particular, `appData.navigation` contains all the menus available in the application. In this case, it is initialized with a default menu. However, menus can also be added in the definition of a page, as explained [later](#Page_definition).
-* `commonModules` contains the definition of modules that are shared across pages, meaning that, through a certain syntax, it is possible to embed in a page a global instance of a module. The inclusion of modules will be dealt with [later](#Modules) in more details.
-* `navigation` can be either "hash"-based or "history"-based. More details will be discussed [later](#Urls).
+* `appData` consists in data that are shared across the whole application. It typically contains data that is bound to the data models of modules, and also menus. In particular, `appData.navigation` contains all the menus available in the application. In this case, it is initialized with a default menu. However, menus can also be added in the definition of a page, as explained [later](#page-definition).
+* `commonModules` contains the definition of modules that are shared across pages, meaning that, through a certain syntax, it is possible to embed in a page a global instance of a module. The inclusion of modules will be dealt with [later](#modules) in more details.
+* `navigation` can be either "hash"-based or "history"-based. More details will be discussed [later](#urls).
 * `css` is an array of standard css files that are global to the application. They are added as `rel` tags and survive page navigations. This feature is not encouraged because css rules should be managed throught CSSTemplates in an AT-based application. Nevertheless, It is possible to declare standard css files as site dependencies.
-* `animations` has to be set to true if you want to use animations for page transitions. The page engine will preload all the classes needed for the animation, so that everything is ready when navigating to the first page. If no animations are needed, the load of useless classes will be avoided. See [below](#Animations) for more details.
-* `storage` allows you to control the way in which the page engine is able to store navigation information across external navigations or page refreshes. See [below](#Page_reload_and_external_navigation) for more details.
+* `animations` has to be set to true if you want to use animations for page transitions. The page engine will preload all the classes needed for the animation, so that everything is ready when navigating to the first page. If no animations are needed, the load of useless classes will be avoided. See [below](#animations) for more details.
+* `storage` allows you to control the way in which the page engine is able to store navigation information across external navigations or page refreshes. See [below](#page-reload-and-external-navigation) for more details.
 
 ## Page definition
 
@@ -67,12 +67,12 @@ A page definition is made of two main parts:
 * [PageComposition](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageComposition), which represents the description of the layout and of the functional parts of the page, namely modules. It contains
     * the main template used to display the page.
     * a list of standard css files that are specific to the page. They are added as `rel` when the page is loaded, and removed when navigating away from the page. This feature is not encouraged because css rules should be managed throught CSSTemplates in an AT-based application. Nevertheless, It is possible to declare standard css files as page dependencies. The removal of the `rel` tags on page change helps managing the styling of your application and helps preventing that the number of css rules actually applied in a page overcomes the limitations imposed by certain browsers.
-    * The list of placeholders. The description of a placeholder will be detailed [later](#Placeholders ).
+    * The list of placeholders. The description of a placeholder will be detailed [later](#placeholders ).
     * The description of page-specific modules. If one or more placeholders need this module, an instance will be created before loading the page.
 
 This separation of the pageDefinition has been conceived in order to clearly split pure contents, that can be reused in different parts of the page, from layout-related and functional parts.
 
-The page definition can be decorated with other information, like the url and the page title. These properties are used for updating the url according to the navigation strategy you have chosen in the site configuration. It is also possible to define animations for the page, as explained in more details [below](#Animations).
+The page definition can be decorated with other information, like the url and the page title. These properties are used for updating the url according to the navigation strategy you have chosen in the site configuration. It is also possible to define animations for the page, as explained in more details [below](#animations).
 
 
 ### Placeholders
@@ -118,7 +118,7 @@ There two types of modules: common and page-specific ones.
 
 #### Common modules
 
-Common modules have to be declared in the site configuration, as shown [above](#Site_configuration). Their declaration accepts an extra parameter, `priority`, which tells the page engine whether to load the module in the initialization phase (priority=1) or as soon as a page uses it (priority=2). Once a common module is loaded, it can be used by any page by its reference path, which is `"friendFinder"` in this case. All pages share the same instance.
+Common modules have to be declared in the site configuration, as shown [above](#site-configuration). Their declaration accepts an extra parameter, `priority`, which tells the page engine whether to load the module in the initialization phase (priority=1) or as soon as a page uses it (priority=2). Once a common module is loaded, it can be used by any page by its reference path, which is `"friendFinder"` in this case. All pages share the same instance.
 
 #### Page-specific modules
 
@@ -127,7 +127,7 @@ Page specific modules have to be declared in the `pageComposition.modules` map o
 
 ### Usage
 
-In a placeholder declaration (see [above](#Placeholders)), the module property can correspond, either to the reference path of a page-specific module (like `"friendFinder"` in the example), either to a common module reference path prefixed with `"common:"` (like `"common:facebookUser"` in the example).
+In a placeholder declaration (see [above](#placeholders)), the module property can correspond, either to the reference path of a page-specific module (like `"friendFinder"` in the example), either to a common module reference path prefixed with `"common:"` (like `"common:facebookUser"` in the example).
 
 
 ### Lifecycle
@@ -147,10 +147,17 @@ The "bind" syntax means that "profile" (namely `this._data.profile` inside the m
 
 Bindings are very powerful ways of enabling commuincation between modules that are bound to the same part of the data model.
 
+### Services
+
+Using the following API for both site and page definitions, it is possible to expose a module controllers methods as services which you can then have access to by using the [getServices](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.PageEngine:getServices:method) method from the [aria.pageEngine.PageEngine](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.PageEngine) class.  Here is an example definition: 
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/siteConfiguration.json?tag=services&lang=javascript&outdent=true'></script>
+
+It is important to note that the method being exposed needs to be defined in the modules public interface, otherwise an exception will be generated.  The services that are created, will be available from anywhere in your application by simply getting the service with the [getServices](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.PageEngine:getServices:method) method.
 
 ## Access to the PageEngine instance
 
-The core class of the page engine layer is [aria.pageEngine.PageEngine](http://ariatemplates.com/api/#aria.pageEngine.PageEngine). As shown [ above](#Getteing_started), you have to create an instance of this class and then call the [start](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:start:method) method (giving a page provider as argument).
+The core class of the page engine layer is [aria.pageEngine.PageEngine](http://ariatemplates.com/api/#aria.pageEngine.PageEngine). As shown [ above](#getting-started), you have to create an instance of this class and then call the [start](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:start:method) method (giving a page provider as argument).
 
 At that stage, it is possible to store the instance of page engine that you have created, so that you can then use it to call the [navigate](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:method) method, which is at the most important method of the page engine layer.
 
@@ -160,11 +167,11 @@ On top of that, it is possible to access a wrapped version of the current `PageE
 
 The following methods are available on the `PageEngine` instance:
 
-* [navigate](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:method), in order to change page or update the information on the current page (see [below](#Navigation) for more informtation).
-* [getData](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:getData:method), which returns the data model of the page engine (more information [below](#Access_to_data)).
+* [navigate](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:method), in order to change page or update the information on the current page (see [below](#navigation) for more informtation).
+* [getData](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:getData:method), which returns the data model of the page engine (more information [below](#access-to-data)).
 * [getPageProvider](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:getPageProvider:method), which returns instance of page provider given as argument to the `start` method. It can be useful to have it because you might have defined other methods in a customized page provider, and you might want to access them from your modules.
 * [isModuleInPage](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:isModuleInPage:method), which accepts an instance of module controller and returns `true` if the module is currently present in the page. This feature is useful because page-specific modules are not destroyed when navigating away from the page (this allows persistence of data model across different navigations to the same page). Since a page-specific module is still alive even when the page is not displayed, it can be important to know when it is actually present so that some actions (most notably calls to the server) that depend on data model changes (especially in the case of module bindings) can be avoided when they have no impact on the current UI.
-
+* [getServices](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.PageEngine:getServices:method), gets exposed methods of module controllers as services.
 
 ## Access to data
 
@@ -180,7 +187,7 @@ where:
 
 You can access these data
 * from a template that is not associated to a module controller, in `data.storage`.
-* by using the [getData](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:getData:method) method on the [instance of page engine](#Access_to_the_PageEngine_instance).
+* by using the [getData](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:getData:method) method on the [instance of page engine](#access-to-the-pageengine_instance).
 
 
 ## Navigation
@@ -194,11 +201,11 @@ It is possible to navigate to a page from templates or modules.
 #### From a template
 
 If the template is associated to the site root module, then it is possible to call `this.moduleCtrl.navigate(pageRequest);`, where `pageRequest` is of type [PageNavigationInformation](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageNavigationInformation).
-You can provide a pageId and/or a url. If the url has already been targeted before, the pageId will be known by the page engine, otherwise it is up to the specified [page provider](#Page_providers) to be aware of the correct mapping.
+You can provide a pageId and/or a url. If the url has already been targeted before, the pageId will be known by the page engine, otherwise it is up to the specified [page provider](#page-providers) to be aware of the correct mapping.
 
 The `title` property can be used to change the title of the document.
 
-If you set the type of navigation to `"history"` (see [below](#Urls)), then if is also possible to provide
+If you set the type of navigation to `"history"` (see [below](#urls)), then if is also possible to provide
 * `data`: used in pushing the new state (as part of the history API),
 * `replace`: in case you want to replace the current state instead of simply pushing the new one.
 
@@ -222,12 +229,12 @@ The site root module will automatically listen to these events and call the navi
 
 #### From anywhere
 
-As long as you have access to the instance of pageEngine (or to its interface), you can call the [navigate](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:method) method that it provides. For more details on how to access the instance of the page engine class, read [this section](#Access_to_the_PageEngine_instance).
+As long as you have access to the instance of pageEngine (or to its interface), you can call the [navigate](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:method) method that it provides. For more details on how to access the instance of the page engine class, read [this section](#access-to-the-pageengine-instance).
 
 
 ### Urls
 
-As shortly explained in [above](#Site_configuration), there are two types of navigation:
+As shortly explained in [above](#site-configuration), there are two types of navigation:
 
 * '''hash-based''': the url that you specify for a certain page is added in the hash. It is possible to set a title for the page but no data can be saved in the history state.
 * '''history-based''': it is based on the [aria.utils.History](http://ariatemplates.com/api/#aria.utils.History) utility, which provides a cross-browser implementation of the HTML5 History API. For browsers that do not natively support it, it falls back on a hash-based implementation, but it still provides the same API, so that it is possible to set a title, save some data in the history state, and replace a state in the history (all these properties can be specified in the [navigate](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:navigate:method) method of the page engine).
@@ -236,7 +243,7 @@ As shortly explained in [above](#Site_configuration), there are two types of nav
 
 When unloading the page (whether because an external navigation has occurred, or because you pressed F5), the page engine is able to store some information about the mapping between urls and pageId's inside the browser local storage. At re-initialization, this information is recovered, so that the page engine is already able to direct you to the page that you were at when leaving. This mechanism also allows to keep the history of your navigation: if you navigate to a couple of pages and then navigate to an external resource, you can click on the back button several times and really see the pages you visited, as in a standard web 1.0 website (in IE7, due to some browsers limitations, the full history is lost, but the last visited page is still correctly restored).
 
-This storage mechanism is by default enabled. Nevertheless, it can be disabled and customized by properly setting the `storage` property in the site configuration, as shown [above](#Site_configuration). In particular, you can decide:
+This storage mechanism is by default enabled. Nevertheless, it can be disabled and customized by properly setting the `storage` property in the site configuration, as shown [above](#site-configuration). In particular, you can decide:
 * whether the storage is activated or not (`active`).
 * The suffix that is appended to the default string that is used as key for local storage.
 * The number of seconds after which the items in the cache retrieved from the local storage are considered expired.
