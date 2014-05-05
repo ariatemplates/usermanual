@@ -84,9 +84,9 @@ Modifiers can accept multiple parameters, just list them as you would do to pass
 
 This modifier returns an empty string for any entry.
 
-#### escape
+#### escape (deprecated)
 
-This modifier returns the entry with &lt;, &gt; and &amp; escaped.
+This modifier returns the entry with &lt;, &gt; and &amp; escaped. This modifier is deprecated, please use `escapeforhtml` modifier instead.
 
 #### escapeForHTML
 
