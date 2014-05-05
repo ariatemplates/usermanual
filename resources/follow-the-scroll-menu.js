@@ -107,7 +107,7 @@
                 if (elem) {
                     elem.style.color = null;
                     elem.style.color = "navy";
-                    if (!isFullyVisible(elem)) {
+                    if (!isFullyVisible(elem) && document.documentElement.clientWidth > 1000) {
                         elem.scrollIntoView();
                     }
                 }
