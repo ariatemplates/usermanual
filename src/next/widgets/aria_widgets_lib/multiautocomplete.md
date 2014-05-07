@@ -52,8 +52,21 @@ This sample enables the  `expandButton` which allows the user to display all sug
 User can also customize the expando suggestion template from the Resources Handler.
 
 ## Select Range Values
+
 By setting the `allowRangeValues` of the Resources Handler to `true`, the user is able to select multiple values. For example, if the entered pattern is either `w1-3` or `w1,2,3` multiple suggestions are proposed by the widget, and  on `Enter` multiple values are added.
 
 The sample uses a passenger names as suggestion. Try typing passenger id like `P1-3` or `P2,4` format to select range of values.
  
 <iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/multiautocomplete/rangevalues/' ></iframe>
+
+## Highlighting, selection and freeText
+
+When it comes to suggestion highlighting and selection, the user interaction with the MultiAutoComplete can be changed by setting the following properties: **preselect**, **freeText**, *autoFill*.
+
+The behaviour is very similar to the AutoComplete widget, so you can look at [its documentation](autocomplete#highlighting-selection-and-freetext) for more information.
+
+In case of range selection the behaviour is not biased by the **preselect**, **freeText** and *autoFill* properties. All the suggestions in the range will be highlighted and selected by hitting on a selection key.
+
+The following sample allows you to change the configuration of the widget and inspect its behaviour.
+
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/multiautocomplete/preselectAutofill/' ></iframe>

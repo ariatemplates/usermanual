@@ -52,31 +52,34 @@ Try typing _fraance_ or any other country doubling its third letter and you'll s
 
 The second AutoComplete in the previous samples uses the sclass _**underlineError**_ to change the style of a field in error.
 
-## Highlight Behavior
+## Highlighting, selection and freeText
 
-* **autofill** is enabled by default. If enabled, when you navigate with _up_/_down_ keys the value of highlighted option is set in the text field.
+When it comes to suggestion highlighting and selection, the user interaction with the autocomplete can be changed by setting the following properties: **preselect**, **freeText**, *autoFill*.
 
-To see the difference, type _**s**_ in the field and press _down_ key, in the first AutoComplete _Switzerland_ is highlighted and set in the field, in the second one the option is only highlighted but the field still contains only the letter _s_.
+* **preselect**: it allows to modify the way suggestions are highlighted and selected when typing.
+	* `"strict"` (default value): the first option is highlighted only if the search string (what you type in the text field) matches exactly the label or the code.
+	* `"always"`: the first option is always highlighted.
+	* `"none"`: the first option is never highlighted.
 
-<template templateclasspath="ariadoc.samples.widgets.autocomplete.HighlightAutofill" />
+* **freeText**: when set to true, the widget will accept as a valid value any entry. This means that, when a selection key is pressed and there no (highlighted) suggestion, the selected value (that is also set in the bound data model) will be the string that is present in the input field. When set to false,
+	* if there is a highlighted suggestion, it will be selected
+	* if there is no suggestion available, then the field will be in error state. The data model will not be changed.
 
+* **autofill**: if set to true, when you navigate with _up_/_down_ keys through the list of suggestions the label of highlighted suggestion is set in the text field. It defaults to `true`.
 
-* **preselect** allows to modify the way options are highlighted when typing.
-	* _strict_: the first option is highlighted only if the search string (what you type in the text field) matches exactly the label or the code.
-	* _always_: the first option is always highlighted.
-	* _none_: the first option is never highlighted.
+The following sample allows you to change the configuration of the autocomplete widget and inspect its behaviour.
 
-You can type _ENG_ or _England_ in the three AutoComplete below and check how suggestions are highlighted.
-In _**strict**_ mode the suggestion is highlighted only when you type entirely _ENG_ or _England_, in _**always**_ mode as soon as you type the letter _e_ and in _**none**_ mode highlight is disabled completely.
-
-<template templateclasspath="ariadoc.samples.widgets.autocomplete.HighlightPreselect" />
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/autocomplete/preselectAutofill/' ></iframe>
 
 ## Action
 
-AutoComplete is a form widget, meaning that it is a good addition to your forms although it can be used also outside such element. For this reason it doesn't allow to react on user interaction (click, focus, ...) but only to data changes.
+It is possible to add listeners to some of the events raised by the widget DOM upon user interaction:
 
+* **onclick**
+* **onfocus**
+* **onblur**
 * **onchange**: called when the value in the field changes. Changes are not immediate as you type, but happens when you leave the field, after a blur or after selecting one of the options.
 
-In this sample the _**onchange**_ callback shows a small notification above the AutoComplete. If you type something in the field and highlight its options the callback is not called, but if you select one option clicking on it, pressing _Enter_ or _Tab_, the notification appears. The callback is called also if you type an invalid text.
+In this sample the **onchange** callback shows a small notification above the AutoComplete. If you type something in the field and highlight its options the callback is not called, but if you select one option clicking on it, pressing _Enter_ or _Tab_, the notification appears. The callback is called also if you type an invalid text.
 
 <iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/autocomplete/onchange/' ></iframe>
