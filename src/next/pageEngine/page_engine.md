@@ -95,7 +95,7 @@ As you can see, the role of this placeholder is to define a position for the nes
 
 When a template does not have a module controller associated to it, it automatically inherits the module controller of the template in which it is included.
 
-The main template of the page, whose classpath is in `pageComposition.template` of the page definition, is automatically associated to a wrapper of the site root module, which is an instance of class [aria.pageEngine.SiteRootModule](http://ariatemplates.com/api/#aria.pageEngine.SiteRootModule). In particular, the keyword `moduleCtrl` inside the template will refer to an object which corresponds to the interface [aria.pageEngine.SiteRootModuleInterface](http://ariatemplates.com/api/#aria.pageEngine.SiteRootModuleInterface), which is mostly needed for page navigation.
+The main template of the page, whose classpath is in `pageComposition.template` of the page definition, is automatically associated to a wrapper of the [site root module](#root-module). 
 
 * If a `module` is provided along with a template, then the template normally represents a view of the data model managed by the module controller. They are automatically associated, and the module data is automatically available in the template, according to the basic principles of Aria Templates.
 
@@ -132,7 +132,7 @@ In a placeholder declaration (see [above](#placeholders)), the module property c
 
 ### Lifecycle
 
-All these modules are automatically loaded as sub-modules of the site root module, which is an instance of [aria.pageEngine.SiteRootModule](http://ariatemplates.com/api/#aria.pageEngine.SiteRootModule). When used in a placeholder of a page, all their dependencies are loaded and all modules are initialized just before displaying the page. When navigating away from a page, page-specific modules instances are not disposed, they keep on living in order to guarantee the persistence of their data model across different navigations to the same page.
+All these modules are automatically loaded as sub-modules of the site [root module](#root-module). When used in a placeholder of a page, all their dependencies are loaded and all modules are initialized just before displaying the page. When navigating away from a page, page-specific modules instances are not disposed, they keep on living in order to guarantee the persistence of their data model across different navigations to the same page.
 
 ### Bindings
 
@@ -154,6 +154,24 @@ Using the following API for both site and page definitions, it is possible to ex
 <script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/siteConfiguration.json?tag=services&lang=javascript&outdent=true'></script>
 
 It is important to note that the method being exposed needs to be defined in the modules public interface, otherwise an exception will be generated.  The services that are created, will be available from anywhere in your application by simply getting the service with the [getServices](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.PageEngine:getServices:method) method.
+
+### Root module
+
+As already mentioned, all modules declared and used in a page engine-based application are loaded as sub-modules of a **root module**: after initializing the page engine through its [start method](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:start:method), the framework creates an instance of a certain module controller that is in charge of coordinating data bindings and services exposures, and that is at the root of the modules hierarchy.
+
+Unless otherwise specified, this module controller will be an instance of class [aria.pageEngine.SiteRootModule](http://ariatemplates.com/api/#aria.pageEngine.SiteRootModule). Nevertheless, it is possible to customize it by providing a different configuration in the argument of the [page engine start method](http://ariatemplates.com/api/#aria.pageEngine.PageEngine:start:method).
+
+Let's look at this code snippet.
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/customRootModule.js?lang=javascript&outdent=true'></script>
+
+As you can also see in [this bean definition](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:Start),
+the `rootModule` property contains a standard module declaration (its classpath, an argument to provide to the constructor and some `initArgs` that will be available in the `init` method).
+
+Two remarks:
+* the custom module controller **must** extend class [aria.pageEngine.SiteRootModule](http://ariatemplates.com/api/#aria.pageEngine.SiteRootModule)
+* properties `appData` and `pageEngine` are automatically injected in the `initArgs` by the framework. If already present in the customized configuration, they will be overridden.
+
+The instance of root module is wrapped through its public interface (which defaults to [aria.pageEngine.SiteRootModuleInterface](http://ariatemplates.com/api/#aria.pageEngine.SiteRootModuleInterface)) and linked to the root template of every page (as well as any other template which does not have a different module in its hierarchy). 
 
 ## Access to the PageEngine instance
 
