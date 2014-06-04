@@ -66,6 +66,8 @@ will be left untouched.
 
 Therefore, if you want to disable the final escaping or to refine its configuration (by passing proper arguments), just use the modifier explicitly at the end of the modifiers' chain, as the second example above shows.
 
+There is also an alternative but to be used with caution, which is to disable the automatic escaping for the whole application context (escaping manually using the modifier will anyway remain possible). For that, you can use the following code: `aria.core.environment.Environment.setEscapeHtmlByDefault(false)` (see [corresponding API documentation](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.core.environment.Environment:setEscapeHtmlByDefault:method)), to be executed before any template (that should profit from this setting) gets compiled.
+
 ### Modifiers
 
 Modifiers are predefined functions that you can use to change a value you want to display. They can be chained to change a value in several ways. The syntax of modifiers is
