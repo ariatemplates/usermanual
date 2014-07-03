@@ -5,3 +5,4 @@ resources/images/Thumbs.db
 out/*
 test
 npm-shrinkwrap.json
+npm-debug.log
