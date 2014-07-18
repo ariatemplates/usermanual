@@ -95,3 +95,19 @@ Aria Templates allows users to make `GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `TRA
 <script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=sampleAsyncRequest&lang=javascript&outdent=true' defer></script>
 
 The whole list of configuration parameters is available in [Async Request](http://ariatemplates.com/api/#aria.core.CfgBeans:IOAsyncRequestCfg).
+
+### Synchronous requests
+
+In case a synchronous requests is needed ([rare and specific use cases](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#Irreplaceability_of_the_synchronous_use)), the `aria.core.IO.asyncRequest` method can be provided with the boolean parameter `async` that forces the synchronous behavior when false. If not specified, the parameter is defaulted to true.
+If the async parameter is set to false, the javascript execution will be completely stopped till the request is finalised; then the callback will be executed and finally the code execution thread is restored from the next javascript command.
+
+As an example, you can have a look below:
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/Async.js?tag=playingSynchronous&lang=javascript&outdent=true' defer></script>
+
+In this case, the result will be:
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/asynchronous/console_output_sync.txt?noheader=true' defer></script>
+
+As you can notice, the execution of the code is **synchronous**, since the callback provided to the request is executed before the last instruction.
+It is important to limit the usage of synchronous requests to scenarios that **strictly need them** because they can freeze the UI deteriorating the user experience.
+Finally, it is suggested to have a look to the [navigator.sendBeacon](https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon) API, that suits many common use cases, avoiding to make use of a synchronous request.
