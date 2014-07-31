@@ -12,6 +12,7 @@ The page engine comes with the following features:
 * Possibility to define page providers, namely classes that are in charge of building the site configuration and page definitions.
 * Animations for page transitions.
 
+This article contains a step-by-step introduction to the page engine. If you want a more verbose presentation and some exercises to get more insight on the page engine, you can also take a look at the __training material__ [here](https://github.com/ariatemplates/page-engine-training).
 
 ## Getting started
 
@@ -78,7 +79,7 @@ The page definition can be decorated with other information, like the url and th
 ### Placeholders
 
 The description of a placeholder is very flexible. Look at the [bean definition](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:Placeholder) to find out all the available options.
-The keys used in `pageComposition.placeholders` allow to define nested placeholders in a flat data structure. By looking at the above example of page definition, it is possible to realize that `"applicationBox.albums.noPhotos"` placeholder is nested under `"applicationBox.albums"`. 
+The keys used in `pageComposition.placeholders` allow to define nested placeholders in a flat data structure. By looking at the above example of page definition, it is possible to realize that `"applicationBox.albums.noPhotos"` placeholder is nested under `"applicationBox.albums"`.
 
 There are mainly three properties that determine the nature of a single placeholder:
 * `template`: the classpath of the template to display. If no `module` or `contentId` is provided, then it is likely that the template is needed to create a certain layout, and the real embedded content is in nested placeholders.
@@ -95,7 +96,7 @@ As you can see, the role of this placeholder is to define a position for the nes
 
 When a template does not have a module controller associated to it, it automatically inherits the module controller of the template in which it is included.
 
-The main template of the page, whose classpath is in `pageComposition.template` of the page definition, is automatically associated to a wrapper of the [site root module](#root-module). 
+The main template of the page, whose classpath is in `pageComposition.template` of the page definition, is automatically associated to a wrapper of the [site root module](#root-module).
 
 * If a `module` is provided along with a template, then the template normally represents a view of the data model managed by the module controller. They are automatically associated, and the module data is automatically available in the template, according to the basic principles of Aria Templates.
 
@@ -149,7 +150,7 @@ Bindings are very powerful ways of enabling commuincation between modules that a
 
 ### Services
 
-Using the following API for both site and page definitions, it is possible to expose a module controllers methods as services which you can then have access to by using the [getServices](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.PageEngine:getServices:method) method from the [aria.pageEngine.PageEngine](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.PageEngine) class.  Here is an example definition: 
+Using the following API for both site and page definitions, it is possible to expose a module controllers methods as services which you can then have access to by using the [getServices](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.PageEngine:getServices:method) method from the [aria.pageEngine.PageEngine](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.PageEngine) class.  Here is an example definition:
 
 <script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/siteConfiguration.json?tag=services&lang=javascript&outdent=true'></script>
 
@@ -171,7 +172,7 @@ Two remarks:
 * the custom module controller **must** extend class [aria.pageEngine.SiteRootModule](http://ariatemplates.com/api/#aria.pageEngine.SiteRootModule)
 * properties `appData` and `pageEngine` are automatically injected in the `initArgs` by the framework. If already present in the customized configuration, they will be overridden.
 
-The instance of root module is wrapped through its public interface (which defaults to [aria.pageEngine.SiteRootModuleInterface](http://ariatemplates.com/api/#aria.pageEngine.SiteRootModuleInterface)) and linked to the root template of every page (as well as any other template which does not have a different module in its hierarchy). 
+The instance of root module is wrapped through its public interface (which defaults to [aria.pageEngine.SiteRootModuleInterface](http://ariatemplates.com/api/#aria.pageEngine.SiteRootModuleInterface)) and linked to the root template of every page (as well as any other template which does not have a different module in its hierarchy).
 
 ## Access to the PageEngine instance
 
