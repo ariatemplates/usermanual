@@ -114,6 +114,8 @@ CssClass: maintoc
 
 ## [Page Engine](page_engine)
 
+## [Packaging](packaging)
+
 ## Appendices
 - [Logging and debugging](logging_and_debugging)
 - [URL handling](url_handling)
