@@ -14,6 +14,7 @@ CssClass: maintoc
     - [Around Classes](around_classes)
     - [Working in an Asynchronous World](working_in_an_asynchronous_world)
     - [Helpers](helpers)
+    - [Skinning System](skinning_system)
 - ### Advanced
     - [JSON Bean Definitions](json_bean_definitions)
     - [Interceptors](interceptors)
