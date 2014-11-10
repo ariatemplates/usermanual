@@ -60,6 +60,7 @@ CssClass: maintoc
     - [NumberField](numberfield)
     - [PasswordField](passwordfield)
     - [RadioButton](radiobutton)
+    - [RangeCalendar](rangecalendar)
     - [Splitter](splitter)
     - [Select](select)
     - [SelectBox](selectbox)
