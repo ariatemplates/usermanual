@@ -43,6 +43,29 @@ Consider the following sample. By clicking on the "Increase" box, the score of a
 
 By looking at the data model of the sample, it is also possible to identify the metadata due to the automatic addition of a listener on the specified portion of the data model.
 
+### Animations for sections
+
+It is possible to animate sections across refreshes.
+The `animation` property allows to specify `animateIn` and `animateOut` as strings selecting the desired kind of animation as shown [here](http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.CfgBeans:PageAnimation).
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/Refresh.tpl?tag=sectionDefFour&lang=at&outdent=true'></script>
+
+This Section property can also be bound to a variable as shown in the following snippet.
+The `bindRefreshTo` items accept the `animate` boolean value that specifies whether the animation should be activated when a refresh occurs due to a change in the data described in that refresh binding. It defaults to true. Anyway, even if it is equal to true, when no animation property is configured (either herd-coded or through bindings) for the section, no animation will be performed.
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/Refresh.tpl?tag=sectionDefThree&lang=at&outdent=true'></script>
+
+Furthermore, in case of manual refresh, the `animate` property provides the possibility to refresh a Section without animating it:
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/templates/refresh/Refresh.tpl?tag=sectionDefFive&lang=at&outdent=true'></script>
+
+Even in this case, the animate value defaults to true.
+
+You can see in action the described features of animations for section in the following sample:
+
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/refresh/animate/'></iframe>
+
+
 ### Repeater
 
 When you have an array or map that you iterate through to display the properties of their entries, it is a good idea to use a repeater. The [repeater statement](writing_templates#repeater) is somehow similar to a foreach loop, with the main difference that it creates refreshable sections for each item in the loop, so that insertion and removal of these sections can be done without refreshing the other sections. Consider the following sample:
