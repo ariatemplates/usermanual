@@ -272,12 +272,45 @@ Take a look at the [apidocs](http://ariatemplates.com/api/#aria.pageEngine.CfgBe
 
 ### Animations
 
-It is possible to perform animations in navigating from one page to another. As described in [this bean](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageDefinition), a page definition can contain an `animation` property (of type [PageAnimation](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageAnimation)). It consists in an Object in which you can specify:
+It is possible to perform animations while navigating from one page to another. As described in [this bean](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageDefinition), a page definition can contain an `animation` property (of type [PageAnimation](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageAnimation)).
+
+It consists of an Object in which you can specify:
 * how the new page has to be displayed (`animateIn`),
 * how the previous page has to be removed (`animateOut`),
-* the `type` of animation to activate (1: normal/2: with hardware acceleration/3: 3D).
+* the `type` of animation to activate (1: for a normal animation, 2: for an animation using hardware acceleration, 3: for a 3D animation).
 
-The list of animations can be found [here](http://ariatemplates.com/api/#aria.pageEngine.CfgBeans:PageAnimation). Animations are based on class [aria.utils.css.Animations](http://ariatemplates.com/api/#aria.utils.css.Animations)<!-- , some documentation on its generic usage can be found [here](Aria_Templates_-_CSS3_animations) -->.
+Just to give you an example of animations that are supported:
+* `slide left`
+* `slide right`
+* `slide up`
+* `slide down`
+* `fade`
+* `pop`
+* `flip`
+
+The complete list of animations can be found [here](http://ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.css.AnimationsBean:AnimationName).
+Animations are based on class [aria.utils.css.Animations](http://ariatemplates.com/api/#aria.utils.css.Animations)<!-- , some documentation on its generic usage can be found [here](Aria_Templates_-_CSS3_animations) -->.
+
+#### Custom Animations
+It's also possible to define custom animations in order to use them with the page engine.
+Defining a custom animation is a matter of defining css classes with the css rules you want to apply.
+So let's say you want to create a custom animation called `customanimation`, what you need to do is to define two rules, one for the new page coming in and one for the page that will be removed during a page navigation.
+
+For css classes, in aria templates, we have a convention that suggests you to add an `x` before your css class, so in order to define your `.customanimation`, you will have to call it `.xcustomanimation` inside your css file.
+You need to combine your custom animation classes with the existing classes in order to support the three different types of animation that aria templates provides, so you need to define the rules to apply to the following classes:
+* for the page coming out:
+	* `.xcustomanimation.xout`
+	* `.xcustomanimation.xoutMix`
+	* `.xcustomanimation.xout3d`
+* for the page coming in:
+	* `.xcustomanimation.xin`
+	* `.xcustomanimation.xinMix`
+	* `.xcustomanimation.xin3d`
+
+#### Example: Fade Fast Animation
+Just to give an example, here you can find a custom animation defined in order to implement a fast fade:
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/pageEngine/customAnimation.css?lang=css&outdent=true'></script>
 
 ## Content processors
 
