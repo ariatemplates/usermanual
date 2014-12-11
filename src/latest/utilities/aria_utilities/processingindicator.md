@@ -10,4 +10,4 @@ The simple way to show processing indicator is as follows
 
 Please refer the API documentation on methods/properties defined on [Domoverlay](http://ariatemplates.com/api/#aria.utils.DomOverlay).
 
-<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/utils/loadingoverlay/' ></iframe>
+<iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/templates/domInteractions/processingIndicator/' ></iframe>
