@@ -78,6 +78,17 @@ These classes implement the interface `aria.utils.validators.IValidator` that de
 
 The validate function returns a specific object, depending on the success or not of the validation. `_validationFailed` and `_validationSucceeded` from `aria.utils.validators.Validator` base class.
 
+When instantiating a validator, it is possible to provide a string that will be used as error message:
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/validators/Validators.js?tag=instantiate&lang=at&outdent=true'></script>
+
+In this way, at validation time, the validator will use this error message that has priority on globally set messages;
+if no message is set, neither locally (on validator instance), nor globally (on app environment, configured as follows), the hardcoded fallback message will be chosen.
+
+<script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/utils/validators/Validators.js?tag=setEnvironment&lang=at&outdent=true'></script>
+
+As you can see, it is possible to easily configure a message for each validator that Aria Templates provides, by binding the desired strings to their class names.
+
 #### MultipleValidator
 
 The MultipleValidator is a special validator that allows you to queue several validators on the same piece of datamodel. By default, it will execute all validators added to it, but have two special behaviours :
