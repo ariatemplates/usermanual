@@ -78,6 +78,7 @@ CssClass: maintoc
     - [Validators](validators)
     - [Prefill Feature](prefill_feature)
     - [Autoselect Feature](autoselect_feature)
+    - [Error messages customization](error_messages_customization)
 - ### [The HTML Widgets Library](the_html_widgets_library)
     - [HTML TextArea](html_textarea)
 - ### [Creating A Custom Widgets Library](creating_a_custom_widgets_library)

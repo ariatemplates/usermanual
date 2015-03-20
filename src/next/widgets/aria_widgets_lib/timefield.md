@@ -32,6 +32,23 @@ Indeed, default time patterns at the application level can be overridden and/or 
 
 Please keep in mind that "setEnvironment" will override all settings, use "updateEnvironment" to update one property.
 
+## Error messages customization
+
+Please refer to the main article concerning default [error messages customization](error_messages_customization).
+
+Here is the list of error messages that can be customized, with for each: 
+
+- the key to be used in the configuration map
+- its description
+- its hard-coded default value
+
+Messages: 
+
+- validation
+  - key: `validation`
+  - description: for wrong input's value format, resulting in the impossibility to interpret it for the widget's value
+  - default hard-coded: `"Please enter a valid time format, for example: 1000 or 10:00"`
+
 ## Sample usage
 
 The following sample shows how to create and use a TextField widget, packed with number format patterns.

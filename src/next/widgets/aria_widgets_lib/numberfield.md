@@ -51,6 +51,23 @@ You can use formatting patterns to specify how a number should be conventionally
 The supported patterns are a subset of the [java.text.DecimalFormat](http://download.oracle.com/javase/1.4.2/docs/api/java/text/DecimalFormat.html) specs.
 More information are available at [localization_and_resources](localization_and_resources).
 
+## Error messages customization
+
+Please refer to the main article concerning default [error messages customization](error_messages_customization).
+
+Here is the list of error messages that can be customized, with for each: 
+
+- the key to be used in the configuration map
+- its description
+- its hard-coded default value
+
+Messages: 
+
+- validation
+  - key: `validation`
+  - description: for wrong input's value format, resulting in the impossibility to interpret it for the widget's value
+  - default hard-coded: `"Number field must be a numerical value."`
+
 ## Sample usage
 
 The following sample shows how to create and use a NumberField widget, with a mandatory attribute for error checking and number format patterns.
