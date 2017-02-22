@@ -111,7 +111,7 @@ These methods are wrappers on the methods from [aria.core.JsObject](http://ariat
 
 Dependencies management is definitely a missing feature from native Javascript. Thus, Aria Templates provides you a way to easily define all the dependencies associated to a specific class.
 
-The first thing you have to understand as far as dependencies are concerned is their type. Aria Templates can handles 2 different kinds of dependencies:
+The first thing you have to understand as far as dependencies are concerned is their type. Aria Templates can handle 2 different kinds of dependencies:
 
 
 <dl>
@@ -123,7 +123,7 @@ The first thing you have to understand as far as dependencies are concerned is t
 
 <dl>
 <dt>Dynamic dependencies</dt>
-<dd>This kind of dependency is to be used when you know that your class will only needs it under certain circumstance. Thus, you can use the helper method [Aria.load](http://ariatemplates.com/api/#Aria:load:method) on the [Aria singleton](the_aria_singleton) object.</dd>
+<dd>This kind of dependency is to be used when you know that your class will only need it under certain circumstance. Thus, you can use the helper method [Aria.load](http://ariatemplates.com/api/#Aria:load:method) on the [Aria singleton](the_aria_singleton) object.</dd>
 <dd>This helper takes also as argument a JSON configuration object, in which you can specify an array of classpaths to be loaded. Once all the classes are loaded, a callback is used to trigger code execution.</dd>
 <dd><script src='%SNIPPETS_SERVER_URL%/snippets/github.com/ariatemplates/documentation-code/snippets/core/classes/DynamicDeps.js?lang=javascript&outdent=true'></script></dd>
 </dl>
