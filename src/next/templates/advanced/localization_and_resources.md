@@ -104,7 +104,7 @@ A potential structure, could be for instance the following, with translations in
     $appRoot/res/SampleRes_sv_SE.js
     $appRoot/res/SampleRes_pl_PL.js
 
-**The framework will automatically try to download the proper resource file based on the locale setting defined through the `AppEnvinroment.setLanguage` method call.**
+**The framework will automatically try to download the proper resource file based on the locale setting defined through the `AppEnvironment.setLanguage` method call.**
 
 Please note how the first resource is indeed the base resource name to be referenced inside your classes, modules and/or templates.
 While keeping this name you should then append the proper locale code according to the language contained in each resource file.
