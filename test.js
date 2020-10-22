@@ -29,7 +29,7 @@ app.use(function(req, res) {
     //console.log(require('util').inspect(req));
     var file = path.normalize(public_folder + req.originalUrl);
     if (!fs.existsSync(file)) {
-        http.get("http://ariatemplates.com/" + req.originalUrl, function(response) {
+        http.get("http://ariatemplates.nce.amadeus.net/" + req.originalUrl, function(response) {
             if (response.statusCode === 200) {
                 var filepath = path.dirname(file);
                 if (!fs.existsSync(filepath)) {

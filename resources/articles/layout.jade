@@ -1,7 +1,7 @@
 -metadata.version = whoAmI.split(/[^\\\/]*[\\\/]src[\\\/]/)[1].split(/[\\\/]/)[0]
 -metadata.Navbar = (metadata.Navbar ? (metadata.Navbar === 'false' ? false: true ) : true)
 -metadata.Toc = (metadata.Toc ? (metadata.Toc === 'false' ? false: true ) : true)
--urlSnippet = (process.env.NODE_ENV === 'production' ? 'http://snippets.ariatemplates.com' : 'http://localhost:3000')
+-urlSnippet = (process.env.NODE_ENV === 'production' ? 'http://ariatemplates.nce.amadeus.net/snippets/' : 'http://localhost:3000')
 
 mixin doc
     div.doc(class=(metadata.CssClass||""))
@@ -164,12 +164,12 @@ html(lang='en')
         meta(charset='utf-8')
         link(href='/favicon.ico', type='image/ico', rel='shortcut icon')
         link(rel='stylesheet', href='/styles/all.css', type='text/css')
-        link(rel='canonical', href='http://ariatemplates.com/usermanual/latest/#{fileName}')
+        link(rel='canonical', href='http://ariatemplates.nce.amadeus.net/usermanual/latest/#{fileName}')
         //if IE 7
             link(rel='stylesheet', href='/styles/versionselect.css', type='text/css')
 
         link(rel='stylesheet', href='../documentation.css', type='text/css')
-        link(rel='stylesheet', href='http://ariatemplates.com/styles/snippets/highlight_skin.css', type='text/css')
+        link(rel='stylesheet', href='http://ariatemplates.nce.amadeus.net/styles/snippets/highlight_skin.css', type='text/css')
 
         //if lt IE 9
             script(type='text/javascript', src='/js/iemap.js').
@@ -192,7 +192,6 @@ html(lang='en')
             nav
                 a.documentation(href='/documentation') Documentation
                 a.blog(href='/blog') Blog
-                a.forum(href='/forum') Forum
                 a.plugins(href='/plugins') Plugins
                 a.contribute(href='/contribute') Contribute
                 a.about(href='/about') About
@@ -263,7 +262,6 @@ html(lang='en')
                             a(href='/discuss') Discuss
                         ul
                             li: a(href='/blog') Blog
-                            li: a(href='/forum') Forum
                             li: a(href='/blog/category/news') Latest News
                     section.contribute
                         h5

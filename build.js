@@ -25,7 +25,7 @@ if (arg1 == "--production" || arg1 == "--development") {
 } else {
     version = argv[0];
 }
-var samplesOrigin = (process.env.NODE_ENV == "production") ? "ariatemplates.com" : "localhost:3000";
+var samplesOrigin = (process.env.NODE_ENV == "production") ? "ariatemplates.nce.amadeus.net" : "localhost:3000";
 console.log(("Samples will be fetched from " + samplesOrigin + "\n").yellow.bold);
 
 console.log("GENERATING DOCUMENTATION".cyan.bold);
