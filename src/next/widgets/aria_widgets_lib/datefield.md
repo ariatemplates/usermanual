@@ -8,6 +8,7 @@ The whole list of configuration parameters is available in [DateFieldCfg bean](h
 <iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/datefield/' ></iframe>
 
 ## Binding
+
 The "value" property in the dateField is bind-able and can be bound to a property in the data model.
 <iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/datefield/binding/' ></iframe>
 
@@ -59,3 +60,28 @@ The "value" property in the dateField is bind-able and can be bound to a propert
 	* 15DEC2010/+10 (equivalent to: 25DEC2010)
 	* 15DEC2010/-3 (equivalent to: 12DEC2010)
 * When the user leaves the field (on blur), the content is reformatted according to the pattern configured in the DateField properties.
+
+## Error messages customization
+
+Please refer to the main article concerning default [error messages customization](error_messages_customization).
+
+Here is the list of error messages that can be customized, with for each: 
+
+- the key to be used in the configuration map
+- its description
+- its hard-coded default value
+
+Messages: 
+
+- validation
+  - key: `validation`
+  - description: for wrong input's value format, resulting in the impossibility to interpret it for the widget's value
+  - default hard-coded: `"Please enter a valid date format, for example: 10/12 or 01MAR or +4"`
+- minimum value
+  - key: `minValue`
+  - description: for cases where the entered date is below the minimum date set in the widget's configuration
+  - default hard-coded: `"Date is before the minimum date."`
+- maximum value
+  - key: `maxValue`
+  - description: for cases where the entered date is beyond the maximum date set in the widget's configuration
+  - default hard-coded: `"Date is after the maximum date."`

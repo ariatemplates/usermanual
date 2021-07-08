@@ -83,3 +83,20 @@ It is possible to add listeners to some of the events raised by the widget DOM u
 In this sample the **onchange** callback shows a small notification above the AutoComplete. If you type something in the field and highlight its options the callback is not called, but if you select one option clicking on it, pressing _Enter_ or _Tab_, the notification appears. The callback is called also if you type an invalid text.
 
 <iframe class='samples' src='%SNIPPETS_SERVER_URL%/samples/github.com/ariatemplates/documentation-code/samples/widgets/autocomplete/onchange/' ></iframe>
+
+## Error messages customization
+
+Please refer to the main article concerning default [error messages customization](error_messages_customization).
+
+Here is the list of error messages that can be customized, with for each: 
+
+- the key to be used in the configuration map
+- its description
+- its hard-coded default value
+
+Messages: 
+
+- validation
+  - key: `validation`
+  - description: for cases where the input's value can't match any option
+  - default hard-coded: `"There is no suggestion available for the given entry."`
